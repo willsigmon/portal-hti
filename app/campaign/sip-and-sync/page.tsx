@@ -207,9 +207,9 @@ export default function SipAndSync() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="container relative pt-12 pb-24 md:pt-20 md:pb-28">
+      <section className="container relative pt-8 pb-16 md:pt-12 md:pb-20">
         <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
-          <div className="min-w-0 space-y-7 lg:col-span-7">
+          <div className="min-w-0 space-y-5 lg:col-span-7">
             <h1
               className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)] animate-fade-in-up"
               style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)" }}
@@ -230,7 +230,7 @@ export default function SipAndSync() {
               Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2 animate-fade-in-up delay-300">
+            <div className="flex flex-wrap gap-4 pt-1 animate-fade-in-up delay-300">
               <Button size="lg" asChild>
                 <a href="#tickets">Reserve Spot</a>
               </Button>
@@ -242,7 +242,7 @@ export default function SipAndSync() {
 
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
           <div className="min-w-0 lg:col-span-5 animate-fade-in-up delay-400">
-            <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/60 p-2 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
+            <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/60 p-1.5 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
               <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[var(--color-accent)] pointer-events-none" />
               <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[var(--color-accent)] pointer-events-none" />
               <div className="absolute -bottom-3.5 -left-3.5 h-7 w-7 border-b border-l border-[var(--color-accent)] pointer-events-none" />
@@ -260,18 +260,18 @@ export default function SipAndSync() {
         </div>
 
         {/* EVENT QUICK INFO GRID */}
-        <div className="mt-20 grid gap-7 sm:grid-cols-3 md:mt-28">
+        <div className="mt-12 grid gap-5 sm:grid-cols-3 md:mt-16">
           {/* Calendar Card */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[210px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[160px] md:min-h-[165px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-4.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-4">
+            <div className="flex min-w-0 items-start gap-3">
               {/* Bespoke SVG stitch-style calendar icon */}
-              <svg className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="calGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#f59e32" />
@@ -286,13 +286,13 @@ export default function SipAndSync() {
                 <path d="M50 50L53 58L61 61L53 64L50 72L47 64L39 61L47 58Z" fill="#f59e32" />
               </svg>
 
-              <div className="min-w-0 space-y-1">
+              <div className="min-w-0 space-y-0.5">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">When</div>
                 <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
                 <p className="text-sm text-[var(--color-muted)]">6:00 PM – 9:00 PM</p>
               </div>
             </div>
-            <span className="mt-8 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
+            <span className="mt-4 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
               Add to Calendar <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -303,11 +303,11 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[210px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[160px] md:min-h-[165px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-4.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-4">
+            <div className="flex min-w-0 items-start gap-3">
               {/* Bespoke SVG stitch-style map pin icon */}
-              <svg className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="pinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#87b891" />
@@ -320,13 +320,13 @@ export default function SipAndSync() {
                 <circle cx="50" cy="38" r="8" fill="#87b891" />
               </svg>
 
-              <div className="min-w-0 space-y-1">
+              <div className="min-w-0 space-y-0.5">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Where</div>
                 <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">Portal HQ, Raleigh</h3>
                 <p className="text-xs text-[var(--color-muted)] leading-tight">3801 Hillsborough St, Suite 113</p>
               </div>
             </div>
-            <span className="mt-8 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
+            <span className="mt-4 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
               Open Maps <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -335,11 +335,11 @@ export default function SipAndSync() {
           <a
             href="#tickets"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[210px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[160px] md:min-h-[165px] w-full min-w-0 flex-col justify-between rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 p-4.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-4">
+            <div className="flex min-w-0 items-start gap-3">
               {/* Bespoke SVG stitch-style ticket icon */}
-              <svg className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="tktGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#f58420" />
@@ -351,13 +351,13 @@ export default function SipAndSync() {
                 <path d="M60 45L62 49L67 50L63 53L64 57L60 55L56 57L57 53L53 50L58 49Z" fill="#ffb800" />
               </svg>
 
-              <div className="min-w-0 space-y-1">
+              <div className="min-w-0 space-y-0.5">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Admission</div>
                 <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">$5.00 Tickets</h3>
                 <p className="text-sm text-[var(--color-muted)]">Includes craft drinks + live networking</p>
               </div>
             </div>
-            <span className="mt-8 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
+            <span className="mt-4 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
               Secure Passes <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -366,7 +366,7 @@ export default function SipAndSync() {
 
       {/* THE COLLABORATION (BENTO GRID) */}
       <section id="about" className="section bg-black/20 backdrop-blur-[1px] border-y border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
-        <div className="container space-y-12">
+        <div className="container space-y-8">
           <div className="max-w-2xl">
             <div className="text-xs font-bold text-[var(--color-accent)] tracking-wide mb-1.5 font-sans">
               Why we're gathering
@@ -379,21 +379,21 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             {/* HTI Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 md:p-10 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="p-5.5 md:p-7 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
-              <div className="space-y-6">
-                <div className="border-b border-white/5 pb-4">
+              <div className="space-y-4.5">
+                <div className="border-b border-white/5 pb-3">
                   <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
                     501(c)(3) Nonprofit Partner
                   </span>
                 </div>
 
                 {/* Massive Brand Logo Wrapper */}
-                <div className="flex items-center justify-center min-h-[140px] bg-black/40 border border-white/5 rounded-xl py-6 px-4 relative overflow-hidden group">
+                <div className="flex items-center justify-center min-h-[110px] bg-black/40 border border-white/5 rounded-xl py-4 px-4 relative overflow-hidden group">
                   <HTILogo className="h-[75px] w-auto filter contrast-[1.03] transition-all group-hover:scale-105 duration-300 object-contain" />
                 </div>
 
@@ -405,17 +405,17 @@ export default function SipAndSync() {
                   HTI bridges the digital divide by transforming retired corporate and private laptops into secure Chromebooks and providing digital literacy training to NC families who lack access to technology.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
                     </div>
                     <div className="min-w-0">
                       <strong className="block text-[11px] text-[var(--color-ink)] font-bold font-sans tracking-wide leading-tight">DoD 5220.22-M</strong>
-                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Secure Data Wipe</span>
+                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Secure Wipe</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
@@ -424,13 +424,13 @@ export default function SipAndSync() {
                       <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">OS &amp; Hardware</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5A2.5 2.5 0 0 1 4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5" /></svg>
                     </div>
                     <div className="min-w-0">
                       <strong className="block text-[11px] text-[var(--color-ink)] font-bold font-sans tracking-wide leading-tight">Distribution</strong>
-                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Literacy Courses</span>
+                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Courses</span>
                     </div>
                   </div>
                 </div>
@@ -440,7 +440,7 @@ export default function SipAndSync() {
                 href="https://www.hubzonetech.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-8"
+                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
               >
                 Visit hubzonetech.org <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
@@ -449,18 +449,18 @@ export default function SipAndSync() {
             {/* Portal HQ Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 md:p-10 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="p-5.5 md:p-7 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
-              <div className="space-y-6">
-                <div className="border-b border-white/5 pb-4">
+              <div className="space-y-4.5">
+                <div className="border-b border-white/5 pb-3">
                   <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
                     Host &amp; Experience Partner
                   </span>
                 </div>
 
                 {/* Massive Brand Logo Wrapper */}
-                <div className="flex items-center justify-center min-h-[140px] bg-black/40 border border-white/5 rounded-xl py-6 px-4 relative overflow-hidden group">
-                  <img src="/portal-logo.png" alt="Portal HQ" className="h-[120px] w-auto filter contrast-[1.02] transition-all group-hover:scale-105 duration-300 object-contain" />
+                <div className="flex items-center justify-center min-h-[110px] bg-black/40 border border-white/5 rounded-xl py-4 px-4 relative overflow-hidden group">
+                  <img src="/portal-logo.png" alt="Portal HQ" className="h-[100px] w-auto filter contrast-[1.02] transition-all group-hover:scale-105 duration-300 object-contain" />
                 </div>
 
                 <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
@@ -471,8 +471,8 @@ export default function SipAndSync() {
                   Raleigh’s premier community workspace and multi-purpose venue. Fostering a high-energy creative ecosystem for entrepreneurs, artists, founders, locally connecting and executing.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                     </div>
@@ -481,7 +481,7 @@ export default function SipAndSync() {
                       <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">12 Gobo Lights</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
                     </div>
@@ -490,13 +490,13 @@ export default function SipAndSync() {
                       <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Adaptable Space</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/5 bg-black/35 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/20 hover:scale-[1.01] shadow-inner">
                     <div className="h-8.5 w-8.5 shrink-0 flex items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <div className="min-w-0">
                       <strong className="block text-[11px] text-[var(--color-ink)] font-bold font-sans tracking-wide leading-tight">Founder Hub</strong>
-                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Elevating NC Startups</span>
+                      <span className="text-[10px] text-[var(--color-muted)] block mt-0.5 leading-none">Startups</span>
                     </div>
                   </div>
                 </div>
@@ -506,7 +506,7 @@ export default function SipAndSync() {
                 href="https://theportalhq.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-8"
+                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
               >
                 Visit theportalhq.com <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
@@ -514,9 +514,9 @@ export default function SipAndSync() {
 
             {/* Shared Purpose Bento Card (Wide Span) */}
             <div
-              className="md:col-span-2 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-md overflow-hidden grid lg:grid-cols-12"
+              className="md:col-span-2 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-md overflow-hidden grid lg:grid-cols-12"
             >
-              <div className="p-8 md:p-12 lg:col-span-7 flex flex-col justify-center space-y-6">
+              <div className="p-6 md:p-8 lg:col-span-7 flex flex-col justify-center space-y-4">
                 <div>
                   <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
                     Our Real Mission
@@ -535,7 +535,7 @@ export default function SipAndSync() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 h-64 lg:h-full min-h-[300px] relative bg-[var(--color-bg-dark)]">
+              <div className="lg:col-span-5 h-64 lg:h-full min-h-[240px] relative bg-[var(--color-bg-dark)]">
                 <img
                   src="/heartfelt_laptop.png"
                   alt="NC student using a refurbished Chromebook"
@@ -549,10 +549,10 @@ export default function SipAndSync() {
 
       {/* VENUE SPOTLIGHT & 360° WALKTHROUGH */}
       <section id="venue-spotlight" className="section bg-black/16 backdrop-blur-[1px] border-b border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
-        <div className="container space-y-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 flex flex-col items-center justify-center text-center space-y-6 lg:py-4">
-              <div className="space-y-3">
+        <div className="container space-y-8">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
+              <div className="space-y-2">
                 <span className="text-xs font-bold text-[var(--color-accent)] tracking-tight font-sans uppercase">
                   The experience space
                 </span>
@@ -568,22 +568,22 @@ export default function SipAndSync() {
                 The Sip &amp; Sync Social Hour will take place in the main gallery hall of <span className="whitespace-nowrap">Portal HQ</span>. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 pt-4 w-full max-w-lg mx-auto">
-                <div className="flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-white/5 bg-[var(--color-surface)]/45 p-6 text-center backdrop-blur-sm shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-display text-5xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">5,000</strong>
-                  <span className="mt-1.5 text-sm font-bold text-[var(--color-accent)]">Sq Ft</span>
-                  <span className="mt-2 max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
+              <div className="grid grid-cols-2 gap-4 pt-2 w-full max-w-lg mx-auto">
+                <div className="flex min-h-[115px] flex-col items-center justify-center rounded-xl border border-white/5 bg-[var(--color-surface)]/45 p-4 text-center backdrop-blur-sm shadow-md transition-all duration-300 hover:scale-[1.02]">
+                  <strong className="font-display text-4xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">5,000</strong>
+                  <span className="mt-0.5 text-sm font-bold text-[var(--color-accent)]">Sq Ft</span>
+                  <span className="mt-1 max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
                 </div>
-                <div className="flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-white/5 bg-[var(--color-surface)]/45 p-6 text-center backdrop-blur-sm shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-display text-5xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">P</strong>
-                  <span className="mt-1.5 text-sm font-bold text-[var(--color-accent)]">Free Parking</span>
-                  <span className="mt-2 max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">150+ spaces on site</span>
+                <div className="flex min-h-[115px] flex-col items-center justify-center rounded-xl border border-white/5 bg-[var(--color-surface)]/45 p-4 text-center backdrop-blur-sm shadow-md transition-all duration-300 hover:scale-[1.02]">
+                  <strong className="font-display text-4xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">P</strong>
+                  <span className="mt-0.5 text-sm font-bold text-[var(--color-accent)]">Free Parking</span>
+                  <span className="mt-1 max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">150+ spaces on site</span>
                 </div>
               </div>
             </div>
 
             {/* Asymmetric Venue Photo Grid */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3">
+            <div className="lg:col-span-5 grid grid-cols-2 gap-2">
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
                   src="https://theportalhq.com/Newphotos/5.png"
@@ -606,7 +606,7 @@ export default function SipAndSync() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white text-xs">
                   <div>
-                    <strong className="block font-semibold">Active Concert Configuration</strong>
+                     <strong className="block font-semibold"><span className="whitespace-nowrap">Portal HQ</span> Concert Stage</strong>
                     Experience concert-grade production during the Sip & Sync Social Hour.
                   </div>
                 </div>
@@ -614,7 +614,7 @@ export default function SipAndSync() {
             </div>
           </div>
 
-          <div className="space-y-6 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] pt-12">
+          <div className="space-y-4.5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] pt-8">
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div className="max-w-2xl">
                 <h3 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
@@ -629,7 +629,7 @@ export default function SipAndSync() {
                 Open full tour
               </a>
             </div>
-            <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)+6px)] border border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)] bg-[var(--color-panel)]/78 p-3.5 shadow-2xl shadow-black/30 backdrop-blur-md md:p-5 shadow-[0_0_50px_rgba(10,28,75,0.18)]">
+            <div className="relative overflow-hidden rounded-[calc(var(--radius-md)+4px)] border border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)] bg-[var(--color-panel)]/78 p-2.5 shadow-xl shadow-black/30 backdrop-blur-md md:p-3.5 shadow-[0_0_50px_rgba(10,28,75,0.18)]">
               {/* Window Controls Bar */}
               <div className="flex flex-col gap-3 px-2 pb-4 text-sm md:flex-row md:items-center md:justify-between border-b border-white/5 mb-3.5">
                 <div className="flex items-center gap-3">
@@ -673,7 +673,7 @@ export default function SipAndSync() {
               </div>
 
               {/* Waypoints Controller Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
                 {tourWaypoints.map((wp) => (
                   <button
                     key={wp.id}
@@ -682,7 +682,7 @@ export default function SipAndSync() {
                       setActiveScene(wp.id);
                       toastRef.current?.show(`Navigating walkthrough to ${wp.name}...`);
                     }}
-                    className={`p-3.5 rounded-xl border text-center transition-all duration-300 font-sans cursor-pointer flex flex-col items-center justify-center ${
+                    className={`p-2.5 rounded-lg border text-center transition-all duration-300 font-sans cursor-pointer flex flex-col items-center justify-center ${
                       activeScene === wp.id
                         ? "bg-[var(--color-accent)]/15 border-[var(--color-accent)] text-[var(--color-accent)] font-semibold shadow-inner scale-[1.01]"
                         : "bg-black/25 border-white/5 text-[var(--color-muted)] hover:border-white/10 hover:text-white hover:bg-black/40 hover:scale-[1.01]"
@@ -700,8 +700,8 @@ export default function SipAndSync() {
 
       {/* TICKETS & DONATIONS */}
       <section id="tickets" className="section container">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <div className="text-center space-y-3">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="text-center space-y-2">
             <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
               Reserve Admission Passes
             </span>
@@ -714,9 +714,9 @@ export default function SipAndSync() {
           </div>
 
           {/* Secure Trust Badges Panel */}
-          <div className="p-5 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs">
-            <div className="h-10 w-10 shrink-0 flex items-center justify-center rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
-              <Award className="h-5 w-5" />
+          <div className="p-3.5 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 flex flex-col sm:flex-row items-start sm:items-center gap-3.5 text-xs">
+            <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+              <Award className="h-4.5 w-4.5" />
             </div>
             <div className="space-y-0.5">
               <strong className="block text-[var(--color-ink)] font-semibold">Receipts for Eligible Donations</strong>
@@ -724,7 +724,7 @@ export default function SipAndSync() {
             </div>
           </div>
 
-          <div className="p-8 sm:p-10 md:p-12 rounded-3xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+          <div className="p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
             <PledgeForm mode="ticket" />
           </div>
         </div>
@@ -732,12 +732,12 @@ export default function SipAndSync() {
 
       {/* LAPTOP PLEDGE DRIVE */}
       <section id="pledge" className="section bg-black/20 backdrop-blur-[1px] border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
-        <div className="container space-y-12">
-          <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
+        <div className="container space-y-8">
+          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-start">
 
             {/* Live Progress Tracker Column */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="space-y-3">
+            <div className="lg:col-span-5 space-y-5">
+              <div className="space-y-2">
                 <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
                   Drive Metrics
                 </span>
@@ -752,9 +752,9 @@ export default function SipAndSync() {
               {/* Live Metric Progress Counter Card */}
               <div
                 onMouseMove={handleMouseMove}
-                className="p-6 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-md space-y-6 spotlight-card"
+                className="p-5 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-md space-y-5 spotlight-card"
               >
-                <div className="flex items-center justify-between border-b pb-4">
+                <div className="flex items-center justify-between border-b pb-3">
                   <div className="text-xs font-semibold text-[var(--color-muted)] font-sans">Live Progress</div>
                   <span className="text-[10px] font-semibold tracking-tight text-[var(--color-signal)]">Local tracker</span>
                 </div>
@@ -762,15 +762,15 @@ export default function SipAndSync() {
                 <div className="grid grid-cols-3 gap-2 text-center">
                   <div className="space-y-1 border-r">
                     <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Target Goal</span>
-                    <strong className="text-lg font-bold text-[var(--color-accent)]">{PLEDGE_GOAL} Devices</strong>
+                    <strong className="text-base font-bold text-[var(--color-accent)]">{PLEDGE_GOAL} Devices</strong>
                   </div>
                   <div className="space-y-1 border-r">
                     <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Pledged</span>
-                    <strong className="text-lg font-bold text-[var(--color-ink)] font-sans">{pledgesCount}</strong>
+                    <strong className="text-base font-bold text-[var(--color-ink)] font-sans">{pledgesCount}</strong>
                   </div>
                   <div className="space-y-1">
                     <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Still Needed</span>
-                    <strong className="text-lg font-bold text-[var(--color-signal)] font-sans">{remainingCount}</strong>
+                    <strong className="text-base font-bold text-[var(--color-signal)] font-sans">{remainingCount}</strong>
                   </div>
                 </div>
 
@@ -803,18 +803,18 @@ export default function SipAndSync() {
               </div>
 
               {/* Logistics grid info */}
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-5 rounded-xl border border-white/5 bg-[var(--color-surface)]/40 backdrop-blur-sm space-y-2 text-xs">
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="p-4 rounded-lg border border-white/5 bg-[var(--color-surface)]/40 backdrop-blur-sm space-y-2 text-xs">
                   <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
                     <MapPin className="h-4 w-4 shrink-0" />
                     Drop-off Location
                   </div>
-                  <strong className="block text-[var(--color-ink)] font-sans">Portal HQ Lobby</strong>
+                  <strong className="block text-[var(--color-ink)] font-sans"><span className="whitespace-nowrap">Portal HQ</span> Lobby</strong>
                   <p className="text-[var(--color-muted)] leading-relaxed font-sans">
                     3801 Hillsborough St, Suite 113, Raleigh. Drop off during the event or standard workspace hours.
                   </p>
                 </div>
-                <div className="p-5 rounded-xl border border-white/5 bg-[var(--color-surface)]/40 backdrop-blur-sm space-y-2 text-xs">
+                <div className="p-4 rounded-lg border border-white/5 bg-[var(--color-surface)]/40 backdrop-blur-sm space-y-2 text-xs">
                   <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
                     <Award className="h-4 w-4 shrink-0" />
                     Free Vehicle Pickup
@@ -830,7 +830,7 @@ export default function SipAndSync() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 rounded-3xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+            <div className="lg:col-span-7 p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
               <PledgeForm mode="laptop" />
             </div>
 
@@ -840,7 +840,7 @@ export default function SipAndSync() {
 
       {/* CONNECT & SHARE */}
       <section id="connect" className="section container">
-        <div className="space-y-12">
+        <div className="space-y-8">
           <div className="max-w-2xl">
             <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block mb-1 font-sans">
               Get in Touch
@@ -854,7 +854,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Encouraging Social share panel */}
-          <div className="p-8 sm:p-10 md:p-12 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_0_50px_rgba(0,0,0,0.15)]">
+          <div className="p-5.5 sm:p-7 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5 shadow-[0_0_50px_rgba(0,0,0,0.15)]">
             <div className="space-y-2 max-w-[50ch]">
               <h4 className="font-display font-semibold text-lg text-[var(--color-ink)]">Spread the Word!</h4>
               <p className="text-sm text-[var(--color-muted)] leading-relaxed">
@@ -875,13 +875,13 @@ export default function SipAndSync() {
           </div>
 
           {/* Coordinators Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4.5">
             {/* Will Sigmon */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-5.5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div>
                   <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">Will Sigmon</h4>
                   <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
@@ -893,7 +893,7 @@ export default function SipAndSync() {
                 </p>
               </div>
 
-              <div className="pt-8 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-8 flex items-center justify-between">
+              <div className="pt-5.5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-5.5 flex items-center justify-between">
                 <a
                   href="mailto:wsigmon@hubzonetech.org"
                   className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
@@ -907,9 +907,9 @@ export default function SipAndSync() {
             {/* David Galindo */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-5.5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div>
                   <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">David Galindo</h4>
                   <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
@@ -921,7 +921,7 @@ export default function SipAndSync() {
                 </p>
               </div>
 
-              <div className="pt-8 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-8 flex items-center justify-between">
+              <div className="pt-5.5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-5.5 flex items-center justify-between">
                 <a
                   href="mailto:dgalindo@kurvpay.com"
                   className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
@@ -938,9 +938,9 @@ export default function SipAndSync() {
             {/* Jake Berlin */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-5.5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/60 backdrop-blur-md shadow-sm flex flex-col justify-between hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div>
                   <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">Jake Berlin</h4>
                   <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
@@ -952,7 +952,7 @@ export default function SipAndSync() {
                 </p>
               </div>
 
-              <div className="pt-8 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-8 flex items-center justify-between">
+              <div className="pt-5.5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] mt-5.5 flex items-center justify-between">
                 <a
                   href="mailto:jake@theportalhq.com"
                   className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
@@ -969,7 +969,7 @@ export default function SipAndSync() {
       {/* FOOTER */}
       <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-y-4">
-          <div>Sip &amp; Sync Social Hour — HTI × Portal HQ • June 11, 2026</div>
+          <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
           <div className="flex gap-7 font-semibold">
             <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
             <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>
@@ -979,7 +979,7 @@ export default function SipAndSync() {
 
       {/* ACTIVE TICKET RETRIEVAL FLOATING PILL */}
       {hasTicket && (
-        <div className="fixed bottom-6 right-6 z-40 animate-bounce">
+        <div className="fixed bottom-4 right-4 z-40 animate-bounce">
           <button
             onClick={handleOpenTicket}
             className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[var(--color-accent)] text-white shadow-lg hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] transition-all font-display text-sm font-semibold tracking-tight shadow-orange-500/20"
@@ -994,7 +994,7 @@ export default function SipAndSync() {
       {scanModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
           <div
-            className="relative w-full max-w-md p-6 md:p-8 rounded-[var(--radius-lg)] border border-[var(--color-signal)]/30 bg-[var(--color-surface)] shadow-2xl space-y-6 text-center transform scale-100 opacity-100 transition-all"
+            className="relative w-full max-w-md p-5 md:p-6.5 rounded-[var(--radius-md)] border border-[var(--color-signal)]/30 bg-[var(--color-surface)] shadow-2xl space-y-4.5 text-center transform scale-100 opacity-100 transition-all"
           >
             {/* Close modal X button */}
             <button
@@ -1020,8 +1020,8 @@ export default function SipAndSync() {
             </div>
 
             {/* Checked-in pass invoice receipt breakdown details */}
-            <div className="rounded-xl border bg-[var(--color-surface)]/50 p-5 space-y-3.5 text-xs text-left font-sans">
-              <div className="flex justify-between items-center border-b pb-2.5">
+            <div className="rounded-xl border bg-[var(--color-surface)]/50 p-4 space-y-2.5 text-xs text-left font-sans">
+              <div className="flex justify-between items-center border-b pb-2">
                 <span className="text-[var(--color-muted)]">Gate Code</span>
                 <strong className="font-sans tabular-nums text-sm text-[var(--color-ink)]">#{scanData.code}</strong>
               </div>

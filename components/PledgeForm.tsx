@@ -195,8 +195,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           </div>
 
           {/* Premium Dashed Coupon Ticket Pass */}
-          <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)] bg-[var(--color-surface)] shadow-lg">
-            {/* Top Indicator Strip */}
+          <div className="relative overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)] bg-[var(--color-surface)] shadow-lg">
             {/* Top Indicator Strip */}
             <div
               className={`px-6 py-2.5 text-center text-xs font-bold font-sans tracking-wide ${
@@ -209,7 +208,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </div>
 
             {/* Main Ticket Info */}
-            <div className="p-6 md:p-8 space-y-6">
+            <div className="p-4.5 md:p-6 space-y-4.5">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                   <div className="text-[var(--color-muted)] text-xs font-semibold tracking-wide font-sans">
@@ -225,13 +224,13 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </div>
 
               {/* Separator dots */}
-              <div className="border-t border-dashed border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] my-4 relative">
+              <div className="border-t border-dashed border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] my-3 relative">
                 <div className="absolute -left-[33px] -top-2 h-4 w-4 rounded-full bg-[var(--color-bg)] border-r border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)]" />
                 <div className="absolute -right-[33px] -top-2 h-4 w-4 rounded-full bg-[var(--color-bg)] border-l border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)]" />
               </div>
 
               {/* Pass details */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6 text-sm">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-4.5 text-sm">
                 <div>
                   <span className="block text-xs text-[var(--color-muted)] font-sans tracking-wide mb-1">
                     Guest Name
@@ -258,21 +257,21 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                   <span className="block text-xs text-[var(--color-muted)] font-sans tracking-wide mb-1">
                     Event Venue
                   </span>
-                  <strong className="text-[var(--color-ink)] font-semibold font-sans">
+                  <strong className="text-[var(--color-ink)] font-semibold font-sans whitespace-nowrap">
                     Portal HQ, Raleigh
                   </strong>
                 </div>
               </div>
 
               {/* Separator dots */}
-              <div className="border-t border-dashed border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] my-4 relative">
+              <div className="border-t border-dashed border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] my-3 relative">
                 <div className="absolute -left-[33px] -top-2 h-4 w-4 rounded-full bg-[var(--color-bg)] border-r border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)]" />
                 <div className="absolute -right-[33px] -top-2 h-4 w-4 rounded-full bg-[var(--color-bg)] border-l border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)]" />
               </div>
 
               {/* Interactive QR Code scan preview */}
-              <div className="flex flex-col items-center justify-center pt-2">
-                <div className="relative p-4 rounded-xl border bg-white shadow-sm overflow-hidden group">
+              <div className="flex flex-col items-center justify-center pt-1">
+                <div className="relative p-3 rounded-lg border bg-white shadow-sm overflow-hidden group">
                   {/* Scanner laser sweep line */}
                   <div className="absolute left-0 top-0 w-full h-0.5 bg-[var(--color-accent)] animate-bounce z-10" />
 
@@ -280,16 +279,16 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                   <img
                     src={qrCodeSrc}
                     alt="Admission Ticket QR Code"
-                    className={`h-40 w-40 object-contain transition-all duration-500 ${
+                    className={`h-32 w-32 object-contain transition-all duration-500 ${
                       ticketPaid ? "opacity-100 blur-0" : "opacity-25 blur-[6px]"
                     }`}
                   />
 
                   {/* Lock Screen for Unpaid */}
                   {!ticketPaid && (
-                    <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center z-20">
+                    <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] flex flex-col items-center justify-center p-3 text-center z-20">
                       <svg
-                        className="h-8 w-8 text-[var(--color-accent)] animate-pulse mb-2"
+                        className="h-7 w-7 text-[var(--color-accent)] animate-pulse mb-1.5"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -300,7 +299,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                       </svg>
-                      <span className="font-sans text-xs font-semibold tracking-tight text-[var(--color-accent)]">
+                      <span className="font-sans text-[11px] font-semibold tracking-tight text-[var(--color-accent)]">
                         Awaiting payment
                       </span>
                       <span className="text-[10px] text-[var(--color-muted)] max-w-[20ch] mt-1 font-sans">
@@ -310,7 +309,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                   )}
                 </div>
 
-                <p className="text-[11px] text-[var(--color-muted)] text-center max-w-[38ch] mt-4 font-sans">
+                <p className="text-[11px] text-[var(--color-muted)] text-center max-w-[38ch] mt-3.5 font-sans">
                   Show this digital QR pass at the Portal HQ entrance on June 11th. A copy of your tax receipt and pass details was saved to this browser.
                 </p>
               </div>
@@ -319,7 +318,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
           {/* Interactive Payment CTAs */}
           {!ticketPaid ? (
-            <div className="rounded-xl border border-[var(--color-accent)]/20 bg-[color-mix(in_oklch,var(--color-accent)_4%,var(--color-bg))] p-6 space-y-4">
+            <div className="rounded-xl border border-[var(--color-accent)]/20 bg-[color-mix(in_oklch,var(--color-accent)_4%,var(--color-bg))] p-4.5 space-y-3.5">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <h5 className="font-display font-semibold text-lg text-[var(--color-ink)]">
@@ -337,7 +336,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              <div className="grid sm:grid-cols-2 gap-4 pt-1">
                 <Button asChild size="lg" className="w-full justify-center">
                   <a
                     href="https://www.paypal.com/donate/?hosted_button_id=C6QJ6V23C63P2"
@@ -353,10 +352,10 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </div>
             </div>
           ) : (
-            <div className="rounded-xl border border-[var(--color-signal)]/20 bg-[color-mix(in_oklch,var(--color-signal)_4%,var(--color-bg))] p-6 text-center">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-signal)]/10 text-[var(--color-signal)] mb-3">
+            <div className="rounded-xl border border-[var(--color-signal)]/20 bg-[color-mix(in_oklch,var(--color-signal)_4%,var(--color-bg))] p-5 text-center">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-signal)]/10 text-[var(--color-signal)] mb-2.5">
                 <svg
-                  className="h-6 w-6"
+                  className="h-5.5 w-5.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -371,7 +370,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 Ticket Activated!
               </h5>
               <p className="text-sm text-[var(--color-muted)] max-w-[42ch] mx-auto mt-1">
-                Thank you for your generous support of HTI and Portal HQ. Your donation helps bridge the digital divide in NC. See you on June 11th!
+                Thank you for your support of HTI and Portal HQ. Your donation helps bridge the NC digital divide. See you on June 11th!
               </p>
             </div>
           )}
@@ -519,7 +518,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     value={guestName}
                     onChange={(e) => setGuestName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
+                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
                   />
                 </div>
                 <div>
@@ -532,7 +531,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     value={guestEmail}
                     onChange={(e) => setGuestEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
+                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
                   />
                 </div>
               </div>
@@ -540,7 +539,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           </div>
 
           {/* Right Invoice Column */}
-          <div className="lg:col-span-5 border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] rounded-2xl bg-[var(--color-surface)] p-6 md:p-8 space-y-6 shadow-sm lg:sticky lg:top-24">
+          <div className="lg:col-span-5 border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] rounded-2xl bg-[var(--color-surface)] p-5 md:p-6 space-y-4.5 shadow-sm lg:sticky lg:top-24">
             <div>
               <div className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
                 Invoice Breakdown
@@ -550,7 +549,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </h4>
             </div>
 
-            <div className="border-t border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pt-4 space-y-3.5 text-sm">
+            <div className="border-t border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pt-3.5 space-y-2.5 text-sm">
               <div className="flex justify-between items-center text-[var(--color-ink)]">
                 <span>
                   {ticketQty} × General Admission Ticket{ticketQty > 1 ? "s" : ""}
@@ -569,7 +568,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </div>
             </div>
 
-            <div className="border-t border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] border-dashed pt-4 flex justify-between items-baseline">
+            <div className="border-t border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] border-dashed pt-3.5 flex justify-between items-baseline">
               <strong className="font-display font-bold text-base text-[var(--color-ink)]">
                 Total Due
               </strong>
@@ -578,9 +577,9 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </strong>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-1">
               <Button type="submit" size="lg" className="w-full justify-center">
-                Register & Get Digital Ticket ➔
+                Register & Get Ticket ➔
               </Button>
 
               <a
@@ -601,10 +600,10 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
   // ---- RENDER LAPTOP MODE ----
   if (laptopStep === "success") {
     return (
-      <div className="rounded-[var(--radius-lg)] border border-[var(--color-signal)]/30 bg-[color-mix(in_oklch,var(--color-signal)_4%,var(--color-surface))] p-8 md:p-10 text-center space-y-6">
-        <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-signal)]/15 text-[var(--color-signal)]">
+      <div className="rounded-[var(--radius-md)] border border-[var(--color-signal)]/30 bg-[color-mix(in_oklch,var(--color-signal)_4%,var(--color-surface))] p-6 md:p-8 text-center space-y-4.5">
+        <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-signal)]/15 text-[var(--color-signal)] mb-1">
           <svg
-            className="h-7 w-7"
+            className="h-5.5 w-5.5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -616,14 +615,14 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           </svg>
         </div>
         <div>
-          <h3 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)] mb-2">
+          <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-[var(--color-ink)] mb-1.5">
             Pledge Received. Thank You!
           </h3>
           <p className="text-[var(--color-muted)] text-sm max-w-[44ch] mx-auto leading-relaxed">
             We’ve securely registered your laptop pledge to the live drive stats stream. A coordinating representative from HTI will reach out within 48 hours to coordinate drop-off details and schedule your data wipe.
           </p>
         </div>
-        <div className="font-sans tabular-nums text-xs text-[var(--color-muted)] py-2 bg-black/20 rounded-lg border border-white/10 inline-block px-4">
+        <div className="font-sans tabular-nums text-xs text-[var(--color-muted)] py-1.5 bg-black/20 rounded-lg border border-white/10 inline-block px-3.5">
           Tracking ID: <span className="text-[var(--color-ink)] font-bold">PLG-{Date.now().toString().slice(-6)}</span>
         </div>
         <div>
@@ -639,7 +638,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
   }
 
   return (
-    <form onSubmit={handleLaptopSubmit} className="space-y-6">
+    <form onSubmit={handleLaptopSubmit} className="space-y-4.5">
       <div>
         <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block mb-1.5 font-sans">
           HTI × Portal Live Drive
@@ -664,7 +663,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             required
             value={laptopData.quantity}
             onChange={handleLaptopChange}
-            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
           />
         </div>
         <div>
@@ -677,7 +676,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             placeholder="Dell Latitude, MacBook, Lenovo etc."
             value={laptopData.brand}
             onChange={handleLaptopChange}
-            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
           />
         </div>
       </div>
@@ -691,7 +690,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           required
           value={laptopData.condition}
           onChange={handleLaptopChange}
-          className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm [&>option]:bg-[#131127] [&>option]:text-white"
+          className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm [&>option]:bg-[#131127] [&>option]:text-white"
         >
           <option value="">Select general condition...</option>
           <option value="excellent">Excellent — boots fast, perfect display screen</option>
@@ -701,8 +700,8 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
       </div>
 
       {/* Contact info grid */}
-      <div className="border-t border-white/10 pt-6 space-y-4">
-        <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block font-sans mb-3">
+      <div className="border-t border-white/10 pt-4.5 space-y-3.5">
+        <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block font-sans mb-2">
           Coordination Details
         </span>
 
@@ -718,7 +717,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               placeholder="Your name"
               value={laptopData.name}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
             />
           </div>
           <div>
@@ -732,7 +731,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               placeholder="you@example.com"
               value={laptopData.email}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
             />
           </div>
         </div>
@@ -740,7 +739,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
         <div className="grid sm:grid-cols-2 gap-4 font-sans">
           <div>
             <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-              Phone Number (for pickup/drop-off scheduling)
+              Phone Number
             </label>
             <input
               type="tel"
@@ -748,7 +747,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               placeholder="(919) 555-0199"
               value={laptopData.phone}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm font-sans"
+              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm font-sans"
             />
           </div>
           <div>
@@ -761,18 +760,18 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               placeholder="Has charger, pick up from office, etc."
               value={laptopData.notes}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm resize-none font-sans"
+              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm resize-none font-sans"
             />
           </div>
         </div>
       </div>
 
-      <div className="pt-2">
+      <div className="pt-1.5">
         <Button type="submit" size="lg" className="w-full justify-center">
           Pledge Device Now ➔
         </Button>
         <p className="text-center text-[10px] text-[var(--color-muted)] mt-2.5">
-          By submitting this form you authorize HTI to issue an official 501(c)(3) donation tax certificate upon hardware collection.
+          By submitting this form you authorize HTI to issue an official 501(c)(3) tax certificate upon hardware collection.
         </p>
       </div>
     </form>

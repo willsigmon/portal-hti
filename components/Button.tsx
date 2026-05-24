@@ -14,7 +14,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-11 px-6 text-[15px] rounded-[var(--radius-md)]",
-        lg: "h-14 px-8 text-base rounded-[var(--radius-lg)]",
+        lg: "h-[50px] px-7 text-base rounded-[var(--radius-md)]",
       },
     },
     defaultVariants: {
