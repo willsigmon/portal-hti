@@ -46,7 +46,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         <section className="surface-band section-tight">
           <div className="container grid gap-8 lg:grid-cols-3">
             {eventType.inclusions.map((item) => (
-              <div key={item} className="panel-card spotlight-card p-6">
+              <div key={item} className="panel-card spotlight-card p-6 flex flex-col justify-center items-center text-center">
                 <Check className="mb-5 h-5 w-5 text-[var(--color-accent)]" />
                 <p className="text-sm font-semibold leading-relaxed text-[var(--color-ink)]">{item}</p>
               </div>
@@ -67,11 +67,11 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
             </div>
             <div className="grid gap-5 lg:col-span-7">
               {PLAN_STEPS.map((step, index) => (
-                <div key={step.title} className="panel-card grid gap-5 p-6 sm:grid-cols-[4rem_1fr]">
+                <div key={step.title} className="panel-card flex flex-col items-center justify-center text-center p-6 gap-3">
                   <div className="font-display text-5xl font-black text-[var(--color-accent)]/70">0{index + 1}</div>
                   <div>
                     <h3 className="font-display text-2xl font-bold">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{step.text}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)] max-w-md">{step.text}</p>
                   </div>
                 </div>
               ))}
@@ -103,7 +103,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
             {FEATURE_CARDS.map((feature) => {
               const FeatureIcon = feature.icon;
               return (
-                <div key={feature.title} className="panel-card spotlight-card p-7">
+                <div key={feature.title} className="panel-card spotlight-card p-7 flex flex-col justify-center items-center text-center">
                   <FeatureIcon className="mb-6 h-6 w-6 text-[var(--color-accent)]" />
                   <h3 className="font-display text-2xl font-bold">{feature.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{feature.text}</p>
@@ -122,15 +122,15 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
               </blockquote>
               <p className="text-sm font-semibold text-[var(--color-muted)]">— {REVIEWS[1].author}, {REVIEWS[1].role}</p>
             </div>
-            <div className="panel-card p-7">
-              <div className="flex items-start gap-3 text-sm text-[var(--color-muted)]">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-accent)]" />
+            <div className="panel-card p-7 flex flex-col justify-center items-center text-center">
+              <div className="flex flex-col items-center justify-center gap-3 text-sm text-[var(--color-muted)]">
+                <MapPin className="h-5 w-5 shrink-0 text-[var(--color-accent)] animate-pulse" />
                 <div>
                   <strong className="block text-[var(--color-ink)]">The Portal HQ</strong>
                   {CONTACT.addressLine}<br />{CONTACT.city}
                 </div>
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <Button asChild><Link href="/portal-hq#proposal">Request Proposal</Link></Button>
                 <Button variant="secondary" asChild><a href={CONTACT.googleMaps} target="_blank" rel="noreferrer">Directions</a></Button>
               </div>
@@ -143,7 +143,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
             <div className="eyebrow">// SPATIAL VARIATIONS // CHAMBER ALTERNATIVES</div>
             <div className="grid gap-5 md:grid-cols-2">
               {related.map((item) => (
-                <Link key={item.href} href={item.href} className="panel-card group flex items-center justify-between gap-5 p-6">
+                <Link key={item.href} href={item.href} className="panel-card group flex flex-col justify-center items-center text-center gap-4 p-6">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">{item.eyebrow}</p>
                     <h3 className="mt-2 font-display text-2xl font-bold">{item.title}</h3>

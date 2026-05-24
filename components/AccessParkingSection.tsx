@@ -28,17 +28,17 @@ export function AccessParkingSection({ compact = false }: { compact?: boolean })
     <section id="access-parking" className={compact ? "surface-band section-tight" : "section container"}>
       <div className={compact ? "container" : undefined}>
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
-          <div className="panel-card-strong spotlight-card overflow-hidden p-7 md:p-9">
-            <div className="eyebrow">
+          <div className="panel-card-strong spotlight-card overflow-hidden p-7 md:p-9 flex flex-col justify-center items-center text-center">
+            <div className="eyebrow flex items-center justify-center gap-1.5">
               <BadgeCheck className="h-3.5 w-3.5" /> Access & parking
             </div>
-            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-tight text-[var(--color-ink)] md:text-5xl">
+            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-tight text-[var(--color-ink)] md:text-5xl max-w-md">
               Easy to enter. <span className="font-normal italic text-[var(--color-accent)]">Easy to park.</span>
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[var(--color-muted)]">
+            <p className="mt-5 text-base leading-relaxed text-[var(--color-muted)] max-w-md">
               Portal HQ should feel low-friction before the event even starts: accessible guest areas, clear arrival, and plentiful parking directly on-site.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Button asChild>
                 <a href={CONTACT.googleMaps} target="_blank" rel="noreferrer">
                   Get directions <MapPin className="h-4 w-4" />
@@ -54,8 +54,8 @@ export function AccessParkingSection({ compact = false }: { compact?: boolean })
             {arrivalFacts.map((fact) => {
               const Icon = fact.icon;
               return (
-                <article key={fact.label} className="panel-card spotlight-card flex min-h-[240px] flex-col justify-between p-6">
-                  <div>
+                <article key={fact.label} className="panel-card spotlight-card flex min-h-[240px] flex-col justify-center items-center text-center p-6">
+                  <div className="flex flex-col items-center justify-center">
                     <Icon className="h-7 w-7 text-[var(--color-accent)]" aria-hidden="true" />
                     <div className="mt-8 font-mono text-4xl font-bold leading-none tracking-tight text-[var(--color-ink)]">
                       {fact.stat}
@@ -64,7 +64,7 @@ export function AccessParkingSection({ compact = false }: { compact?: boolean })
                       {fact.label}
                     </h3>
                   </div>
-                  <p className="mt-6 text-sm leading-relaxed text-[var(--color-muted)]">{fact.text}</p>
+                  <p className="mt-6 text-sm leading-relaxed text-[var(--color-muted)] max-w-[200px]">{fact.text}</p>
                 </article>
               );
             })}
