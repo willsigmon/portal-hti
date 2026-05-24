@@ -135,7 +135,7 @@ export default function PortalHQBooking() {
       <main className="relative overflow-hidden">
         <section className="container relative grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
           {/* Cosmic Portal Swirling in the Distance (Ratchet & Clank black-hole vibe) */}
-          <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-[480px] w-[480px] select-none opacity-45 transition-opacity duration-1000 md:h-[640px] md:w-[640px] lg:-right-36 lg:-top-32">
+          <div className="pointer-events-none absolute -right-20 -top-24 z-0 h-[480px] w-[480px] select-none opacity-45 transition-opacity duration-1000 md:h-[640px] md:w-[640px] lg:-right-36 lg:-top-32">
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/20 to-cyan-500/25 blur-3xl animate-pulse" />
             <img 
               src="/portal_cosmic_hero.png" 
@@ -144,7 +144,18 @@ export default function PortalHQBooking() {
             />
           </div>
 
-          <div className="space-y-8 lg:col-span-7">
+          {/* Distant secondary portal deep in the space void */}
+          <div className="pointer-events-none absolute left-6 top-[35%] z-0 h-24 w-24 select-none opacity-25 transition-opacity duration-1000 md:h-32 md:w-32 lg:left-12">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/10 to-[var(--color-accent)]/15 blur-2xl animate-pulse" />
+            <img 
+              src="/portal_cosmic_hero.png" 
+              alt="" 
+              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-50 animate-spin-slow filter hue-rotate-[60deg] brightness-90 drop-shadow-[0_0_20px_rgba(6,182,212,0.25)]"
+              style={{ animationDuration: "110s" }}
+            />
+          </div>
+
+          <div className="relative z-10 space-y-8 lg:col-span-7">
             <div className="eyebrow">Raleigh's 5,000 sq ft event house</div>
             <h1 className="display-xl max-w-[9ch] uppercase tracking-[-0.06em]">
               One Space. <span className="text-[var(--color-accent)]">Every Event.</span>
@@ -169,7 +180,7 @@ export default function PortalHQBooking() {
             </div>
           </div>
 
-          <div className="relative lg:col-span-5">
+          <div className="relative z-10 lg:col-span-5">
             <div onMouseMove={handleMouseMove} className="photo-frame spotlight-card">
               <img src={PHOTOS.hero} alt={PHOTOS.heroAlt} className="h-full w-full object-cover" />
               <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/68 p-4 text-white shadow-2xl backdrop-blur-md">
