@@ -516,7 +516,7 @@ export default function SipAndSync() {
             <div
               className="md:col-span-2 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-md overflow-hidden grid lg:grid-cols-12"
             >
-              <div className="p-6 md:p-8 lg:col-span-7 flex flex-col justify-center space-y-4">
+              <div className="p-8 sm:p-10 md:p-12 lg:p-16 lg:col-span-7 flex flex-col justify-center space-y-4">
                 <div>
                   <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
                     Our Real Mission
@@ -550,8 +550,8 @@ export default function SipAndSync() {
       {/* VENUE SPOTLIGHT & 360° WALKTHROUGH */}
       <section id="venue-spotlight" className="section bg-black/16 backdrop-blur-[1px] border-b border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
         <div className="container space-y-8">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
+          <div className="grid lg:grid-cols-12 gap-y-8 lg:gap-x-16 items-center">
+            <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
               <div className="space-y-2">
                 <span className="text-xs font-bold text-[var(--color-accent)] tracking-tight font-sans uppercase">
                   The experience space
@@ -583,7 +583,7 @@ export default function SipAndSync() {
             </div>
 
             {/* Asymmetric Venue Photo Grid */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-2">
+            <div className="lg:col-span-6 lg:col-start-7 grid grid-cols-2 gap-2">
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
                   src="https://theportalhq.com/Newphotos/5.png"
@@ -733,7 +733,7 @@ export default function SipAndSync() {
       {/* LAPTOP PLEDGE DRIVE */}
       <section id="pledge" className="section bg-black/20 backdrop-blur-[1px] border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
         <div className="container space-y-8">
-          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-start">
+          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center">
 
             {/* Live Progress Tracker Column */}
             <div className="lg:col-span-5 space-y-5">
