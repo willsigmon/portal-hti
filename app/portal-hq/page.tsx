@@ -125,33 +125,27 @@ export default function PortalHQBooking() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white grain">
+    <div className="min-h-screen bg-transparent text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white grain">
       <JsonLd data={LOCAL_BUSINESS_JSON_LD} />
       <JsonLd data={FAQ_JSON_LD} />
-      <Starfield opacity={0.18} />
+      <Starfield opacity={0.52} />
       <Toast ref={toastRef} />
       <PortalNav />
 
       <main className="relative overflow-hidden">
         <section className="container relative grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
-          {/* Cosmic Portal Swirling in the Distance (Ratchet & Clank black-hole vibe) */}
-          <div className="pointer-events-none absolute -right-20 -top-24 z-0 h-[480px] w-[480px] select-none opacity-45 transition-opacity duration-1000 md:h-[640px] md:w-[640px] lg:-right-36 lg:-top-32">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/20 to-cyan-500/25 blur-3xl animate-pulse" />
+          {/* Cosmic Portal Swirling in the Center Background (Vibrant space black-hole vibe) */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 select-none opacity-45 transition-opacity duration-1000 md:h-[800px] md:w-[800px] lg:h-[1000px] lg:w-[1000px]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/15 to-[var(--color-violet)]/25 blur-3xl animate-pulse" />
             <img 
               src="/portal_cosmic_hero.png" 
               alt="" 
-              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-65 animate-spin-slow filter drop-shadow-[0_0_60px_rgba(245,132,32,0.32)]"
-            />
-          </div>
-
-          {/* Distant secondary portal deep in the space void */}
-          <div className="pointer-events-none absolute left-6 top-[35%] z-0 h-24 w-24 select-none opacity-25 transition-opacity duration-1000 md:h-32 md:w-32 lg:left-12">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/10 to-[var(--color-accent)]/15 blur-2xl animate-pulse" />
-            <img 
-              src="/portal_cosmic_hero.png" 
-              alt="" 
-              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-50 animate-spin-slow filter hue-rotate-[60deg] brightness-90 drop-shadow-[0_0_20px_rgba(6,182,212,0.25)]"
-              style={{ animationDuration: "110s" }}
+              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-70 animate-spin-slow filter drop-shadow-[0_0_80px_rgba(250,204,21,0.3)]"
+              style={{ 
+                animationDuration: "100s",
+                maskImage: "radial-gradient(circle, rgba(0,0,0,1) 32%, rgba(0,0,0,0) 68%)", 
+                WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 32%, rgba(0,0,0,0) 68%)" 
+              }}
             />
           </div>
 

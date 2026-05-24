@@ -47,11 +47,11 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
         const rand = Math.random();
 
         if (rand > 0.965) {
-          color = "#f59e32"; // Portal amber
+          color = "#facc15"; // Nebula yellow
         } else if (rand > 0.94) {
-          color = "#d9b36a"; // warm brass
+          color = "#a78bfa"; // Cosmic violet
         } else if (rand > 0.91) {
-          color = "#7fb8ff"; // cold navy-blue glint
+          color = "#8b5cf6"; // Deep purple glint
         }
 
         stars.push({
@@ -81,12 +81,12 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
       const cy = h / 2;
       const maxDepth = w;
 
-      // Navy-black venue-space field with more contrast than the warm charcoal fallback.
+      // Galactic space field: deep purple-indigo cosmic void inspired by original site.
       const backdrop = ctx.createRadialGradient(cx * 0.5, cy * 0.3, 0, cx, cy, Math.max(w, h));
-      backdrop.addColorStop(0, "#0a1c4b"); // Rich deep cosmic navy
-      backdrop.addColorStop(0.35, "#040d2b"); // Solid dark space blue
-      backdrop.addColorStop(0.7, "#020617"); // Darkest void
-      backdrop.addColorStop(1, "#000105"); // Void floor
+      backdrop.addColorStop(0, "#12072b"); // Deep velvet violet
+      backdrop.addColorStop(0.35, "#09031c"); // Dark cosmic purple
+      backdrop.addColorStop(0.7, "#05010e"); // Deepest void
+      backdrop.addColorStop(1, "#020005"); // Void floor
       ctx.fillStyle = backdrop;
       ctx.fillRect(0, 0, w, h);
 

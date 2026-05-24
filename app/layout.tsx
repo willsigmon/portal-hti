@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { Space_Grotesk, Outfit } from "next/font/google";
 
-const display = Bricolage_Grotesque({
+const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Instrument_Sans({
+const body = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
