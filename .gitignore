@@ -1,0 +1,7 @@
+.DS_Store
+.vercel
+gobble_extract/
+node_modules/
+dist/
+build/
+*.log
