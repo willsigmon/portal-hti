@@ -150,7 +150,7 @@ export default function PortalHQBooking() {
           </div>
 
           <div className="relative z-10 space-y-8 lg:col-span-7">
-            <div className="eyebrow">Raleigh's 5,000 sq ft event house</div>
+            <div className="eyebrow">// 35.7876° N, 78.6791° W // SECTION 01 // THE RALEIGH EVENT HOUSE</div>
             <h1 className="display-xl max-w-[12ch] leading-[1.08] tracking-tight">
               One Space. <span className="font-normal italic text-[var(--color-accent)]">Every Event.</span>
             </h1>
@@ -189,7 +189,7 @@ export default function PortalHQBooking() {
           <div className="container space-y-10">
             <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
               <div className="max-w-2xl space-y-3">
-                <div className="eyebrow">Real venue photos</div>
+                <div className="eyebrow">// SPECIFICATION RECORD // SECTION 02 // VISUAL PORTFOLIO</div>
                 <h2 className="display-lg leading-tight tracking-tight">A brighter gallery, <span className="font-normal italic text-[var(--color-accent)]">not a pricing sheet.</span></h2>
                 <p className="text-sm leading-relaxed text-[var(--color-muted)]">
                   Jake asked to remove packages and bring the image carousel higher. This gallery now sells the transformation first: daylight, stage energy, dinner warmth, and guest arrival.
@@ -248,7 +248,7 @@ export default function PortalHQBooking() {
         <section id="tour" className="section container">
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <div className="space-y-4">
-              <div className="eyebrow">Explore before booking</div>
+              <div className="eyebrow">// SPATIAL TELEMETRY // SECTION 03 // 360° WALKTHROUGH</div>
               <h2 className="display-lg leading-tight tracking-tight">Explore the space <span className="font-normal italic text-[var(--color-accent)]">in 360°.</span></h2>
               <p className="text-sm leading-relaxed text-[var(--color-muted)]">
                 The tour now sits before the sales pitch. Visitors can understand the room first, then choose whether to request a proposal.
@@ -276,7 +276,7 @@ export default function PortalHQBooking() {
         <section id="event-styles" className="surface-band section">
           <div className="container space-y-10">
             <div className="max-w-3xl space-y-3">
-              <div className="eyebrow">SEO landing pages</div>
+              <div className="eyebrow">// EXPERIENCE ARCHITECTURE // SECTION 04 // INTERIOR CONFIGURATIONS</div>
               <h2 className="display-lg leading-tight tracking-tight">Designed for <span className="font-normal italic text-[var(--color-accent)]">every ambition.</span></h2>
               <p className="text-base leading-relaxed text-[var(--color-muted)]">
                 The homepage stays cohesive, while corporate, concert, and celebration pages give search visitors a more specific entry point.
@@ -309,7 +309,7 @@ export default function PortalHQBooking() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
             <div className="space-y-8 lg:col-span-7">
               <div className="space-y-3">
-                <div className="eyebrow">Custom proposal builder</div>
+                <div className="eyebrow">// ESTIMATOR SCHEMATICS // SECTION 05 // AV PRODUCTION CONFIGURATOR</div>
                 <h2 className="display-lg leading-tight tracking-tight">Tailor your <span className="font-normal italic text-[var(--color-accent)]">production setup.</span></h2>
                 <p className="text-sm leading-relaxed text-[var(--color-muted)]">
                   The public page no longer sells fixed packages. Visitors select what matters, then Jake's team follows up with a custom configuration.
@@ -388,7 +388,7 @@ export default function PortalHQBooking() {
         <section id="reviews" className="surface-band section">
           <div className="container space-y-10">
             <div className="mx-auto max-w-2xl space-y-3 text-center">
-              <div className="eyebrow justify-center">What people are saying</div>
+              <div className="eyebrow justify-center">// PUBLIC RECORD // SECTION 06 // CLIENT REVIEWS & AUDITS</div>
               <h2 className="display-lg leading-tight tracking-tight">What our guests <span className="font-normal italic text-[var(--color-accent)]">are saying.</span></h2>
               <p className="text-sm leading-relaxed text-[var(--color-muted)]">The revamp should sharpen the story without losing the social proof Jake already has.</p>
             </div>
@@ -410,7 +410,7 @@ export default function PortalHQBooking() {
         <section id="visit" className="section container">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="space-y-5 lg:col-span-5">
-              <div className="eyebrow"><MapPin className="h-3.5 w-3.5" /> Visit the venue</div>
+              <div className="eyebrow"><MapPin className="h-3.5 w-3.5 text-[var(--color-accent)] animate-pulse" /> // PHYSICAL WAYFINDING // SECTION 07 // VENUE LOCATION</div>
               <h2 className="display-lg leading-tight tracking-tight">Hillsborough Street, <span className="font-normal italic text-[var(--color-accent)]">without the headache.</span></h2>
               <p className="text-base leading-relaxed text-[var(--color-muted)]">
                 Portal HQ's free on-site parking is not a footnote. It is a conversion point for corporate planners, families, performers, caterers, and production crews.
@@ -438,7 +438,7 @@ export default function PortalHQBooking() {
           <div className="container max-w-4xl">
             <div onMouseMove={handleMouseMove} className="panel-card-strong spotlight-card space-y-8 p-6 md:p-10">
               <div className="mx-auto max-w-2xl space-y-3 text-center">
-                <div className="eyebrow justify-center">Free tour & proposal request</div>
+                <div className="eyebrow justify-center">// BOOKINGS & PROPOSALS // SECTION 08 // INQUIRY DIRECTIVE</div>
                 <h2 className="display-lg leading-tight tracking-tight">Begin your <span className="font-normal italic text-[var(--color-accent)]">custom proposal.</span></h2>
                 <p className="text-sm leading-relaxed text-[var(--color-muted)]">
                   This form opens a pre-filled email to Jake's team with your selected room brief. No fake “sent” state and no public package pricing.
@@ -485,7 +485,7 @@ export default function PortalHQBooking() {
         <section id="faq" className="section container max-w-3xl">
           <div className="space-y-8">
             <div className="space-y-3 text-center">
-              <div className="eyebrow justify-center">Common Questions</div>
+              <div className="eyebrow justify-center">// TECHNICAL DOCUMENTATION // SECTION 09 // VENUE MANUAL</div>
               <h2 className="display-lg leading-tight tracking-tight">Frequently asked <span className="font-normal italic text-[var(--color-accent)]">venue details.</span></h2>
             </div>
             <div className="space-y-3">

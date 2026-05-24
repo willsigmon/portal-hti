@@ -21,7 +21,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
       <main>
         <section className="container grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:items-center">
           <div className="space-y-7 lg:col-span-7">
-            <div className="eyebrow"><Icon className="h-3.5 w-3.5" /> {eventType.eyebrow}</div>
+            <div className="eyebrow"><Icon className="h-3.5 w-3.5 text-[var(--color-accent)] shrink-0 animate-pulse" /> // {eventType.eyebrow.toUpperCase()} CONFIGURATION</div>
             <h1 className="display-xl max-w-[12ch] leading-[1.08] tracking-tight">{eventType.seoTitle.replace(" in Raleigh, NC", "")}</h1>
             <p className="max-w-2xl border-l-2 border-[var(--color-accent)]/30 pl-5 font-display text-2xl font-medium italic leading-relaxed text-[var(--color-muted)]">
               {eventType.summary}
@@ -59,7 +59,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         <section className="section container">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="space-y-4 lg:col-span-5">
-              <div className="eyebrow">How it works</div>
+              <div className="eyebrow">// SERVICE SEQUENCE // THE PROCESS</div>
               <h2 className="display-lg leading-tight tracking-tight">A clearer path <span className="font-normal italic text-[var(--color-accent)]">than packages.</span></h2>
               <p className="text-base leading-relaxed text-[var(--color-muted)]">
                 Jake wants pricing removed from the public page because the best use of Portal HQ is consultative: the room changes based on layout, production, staff, and guest flow.
@@ -82,7 +82,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         <section className="surface-band section">
           <div className="container space-y-10">
             <div className="max-w-3xl space-y-3">
-              <div className="eyebrow">Room Proof</div>
+              <div className="eyebrow">// METRIC AUDIT // PROOF OF TRANSFORMATION</div>
               <h2 className="display-lg leading-tight tracking-tight">Shift the room <span className="font-normal italic text-[var(--color-accent)]">without losing polish.</span></h2>
             </div>
             <div className="grid auto-rows-[220px] gap-4 md:grid-cols-4">
@@ -116,7 +116,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         <section className="surface-band section-tight">
           <div className="container grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div className="space-y-4">
-              <div className="eyebrow"><Star className="h-3.5 w-3.5" /> Five-star social proof</div>
+              <div className="eyebrow"><Star className="h-3.5 w-3.5 text-[var(--color-accent)] shrink-0 animate-pulse" /> // AUDIT JOURNAL // CLIENT ADVISORY</div>
               <blockquote className="font-display text-3xl font-semibold leading-tight tracking-tight text-[var(--color-ink)] md:text-4xl">
                 “{REVIEWS[1].text}”
               </blockquote>
@@ -140,7 +140,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
 
         <section className="section container">
           <div className="space-y-7">
-            <div className="eyebrow">More ways to use the room</div>
+            <div className="eyebrow">// SPATIAL VARIATIONS // CHAMBER ALTERNATIVES</div>
             <div className="grid gap-5 md:grid-cols-2">
               {related.map((item) => (
                 <Link key={item.href} href={item.href} className="panel-card group flex items-center justify-between gap-5 p-6">

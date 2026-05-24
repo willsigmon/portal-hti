@@ -407,3 +407,24 @@ html, body {
 .delay-500 {
   animation-delay: 500ms;
 }
+
+/* Pristine media studio print broadsheet elements */
+.double-rule {
+  border-top: 4px double var(--color-border-strong);
+  margin-block: 2.5rem;
+  opacity: 0.64;
+}
+
+.dotted-rule {
+  border-top: 1px dotted var(--color-border-strong);
+  margin-block: 2rem;
+  opacity: 0.48;
+}
+
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, color-mix(in oklch, var(--color-border) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--color-border) 45%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
