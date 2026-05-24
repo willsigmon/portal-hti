@@ -47,11 +47,11 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
         const rand = Math.random();
 
         if (rand > 0.965) {
-          color = "#facc15"; // Nebula yellow
+          color = "#d97d54"; // Clay terracotta
         } else if (rand > 0.94) {
-          color = "#a78bfa"; // Cosmic violet
+          color = "#cba158"; // Brushed copper
         } else if (rand > 0.91) {
-          color = "#8b5cf6"; // Deep purple glint
+          color = "#efece6"; // Soft chalky white
         }
 
         stars.push({
@@ -81,12 +81,12 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
       const cy = h / 2;
       const maxDepth = w;
 
-      // Galactic space field: deep purple-indigo cosmic void inspired by original site.
+      // Ambient gallery space: raw charcoal and limestone concrete depths.
       const backdrop = ctx.createRadialGradient(cx * 0.5, cy * 0.3, 0, cx, cy, Math.max(w, h));
-      backdrop.addColorStop(0, "#12072b"); // Deep velvet violet
-      backdrop.addColorStop(0.35, "#09031c"); // Dark cosmic purple
-      backdrop.addColorStop(0.7, "#05010e"); // Deepest void
-      backdrop.addColorStop(1, "#020005"); // Void floor
+      backdrop.addColorStop(0, "#1c1d22"); // Warm charcoal concrete core
+      backdrop.addColorStop(0.35, "#121316"); // Deep limestone slate
+      backdrop.addColorStop(0.7, "#0c0d0f"); // Dark raw iron
+      backdrop.addColorStop(1, "#070809"); // Void floor
       ctx.fillStyle = backdrop;
       ctx.fillRect(0, 0, w, h);
 

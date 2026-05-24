@@ -134,17 +134,17 @@ export default function PortalHQBooking() {
 
       <main className="relative overflow-hidden">
         <section className="container relative grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
-          {/* Cosmic Portal Swirling in the Center Background (Vibrant space black-hole vibe) */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 select-none opacity-45 transition-opacity duration-1000 md:h-[800px] md:w-[800px] lg:h-[1000px] lg:w-[1000px]">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/15 to-[var(--color-violet)]/25 blur-3xl animate-pulse" />
+          {/* Minimalist Celestial Gold-Leaf Engraving Backdrop */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 select-none opacity-32 transition-opacity duration-1000 md:h-[800px] md:w-[800px] lg:h-[1000px] lg:w-[1000px]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/8 to-[var(--color-violet)]/12 blur-3xl animate-pulse" />
             <img 
               src="/portal_cosmic_hero.png" 
               alt="" 
-              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-70 animate-spin-slow filter drop-shadow-[0_0_80px_rgba(250,204,21,0.3)]"
+              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-55 animate-spin-slow filter sepia-[0.95] saturate-[0.7] brightness-[0.72] contrast-[1.15] hue-rotate-[320deg] drop-shadow-[0_0_50px_rgba(217,125,84,0.15)]"
               style={{ 
-                animationDuration: "100s",
-                maskImage: "radial-gradient(circle, rgba(0,0,0,1) 32%, rgba(0,0,0,0) 68%)", 
-                WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 32%, rgba(0,0,0,0) 68%)" 
+                animationDuration: "140s",
+                maskImage: "radial-gradient(circle, rgba(0,0,0,1) 28%, rgba(0,0,0,0) 65%)", 
+                WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 28%, rgba(0,0,0,0) 65%)" 
               }}
             />
           </div>

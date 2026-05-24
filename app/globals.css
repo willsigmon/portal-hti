@@ -8,30 +8,30 @@
    ===================================================== */
 
 @theme {
-  --font-display: "Playfair Display", "Georgia", serif;
-  --font-body: "Outfit", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "Space Mono", monospace;
 
-  /* Inspired by original site: galactic space violet/indigo & radiant nebula yellow. */
-  --color-bg: oklch(0.08 0.042 285);
-  --color-bg-dark: oklch(0.05 0.035 285);
-  --color-band: oklch(0.11 0.042 285);
-  --color-surface: oklch(0.13 0.042 285);
-  --color-surface-dark: oklch(0.09 0.035 285);
-  --color-panel: oklch(0.16 0.045 285);
-  --color-panel-strong: oklch(0.20 0.05 285);
-  --color-ink: oklch(0.975 0.008 285);
-  --color-ink-dark: oklch(0.975 0.008 285);
-  --color-muted: oklch(0.785 0.022 285);
-  --color-muted-dark: oklch(0.785 0.022 285);
-  --color-accent: oklch(0.85 0.17 95); /* Vibrant Nebula Yellow (rgb(250, 204, 21)) */
-  --color-accent-dark: oklch(0.81 0.15 95);
-  --color-violet: oklch(0.68 0.22 285); /* Cosmic Purple/Violet (rgb(167, 139, 250)) */
-  --color-gold: oklch(0.88 0.15 95);
-  --color-signal: oklch(0.62 0.105 152);
-  --color-signal-dark: oklch(0.62 0.105 152);
-  --color-border: color-mix(in oklch, var(--color-ink) 12%, transparent);
-  --color-border-strong: color-mix(in oklch, var(--color-ink) 20%, transparent);
+  /* Architectural raw concrete, chalk, and warm copper/clay brand palette */
+  --color-bg: oklch(0.11 0.015 250);          /* Deep charcoal raw concrete */
+  --color-bg-dark: oklch(0.07 0.01 250);     /* Darker concrete void */
+  --color-band: oklch(0.14 0.015 250);
+  --color-surface: oklch(0.16 0.015 250);    /* Chalky textured concrete card */
+  --color-surface-dark: oklch(0.12 0.012 250);
+  --color-panel: oklch(0.19 0.018 250);
+  --color-panel-strong: oklch(0.24 0.022 250);
+  --color-ink: oklch(0.96 0.01 85);          /* Chalky uncoated linen white */
+  --color-ink-dark: oklch(0.96 0.01 85);
+  --color-muted: oklch(0.75 0.015 85);       /* Muted limestone gray */
+  --color-muted-dark: oklch(0.75 0.015 85);
+  --color-accent: oklch(0.68 0.12 45);       /* Muted tactile clay Terracotta */
+  --color-accent-dark: oklch(0.64 0.10 45);
+  --color-violet: oklch(0.78 0.11 75);       /* Warm copper/bronze (replaces old purple) */
+  --color-gold: oklch(0.85 0.11 88);
+  --color-signal: oklch(0.64 0.06 150);
+  --color-signal-dark: oklch(0.64 0.06 150);
+  --color-border: color-mix(in oklch, var(--color-ink) 8%, transparent);
+  --color-border-strong: color-mix(in oklch, var(--color-ink) 14%, transparent);
 
   --spacing-4: 0.25rem;
   --spacing-8: 0.5rem;
@@ -52,9 +52,9 @@
 @layer base {
   html {
     background:
-      radial-gradient(circle at 20% 0%, color-mix(in oklch, var(--color-violet) 18%, transparent), transparent 34rem),
-      radial-gradient(circle at 86% 12%, color-mix(in oklch, var(--color-accent) 8%, transparent), transparent 30rem),
-      #08041c;
+      radial-gradient(circle at 20% 0%, color-mix(in oklch, var(--color-violet) 8%, transparent), transparent 34rem),
+      radial-gradient(circle at 86% 12%, color-mix(in oklch, var(--color-accent) 6%, transparent), transparent 30rem),
+      #111215;
     color: var(--color-ink);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
@@ -64,9 +64,9 @@
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at 14% 0%, color-mix(in oklch, var(--color-violet) 14%, transparent), transparent 28rem),
-      radial-gradient(circle at 92% 12%, color-mix(in oklch, var(--color-accent) 8%, transparent), transparent 24rem),
-      #08041c;
+      radial-gradient(circle at 14% 0%, color-mix(in oklch, var(--color-violet) 6%, transparent), transparent 28rem),
+      radial-gradient(circle at 92% 12%, color-mix(in oklch, var(--color-accent) 6%, transparent), transparent 24rem),
+      #111215;
     color: var(--color-ink);
     font-family: var(--font-body);
   }
