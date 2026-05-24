@@ -507,33 +507,29 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 </h4>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-                    Guest Name
-                  </label>
+              <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
+                <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+                  Guest Name
                   <input
                     type="text"
                     required
                     value={guestName}
                     onChange={(e) => setGuestName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
+                    className="input-field"
                   />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-                    Email Address
-                  </label>
+                </label>
+                <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+                  Email Address
                   <input
                     type="email"
                     required
                     value={guestEmail}
                     onChange={(e) => setGuestEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] placeholder-white/30 shadow-sm"
+                    className="input-field"
                   />
-                </div>
+                </label>
               </div>
             </div>
           </div>
@@ -651,11 +647,9 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-            How Many Laptops?
-          </label>
+      <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
+        <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+          How Many Laptops?
           <input
             type="number"
             name="quantity"
@@ -663,53 +657,47 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             required
             value={laptopData.quantity}
             onChange={handleLaptopChange}
-            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+            className="input-field"
           />
-        </div>
-        <div>
-          <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-            Brand / Model (Optional)
-          </label>
+        </label>
+        <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+          Brand / Model (Optional)
           <input
             type="text"
             name="brand"
-            placeholder="Dell Latitude, MacBook, Lenovo etc."
+            placeholder="Dell, Lenovo, MacBook etc."
             value={laptopData.brand}
             onChange={handleLaptopChange}
-            className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+            className="input-field"
           />
-        </div>
+        </label>
       </div>
 
-      <div>
-        <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-          General Hardware Condition
-        </label>
+      <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full text-left">
+        General Hardware Condition
         <select
           name="condition"
           required
           value={laptopData.condition}
           onChange={handleLaptopChange}
-          className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm [&>option]:bg-[#131127] [&>option]:text-white"
+          className="input-field bg-transparent py-1 border-b border-[var(--color-border-strong)] outline-none"
         >
-          <option value="">Select general condition...</option>
-          <option value="excellent">Excellent — boots fast, perfect display screen</option>
-          <option value="good">Good — functional, holds a charge, minor surface scratches</option>
-          <option value="fair">Fair — boots up but holds weak charge or operates slowly</option>
+          <option value="" className="bg-[var(--color-panel)] text-[var(--color-ink)]">Select general condition...</option>
+          <option value="excellent" className="bg-[var(--color-panel)] text-[var(--color-ink)]">Excellent — boots fast, perfect display screen</option>
+          <option value="good" className="bg-[var(--color-panel)] text-[var(--color-ink)]">Good — functional, minor surface scratches</option>
+          <option value="fair" className="bg-[var(--color-panel)] text-[var(--color-ink)]">Fair — boots up but operates slowly</option>
         </select>
-      </div>
+      </label>
 
       {/* Contact info grid */}
-      <div className="border-t border-white/10 pt-4.5 space-y-3.5">
-        <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block font-sans mb-2">
+      <div className="border-t border-white/10 pt-6.5 space-y-6 w-full">
+        <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] block text-left">
           Coordination Details
         </span>
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-              Your Full Name
-            </label>
+        <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
+          <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+            Your Full Name
             <input
               type="text"
               name="name"
@@ -717,52 +705,46 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               placeholder="Your name"
               value={laptopData.name}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+              className="input-field"
             />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-              Email Address
-            </label>
+          </label>
+          <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+            Email Address
             <input
               type="email"
               name="email"
               required
-              placeholder="you@example.com"
+              placeholder="you@domain.com"
               value={laptopData.email}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm"
+              className="input-field"
             />
-          </div>
+          </label>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 font-sans">
-          <div>
-            <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-              Phone Number
-            </label>
+        <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
+          <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+            Phone Number
             <input
               type="tel"
               name="phone"
               placeholder="(919) 555-0199"
               value={laptopData.phone}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm font-sans"
+              className="input-field"
             />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-[var(--color-muted)] mb-1 font-sans">
-              Notes or Pickup Preferences
-            </label>
-            <textarea
+          </label>
+          <label className="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-wider text-[var(--color-muted)] w-full">
+            Notes or Pickup Preferences
+            <input
+              type="text"
               name="notes"
-              rows={1}
               placeholder="Has charger, pick up from office, etc."
               value={laptopData.notes}
               onChange={handleLaptopChange}
-              className="w-full rounded-[var(--radius-md)] border border-white/10 bg-black/30 px-3.5 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] shadow-sm resize-none font-sans"
+              className="input-field"
             />
-          </div>
+          </label>
         </div>
       </div>
 

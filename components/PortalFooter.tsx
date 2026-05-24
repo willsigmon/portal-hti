@@ -12,12 +12,12 @@ export function PortalFooter() {
             <p className="max-w-xl text-sm leading-relaxed">
               A flexible 5,000 sq ft Raleigh event venue for corporate retreats, live showcases, private celebrations, and community moments that need real production support.
             </p>
-            <div className="flex flex-wrap gap-2 pt-1 text-[11px] font-black uppercase tracking-[0.16em] text-[var(--color-ink)]">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-panel)]/80 px-3 py-2">
-                <Accessibility className="h-3.5 w-3.5 text-[var(--color-accent)]" /> Accessible guest areas
+            <div className="flex flex-wrap gap-2 pt-1 text-[10px] font-mono font-bold uppercase tracking-[0.16em] text-[var(--color-ink)]">
+              <span className="inline-flex items-center gap-2 rounded-sm border border-[var(--color-border)] bg-[var(--color-panel)]/80 px-3 py-1.5">
+                <Accessibility className="h-3.5 w-3.5 text-[var(--color-accent)] animate-pulse" /> Accessible guest areas
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-panel)]/80 px-3 py-2">
-                <Car className="h-3.5 w-3.5 text-[var(--color-accent)]" /> Plentiful free parking
+              <span className="inline-flex items-center gap-2 rounded-sm border border-[var(--color-border)] bg-[var(--color-panel)]/80 px-3 py-1.5">
+                <Car className="h-3.5 w-3.5 text-[var(--color-accent)] animate-pulse" /> Plentiful free parking
               </span>
             </div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
@@ -34,7 +34,7 @@ export function PortalFooter() {
         </div>
         <div className="flex flex-col justify-between gap-3 border-t border-[var(--color-border)] pt-7 text-xs sm:flex-row">
           <span>© {new Date().getFullYear()} The Portal HQ. Raleigh Event Venue.</span>
-          <span>Custom proposal-first revamp — pricing intentionally removed.</span>
+          <span>Consultative spatial production.</span>
         </div>
       </div>
     </footer>

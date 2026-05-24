@@ -35,20 +35,20 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
           <div className="lg:col-span-5">
             <div className="photo-frame spotlight-card">
               <img src={eventType.photo} alt={eventType.alt} className="h-full w-full object-cover" />
-              <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/68 p-4 text-sm text-white backdrop-blur-md">
-                <strong className="block font-display text-lg">No fixed package pressure.</strong>
-                <span className="text-white/76">Use this page to scope the room, then get the right proposal for the actual event.</span>
+              <div className="absolute inset-x-4 bottom-4 rounded-sm border border-white/10 bg-black/75 p-4.5 text-sm text-white backdrop-blur-md">
+                <strong className="block font-display text-lg tracking-tight">Adaptable Space Layout</strong>
+                <span className="text-white/76 text-xs mt-1 block">This chamber configuration is built to adapt dynamically to your visual and structural requirements.</span>
               </div>
             </div>
           </div>
         </section>
 
         <section className="surface-band section-tight">
-          <div className="container grid gap-8 lg:grid-cols-3">
+          <div className="container grid gap-6 lg:grid-cols-3">
             {eventType.inclusions.map((item) => (
-              <div key={item} className="panel-card spotlight-card p-6 flex flex-col justify-center items-center text-center">
-                <Check className="mb-5 h-5 w-5 text-[var(--color-accent)]" />
-                <p className="text-sm font-semibold leading-relaxed text-[var(--color-ink)]">{item}</p>
+              <div key={item} className="panel-card spotlight-card p-7.5 flex flex-col justify-center items-center text-center min-h-[140px]">
+                <Check className="mb-4 h-4 w-4 text-[var(--color-accent)] animate-pulse" />
+                <p className="text-sm font-semibold leading-relaxed text-[var(--color-ink)] max-w-[20ch]">{item}</p>
               </div>
             ))}
           </div>
@@ -60,18 +60,18 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="space-y-4 lg:col-span-5">
               <div className="eyebrow">// SERVICE SEQUENCE // THE PROCESS</div>
-              <h2 className="display-lg leading-tight tracking-tight">A clearer path <span className="font-normal italic text-[var(--color-accent)]">than packages.</span></h2>
+              <h2 className="display-lg leading-tight tracking-tight">Bespoke <span className="font-normal italic text-[var(--color-accent)]">Scoping Pipeline.</span></h2>
               <p className="text-base leading-relaxed text-[var(--color-muted)]">
-                Jake wants pricing removed from the public page because the best use of Portal HQ is consultative: the room changes based on layout, production, staff, and guest flow.
+                We avoid rigid, pre-packaged event plans. Instead, we work with you to scope visual production, layouts, staff, and guest movement.
               </p>
             </div>
-            <div className="grid gap-5 lg:col-span-7">
+            <div className="grid gap-4 lg:col-span-7">
               {PLAN_STEPS.map((step, index) => (
-                <div key={step.title} className="panel-card flex flex-col items-center justify-center text-center p-6 gap-3">
-                  <div className="font-display text-5xl font-black text-[var(--color-accent)]/70">0{index + 1}</div>
-                  <div>
-                    <h3 className="font-display text-2xl font-bold">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)] max-w-md">{step.text}</p>
+                <div key={step.title} className="panel-card flex flex-col items-center justify-center text-center p-7.5 gap-3.5">
+                  <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-[var(--color-accent)]">Step 0{index + 1}</div>
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    <h3 className="font-display text-2xl font-bold text-[var(--color-ink)]">{step.title}</h3>
+                    <p className="text-sm leading-relaxed text-[var(--color-muted)] max-w-md">{step.text}</p>
                   </div>
                 </div>
               ))}
@@ -82,8 +82,8 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         <section className="surface-band section">
           <div className="container space-y-10">
             <div className="max-w-3xl space-y-3">
-              <div className="eyebrow">// METRIC AUDIT // PROOF OF TRANSFORMATION</div>
-              <h2 className="display-lg leading-tight tracking-tight">Shift the room <span className="font-normal italic text-[var(--color-accent)]">without losing polish.</span></h2>
+              <div className="eyebrow">// SPATIAL ARCHIVE // VISUAL PROOF</div>
+              <h2 className="display-lg leading-tight tracking-tight">Gallery of <span className="font-normal italic text-[var(--color-accent)]">Chamber Variations.</span></h2>
             </div>
             <div className="grid auto-rows-[220px] gap-4 md:grid-cols-4">
               {[eventType.photo, PHOTOS.entry, PHOTOS.stage, PHOTOS.dining, PHOTOS.exterior].map((src, index) => (
@@ -91,7 +91,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
                   key={src}
                   src={src}
                   alt={`${eventType.shortTitle} venue proof ${index + 1}`}
-                  className={`h-full w-full rounded-[var(--radius-lg)] border border-[var(--color-border)] object-cover ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
+                  className={`h-full w-full rounded-sm border border-[var(--color-border)] object-cover ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
                 />
               ))}
             </div>
@@ -99,14 +99,16 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
         </section>
 
         <section className="section container">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {FEATURE_CARDS.map((feature) => {
               const FeatureIcon = feature.icon;
               return (
-                <div key={feature.title} className="panel-card spotlight-card p-7 flex flex-col justify-center items-center text-center">
-                  <FeatureIcon className="mb-6 h-6 w-6 text-[var(--color-accent)]" />
-                  <h3 className="font-display text-2xl font-bold">{feature.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{feature.text}</p>
+                <div key={feature.title} className="panel-card spotlight-card p-8 flex flex-col justify-center items-center text-center min-h-[220px]">
+                  <FeatureIcon className="mb-5 h-5 w-5 text-[var(--color-accent)]" />
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    <h3 className="font-display text-2xl font-bold text-[var(--color-ink)]">{feature.title}</h3>
+                    <p className="text-sm leading-relaxed text-[var(--color-muted)] max-w-[22ch]">{feature.text}</p>
+                  </div>
                 </div>
               );
             })}
