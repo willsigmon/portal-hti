@@ -300,7 +300,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                       </svg>
-                      <span className="font-sans text-xs font-bold text-[var(--color-accent)] uppercase tracking-wide">
+                      <span className="font-sans text-xs font-semibold tracking-tight text-[var(--color-accent)]">
                         Awaiting payment
                       </span>
                       <span className="text-[10px] text-[var(--color-muted)] max-w-[20ch] mt-1 font-sans">

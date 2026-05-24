@@ -11,7 +11,7 @@ interface Star {
   size: number;
 }
 
-export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
+export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -23,8 +23,8 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
 
     let animationFrameId: number;
     let stars: Star[] = [];
-    const STAR_COUNT = 5200; // Dense enough for depth without turning the venue into sci-fi
-    const SPEED = 0.16; // Slow ambient drift
+    const STAR_COUNT = 24000; // Richer field for the event backdrop without becoming visual noise
+    const SPEED = 0.45; // Quicker, high-craft ambient space drift
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -46,12 +46,12 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
         let color = "#ffffff";
         const rand = Math.random();
 
-        if (rand > 0.96) {
+        if (rand > 0.965) {
           color = "#f59e32"; // Portal amber
-        } else if (rand > 0.92) {
+        } else if (rand > 0.94) {
           color = "#d9b36a"; // warm brass
-        } else if (rand > 0.88) {
-          color = "#87b891"; // muted sage
+        } else if (rand > 0.91) {
+          color = "#7fb8ff"; // cold navy-blue glint
         }
 
         stars.push({
@@ -81,8 +81,13 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
       const cy = h / 2;
       const maxDepth = w;
 
-      // Solid backdrop clear matching the exact space void color
-      ctx.fillStyle = "#11100c";
+      // Navy-black venue-space field with more contrast than the warm charcoal fallback.
+      const backdrop = ctx.createRadialGradient(cx * 0.5, cy * 0.3, 0, cx, cy, Math.max(w, h));
+      backdrop.addColorStop(0, "#0a1c4b"); // Rich deep cosmic navy
+      backdrop.addColorStop(0.35, "#040d2b"); // Solid dark space blue
+      backdrop.addColorStop(0.7, "#020617"); // Darkest void
+      backdrop.addColorStop(1, "#000105"); // Void floor
+      ctx.fillStyle = backdrop;
       ctx.fillRect(0, 0, w, h);
 
       for (let i = 0; i < stars.length; i++) {
@@ -114,7 +119,7 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
           ctx.beginPath();
           ctx.strokeStyle = star.color;
           ctx.lineWidth = Math.min(2.0, currentSize);
-          ctx.globalAlpha = starOpacity * 0.45 * opacity;
+          ctx.globalAlpha = starOpacity * 0.58 * opacity;
           ctx.moveTo(ppx, ppy);
           ctx.lineTo(px, py);
           ctx.stroke();
@@ -122,7 +127,7 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
 
         // Ultra-high performance core render utilizing hardware-accelerated fillRect in white
         ctx.fillStyle = "#ffffff";
-        ctx.globalAlpha = starOpacity * opacity;
+        ctx.globalAlpha = Math.min(1, starOpacity * 1.15 * opacity);
         ctx.fillRect(
           px - currentSize / 2,
           py - currentSize / 2,
@@ -149,7 +154,7 @@ export function Starfield({ opacity = 0.35 }: { opacity?: number }) {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 -z-10 pointer-events-none select-none"
-      style={{ mixBlendMode: "screen", opacity: 0.72 }}
+      style={{ mixBlendMode: "normal", opacity: 1 }}
     />
   );
 }

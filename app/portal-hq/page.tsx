@@ -14,6 +14,7 @@ import {
   Star,
 } from "lucide-react";
 import { Button } from "@/components/Button";
+import { AccessParkingSection } from "@/components/AccessParkingSection";
 import { JsonLd } from "@/components/JsonLd";
 import { PortalFooter } from "@/components/PortalFooter";
 import { PortalNav } from "@/components/PortalNav";
@@ -131,8 +132,18 @@ export default function PortalHQBooking() {
       <Toast ref={toastRef} />
       <PortalNav />
 
-      <main>
-        <section className="container grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
+      <main className="relative overflow-hidden">
+        <section className="container relative grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
+          {/* Cosmic Portal Swirling in the Distance (Ratchet & Clank black-hole vibe) */}
+          <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-[480px] w-[480px] select-none opacity-45 transition-opacity duration-1000 md:h-[640px] md:w-[640px] lg:-right-36 lg:-top-32">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/20 to-cyan-500/25 blur-3xl animate-pulse" />
+            <img 
+              src="/portal_cosmic_hero.png" 
+              alt="" 
+              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-65 animate-spin-slow filter drop-shadow-[0_0_60px_rgba(245,132,32,0.32)]"
+            />
+          </div>
+
           <div className="space-y-8 lg:col-span-7">
             <div className="eyebrow">Raleigh's 5,000 sq ft event house</div>
             <h1 className="display-xl max-w-[9ch] uppercase tracking-[-0.06em]">
@@ -254,6 +265,8 @@ export default function PortalHQBooking() {
             </div>
           </div>
         </section>
+
+        <AccessParkingSection />
 
         <section id="event-styles" className="surface-band section">
           <div className="container space-y-10">

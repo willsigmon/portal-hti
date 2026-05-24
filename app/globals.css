@@ -12,20 +12,21 @@
   --font-body: "Instrument Sans", "Satoshi", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Purple-free OKLCH palette: warm charcoal, copper amber, soft gallery text. */
-  --color-bg: oklch(0.082 0.012 72);
-  --color-bg-dark: oklch(0.062 0.012 72);
-  --color-band: oklch(0.115 0.016 72);
-  --color-surface: oklch(0.145 0.017 72);
-  --color-surface-dark: oklch(0.11 0.014 72);
-  --color-panel: oklch(0.18 0.019 72);
-  --color-panel-strong: oklch(0.225 0.022 72);
+  /* Purple-free OKLCH palette: navy-black space, copper amber, soft gallery text. */
+  --color-bg: oklch(0.095 0.032 265);
+  --color-bg-dark: oklch(0.06 0.028 265);
+  --color-band: oklch(0.135 0.035 265);
+  --color-surface: oklch(0.15 0.032 265);
+  --color-surface-dark: oklch(0.105 0.028 265);
+  --color-panel: oklch(0.18 0.034 265);
+  --color-panel-strong: oklch(0.225 0.038 265);
   --color-ink: oklch(0.965 0.012 84);
   --color-ink-dark: oklch(0.965 0.012 84);
   --color-muted: oklch(0.765 0.024 78);
   --color-muted-dark: oklch(0.765 0.024 78);
   --color-accent: oklch(0.72 0.17 55);
   --color-accent-dark: oklch(0.76 0.15 55);
+  --color-gold: oklch(0.86 0.16 88);
   --color-signal: oklch(0.62 0.105 152);
   --color-signal-dark: oklch(0.62 0.105 152);
   --color-border: color-mix(in oklch, var(--color-ink) 10%, transparent);
@@ -49,7 +50,10 @@
 
 @layer base {
   html {
-    background: var(--color-bg);
+    background:
+      radial-gradient(circle at 20% 0%, color-mix(in oklch, #264fbd 22%, transparent), transparent 34rem),
+      radial-gradient(circle at 86% 12%, color-mix(in oklch, var(--color-accent) 10%, transparent), transparent 30rem),
+      #030817;
     color: var(--color-ink);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
@@ -59,9 +63,9 @@
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at 12% 0%, color-mix(in oklch, var(--color-accent) 12%, transparent), transparent 28rem),
-      radial-gradient(circle at 92% 12%, color-mix(in oklch, var(--color-signal) 8%, transparent), transparent 24rem),
-      var(--color-bg);
+      radial-gradient(circle at 14% 0%, color-mix(in oklch, #315bc8 18%, transparent), transparent 28rem),
+      radial-gradient(circle at 92% 12%, color-mix(in oklch, var(--color-accent) 10%, transparent), transparent 24rem),
+      #030817;
     color: var(--color-ink);
     font-family: var(--font-body);
   }
@@ -101,11 +105,11 @@
 .container {
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 .section {
-  padding-block: clamp(5.25rem, 9vw, 8.5rem);
+  padding-block: clamp(7.5rem, 11vw, 11.5rem); /* Beautiful massive breathing room between major event panels */
 }
 
 .section-tight {
@@ -350,4 +354,18 @@ input[type="range"]::-webkit-slider-thumb {
 
 html, body {
   overflow-x: hidden;
+}
+
+/* Slow cosmic portal rotation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 80s linear infinite;
 }

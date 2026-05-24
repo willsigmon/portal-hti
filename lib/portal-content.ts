@@ -215,6 +215,10 @@ export const EVENT_TYPES = [
 
 export const FAQS = [
   {
+    q: "Is the venue accessible?",
+    a: "Yes. Portal HQ is planned around an accessible guest experience, and virtually all customer-facing areas in the venue are accessible. If your group has specific mobility or layout needs, include them in the proposal request so Jake's team can plan the room correctly.",
+  },
+  {
     q: "Do you have a full liquor license?",
     a: "Portal HQ carries a beer and wine license in-house. For full-bar service, planners can bring a licensed external bar partner for more control over selection and cost.",
   },
@@ -264,7 +268,7 @@ export const LOCAL_BUSINESS_JSON_LD = {
   geo: { "@type": "GeoCoordinates", latitude: 35.78684, longitude: -78.70844 },
   maximumAttendeeCapacity: 200,
   floorSize: { "@type": "QuantitativeValue", value: 5000, unitCode: "FTK" },
-  amenityFeature: ["Free Parking", "Stage", "Sound System", "Lighting System", "Projectors", "Bar Service", "AV Support"].map((name) => ({
+  amenityFeature: ["Accessible Guest Areas", "Plentiful On-Site Parking", "Free Parking", "Stage", "Sound System", "Lighting System", "Projectors", "Bar Service", "AV Support"].map((name) => ({
     "@type": "LocationFeatureSpecification",
     name,
     value: true,

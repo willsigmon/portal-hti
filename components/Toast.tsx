@@ -34,7 +34,6 @@ export const Toast = forwardRef<ToastRef, {}>((_, ref) => {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
         {message}
       </div>
     </div>

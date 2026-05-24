@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check, MapPin, Star } from "lucide-react";
+import { AccessParkingSection } from "@/components/AccessParkingSection";
 import { Button } from "@/components/Button";
 import { PortalNav } from "@/components/PortalNav";
 import { PortalFooter } from "@/components/PortalFooter";
@@ -50,6 +51,8 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
             ))}
           </div>
         </section>
+
+        <AccessParkingSection compact />
 
         <section className="section container">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">

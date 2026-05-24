@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 const tabs = [
   { href: "/portal-hq#gallery", label: "Gallery" },
   { href: "/portal-hq#tour", label: "360° Tour" },
+  { href: "/portal-hq#access-parking", label: "Access" },
   { href: "/corporate", label: "Corporate" },
   { href: "/concerts", label: "Concerts" },
   { href: "/celebrations", label: "Celebrations" },
