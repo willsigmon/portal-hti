@@ -58,6 +58,8 @@ export default function PortalHQBooking() {
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [carouselCategory, setCarouselCategory] = useState("all");
   const [selectedSpecs, setSelectedSpecs] = useState<Record<string, boolean>>(DEFAULT_SPECS);
+  const [activeConfigTab, setActiveConfigTab] = useState("audio");
+  const [formStep, setFormStep] = useState(1);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -312,65 +314,100 @@ export default function PortalHQBooking() {
                 <div className="eyebrow">// ESTIMATOR SCHEMATICS // SECTION 05 // AV PRODUCTION CONFIGURATOR</div>
                 <h2 className="display-lg leading-tight tracking-tight">Tailor your <span className="font-normal italic text-[var(--color-accent)]">production setup.</span></h2>
                 <p className="text-sm leading-relaxed text-[var(--color-muted)]">
-                  The public page no longer sells fixed packages. Visitors select what matters, then Jake's team follows up with a custom configuration.
+                  Select what matters for your vision. We only display one operational category at a time to keep your design process minimal, crisp, and high-focus.
                 </p>
               </div>
 
-              <div className="grid gap-5">
-                 {[
-                  { title: "Audio & Acoustics", items: TECH_EQUIPMENT.audio, note: "sound system" },
-                  { title: "Projection & Lights", items: TECH_EQUIPMENT.lighting, note: "visual production" },
-                  { title: "Venue Flow", items: TECH_EQUIPMENT.facilities, note: "guest operations" },
-                ].map((group) => (
-                  <div key={group.title} onMouseMove={handleMouseMove} className="panel-card spotlight-card p-6 flex flex-col justify-center items-center text-center">
-                    <h3 className="font-display text-xl font-bold">{group.title}</h3>
-                    <div className="mt-5 grid gap-3 sm:grid-cols-2 w-full">
-                      {group.items.slice(0, 6).map((eq) => (
-                        <button
-                          key={eq.name}
-                          onClick={() => toggleSpec(eq.name)}
-                          className={`rounded-xl border p-3 text-center text-xs transition-all flex flex-col items-center justify-center ${
-                            selectedSpecs[eq.name]
-                              ? "border-[var(--color-accent)]/45 bg-[var(--color-accent)]/10 text-[var(--color-ink)]"
-                              : "border-[var(--color-border)] bg-[var(--color-panel-strong)]/38 text-[var(--color-muted)] hover:border-[var(--color-accent)]/35 hover:text-[var(--color-ink)]"
-                          }`}
-                        >
-                          <span className="flex flex-col items-center justify-center gap-2">
-                            <span className={`grid h-4 w-4 shrink-0 place-items-center rounded border ${selectedSpecs[eq.name] ? "border-transparent bg-[var(--color-accent)] text-white" : "border-[var(--color-border-strong)]"}`}>
-                              {selectedSpecs[eq.name] && <Check className="h-3 w-3" />}
-                            </span>
-                            <span>
-                              <strong className="block text-[var(--color-ink)]">{eq.name}</strong>
-                              <span className="mt-1 block">Qty {eq.qty} • {group.note}</span>
-                            </span>
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+              {/* Minimal geometric tabs inspired by Two Twelve wayfinding */}
+              <div className="flex flex-wrap gap-2 border-b border-[var(--color-border)] pb-6 w-full justify-center md:justify-start">
+                {[
+                  { id: "audio", label: "Sound & Acoustics" },
+                  { id: "lighting", label: "Lights & Laser Projection" },
+                  { id: "facilities", label: "Chamber Operations" },
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveConfigTab(tab.id)}
+                    className={`rounded-full px-5 py-2.5 text-[10px] font-mono uppercase tracking-[0.16em] transition-all border ${
+                      activeConfigTab === tab.id
+                        ? "border-transparent bg-[var(--color-accent)] text-white shadow-md"
+                        : "border-[var(--color-border)] bg-[var(--color-panel)] text-[var(--color-muted)] hover:border-[var(--color-accent)]/45 hover:text-[var(--color-accent)]"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
                 ))}
+              </div>
+
+              <div className="mt-6 w-full">
+                {(() => {
+                  const group =
+                    activeConfigTab === "audio"
+                      ? { title: "Audio & Acoustics", items: TECH_EQUIPMENT.audio, note: "sound system" }
+                      : activeConfigTab === "lighting"
+                      ? { title: "Projection & Lights", items: TECH_EQUIPMENT.lighting, note: "visual production" }
+                      : { title: "Venue Flow", items: TECH_EQUIPMENT.facilities, note: "guest operations" };
+
+                  return (
+                    <div onMouseMove={handleMouseMove} className="panel-card spotlight-card p-6 flex flex-col justify-center items-center text-center w-full">
+                      <h3 className="font-display text-xl font-bold tracking-tight">{group.title}</h3>
+                      <div className="mt-5 grid gap-3 sm:grid-cols-2 w-full">
+                        {group.items.slice(0, 6).map((eq) => (
+                          <button
+                            key={eq.name}
+                            onClick={() => toggleSpec(eq.name)}
+                            className={`rounded-xl border p-3 text-center text-xs transition-all flex flex-col items-center justify-center ${
+                              selectedSpecs[eq.name]
+                                ? "border-[var(--color-accent)]/45 bg-[var(--color-accent)]/10 text-[var(--color-ink)]"
+                                : "border-[var(--color-border)] bg-[var(--color-panel-strong)]/38 text-[var(--color-muted)] hover:border-[var(--color-accent)]/35 hover:text-[var(--color-ink)]"
+                            }`}
+                          >
+                            <span className="flex flex-col items-center justify-center gap-2">
+                              <span className={`grid h-4 w-4 shrink-0 place-items-center rounded border ${selectedSpecs[eq.name] ? "border-transparent bg-[var(--color-accent)] text-white" : "border-[var(--color-border-strong)]"}`}>
+                                {selectedSpecs[eq.name] && <Check className="h-3 w-3" />}
+                              </span>
+                              <span>
+                                <strong className="block text-[var(--color-ink)]">{eq.name}</strong>
+                                <span className="mt-1 block">Qty {eq.qty} • {group.note}</span>
+                              </span>
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
             <aside className="lg:col-span-5">
               <div onMouseMove={handleMouseMove} className="panel-card-strong spotlight-card sticky top-28 space-y-6 p-6 flex flex-col justify-center items-center text-center">
                 <div className="flex flex-col items-center justify-center border-b border-[var(--color-border)] pb-5 w-full">
-                  <h3 className="font-display text-2xl font-black">Your room brief</h3>
+                  <h3 className="font-display text-2xl font-black tracking-tight">Your room brief</h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Proposal checklist</p>
                   <span className="mt-3 rounded-full bg-[var(--color-accent)]/12 px-3 py-1.5 text-xs font-black text-[var(--color-accent)]">{activeSpecs.length} items</span>
                 </div>
-                <div className="space-y-3 text-sm w-full flex flex-col items-center">
-                  {Object.keys(selectedSpecs).map((spec) => (
-                    <div key={spec} className="flex items-center justify-between gap-4 w-full max-w-[280px]">
-                      <span className={`flex items-center gap-2.5 ${selectedSpecs[spec] ? "text-[var(--color-ink)]" : "text-[var(--color-muted)] opacity-55 line-through"}`}>
-                        <CheckCircle className={`h-4 w-4 shrink-0 ${selectedSpecs[spec] ? "text-[var(--color-accent)]" : "text-[var(--color-border-strong)]"}`} />
-                        {spec}
-                      </span>
-                      <button onClick={() => toggleSpec(spec)} className="text-xs font-bold text-[var(--color-accent)] hover:underline">
-                        {selectedSpecs[spec] ? "Remove" : "Add"}
-                      </button>
+                <div className="space-y-3.5 text-sm w-full flex flex-col items-center">
+                  {activeSpecs.length === 0 ? (
+                    <div className="py-8 px-4 flex flex-col justify-center items-center text-center space-y-2">
+                      <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[var(--color-muted)] opacity-55">[ NO PRODUCTION ITEMS ACTIVE ]</span>
+                      <p className="text-[11px] leading-normal text-[var(--color-muted)] max-w-[200px]">
+                        Tap production items on the left to customize your room brief and AV layout.
+                      </p>
                     </div>
-                  ))}
+                  ) : (
+                    activeSpecs.map((spec) => (
+                      <div key={spec} className="flex items-center justify-between gap-4 w-full max-w-[280px]">
+                        <span className="flex items-center gap-2.5 text-[var(--color-ink)] text-xs text-left">
+                          <CheckCircle className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+                          {spec}
+                        </span>
+                        <button onClick={() => toggleSpec(spec)} className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] hover:underline shrink-0">
+                          Remove
+                        </button>
+                      </div>
+                    ))
+                  )}
                 </div>
                 <div className="space-y-3 border-t border-[var(--color-border)] pt-5 text-xs text-[var(--color-muted)] w-full flex flex-col items-center">
                   <div className="flex justify-between gap-3 w-full max-w-[280px]"><span>Public package pricing</span><strong className="text-[var(--color-accent)]">Removed</strong></div>
@@ -439,42 +476,84 @@ export default function PortalHQBooking() {
                 <div className="eyebrow justify-center">// BOOKINGS & PROPOSALS // SECTION 08 // INQUIRY DIRECTIVE</div>
                 <h2 className="display-lg leading-tight tracking-tight">Begin your <span className="font-normal italic text-[var(--color-accent)]">custom proposal.</span></h2>
                 <p className="text-sm leading-relaxed text-[var(--color-muted)]">
-                  This form opens a pre-filled email to Jake's team with your selected room brief. No fake “sent” state and no public package pricing.
+                  Scope your layout. Tap elements. Build the brief. We handle the rest without daunting pricing guides or rigid packages.
                 </p>
+              </div>
+
+              {/* Minimal geometric steps inspired by Two Twelve wayfinding */}
+              <div className="flex items-center justify-center gap-3 w-full max-w-xs border-b border-[var(--color-border)] pb-4">
+                <span className={`font-mono text-[9px] uppercase tracking-[0.16em] transition-colors duration-300 ${formStep === 1 ? "text-[var(--color-accent)] font-bold" : "text-[var(--color-muted)]"}`}>
+                  01 // Contact
+                </span>
+                <span className="h-px w-6 bg-[var(--color-border)]" />
+                <span className={`font-mono text-[9px] uppercase tracking-[0.16em] transition-colors duration-300 ${formStep === 2 ? "text-[var(--color-accent)] font-bold" : "text-[var(--color-muted)]"}`}>
+                  02 // Logistics
+                </span>
               </div>
 
               {formSubmitted && (
                 <div className="rounded-2xl border border-[var(--color-signal)]/28 bg-[var(--color-signal)]/10 p-5 text-center text-sm text-[var(--color-muted)] w-full">
-                  <CheckCircle className="mx-auto mb-3 h-6 w-6 text-[var(--color-signal)]" />
+                  <CheckCircle className="mx-auto mb-3 h-6 w-6 text-[var(--color-signal)] animate-pulse" />
                   Your email draft should be open. If your browser blocked it, email <a className="font-bold text-[var(--color-accent)]" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> with the same details.
                 </div>
               )}
 
               <form onSubmit={handleFormSubmit} className="space-y-6 text-sm w-full">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="space-y-2 font-semibold">Full name<input required name="name" value={formData.name} onChange={handleFormChange} placeholder="Your name" className="input-field" /></label>
-                  <label className="space-y-2 font-semibold">Email<input required type="email" name="email" value={formData.email} onChange={handleFormChange} placeholder="you@example.com" className="input-field" /></label>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-3">
-                  <label className="space-y-2 font-semibold">Phone<input name="phone" value={formData.phone} onChange={handleFormChange} placeholder="Optional" className="input-field" /></label>
-                  <label className="space-y-2 font-semibold">Event category<select name="eventType" value={formData.eventType} onChange={handleFormChange} className="input-field">
-                    {EVENT_TYPES.map((event) => <option key={event.id} value={event.id}>{event.shortTitle}</option>)}
-                    <option value="custom">Custom</option>
-                  </select></label>
-                  <label className="space-y-2 font-semibold">Guest count<select name="guestCount" value={formData.guestCount} onChange={handleFormChange} className="input-field">
-                    <option value="Under 50">Under 50</option>
-                    <option value="50-100">50–100</option>
-                    <option value="100-200">100–200</option>
-                    <option value="Flexible / TBD">Flexible / TBD</option>
-                  </select></label>
-                </div>
-                <label className="block space-y-2 font-semibold">Target date<input type="date" name="date" value={formData.date} onChange={handleFormChange} className="input-field" /></label>
-                <label className="block space-y-2 font-semibold">Layout goals and AV needs<textarea name="notes" value={formData.notes} onChange={handleFormChange} rows={5} placeholder="Tell Jake what the event needs to feel like: stage, dinner flow, bar, projection, microphones, photos, patio, load-in, etc." className="input-field resize-y" /></label>
-                <div className="rounded-2xl border border-[var(--color-accent)]/24 bg-[var(--color-accent)]/8 p-4 text-xs leading-relaxed text-[var(--color-muted)] text-center w-full flex items-center justify-center gap-2">
-                  <Info className="h-4 w-4 text-[var(--color-accent)] shrink-0" />
-                  Your email will include <strong className="text-[var(--color-ink)]">{activeSpecs.length} selected configuration items</strong> from the room brief above.
-                </div>
-                <Button type="submit" size="lg" className="w-full">Open Proposal Email to Jake</Button>
+                {formStep === 1 && (
+                  <div className="space-y-6 animate-fade-in-up">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="space-y-2 font-semibold">Full name<input required name="name" value={formData.name} onChange={handleFormChange} placeholder="Your name" className="input-field" /></label>
+                      <label className="space-y-2 font-semibold">Email<input required type="email" name="email" value={formData.email} onChange={handleFormChange} placeholder="you@example.com" className="input-field" /></label>
+                    </div>
+                    <label className="block space-y-2 font-semibold">Phone number<input name="phone" value={formData.phone} onChange={handleFormChange} placeholder="Optional" className="input-field" /></label>
+                    <Button
+                      type="button"
+                      size="lg"
+                      className="w-full mt-4"
+                      disabled={!formData.name || !formData.email}
+                      onClick={() => setFormStep(2)}
+                    >
+                      Continue to Event Logistics
+                    </Button>
+                  </div>
+                )}
+
+                {formStep === 2 && (
+                  <div className="space-y-6 animate-fade-in-up">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="space-y-2 font-semibold">Event category<select name="eventType" value={formData.eventType} onChange={handleFormChange} className="input-field">
+                        {EVENT_TYPES.map((event) => <option key={event.id} value={event.id}>{event.shortTitle}</option>)}
+                        <option value="custom">Custom</option>
+                      </select></label>
+                      <label className="space-y-2 font-semibold">Guest count<select name="guestCount" value={formData.guestCount} onChange={handleFormChange} className="input-field">
+                        <option value="Under 50">Under 50</option>
+                        <option value="50-100">50–100</option>
+                        <option value="100-200">100–200</option>
+                        <option value="Flexible / TBD">Flexible / TBD</option>
+                      </select></label>
+                    </div>
+                    <label className="block space-y-2 font-semibold">Target date<input type="date" name="date" value={formData.date} onChange={handleFormChange} className="input-field" /></label>
+                    <label className="block space-y-2 font-semibold">Layout goals and AV needs<textarea name="notes" value={formData.notes} onChange={handleFormChange} rows={4} placeholder="Tell Jake what the event needs to feel like: stage, dinner flow, bar, projection, microphones, patio, load-in, etc." className="input-field resize-y" /></label>
+                    <div className="rounded-2xl border border-[var(--color-accent)]/24 bg-[var(--color-accent)]/8 p-4 text-xs leading-relaxed text-[var(--color-muted)] text-center w-full flex items-center justify-center gap-2">
+                      <Info className="h-4 w-4 text-[var(--color-accent)] shrink-0" />
+                      Your email will include <strong className="text-[var(--color-ink)]">{activeSpecs.length} selected configuration items</strong> from the room brief above.
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-3 w-full">
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        size="lg"
+                        className="w-full"
+                        onClick={() => setFormStep(1)}
+                      >
+                        Back to Contact Info
+                      </Button>
+                      <Button type="submit" size="lg" className="w-full">
+                        Open Proposal Email to Jake
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </form>
             </div>
           </div>

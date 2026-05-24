@@ -322,7 +322,7 @@ export default function SipAndSync() {
 
               <div className="min-w-0 space-y-1">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Where</div>
-                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">Portal HQ, Raleigh</h3>
+                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">Portal HQ, Raleigh</h3>
                 <p className="text-xs text-[var(--color-muted)] leading-tight">3801 Hillsborough St, Suite 113</p>
               </div>
             </div>
@@ -463,7 +463,7 @@ export default function SipAndSync() {
                   <img src="/portal-logo.png" alt="Portal HQ" className="h-[120px] w-auto filter contrast-[1.02] transition-all group-hover:scale-105 duration-300 object-contain" />
                 </div>
 
-                <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)]">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Portal HQ
                 </h3>
 
@@ -556,7 +556,7 @@ export default function SipAndSync() {
                 <span className="text-xs font-bold text-[var(--color-accent)] tracking-tight font-sans uppercase">
                   The experience space
                 </span>
-                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-2">
+                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-2 whitespace-nowrap">
                   The Venue: Portal HQ
                 </h2>
                 <p className="text-lg text-[var(--color-muted)] max-w-[46ch] mx-auto">
@@ -565,7 +565,7 @@ export default function SipAndSync() {
               </div>
 
               <p className="text-sm text-[var(--color-muted)] leading-relaxed max-w-[54ch] mx-auto">
-                The Sip &amp; Sync Social Hour will take place in the main gallery hall of Portal HQ. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
+                The Sip &amp; Sync Social Hour will take place in the main gallery hall of <span className="whitespace-nowrap">Portal HQ</span>. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-4 w-full max-w-lg mx-auto">
@@ -640,7 +640,7 @@ export default function SipAndSync() {
                   </div>
                   <div className="h-4 w-px bg-white/10" />
                   <div>
-                    <strong className="block font-display text-sm tracking-tight text-[var(--color-ink)]">Portal HQ virtual walkthrough</strong>
+                    <strong className="block font-display text-sm tracking-tight text-[var(--color-ink)]"><span className="whitespace-nowrap">Portal HQ</span> virtual walkthrough</strong>
                     <span className="text-[10px] text-[var(--color-muted)] flex items-center gap-1.5 mt-0.5">
                       <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse block" />
                       Interactive 3D Stream Active
@@ -745,7 +745,7 @@ export default function SipAndSync() {
                   Live Laptop Pledge Tracker
                 </h2>
                 <p className="text-sm text-[var(--color-muted)] leading-relaxed">
-                  Help us reach our collaborative event goal of <strong className="text-[var(--color-ink)]">150 pledged laptops</strong>. Bring your old device to Portal HQ, or arrange a free pickup!
+                  Help us reach our collaborative event goal of <strong className="text-[var(--color-ink)]">150 pledged laptops</strong>. Bring your old device to <span className="whitespace-nowrap">Portal HQ</span>, or arrange a free pickup!
                 </p>
               </div>
 
