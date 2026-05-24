@@ -211,7 +211,7 @@ export default function SipAndSync() {
         <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
           <div className="min-w-0 space-y-7 lg:col-span-7">
             <h1
-              className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)]"
+              className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)] animate-fade-in-up"
               style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)" }}
             >
               <span className="block whitespace-nowrap">
@@ -219,19 +219,18 @@ export default function SipAndSync() {
                 <span className="text-white">&amp;</span>{" "}
                 <span className="text-[var(--color-accent)]">Sync</span>
               </span>
-              <span className="block text-[var(--color-ink)]">Social</span>
-              <span className="block text-[var(--color-ink)]">Hour</span>
+              <span className="block text-[var(--color-ink)] whitespace-nowrap">Social Hour</span>
             </h1>
 
-            <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4">
+            <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
               "Old Laptops. New Opportunities."
             </p>
 
-            <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed">
+            <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed animate-fade-in-up delay-200">
               Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-4 pt-2 animate-fade-in-up delay-300">
               <Button size="lg" asChild>
                 <a href="#tickets">Reserve Spot</a>
               </Button>
@@ -242,7 +241,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
-          <div className="min-w-0 lg:col-span-5">
+          <div className="min-w-0 lg:col-span-5 animate-fade-in-up delay-400">
             <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-lg)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)]/60 p-2 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
               <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[var(--color-accent)] pointer-events-none" />
               <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[var(--color-accent)] pointer-events-none" />
@@ -251,8 +250,8 @@ export default function SipAndSync() {
 
               <div className="aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner">
                 <img
-                  src="/portal_hq_party_slack_mockup.png"
-                  alt="Sip & Sync Social Hour Mockup"
+                  src="/portal_hq_real.png"
+                  alt="Real view of Portal HQ Raleigh Event space"
                   className="h-full w-full max-w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>
