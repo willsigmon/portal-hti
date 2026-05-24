@@ -4,6 +4,7 @@ import { AccessParkingSection } from "@/components/AccessParkingSection";
 import { Button } from "@/components/Button";
 import { PortalNav } from "@/components/PortalNav";
 import { PortalFooter } from "@/components/PortalFooter";
+import { Starfield } from "@/components/Starfield";
 import { CONTACT, EVENT_TYPES, FEATURE_CARDS, PHOTOS, PLAN_STEPS, REVIEWS } from "@/lib/portal-content";
 
 type EventType = (typeof EVENT_TYPES)[number];
@@ -13,15 +14,16 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
   const related = EVENT_TYPES.filter((item) => item.id !== eventType.id);
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white grain">
+    <div className="min-h-screen bg-transparent text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white grain">
+      <Starfield opacity={0.38} />
       <PortalNav />
 
       <main>
         <section className="container grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:items-center">
           <div className="space-y-7 lg:col-span-7">
             <div className="eyebrow"><Icon className="h-3.5 w-3.5" /> {eventType.eyebrow}</div>
-            <h1 className="display-xl max-w-[10ch] uppercase tracking-[-0.055em]">{eventType.seoTitle.replace(" in Raleigh, NC", "")}</h1>
-            <p className="max-w-2xl border-l-2 border-[var(--color-accent)]/50 pl-5 font-display text-2xl font-semibold leading-tight text-[var(--color-muted)]">
+            <h1 className="display-xl max-w-[12ch] leading-[1.08] tracking-tight">{eventType.seoTitle.replace(" in Raleigh, NC", "")}</h1>
+            <p className="max-w-2xl border-l-2 border-[var(--color-accent)]/30 pl-5 font-display text-2xl font-medium italic leading-relaxed text-[var(--color-muted)]">
               {eventType.summary}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -58,7 +60,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="space-y-4 lg:col-span-5">
               <div className="eyebrow">How it works</div>
-              <h2 className="display-lg max-w-[10ch]">A clearer path than packages.</h2>
+              <h2 className="display-lg leading-tight tracking-tight">A clearer path <span className="font-normal italic text-[var(--color-accent)]">than packages.</span></h2>
               <p className="text-base leading-relaxed text-[var(--color-muted)]">
                 Jake wants pricing removed from the public page because the best use of Portal HQ is consultative: the room changes based on layout, production, staff, and guest flow.
               </p>
@@ -81,7 +83,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
           <div className="container space-y-10">
             <div className="max-w-3xl space-y-3">
               <div className="eyebrow">Room Proof</div>
-              <h2 className="display-lg">The room can shift without losing polish.</h2>
+              <h2 className="display-lg leading-tight tracking-tight">Shift the room <span className="font-normal italic text-[var(--color-accent)]">without losing polish.</span></h2>
             </div>
             <div className="grid auto-rows-[220px] gap-4 md:grid-cols-4">
               {[eventType.photo, PHOTOS.entry, PHOTOS.stage, PHOTOS.dining, PHOTOS.exterior].map((src, index) => (

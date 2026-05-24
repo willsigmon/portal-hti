@@ -8,7 +8,7 @@
    ===================================================== */
 
 @theme {
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
