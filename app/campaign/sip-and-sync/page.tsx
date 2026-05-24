@@ -166,11 +166,11 @@ export default function SipAndSync() {
 
       {/* STICKY GLASSMORPHIC NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-bg)]/80 backdrop-blur-md">
-        <div className="container flex h-20 md:h-24 items-center justify-between">
+        <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <HTILogo className="h-[34px] md:h-[56px] w-auto filter contrast-[1.03] transition-all object-contain" />
+            <HTILogo className="h-[34px] md:h-[44px] w-auto filter contrast-[1.03] transition-all object-contain" />
             <span className="text-base text-[var(--color-muted)] font-display font-bold select-none opacity-45 mx-0.5">×</span>
-            <img src="/portal-logo.png" alt="Portal HQ" className="h-[42px] md:h-[62px] w-auto filter contrast-[1.02] transition-all object-contain" />
+            <img src="/portal-logo.png" alt="Portal HQ" className="h-[42px] md:h-[50px] w-auto filter contrast-[1.02] transition-all object-contain" />
           </div>
 
           <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-surface)]/55 backdrop-blur-md shadow-inner">
@@ -200,7 +200,7 @@ export default function SipAndSync() {
       {/* HERO SECTION */}
       <section className="container pt-8 md:pt-16 pb-20 relative">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center">
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8 min-w-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-surface)] text-xs font-medium tracking-tight text-[var(--color-muted)] font-sans">
               <span className="h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
               HTI × Portal HQ presents
@@ -215,7 +215,7 @@ export default function SipAndSync() {
               "Old Laptops. New Opportunities."
             </p>
 
-            <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[48ch] leading-relaxed">
+            <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed">
               Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
             </p>
 

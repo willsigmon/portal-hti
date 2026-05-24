@@ -2,19 +2,19 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 
 const tabs = [
-  { href: "/#gallery", label: "Gallery" },
-  { href: "/#tour", label: "360° Tour" },
+  { href: "/portal-hq#gallery", label: "Gallery" },
+  { href: "/portal-hq#tour", label: "360° Tour" },
   { href: "/corporate", label: "Corporate" },
   { href: "/concerts", label: "Concerts" },
   { href: "/celebrations", label: "Celebrations" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/portal-hq#faq", label: "FAQ" },
 ];
 
 export function PortalNav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[color-mix(in_oklch,var(--color-bg)_86%,transparent)] backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="group flex items-center gap-3" aria-label="The Portal HQ home">
+        <Link href="/portal-hq" className="group flex items-center gap-3" aria-label="The Portal HQ home">
           <span className="grid h-11 w-11 place-items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)]/85 shadow-sm transition-transform group-hover:-rotate-2">
             <img src="/portal-logo.png" alt="" className="h-8 w-auto object-contain" />
           </span>
@@ -33,7 +33,7 @@ export function PortalNav() {
         </div>
 
         <Button size="default" variant="primary" asChild>
-          <Link href="/#proposal">Request Proposal</Link>
+          <Link href="/portal-hq#proposal">Request Proposal</Link>
         </Button>
       </div>
     </nav>

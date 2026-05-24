@@ -24,8 +24,8 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
               {eventType.summary}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" asChild><Link href="/#proposal">Request Custom Proposal</Link></Button>
-              <Button size="lg" variant="secondary" asChild><Link href="/#tour">Explore 360° Tour</Link></Button>
+              <Button size="lg" asChild><Link href="/portal-hq#proposal">Request Custom Proposal</Link></Button>
+              <Button size="lg" variant="secondary" asChild><Link href="/portal-hq#tour">Explore 360° Tour</Link></Button>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export function VenueLandingPage({ eventType }: { eventType: EventType }) {
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button asChild><Link href="/#proposal">Request Proposal</Link></Button>
+                <Button asChild><Link href="/portal-hq#proposal">Request Proposal</Link></Button>
                 <Button variant="secondary" asChild><a href={CONTACT.googleMaps} target="_blank" rel="noreferrer">Directions</a></Button>
               </div>
             </div>
