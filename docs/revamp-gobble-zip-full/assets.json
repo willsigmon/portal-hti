@@ -1,0 +1,188 @@
+{
+  "images": [
+    {
+      "src": "https://theportalhq.com/x1.png",
+      "alt": "Portal Logo",
+      "width": 1563,
+      "height": 1563,
+      "loading": "auto"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A0033.jpg",
+      "alt": "The Portal HQ venue 1",
+      "width": 6720,
+      "height": 4480,
+      "loading": "eager"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A8501.jpeg",
+      "alt": "The Portal HQ venue 2",
+      "width": 6720,
+      "height": 4480,
+      "loading": "eager"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A8512.jpeg",
+      "alt": "The Portal HQ venue 3",
+      "width": 6720,
+      "height": 4480,
+      "loading": "eager"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A8524.jpeg",
+      "alt": "The Portal HQ venue 4",
+      "width": 6720,
+      "height": 4480,
+      "loading": "eager"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A9000.jpeg",
+      "alt": "The Portal HQ venue 5",
+      "width": 6720,
+      "height": 4480,
+      "loading": "eager"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/1C7A9002.jpeg",
+      "alt": "The Portal HQ venue 6",
+      "width": 6720,
+      "height": 4480,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/2.png",
+      "alt": "The Portal HQ venue 7",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/3.png",
+      "alt": "The Portal HQ venue 8",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/5.png",
+      "alt": "The Portal HQ venue 9",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/6.png",
+      "alt": "The Portal HQ venue 10",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/7.png",
+      "alt": "The Portal HQ venue 11",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/8.png",
+      "alt": "The Portal HQ venue 12",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/9.png",
+      "alt": "The Portal HQ venue 13",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/11.png",
+      "alt": "The Portal HQ venue 14",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/12.png",
+      "alt": "The Portal HQ venue 15",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/13.png",
+      "alt": "The Portal HQ venue 16",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/14.png",
+      "alt": "The Portal HQ venue 17",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/15.png",
+      "alt": "The Portal HQ venue 18",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/16.png",
+      "alt": "The Portal HQ venue 19",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://theportalhq.com/Newphotos/18.png",
+      "alt": "The Portal HQ venue 20",
+      "width": 1920,
+      "height": 1080,
+      "loading": "lazy"
+    }
+  ],
+  "backgroundImages": [
+    {
+      "src": "https://theportalhq.com/x2.jpg",
+      "element": "section",
+      "class": "relative min-h-screen flex flex-col"
+    },
+    {
+      "src": "https://theportalhq.com/bookings2.png",
+      "element": "section",
+      "class": "relative min-h-screen flex flex-col"
+    },
+    {
+      "src": "https://theportalhq.com/car9.png",
+      "element": "div",
+      "class": "h-64 md:h-auto bg-cover bg-center"
+    },
+    {
+      "src": "https://theportalhq.com/xe1.jpg",
+      "element": "div",
+      "class": "h-48 bg-cover bg-center"
+    },
+    {
+      "src": "https://theportalhq.com/xx1.png",
+      "element": "div",
+      "class": "h-48 bg-cover bg-center"
+    },
+    {
+      "src": "https://theportalhq.com/showCS.jpg",
+      "element": "div",
+      "class": "h-48 bg-cover bg-center"
+    },
+    {
+      "src": "https://theportalhq.com/socialSO.png",
+      "element": "div",
+      "class": "h-48 bg-cover bg-center"
+    }
+  ]
+}

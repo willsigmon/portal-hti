@@ -1,0 +1,798 @@
+{
+  "source": {
+    "url": "http://localhost:3001/",
+    "title": "Sip & Sync Social Hour — HTI × Portal HQ",
+    "capturedAt": "2026-05-24T16:29:40.934Z",
+    "language": "en"
+  },
+  "dimensions": {
+    "pageWidth": 1658,
+    "pageHeight": 3795,
+    "devicePixelRatio": 1,
+    "capturedWidth": 1658,
+    "capturedHeight": 3795
+  },
+  "sections": [
+    {
+      "index": 0,
+      "format": "image/webp",
+      "quality": 0.9,
+      "sizeMB": "0.38",
+      "scaled": false,
+      "scaleFactor": 1,
+      "overLimit": false,
+      "startY": 0,
+      "endY": 3795,
+      "heightPx": 3795
+    }
+  ],
+  "pageStructure": {
+    "headings": [
+      {
+        "level": 1,
+        "text": "SIP & SYNCSOCIAL HOUR",
+        "offsetTop": 35
+      },
+      {
+        "level": 3,
+        "text": "Thursday, June 11",
+        "offsetTop": 43
+      },
+      {
+        "level": 3,
+        "text": "Portal HQ, Raleigh",
+        "offsetTop": 43
+      },
+      {
+        "level": 3,
+        "text": "$5.00 Tickets",
+        "offsetTop": 43
+      },
+      {
+        "level": 2,
+        "text": "The Collaboration",
+        "offsetTop": 783
+      },
+      {
+        "level": 3,
+        "text": "HUBZone Technology Initiative",
+        "offsetTop": 89
+      },
+      {
+        "level": 3,
+        "text": "Portal HQ",
+        "offsetTop": 89
+      },
+      {
+        "level": 3,
+        "text": "Close the Digital Divide",
+        "offsetTop": 1376
+      },
+      {
+        "level": 2,
+        "text": "Tickets & Donations",
+        "offsetTop": 1746
+      },
+      {
+        "level": 2,
+        "text": "Live Laptop Pledge Tracker",
+        "offsetTop": 2575
+      },
+      {
+        "level": 3,
+        "text": "Pledge a Laptop",
+        "offsetTop": 2579
+      },
+      {
+        "level": 2,
+        "text": "Connect & Share",
+        "offsetTop": 3351
+      }
+    ],
+    "linkCount": 20,
+    "topLinks": [
+      {
+        "href": "http://localhost:3001/#about",
+        "text": "The Collaboration"
+      },
+      {
+        "href": "http://localhost:3001/#tickets",
+        "text": "Tickets & Donations"
+      },
+      {
+        "href": "http://localhost:3001/#pledge",
+        "text": "Laptop Pledge Drive"
+      },
+      {
+        "href": "http://localhost:3001/#connect",
+        "text": "Connect"
+      },
+      {
+        "href": "http://localhost:3001/#tickets",
+        "text": "Get Tickets"
+      },
+      {
+        "href": "http://localhost:3001/#tickets",
+        "text": "Reserve Spot ($5)"
+      },
+      {
+        "href": "http://localhost:3001/#pledge",
+        "text": "Pledge a Laptop"
+      },
+      {
+        "href": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607",
+        "text": "WHENThursday, June 116:00 PM – 9:00 PMAdd to Calendar"
+      },
+      {
+        "href": "https://maps.google.com/?q=3801+Hillsborough+St,+Suite+113,+Raleigh,+NC+27607",
+        "text": "WHEREPortal HQ, Raleigh3801 Hillsborough St, Suite 113Open Maps"
+      },
+      {
+        "href": "http://localhost:3001/#tickets",
+        "text": "ADMISSION$5.00 TicketsIncludes craft drinks + live networkingSecure Passes"
+      },
+      {
+        "href": "https://www.hubzonetech.org/",
+        "text": "Visit hubzonetech.org"
+      },
+      {
+        "href": "https://theportalhq.com/",
+        "text": "Visit theportalhq.com"
+      },
+      {
+        "href": "https://www.paypal.com/donate/?hosted_button_id=C6QJ6V23C63P2",
+        "text": "Or, donate directly via PayPal"
+      },
+      {
+        "href": "mailto:pickups@hubzonetech.org",
+        "text": "Email pickups@hubzonetech.org ➔"
+      },
+      {
+        "href": "http://localhost:3001/sip_and_sync_flyer.png",
+        "text": "Download Event Flyer"
+      },
+      {
+        "href": "mailto:wsigmon@hubzonetech.org",
+        "text": "wsigmon@hubzonetech.org"
+      },
+      {
+        "href": "mailto:dgalindo@kurvpay.com",
+        "text": "dgalindo@kurvpay.com"
+      },
+      {
+        "href": "mailto:jake@theportalhq.com",
+        "text": "jake@theportalhq.com"
+      },
+      {
+        "href": "https://hubzonetech.org/",
+        "text": "hubzonetech.org"
+      },
+      {
+        "href": "https://theportalhq.com/",
+        "text": "theportalhq.com"
+      }
+    ]
+  },
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1",
+    "description": "June 11 • Portal HQ, Raleigh. $5 tickets + laptop donation drive to close the digital divide in North Carolina."
+  },
+  "design": {
+    "colors": [
+      {
+        "color": "oklch(0.18 0.012 265)",
+        "count": 29
+      },
+      {
+        "color": "oklch(0.48 0.01 85)",
+        "count": 27
+      },
+      {
+        "color": "oklch(0.68 0.18 48)",
+        "count": 11
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "count": 9
+      },
+      {
+        "color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+        "count": 3
+      },
+      {
+        "color": "oklch(0.98 0.008 85)",
+        "count": 1
+      },
+      {
+        "color": "oklab(0.98 0.000697246 0.00796956 / 0.8)",
+        "count": 1
+      },
+      {
+        "color": "oklab(0.68 0.120444 0.133766)",
+        "count": 1
+      },
+      {
+        "color": "oklab(0.96 0.000522935 0.00597717 / 0.2)",
+        "count": 1
+      }
+    ],
+    "fonts": [
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "12px",
+        "weight": "400",
+        "count": 10
+      },
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "14px",
+        "weight": "400",
+        "count": 9
+      },
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "count": 6
+      },
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "12px",
+        "weight": "600",
+        "count": 5
+      },
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "14px",
+        "weight": "500",
+        "count": 4
+      },
+      {
+        "family": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\"",
+        "size": "16px",
+        "weight": "600",
+        "count": 4
+      },
+      {
+        "family": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\"",
+        "size": "68px",
+        "weight": "700",
+        "count": 4
+      },
+      {
+        "family": "\"JetBrains Mono\", ui-monospace, monospace",
+        "size": "14px",
+        "weight": "600",
+        "count": 4
+      },
+      {
+        "family": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\"",
+        "size": "15px",
+        "weight": "600",
+        "count": 3
+      },
+      {
+        "family": "\"Instrument Sans\", \"Instrument Sans Fallback\"",
+        "size": "18px",
+        "weight": "400",
+        "count": 3
+      }
+    ],
+    "customProperties": {}
+  },
+  "assets": {
+    "images": [
+      {
+        "src": "http://localhost:3001/hti-official-logo.png",
+        "alt": "HUBZone Technology Initiative",
+        "width": 839,
+        "height": 225,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/portal-logo.png",
+        "alt": "Portal HQ",
+        "width": 1016,
+        "height": 652,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/portal_hq_party_slack_mockup.png",
+        "alt": "Sip & Sync Social Hour Mockup",
+        "width": 1024,
+        "height": 1024,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/hti-official-logo.png",
+        "alt": "HUBZone Technology Initiative",
+        "width": 839,
+        "height": 225,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/portal-logo.png",
+        "alt": "Portal HQ",
+        "width": 1016,
+        "height": 652,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/heartfelt_laptop.png",
+        "alt": "NC student using a refurbished Chromebook",
+        "width": 1024,
+        "height": 1024,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/hti-cropped.png",
+        "alt": "HTI",
+        "width": 920,
+        "height": 337,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/hti-cropped.png",
+        "alt": "HTI",
+        "width": 920,
+        "height": 337,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/portal-logo.png",
+        "alt": "Portal",
+        "width": 1016,
+        "height": 652,
+        "loading": "auto"
+      },
+      {
+        "src": "http://localhost:3001/portal-logo.png",
+        "alt": "Portal",
+        "width": 1016,
+        "height": 652,
+        "loading": "auto"
+      }
+    ],
+    "backgroundImages": []
+  },
+  "structuredData": [],
+  "resources": {
+    "scripts": [
+      {
+        "src": "http://localhost:3001/_next/static/chunks/main-app.js?v=1779640135088",
+        "async": true,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "http://localhost:3001/_next/static/chunks/app-pages-internals.js",
+        "async": true,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "http://localhost:3001/_next/static/chunks/app/page.js",
+        "async": true,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "http://localhost:3001/_next/static/chunks/polyfills.js",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "http://localhost:3001/_next/static/chunks/webpack.js?v=1779640135088",
+        "async": true,
+        "defer": false,
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "http://localhost:3001/_next/static/css/app/layout.css?v=1779640135088",
+        "media": "all"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "600",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "600",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "700",
+        "status": "loaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "800",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "800",
+        "status": "unloaded"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "style": "normal",
+        "weight": "800",
+        "status": "loaded"
+      },
+      {
+        "family": "Bricolage Grotesque Fallback",
+        "style": "normal",
+        "weight": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "600",
+        "status": "unloaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "Instrument Sans",
+        "style": "normal",
+        "weight": "700",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Sans Fallback",
+        "style": "normal",
+        "weight": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "__nextjs-Geist",
+        "style": "normal",
+        "weight": "400 600",
+        "status": "unloaded"
+      },
+      {
+        "family": "__nextjs-Geist Mono",
+        "style": "normal",
+        "weight": "400 600",
+        "status": "unloaded"
+      },
+      {
+        "family": "__nextjs-Geist",
+        "style": "normal",
+        "weight": "400 600",
+        "status": "loaded"
+      },
+      {
+        "family": "__nextjs-Geist Mono",
+        "style": "normal",
+        "weight": "400 600",
+        "status": "unloaded"
+      }
+    ],
+    "preloads": [
+      {
+        "rel": "preload",
+        "href": "http://localhost:3001/_next/static/chunks/webpack.js?v=1779640135088",
+        "as": "script"
+      },
+      {
+        "rel": "preload",
+        "href": "http://localhost:3001/_next/static/media/26d0ba92e140f0dc-s.p.woff2",
+        "as": "font"
+      },
+      {
+        "rel": "preload",
+        "href": "http://localhost:3001/_next/static/media/9d5a263311222317-s.p.woff2",
+        "as": "font"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "action": "http://localhost:3001/",
+      "method": "get",
+      "id": "",
+      "name": "",
+      "fields": [
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "number",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "button",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "range",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "number",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "",
+          "id": "",
+          "placeholder": "Will Sigmon",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "",
+          "id": "",
+          "placeholder": "wjsigmon@gmail.com",
+          "required": true
+        },
+        {
+          "tag": "button",
+          "type": "submit",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "http://localhost:3001/",
+      "method": "get",
+      "id": "",
+      "name": {},
+      "fields": [
+        {
+          "tag": "input",
+          "type": "number",
+          "name": "quantity",
+          "id": "",
+          "placeholder": "",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "brand",
+          "id": "",
+          "placeholder": "Dell Latitude, MacBook, Lenovo etc.",
+          "required": false
+        },
+        {
+          "tag": "select",
+          "type": "select-one",
+          "name": "condition",
+          "id": "",
+          "placeholder": "",
+          "required": true,
+          "options": [
+            {
+              "value": "",
+              "text": "Select general condition..."
+            },
+            {
+              "value": "excellent",
+              "text": "Excellent — boots fast, perfect display screen"
+            },
+            {
+              "value": "good",
+              "text": "Good — functional, holds a charge, minor surface scratches"
+            },
+            {
+              "value": "fair",
+              "text": "Fair — boots up but holds weak charge or operates slowly"
+            }
+          ]
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "name",
+          "id": "",
+          "placeholder": "Will Sigmon",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "id": "",
+          "placeholder": "wjsigmon@gmail.com",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "tel",
+          "name": "phone",
+          "id": "",
+          "placeholder": "(919) 555-0199",
+          "required": false
+        },
+        {
+          "tag": "textarea",
+          "type": "textarea",
+          "name": "notes",
+          "id": "",
+          "placeholder": "Has charger, pick up from office, etc.",
+          "required": false
+        },
+        {
+          "tag": "button",
+          "type": "submit",
+          "name": "",
+          "id": "",
+          "placeholder": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "textStats": {
+    "characters": 7614,
+    "words": 969
+  },
+  "processing": {
+    "elapsedMs": 1585,
+    "totalCaptures": 3,
+    "compressionStrategy": "auto",
+    "textExtractionEnabled": true
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "href": "http://localhost:3001/#about",
+    "text": "The Collaboration"
+  },
+  {
+    "href": "http://localhost:3001/#tickets",
+    "text": "Tickets & Donations"
+  },
+  {
+    "href": "http://localhost:3001/#pledge",
+    "text": "Laptop Pledge Drive"
+  },
+  {
+    "href": "http://localhost:3001/#connect",
+    "text": "Connect"
+  },
+  {
+    "href": "http://localhost:3001/#tickets",
+    "text": "Get Tickets"
+  },
+  {
+    "href": "http://localhost:3001/#tickets",
+    "text": "Reserve Spot ($5)"
+  },
+  {
+    "href": "http://localhost:3001/#pledge",
+    "text": "Pledge a Laptop"
+  },
+  {
+    "href": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607",
+    "text": "WHENThursday, June 116:00 PM – 9:00 PMAdd to Calendar"
+  },
+  {
+    "href": "https://maps.google.com/?q=3801+Hillsborough+St,+Suite+113,+Raleigh,+NC+27607",
+    "text": "WHEREPortal HQ, Raleigh3801 Hillsborough St, Suite 113Open Maps"
+  },
+  {
+    "href": "http://localhost:3001/#tickets",
+    "text": "ADMISSION$5.00 TicketsIncludes craft drinks + live networkingSecure Passes"
+  },
+  {
+    "href": "https://www.hubzonetech.org/",
+    "text": "Visit hubzonetech.org"
+  },
+  {
+    "href": "https://theportalhq.com/",
+    "text": "Visit theportalhq.com"
+  },
+  {
+    "href": "https://www.paypal.com/donate/?hosted_button_id=C6QJ6V23C63P2",
+    "text": "Or, donate directly via PayPal"
+  },
+  {
+    "href": "mailto:pickups@hubzonetech.org",
+    "text": "Email pickups@hubzonetech.org ➔"
+  },
+  {
+    "href": "http://localhost:3001/sip_and_sync_flyer.png",
+    "text": "Download Event Flyer"
+  },
+  {
+    "href": "mailto:wsigmon@hubzonetech.org",
+    "text": "wsigmon@hubzonetech.org"
+  },
+  {
+    "href": "mailto:dgalindo@kurvpay.com",
+    "text": "dgalindo@kurvpay.com"
+  },
+  {
+    "href": "mailto:jake@theportalhq.com",
+    "text": "jake@theportalhq.com"
+  },
+  {
+    "href": "https://hubzonetech.org/",
+    "text": "hubzonetech.org"
+  },
+  {
+    "href": "https://theportalhq.com/",
+    "text": "theportalhq.com"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "images": [
+    {
+      "src": "http://localhost:3001/hti-official-logo.png",
+      "alt": "HUBZone Technology Initiative",
+      "width": 839,
+      "height": 225,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/portal-logo.png",
+      "alt": "Portal HQ",
+      "width": 1016,
+      "height": 652,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/portal_hq_party_slack_mockup.png",
+      "alt": "Sip & Sync Social Hour Mockup",
+      "width": 1024,
+      "height": 1024,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/hti-official-logo.png",
+      "alt": "HUBZone Technology Initiative",
+      "width": 839,
+      "height": 225,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/portal-logo.png",
+      "alt": "Portal HQ",
+      "width": 1016,
+      "height": 652,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/heartfelt_laptop.png",
+      "alt": "NC student using a refurbished Chromebook",
+      "width": 1024,
+      "height": 1024,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/hti-cropped.png",
+      "alt": "HTI",
+      "width": 920,
+      "height": 337,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/hti-cropped.png",
+      "alt": "HTI",
+      "width": 920,
+      "height": 337,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/portal-logo.png",
+      "alt": "Portal",
+      "width": 1016,
+      "height": 652,
+      "loading": "auto"
+    },
+    {
+      "src": "http://localhost:3001/portal-logo.png",
+      "alt": "Portal",
+      "width": 1016,
+      "height": 652,
+      "loading": "auto"
+    }
+  ],
+  "backgroundImages": []
+}

@@ -11,32 +11,32 @@
     --color-bg-dark: #06050f;
     --color-card-dark: rgba(13, 11, 28, 0.6);
     --color-card-border: rgba(255, 255, 255, 0.05);
-    
+
     --color-text-main: #fcfcfd;
     --color-text-muted: #8c8aa9; /* Slate-violet */
-    
+
     /* Neon Accent Colors (Portal HQ & HTI) */
     --color-portal-magenta: #ff1c84; /* Ultra-saturated hot pink */
     --color-portal-magenta-hover: #e0006c;
-    
+
     --color-hti-orange: #f58420;
     --color-hti-orange-deep: #e45927;
     --color-hti-gold: #fdb715;
-    
+
     --color-neon-cyan: #00f0ff; /* Electric cyan */
     --color-neon-purple: #7000ff;
-    
+
     /* Gradients */
     --gradient-joint: linear-gradient(135deg, var(--color-hti-orange) 10%, var(--color-portal-magenta) 90%);
     --gradient-magenta: linear-gradient(135deg, var(--color-portal-magenta), var(--color-neon-purple));
     --gradient-orange: linear-gradient(135deg, var(--color-hti-gold), var(--color-hti-orange));
     --gradient-cyan: linear-gradient(135deg, var(--color-neon-cyan), #0072ff);
-    
+
     /* Typography Combination */
     --font-heading: 'Unbounded', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    
+
     /* Global Transitions */
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --border-radius-lg: 12px;
@@ -99,7 +99,7 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: -0.04em; 
+    letter-spacing: -0.04em;
 }
 
 /* Retro-Neon Sign text glows */
@@ -110,7 +110,7 @@ h1, h2, h3, h4 {
 
 .magenta-glow-text {
     color: var(--color-portal-magenta);
-    text-shadow: 
+    text-shadow:
         0 0 8px rgba(255, 28, 132, 0.5),
         0 0 20px rgba(255, 28, 132, 0.25);
     font-weight: 900;
@@ -118,7 +118,7 @@ h1, h2, h3, h4 {
 
 .cyan-glow-text {
     color: var(--color-neon-cyan);
-    text-shadow: 
+    text-shadow:
         0 0 8px rgba(0, 240, 255, 0.5),
         0 0 20px rgba(0, 240, 255, 0.25);
     font-weight: 900;
@@ -378,9 +378,9 @@ h1, h2, h3, h4 {
     padding: 6px;
     background: linear-gradient(135deg, rgba(255, 28, 132, 0.15), rgba(0, 240, 255, 0.15));
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
                 0 0 30px rgba(112, 0, 255, 0.1);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 border-color 0.4s ease;
     overflow: hidden;
@@ -391,8 +391,8 @@ h1, h2, h3, h4 {
 .hero-mockup-wrapper:hover {
     transform: translateY(-6px) scale(1.02);
     border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 
-                0 0 45px rgba(0, 240, 255, 0.25), 
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+                0 0 45px rgba(0, 240, 255, 0.25),
                 0 0 45px rgba(255, 28, 132, 0.25);
 }
 
@@ -2180,65 +2180,65 @@ h1, h2, h3, h4 {
     .header-container {
         padding: 0 16px;
     }
-    
+
     .nav-links {
         display: none; /* Hide nav links on small mobile screens */
     }
-    
+
     .hero {
         padding-top: 120px;
         padding-bottom: 40px;
     }
-    
+
     .hero-title {
         font-size: 44px;
     }
-    
+
     .hero-tagline {
         font-size: 20px;
     }
-    
+
     .info-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .bento-card {
         padding: 32px 24px;
     }
-    
+
     .bento-wide {
         grid-template-columns: 1fr;
         gap: 24px;
     }
-    
+
     .widget-form {
         padding: 24px;
     }
-    
+
     .widget-invoice {
         padding: 24px;
     }
-    
+
     .pledge-form-card {
         padding: 24px;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .logistics-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-    
+
     .pledge-stats-dashboard {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .stat-column {
         padding: 12px 16px;
         flex-direction: row;
@@ -2246,24 +2246,24 @@ h1, h2, h3, h4 {
         align-items: center;
         text-align: left;
     }
-    
+
     .stat-column .stat-label {
         margin-bottom: 0;
     }
-    
+
     .tab-content {
         padding: 24px;
     }
-    
+
     .coordinators-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .modal-card {
         padding: 24px;
     }
-    
+
     .footer {
         padding: 32px 24px;
     }
@@ -4342,8 +4342,8 @@ h1, h2, h3, h4 {
     display: none !important;
 }
 
-.backstory-badge, 
-.bento-tag, 
+.backstory-badge,
+.bento-tag,
 .card-tech-tag {
     display: none !important;
 }
@@ -4363,17 +4363,17 @@ h1, h2, h3, h4 {
         box-sizing: border-box !important;
         scroll-behavior: smooth !important;
     }
-    
+
     .info-grid::-webkit-scrollbar {
         display: none !important; /* hide default scrollbar */
     }
-    
+
     .info-grid-item {
         flex: 0 0 280px !important; /* fixed swipe-snap width */
         scroll-snap-align: center !important;
         height: auto !important;
     }
-    
+
     .info-card {
         flex-direction: column !important;
         text-align: center !important;
@@ -4382,21 +4382,21 @@ h1, h2, h3, h4 {
         min-height: 330px !important;
         gap: 16px !important;
     }
-    
+
     .custom-icon-stitch {
         width: 80px !important;
         height: 80px !important;
         margin-bottom: 12px !important;
     }
-    
+
     .info-card-text {
         text-align: center !important;
     }
-    
+
     .info-card p {
         margin-bottom: 0 !important;
     }
-    
+
     .card-action-hint {
         position: relative !important;
         bottom: auto !important;
@@ -4404,7 +4404,7 @@ h1, h2, h3, h4 {
         transform: none !important;
         margin-top: 12px !important;
     }
-    
+
     .info-card:hover .card-action-hint {
         transform: scale(1.06) !important;
     }

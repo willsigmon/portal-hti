@@ -9,32 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('starfield');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        
+
         let stars = [];
         const STAR_COUNT = 12000; // Ultra-dense 3x expansion (12k stars)
         const speed = 0.22; // Speed accelerated by another 20% for an ultra-immersive cosmic drift
-        
+
         // Handle High-DPI (Retina) Displays
         function resizeCanvas() {
             const dpr = window.devicePixelRatio || 1;
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
-            
+
             // Re-normalize dimensions in CSS
             canvas.style.width = `${window.innerWidth}px`;
             canvas.style.height = `${window.innerHeight}px`;
-            
+
             ctx.scale(dpr, dpr);
-            
+
             initStars();
         }
-        
+
         function initStars() {
             stars = [];
             const w = window.innerWidth;
             const h = window.innerHeight;
             const maxDepth = w; // Max space depth matches viewport width
-            
+
             for (let i = 0; i < STAR_COUNT; i++) {
                 // Keep stars themed: Mostly pure white, with some HTI orange, Portal magenta, or neon cyan highlights
                 let color = '#ffffff';
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (rand > 0.88) {
                     color = '#00f0ff'; // Neon Cyan
                 }
-                
+
                 stars.push({
                     x: (Math.random() - 0.5) * w * 2,
                     y: (Math.random() - 0.5) * h * 2,
@@ -58,28 +58,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 stars[i].prevZ = stars[i].z;
             }
         }
-        
+
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas(); // Initial setup
-        
+
         function drawStarfield() {
             const w = window.innerWidth;
             const h = window.innerHeight;
             const cx = w / 2;
             const cy = h / 2;
             const maxDepth = w;
-            
+
             // Solid backdrop clear
             ctx.fillStyle = '#06050f';
             ctx.fillRect(0, 0, w, h);
-            
+
             for (let i = 0; i < stars.length; i++) {
                 const star = stars[i];
-                
+
                 // Track Z coordinate shift
                 star.prevZ = star.z;
                 star.z -= speed;
-                
+
                 // Reset stars that fly past screen camera
                 if (star.z <= 0) {
                     star.z = maxDepth;
@@ -87,25 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     star.y = (Math.random() - 0.5) * h * 2;
                     star.prevZ = star.z;
                 }
-                
+
                 // 3D to 2D projection formulas
                 const px = (star.x / star.z) * w + cx;
                 const py = (star.y / star.z) * h + cy;
-                
+
                 // Skip rendering if stars project outside viewport
                 if (px < 0 || px >= w || py < 0 || py >= h) continue;
-                
+
                 // Fade star into visibility as it travels from dark distance
                 const opacity = Math.min(1, 1 - star.z / maxDepth);
-                
+
                 // Dynamically scale size based on proximity
                 const currentSize = star.size * (1 + (maxDepth / star.z) * 0.05);
-                
+
                 // Draw space particle trail ONLY for close stars (cuts path building by 60%)
                 if (star.z < maxDepth * 0.4) {
                     const ppx = (star.x / star.prevZ) * w + cx;
                     const ppy = (star.y / star.prevZ) * h + cy;
-                    
+
                     ctx.beginPath();
                     ctx.strokeStyle = star.color;
                     ctx.lineWidth = Math.min(2.0, currentSize);
@@ -114,17 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     ctx.lineTo(px, py);
                     ctx.stroke();
                 }
-                
+
                 // Ultra-high performance core render utilizing hardware-accelerated fillRect
                 ctx.fillStyle = '#ffffff';
                 ctx.globalAlpha = opacity;
                 ctx.fillRect(px - currentSize / 2, py - currentSize / 2, currentSize, currentSize);
             }
-            
+
             ctx.globalAlpha = 1.0;
             requestAnimationFrame(drawStarfield);
         }
-        
+
         requestAnimationFrame(drawStarfield);
     }
 
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector('#tickets');
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
-                
+
                 // Trigger gorgeous spotlight halo pulse on the widget
                 const widget = document.querySelector('.ticket-widget');
                 if (widget) {
@@ -153,16 +153,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const ticketQtyInput = document.getElementById('ticketQty');
     const qtyMinusBtn = document.getElementById('qtyMinus');
     const qtyPlusBtn = document.getElementById('qtyPlus');
-    
+
     const donateSlider = document.getElementById('donateSlider');
     const donateInput = document.getElementById('donateInput');
     const presetBtns = document.querySelectorAll('.btn-preset');
-    
+
     const invoiceTicketLabel = document.getElementById('invoiceTicketLabel');
     const invoiceTicketPrice = document.getElementById('invoiceTicketPrice');
     const invoiceDonationPrice = document.getElementById('invoiceDonationPrice');
     const invoiceTotal = document.getElementById('invoiceTotal');
-    
+
     const TICKET_PRICE = 5.00;
 
     // Quantity selectors logic
@@ -200,12 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
         donateInput.addEventListener('input', (e) => {
             let val = parseFloat(e.target.value);
             if (isNaN(val) || val < 0) val = 0;
-            
+
             // Adjust slider range dynamically
             if (val < 25) {
                 donateSlider.min = 0;
             }
-            
+
             donateSlider.value = val;
             deactivatePresets();
             activateMatchingPreset(val.toString());
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.classList.add('active');
             }
         });
-        
+
         const hasActive = Array.from(presetBtns).some(b => b.classList.contains('active'));
         if (!hasActive) {
             const customBtn = Array.from(presetBtns).find(b => b.getAttribute('data-val') === 'custom');
@@ -263,10 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticketQtyInput || !invoiceTicketLabel) return;
         const qty = parseInt(ticketQtyInput.value);
         const donation = parseFloat(donateInput.value) || 0;
-        
+
         const ticketsCost = qty * TICKET_PRICE;
         const total = ticketsCost + donation;
-        
+
         // Update elements
         invoiceTicketLabel.textContent = `${qty} × General Admission Ticket${qty > 1 ? 's' : ''}`;
         invoiceTicketPrice.textContent = `$${ticketsCost.toFixed(2)}`;
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ticketModal = document.getElementById('ticketModal');
     const modalClose = document.getElementById('modalClose');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
-    
+
     const passCodeDisplay = document.getElementById('passCodeDisplay');
     const passGuestName = document.getElementById('passGuestName');
     const passCountDisplay = document.getElementById('passCountDisplay');
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const passPaymentActions = document.getElementById('passPaymentActions');
         const modalCloseBtn = document.getElementById('modalCloseBtn');
         const btnPayActivate = document.getElementById('btnPayActivate');
-        
+
         if (!ticket) return;
 
         if (ticket.paid) {
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (passQrLockOverlay) passQrLockOverlay.classList.remove('hidden');
             if (passPaymentActions) passPaymentActions.style.display = 'flex';
             if (modalCloseBtn) modalCloseBtn.style.display = 'none';
-            
+
             if (btnPayActivate) {
                 btnPayActivate.textContent = `Pay & Activate Ticket ($${totalCost.toFixed(2)}) ➔`;
             }
@@ -333,16 +333,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedPass = localStorage.getItem('ss_event_ticket');
         if (savedPass && floatingPassPill) {
             const data = JSON.parse(savedPass);
-            
+
             // Populate Ticket Modal
             if (passGuestName) passGuestName.textContent = data.guestName;
             if (passCountDisplay) passCountDisplay.textContent = `${data.qty} Ticket${data.qty > 1 ? 's' : ''}`;
             if (passCodeDisplay) passCodeDisplay.textContent = data.code;
-            
+
             // Update QR code: Points to local scanner validation check URL parameter
             const verifyUrl = `${window.location.origin}${window.location.pathname}?verify=${data.code}&guest=${encodeURIComponent(data.guestName)}&qty=${data.qty}&donation=${data.donation}`;
             if (modalQrCode) modalQrCode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyUrl)}`;
-            
+
             // Sync payment state
             syncPassPaymentState(data);
 
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const guestNameInput = document.getElementById('guestNameInput');
             let guestName = guestNameInput ? guestNameInput.value.trim() : "Will Sigmon";
             if (guestName === "") guestName = "Will Sigmon";
-            
+
             const qty = parseInt(ticketQtyInput.value);
             const randomPassCode = `SS-${Math.floor(10000 + Math.random() * 90000)}`;
             const donationVal = parseFloat(donateInput.value) || 0;
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (passGuestName) passGuestName.textContent = guestName;
             if (passCountDisplay) passCountDisplay.textContent = `${qty} Ticket${qty > 1 ? 's' : ''}`;
             if (passCodeDisplay) passCodeDisplay.textContent = randomPassCode;
-            
+
             // Generate self-validating check-in QR code
             const verifyUrl = `${window.location.origin}${window.location.pathname}?verify=${randomPassCode}&guest=${encodeURIComponent(guestName)}&qty=${qty}&donation=${donationVal}`;
             if (modalQrCode) modalQrCode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyUrl)}`;
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = JSON.parse(savedPass);
                 data.paid = true;
                 localStorage.setItem('ss_event_ticket', JSON.stringify(data));
-                
+
                 // Animate transition to paid
                 syncPassPaymentState(data);
                 showToast("Ticket pass activated successfully! Thank you!");
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkinModal = document.getElementById('checkinModal');
     const checkinClose = document.getElementById('checkinClose');
     const checkinCloseBtn = document.getElementById('checkinCloseBtn');
-    
+
     const checkinCode = document.getElementById('checkinCode');
     const checkinGuestName = document.getElementById('checkinGuestName');
     const checkinQty = document.getElementById('checkinQty');
@@ -511,10 +511,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Recalculate pledges
     function syncPledgeTracker() {
         if (!pledgedCountLabel || !progressBar) return;
-        
+
         // Target event goal is 150 laptops
         const goalTarget = 150;
-        
+
         // Real user submissions (remove fake baseline 119 entirely!)
         let totalCount = storedPledges.reduce((sum, item) => sum + item.count, 0);
 
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render live counters
         pledgedCountLabel.textContent = totalCount;
-        
+
         const wipedCountLabel = document.getElementById('wipedCount');
         if (wipedCountLabel) {
             wipedCountLabel.textContent = totalCount;
@@ -594,11 +594,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pledgeForm) {
         pledgeForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const nameVal = document.getElementById('pledgeName').value.trim();
             const countVal = parseInt(document.getElementById('pledgeCount').value) || 1;
             const detailsVal = document.getElementById('pledgeDetails').value.trim() || 'Laptop Devices';
-            
+
             // Add to active local storage logs with current timestamp
             const newPledge = {
                 name: nameVal,
@@ -621,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Sync Tracker UI
             syncPledgeTracker();
-            
+
             // Show glowing progress pulse
             progressBar.classList.add('pulse-glow-orange');
             setTimeout(() => {
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
 
             alert(`Thank you, ${nameVal}! Your pledge of ${countVal} device${countVal > 1 ? 's' : ''} has been registered to the live drive stream. We sent drop-off instructions to your email!`);
-            
+
             pledgeForm.reset();
         });
     }
@@ -666,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize direct share links based on active window URL
         const currentUrl = window.location.href;
         if (shareUrlDisplay) shareUrlDisplay.textContent = currentUrl;
-        
+
         // Dynamically load scanner share QR image pointing to current address
         if (shareQrImage) {
             shareQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
@@ -708,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 7. SCROLL REVEAL INTERSECTION OBSERVER ---
     const revealSections = document.querySelectorAll('.bento-card, .info-card, .quote-card, .ticket-widget, .pledge-progress-card, .pledge-form-card, .logistics-card, .connect-container, .backstory-card');
-    
+
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 10. HIGH-PERFORMANCE SPOTLIGHT MOUSE-TRACKING ENGINE ---
     const spotlightCards = document.querySelectorAll('.info-card, .bento-card, .coordinator-card, .pledge-progress-card, .pledge-form-card, .ticket-widget, .backstory-card, .logistics-card');
-    
+
     spotlightCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();

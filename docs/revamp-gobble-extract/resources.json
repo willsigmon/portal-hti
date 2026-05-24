@@ -1,0 +1,233 @@
+{
+  "scripts": [
+    {
+      "src": "http://localhost:3001/_next/static/chunks/main-app.js?v=1779640135088",
+      "async": true,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "http://localhost:3001/_next/static/chunks/app-pages-internals.js",
+      "async": true,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "http://localhost:3001/_next/static/chunks/app/page.js",
+      "async": true,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "http://localhost:3001/_next/static/chunks/polyfills.js",
+      "async": false,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "http://localhost:3001/_next/static/chunks/webpack.js?v=1779640135088",
+      "async": true,
+      "defer": false,
+      "type": "text/javascript"
+    }
+  ],
+  "stylesheets": [
+    {
+      "href": "http://localhost:3001/_next/static/css/app/layout.css?v=1779640135088",
+      "media": "all"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "600",
+      "status": "loaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "700",
+      "status": "loaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "800",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "800",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "weight": "800",
+      "status": "loaded"
+    },
+    {
+      "family": "Bricolage Grotesque Fallback",
+      "style": "normal",
+      "weight": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "500",
+      "status": "loaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "600",
+      "status": "loaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Instrument Sans",
+      "style": "normal",
+      "weight": "700",
+      "status": "loaded"
+    },
+    {
+      "family": "Instrument Sans Fallback",
+      "style": "normal",
+      "weight": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "__nextjs-Geist",
+      "style": "normal",
+      "weight": "400 600",
+      "status": "unloaded"
+    },
+    {
+      "family": "__nextjs-Geist Mono",
+      "style": "normal",
+      "weight": "400 600",
+      "status": "unloaded"
+    },
+    {
+      "family": "__nextjs-Geist",
+      "style": "normal",
+      "weight": "400 600",
+      "status": "loaded"
+    },
+    {
+      "family": "__nextjs-Geist Mono",
+      "style": "normal",
+      "weight": "400 600",
+      "status": "unloaded"
+    }
+  ],
+  "preloads": [
+    {
+      "rel": "preload",
+      "href": "http://localhost:3001/_next/static/chunks/webpack.js?v=1779640135088",
+      "as": "script"
+    },
+    {
+      "rel": "preload",
+      "href": "http://localhost:3001/_next/static/media/26d0ba92e140f0dc-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "http://localhost:3001/_next/static/media/9d5a263311222317-s.p.woff2",
+      "as": "font"
+    }
+  ]
+}

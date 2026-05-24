@@ -1,0 +1,908 @@
+{
+  "source": {
+    "url": "https://theportalhq.com/booking.html",
+    "title": "Book Your Event | The Portal HQ - Event Venue Raleigh, NC",
+    "capturedAt": "2026-05-24T16:34:02.714Z",
+    "language": "en"
+  },
+  "dimensions": {
+    "pageWidth": 1658,
+    "pageHeight": 12028,
+    "devicePixelRatio": 1,
+    "capturedWidth": 1658,
+    "capturedHeight": 12028
+  },
+  "sections": [
+    {
+      "index": 0,
+      "format": "image/webp",
+      "quality": 0.9,
+      "sizeMB": "0.38",
+      "scaled": false,
+      "scaleFactor": 1,
+      "overLimit": false,
+      "startY": 0,
+      "endY": 3988,
+      "heightPx": 3988
+    },
+    {
+      "index": 1,
+      "format": "image/webp",
+      "quality": 0.9,
+      "sizeMB": "1.13",
+      "scaled": false,
+      "scaleFactor": 1,
+      "overLimit": false,
+      "startY": 3988,
+      "endY": 8264,
+      "heightPx": 4276
+    },
+    {
+      "index": 2,
+      "format": "image/webp",
+      "quality": 0.9,
+      "sizeMB": "0.19",
+      "scaled": false,
+      "scaleFactor": 1,
+      "overLimit": false,
+      "startY": 8264,
+      "endY": 12028,
+      "heightPx": 3764
+    }
+  ],
+  "pageStructure": {
+    "headings": [
+      {
+        "level": 1,
+        "text": "One Space.Every Event.",
+        "offsetTop": 664
+      },
+      {
+        "level": 2,
+        "text": "Virtual Walkthrough",
+        "offsetTop": 81
+      },
+      {
+        "level": 2,
+        "text": "Find Your Package",
+        "offsetTop": 3870
+      },
+      {
+        "level": 3,
+        "text": "Custom Event",
+        "offsetTop": 4072
+      },
+      {
+        "level": 3,
+        "text": "Elegant Affair",
+        "offsetTop": 4719
+      },
+      {
+        "level": 3,
+        "text": "Executive Experience",
+        "offsetTop": 4719
+      },
+      {
+        "level": 3,
+        "text": "Showcase",
+        "offsetTop": 4719
+      },
+      {
+        "level": 3,
+        "text": "Social Soirée",
+        "offsetTop": 4719
+      },
+      {
+        "level": 2,
+        "text": "What People Are Saying",
+        "offsetTop": 5402
+      },
+      {
+        "level": 2,
+        "text": "Common Questions",
+        "offsetTop": 8534
+      },
+      {
+        "level": 2,
+        "text": "Visit Our Venue",
+        "offsetTop": 9638
+      },
+      {
+        "level": 3,
+        "text": "The Portal HQ",
+        "offsetTop": 9822
+      },
+      {
+        "level": 2,
+        "text": "Professional Audio, Lighting & AV Equipment",
+        "offsetTop": 10288
+      },
+      {
+        "level": 3,
+        "text": "Speakers & PA",
+        "offsetTop": 10534
+      },
+      {
+        "level": 3,
+        "text": "Microphones",
+        "offsetTop": 10534
+      },
+      {
+        "level": 3,
+        "text": "Mic Stands",
+        "offsetTop": 10534
+      },
+      {
+        "level": 3,
+        "text": "Lighting & Visuals",
+        "offsetTop": 10894
+      },
+      {
+        "level": 3,
+        "text": "Mixing & Signal",
+        "offsetTop": 10894
+      },
+      {
+        "level": 3,
+        "text": "Stage & Backline",
+        "offsetTop": 10894
+      },
+      {
+        "level": 2,
+        "text": "Your event starts here.",
+        "offsetTop": 11675
+      }
+    ],
+    "linkCount": 6,
+    "topLinks": [
+      {
+        "href": "https://theportalhq.com/tour.html",
+        "text": "Book a Free Tour"
+      },
+      {
+        "href": "https://theportalhq.com/tour.html",
+        "text": "Book a Tour"
+      },
+      {
+        "href": "mailto:portalheadquarters@gmail.com",
+        "text": "portalheadquarters@gmail.com"
+      },
+      {
+        "href": "https://www.google.com/maps/dir/?api=1&destination=3801+Hillsborough+St+%23113+Raleigh+NC+27607",
+        "text": "Get Directions"
+      },
+      {
+        "href": "https://theportalhq.com/booking.html#packages",
+        "text": "See Packages & Pricing →"
+      },
+      {
+        "href": "mailto:portalheadquarters@gmail.com",
+        "text": "Have questions? Email us at portalheadquarters@gmail.com"
+      }
+    ]
+  },
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no",
+    "description": "Book The Portal HQ, Raleigh's premier 5,000 sq ft event venue on Hillsborough Street. Corporate retreats, private parties, concerts, fashion shows and more. Up to 200 guests. Free parking.",
+    "keywords": "event venue Raleigh NC, venue rental Raleigh, corporate event space Raleigh, party venue Raleigh, concert venue Raleigh, wedding venue Raleigh, event space Hillsborough Street, private event venue Raleigh, The Portal HQ",
+    "robots": "index, follow",
+    "author": "The Portal HQ",
+    "geo.region": "US-NC",
+    "geo.placename": "Raleigh, North Carolina",
+    "geo.position": "35.78684;-78.70844",
+    "ICBM": "35.78684, -78.70844",
+    "og:type": "website",
+    "og:site_name": "The Portal HQ",
+    "og:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+    "og:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more. Up to 200 guests. Free parking on Hillsborough Street.",
+    "og:url": "https://theportalhq.com/booking.html",
+    "og:image": "https://theportalhq.com/tphqbanner.jpeg",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:locale": "en_US",
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+    "twitter:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more.",
+    "twitter:image": "https://theportalhq.com/tphqbanner.jpeg",
+    "theme-color": "#7c3aed"
+  },
+  "design": {
+    "colors": [
+      {
+        "color": "rgb(255, 255, 255)",
+        "count": 30
+      },
+      {
+        "color": "rgb(0, 0, 0)",
+        "count": 12
+      },
+      {
+        "color": "rgb(167, 139, 250)",
+        "count": 10
+      },
+      {
+        "color": "rgb(156, 163, 175)",
+        "count": 9
+      },
+      {
+        "color": "rgb(229, 231, 235)",
+        "count": 8
+      },
+      {
+        "color": "rgb(209, 213, 219)",
+        "count": 6
+      },
+      {
+        "color": "rgb(147, 51, 234)",
+        "count": 6
+      },
+      {
+        "color": "rgb(250, 204, 21)",
+        "count": 6
+      },
+      {
+        "color": "rgb(243, 244, 246)",
+        "count": 5
+      },
+      {
+        "color": "rgb(107, 114, 128)",
+        "count": 4
+      },
+      {
+        "color": "rgb(124, 58, 237)",
+        "count": 3
+      },
+      {
+        "color": "rgb(249, 250, 251)",
+        "count": 1
+      },
+      {
+        "color": "rgb(31, 41, 55)",
+        "count": 1
+      }
+    ],
+    "fonts": [
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "count": 16
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "count": 15
+      },
+      {
+        "family": "\"Space Grotesk\", sans-serif",
+        "size": "15.2px",
+        "weight": "600",
+        "count": 6
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "16px",
+        "weight": "500",
+        "count": 5
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "12px",
+        "weight": "600",
+        "count": 5
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "14px",
+        "weight": "500",
+        "count": 5
+      },
+      {
+        "family": "\"Space Grotesk\", system-ui, sans-serif",
+        "size": "24px",
+        "weight": "500",
+        "count": 4
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "20px",
+        "weight": "600",
+        "count": 4
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "12.48px",
+        "weight": "600",
+        "count": 3
+      },
+      {
+        "family": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "size": "30px",
+        "weight": "700",
+        "count": 2
+      }
+    ],
+    "customProperties": {}
+  },
+  "assets": {
+    "images": [
+      {
+        "src": "https://theportalhq.com/x1.png",
+        "alt": "Portal Logo",
+        "width": 1563,
+        "height": 1563,
+        "loading": "auto"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A0033.jpg",
+        "alt": "The Portal HQ venue 1",
+        "width": 6720,
+        "height": 4480,
+        "loading": "eager"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A8501.jpeg",
+        "alt": "The Portal HQ venue 2",
+        "width": 6720,
+        "height": 4480,
+        "loading": "eager"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A8512.jpeg",
+        "alt": "The Portal HQ venue 3",
+        "width": 6720,
+        "height": 4480,
+        "loading": "eager"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A8524.jpeg",
+        "alt": "The Portal HQ venue 4",
+        "width": 6720,
+        "height": 4480,
+        "loading": "eager"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A9000.jpeg",
+        "alt": "The Portal HQ venue 5",
+        "width": 6720,
+        "height": 4480,
+        "loading": "eager"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/1C7A9002.jpeg",
+        "alt": "The Portal HQ venue 6",
+        "width": 6720,
+        "height": 4480,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/2.png",
+        "alt": "The Portal HQ venue 7",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/3.png",
+        "alt": "The Portal HQ venue 8",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/5.png",
+        "alt": "The Portal HQ venue 9",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/6.png",
+        "alt": "The Portal HQ venue 10",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/7.png",
+        "alt": "The Portal HQ venue 11",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/8.png",
+        "alt": "The Portal HQ venue 12",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/9.png",
+        "alt": "The Portal HQ venue 13",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/11.png",
+        "alt": "The Portal HQ venue 14",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/12.png",
+        "alt": "The Portal HQ venue 15",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/13.png",
+        "alt": "The Portal HQ venue 16",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/14.png",
+        "alt": "The Portal HQ venue 17",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/15.png",
+        "alt": "The Portal HQ venue 18",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/16.png",
+        "alt": "The Portal HQ venue 19",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      },
+      {
+        "src": "https://theportalhq.com/Newphotos/18.png",
+        "alt": "The Portal HQ venue 20",
+        "width": 1920,
+        "height": 1080,
+        "loading": "lazy"
+      }
+    ],
+    "backgroundImages": [
+      {
+        "src": "https://theportalhq.com/x2.jpg",
+        "element": "section",
+        "class": "relative min-h-screen flex flex-col"
+      },
+      {
+        "src": "https://theportalhq.com/bookings2.png",
+        "element": "section",
+        "class": "relative min-h-screen flex flex-col"
+      },
+      {
+        "src": "https://theportalhq.com/car9.png",
+        "element": "div",
+        "class": "h-64 md:h-auto bg-cover bg-center"
+      },
+      {
+        "src": "https://theportalhq.com/xe1.jpg",
+        "element": "div",
+        "class": "h-48 bg-cover bg-center"
+      },
+      {
+        "src": "https://theportalhq.com/xx1.png",
+        "element": "div",
+        "class": "h-48 bg-cover bg-center"
+      },
+      {
+        "src": "https://theportalhq.com/showCS.jpg",
+        "element": "div",
+        "class": "h-48 bg-cover bg-center"
+      },
+      {
+        "src": "https://theportalhq.com/socialSO.png",
+        "element": "div",
+        "class": "h-48 bg-cover bg-center"
+      }
+    ]
+  },
+  "structuredData": [
+    {
+      "type": "json-ld",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "EventVenue",
+        "name": "The Portal HQ",
+        "url": "https://theportalhq.com",
+        "description": "5,000 sq ft multi-use event venue in Raleigh, NC. Ideal for corporate retreats, private parties, concerts, fashion shows, and more. Up to 200 guests with free on-site parking.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3801 Hillsborough St #113",
+          "addressLocality": "Raleigh",
+          "addressRegion": "NC",
+          "postalCode": "27607",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.78684,
+          "longitude": -78.70844
+        },
+        "email": "portalheadquarters@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/theportalhq",
+          "https://www.yelp.com/biz/the-portal-hq-raleigh",
+          "https://www.peerspace.com/pages/listings/6823734471ad90bf3ec71a40",
+          "https://www.tagvenue.com/us/venues/raleigh/63920/the-portal-hq"
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free Parking",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Stage",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Sound System",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Lighting System",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Projector",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Bar Service",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "AV Support",
+            "value": true
+          }
+        ],
+        "maximumAttendeeCapacity": 200,
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 5000,
+          "unitCode": "FTK"
+        },
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1",
+          "reviewCount": "3"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Robin D."
+            },
+            "reviewBody": "Had a great Christmas party there. Food was good so was atmosphere and decor."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Autumn S."
+            },
+            "reviewBody": "The Portal HQ is perfect for anything you need! The staff is friendly, professional, and always ready to assist. A true hidden gem venue in Raleigh!"
+          },
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Taylor G."
+            },
+            "reviewBody": "The Portal is awesome for concert venues! I had such a smooth experience taking photos here. The crowd had enough room to dance and have a great time."
+          }
+        ]
+      }
+    },
+    {
+      "type": "json-ld",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you have a full liquor license?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We have a beer and wine license. For full bar service, you're welcome to bring in a licensed external bar service, which gives you more control over selection and often comes in at a lower cost than a venue-operated bar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's included with every booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every booking includes full use of the 5,000 sq ft space, flexible layout configuration, on-site event support, and free on-site parking. Specific inclusions like AV, staging, and bar service vary by package."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Custom Events start at a 3 hour minimum. Our curated packages range from 5 to 8 hours depending on the event type, with the option to add extra hours at a per-hour rate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we bring outside catering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, outside caterers are welcome. If you'd prefer we handle it, catering coordination is available as an add-on through our booking process."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is parking really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Free on-site parking is included with every booking. No garages, no meters, no headaches for your guests."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How far in advance should I book?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recommend booking at least 2-4 weeks in advance, especially for weekend dates. Saturday evenings and holiday weekends tend to go quickly. If you have a specific date in mind, it's always better to lock it in early."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I see the space before committing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We offer free tours with no commitment required. Visit theportalhq.com/tour.html and we'll show you around and answer any questions in person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your cancellation policy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We handle cancellations on a case-by-case basis. If your plans change, reach out to us directly at portalheadquarters@gmail.com and we'll work with you to find a solution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the space available for corporate events?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we regularly host corporate retreats, conferences, seminars, product launches, and team events. Our Executive Experience package is designed specifically for corporate clients and includes AV, microphones, and full tech support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the maximum capacity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Up to 200 guests for standing and concert-style events. For seated dinners and formal receptions, we comfortably accommodate up to 100 guests."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "open-graph",
+      "data": {
+        "og:type": "website",
+        "og:site_name": "The Portal HQ",
+        "og:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+        "og:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more. Up to 200 guests. Free parking on Hillsborough Street.",
+        "og:url": "https://theportalhq.com/booking.html",
+        "og:image": "https://theportalhq.com/tphqbanner.jpeg",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:locale": "en_US"
+      }
+    },
+    {
+      "type": "twitter-card",
+      "data": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+        "twitter:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more.",
+        "twitter:image": "https://theportalhq.com/tphqbanner.jpeg"
+      }
+    }
+  ],
+  "resources": {
+    "scripts": [
+      {
+        "src": "https://cdn.tailwindcss.com/",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://unpkg.com/react@18/umd/react.production.min.js",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://unpkg.com/@babel/standalone/babel.min.js",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://theportalhq.com/booking.js?v=20260518h",
+        "async": true,
+        "defer": false,
+        "type": "text/babel"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap",
+        "media": "all"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "400",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "500",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "600",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "600",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "style": "normal",
+        "weight": "700",
+        "status": "loaded"
+      }
+    ],
+    "preloads": [
+      {
+        "rel": "preload",
+        "href": "https://theportalhq.com/x2.jpg",
+        "as": "image"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com/",
+        "as": ""
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com/",
+        "as": ""
+      }
+    ]
+  },
+  "forms": [],
+  "textStats": {
+    "characters": 6936,
+    "words": 1143
+  },
+  "processing": {
+    "elapsedMs": 5723,
+    "totalCaptures": 10,
+    "compressionStrategy": "auto",
+    "textExtractionEnabled": true
+  }
+}

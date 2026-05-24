@@ -1,0 +1,131 @@
+{
+  "scripts": [
+    {
+      "src": "https://cdn.tailwindcss.com/",
+      "async": false,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "https://unpkg.com/react@18/umd/react.production.min.js",
+      "async": false,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js",
+      "async": false,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "https://unpkg.com/@babel/standalone/babel.min.js",
+      "async": false,
+      "defer": false,
+      "type": "text/javascript"
+    },
+    {
+      "src": "https://theportalhq.com/booking.js?v=20260518h",
+      "async": true,
+      "defer": false,
+      "type": "text/babel"
+    }
+  ],
+  "stylesheets": [
+    {
+      "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      "media": "all"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "500",
+      "status": "loaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "600",
+      "status": "loaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "normal",
+      "weight": "700",
+      "status": "loaded"
+    }
+  ],
+  "preloads": [
+    {
+      "rel": "preload",
+      "href": "https://theportalhq.com/x2.jpg",
+      "as": "image"
+    },
+    {
+      "rel": "preconnect",
+      "href": "https://fonts.googleapis.com/",
+      "as": ""
+    },
+    {
+      "rel": "preconnect",
+      "href": "https://fonts.gstatic.com/",
+      "as": ""
+    }
+  ]
+}

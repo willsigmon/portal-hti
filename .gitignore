@@ -1,7 +1,49 @@
-.DS_Store
-.vercel
-gobble_extract/
+# dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# build output
+.next/
+out/
 dist/
 build/
+web-build/
+coverage/
+
+# Expo / native generated output
+.expo/
+.kotlin/
+ios/
+android/
+.metro-health-check*
+
+# logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env / secrets
+.env*.local
+*.pem
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# deployment/tooling
+.vercel/
+
+# TypeScript generated cache
+*.tsbuildinfo
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.orig.*
+
+# local browser automation artifacts
+.playwright-mcp/

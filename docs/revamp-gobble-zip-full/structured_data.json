@@ -1,0 +1,250 @@
+[
+  {
+    "type": "json-ld",
+    "data": {
+      "@context": "https://schema.org",
+      "@type": "EventVenue",
+      "name": "The Portal HQ",
+      "url": "https://theportalhq.com",
+      "description": "5,000 sq ft multi-use event venue in Raleigh, NC. Ideal for corporate retreats, private parties, concerts, fashion shows, and more. Up to 200 guests with free on-site parking.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3801 Hillsborough St #113",
+        "addressLocality": "Raleigh",
+        "addressRegion": "NC",
+        "postalCode": "27607",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.78684,
+        "longitude": -78.70844
+      },
+      "email": "portalheadquarters@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/theportalhq",
+        "https://www.yelp.com/biz/the-portal-hq-raleigh",
+        "https://www.peerspace.com/pages/listings/6823734471ad90bf3ec71a40",
+        "https://www.tagvenue.com/us/venues/raleigh/63920/the-portal-hq"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free Parking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Stage",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Sound System",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Lighting System",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Projector",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Bar Service",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "AV Support",
+          "value": true
+        }
+      ],
+      "maximumAttendeeCapacity": 200,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 5000,
+        "unitCode": "FTK"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Robin D."
+          },
+          "reviewBody": "Had a great Christmas party there. Food was good so was atmosphere and decor."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Autumn S."
+          },
+          "reviewBody": "The Portal HQ is perfect for anything you need! The staff is friendly, professional, and always ready to assist. A true hidden gem venue in Raleigh!"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Taylor G."
+          },
+          "reviewBody": "The Portal is awesome for concert venues! I had such a smooth experience taking photos here. The crowd had enough room to dance and have a great time."
+        }
+      ]
+    }
+  },
+  {
+    "type": "json-ld",
+    "data": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you have a full liquor license?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We have a beer and wine license. For full bar service, you're welcome to bring in a licensed external bar service, which gives you more control over selection and often comes in at a lower cost than a venue-operated bar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included with every booking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every booking includes full use of the 5,000 sq ft space, flexible layout configuration, on-site event support, and free on-site parking. Specific inclusions like AV, staging, and bar service vary by package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum booking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom Events start at a 3 hour minimum. Our curated packages range from 5 to 8 hours depending on the event type, with the option to add extra hours at a per-hour rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we bring outside catering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, outside caterers are welcome. If you'd prefer we handle it, catering coordination is available as an add-on through our booking process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is parking really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Free on-site parking is included with every booking. No garages, no meters, no headaches for your guests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend booking at least 2-4 weeks in advance, especially for weekend dates. Saturday evenings and holiday weekends tend to go quickly. If you have a specific date in mind, it's always better to lock it in early."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see the space before committing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We offer free tours with no commitment required. Visit theportalhq.com/tour.html and we'll show you around and answer any questions in person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your cancellation policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We handle cancellations on a case-by-case basis. If your plans change, reach out to us directly at portalheadquarters@gmail.com and we'll work with you to find a solution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the space available for corporate events?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we regularly host corporate retreats, conferences, seminars, product launches, and team events. Our Executive Experience package is designed specifically for corporate clients and includes AV, microphones, and full tech support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the maximum capacity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Up to 200 guests for standing and concert-style events. For seated dinners and formal receptions, we comfortably accommodate up to 100 guests."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "open-graph",
+    "data": {
+      "og:type": "website",
+      "og:site_name": "The Portal HQ",
+      "og:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+      "og:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more. Up to 200 guests. Free parking on Hillsborough Street.",
+      "og:url": "https://theportalhq.com/booking.html",
+      "og:image": "https://theportalhq.com/tphqbanner.jpeg",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:locale": "en_US"
+    }
+  },
+  {
+    "type": "twitter-card",
+    "data": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Book Your Event | The Portal HQ - Raleigh Event Venue",
+      "twitter:description": "5,000 sq ft of fully-equipped event space in Raleigh, NC. Corporate retreats, private parties, concerts and more.",
+      "twitter:image": "https://theportalhq.com/tphqbanner.jpeg"
+    }
+  }
+]

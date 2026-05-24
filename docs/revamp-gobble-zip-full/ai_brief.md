@@ -1,0 +1,352 @@
+# PageGobbler AI Brief: Book Your Event | The Portal HQ - Event Venue Raleigh, NC
+
+## Source
+- URL: https://theportalhq.com/booking.html
+- Title: Book Your Event | The Portal HQ - Event Venue Raleigh, NC
+- Captured: 2026-05-24T16:34:02.714Z
+- Language: en
+
+## Capture
+- Page size: 1658 x 12028 CSS px
+- Device pixel ratio: 1x
+- Viewport captures: 10
+- Output sections: 3
+- Total output size: 1.70 MB
+- Compression: auto; target 3 MB; quality ceiling 90%
+- Elapsed: 5.7 s
+
+## Screenshot Files
+- section_1.webp: 1658x3988, 0.38 MB, image/webp, quality 90%
+- section_2.webp: 1658x4276, 1.13 MB, image/webp, quality 90%
+- section_3.webp: 1658x3764, 0.19 MB, image/webp, quality 90%
+
+## Page Structure
+- H1: One Space.Every Event.
+  - H2: Virtual Walkthrough
+  - H2: Find Your Package
+    - H3: Custom Event
+    - H3: Elegant Affair
+    - H3: Executive Experience
+    - H3: Showcase
+    - H3: Social Soirée
+  - H2: What People Are Saying
+  - H2: Common Questions
+  - H2: Visit Our Venue
+    - H3: The Portal HQ
+  - H2: Professional Audio, Lighting & AV Equipment
+    - H3: Speakers & PA
+    - H3: Microphones
+    - H3: Mic Stands
+    - H3: Lighting & Visuals
+    - H3: Mixing & Signal
+    - H3: Stage & Backline
+  - H2: Your event starts here.
+
+## Design Tokens
+### Colors
+- rgb(255, 255, 255) (30)
+- rgb(0, 0, 0) (12)
+- rgb(167, 139, 250) (10)
+- rgb(156, 163, 175) (9)
+- rgb(229, 231, 235) (8)
+- rgb(209, 213, 219) (6)
+- rgb(147, 51, 234) (6)
+- rgb(250, 204, 21) (6)
+
+### Fonts
+- -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 16px; weight 400 (16)
+- -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 14px; weight 400 (15)
+- "Space Grotesk", sans-serif; 15.2px; weight 600 (6)
+- -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 16px; weight 500 (5)
+- -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 12px; weight 600 (5)
+- -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 14px; weight 500 (5)
+
+## Key Links
+- [Book a Free Tour](https://theportalhq.com/tour.html)
+- [Book a Tour](https://theportalhq.com/tour.html)
+- [portalheadquarters@gmail.com](mailto:portalheadquarters@gmail.com)
+- [Get Directions](https://www.google.com/maps/dir/?api=1&destination=3801+Hillsborough+St+%23113+Raleigh+NC+27607)
+- [See Packages & Pricing →](https://theportalhq.com/booking.html#packages)
+- [Have questions? Email us at portalheadquarters@gmail.com](mailto:portalheadquarters@gmail.com)
+
+## Text Excerpt
+# Book Your Event | The Portal HQ - Event Venue Raleigh, NC
+
+URL: https://theportalhq.com/booking.html
+
+## Description
+Book The Portal HQ, Raleigh's premier 5,000 sq ft event venue on Hillsborough Street. Corporate retreats, private parties, concerts, fashion shows and more. Up to 200 guests. Free parking.
+
+## Page Structure
+
+# One Space.Every Event.
+## Virtual Walkthrough
+## Find Your Package
+### Custom Event
+### Elegant Affair
+### Executive Experience
+### Showcase
+### Social Soirée
+## What People Are Saying
+## Common Questions
+## Visit Our Venue
+### The Portal HQ
+## Professional Audio, Lighting & AV Equipment
+### Speakers & PA
+### Microphones
+### Mic Stands
+### Lighting & Visuals
+### Mixing & Signal
+### Stage & Backline
+## Your event starts here.
+
+## Full Page Text
+
+One Space.
+Every Event.
+Corporate retreats. Private celebrations. Live performances. All in one space on Hillsborough Street.
+5,000
+Sq Ft
+200
+Max Guests
+250+
+Events Hosted
+Free
+Parking
+The same space that hosts sold-out concerts transforms into the perfect setting for your corporate retreat, product launch, or private celebration.
+✓
+Professional Sound System & Full AV Production
+✓
+Dynamic Lighting + Full-Wall Projection
+✓
+Professional Stage + Backstage Lounge
+✓
+Outdoor Patio + Free On-Site Parking
+Explore Before You Book
+Virtual Walkthrough
+Step inside The Portal HQ in 360° and preview the space before you choose a package.
+Find Your Package
+Every package includes on-site support, flexible layouts, and full use of the space. AV and production add-ons available for any package.
+Custom Event
+Create your perfect event by choosing exactly what you need from our wide variety of event specific add ons and lets make your dream event come to life!
+Starting at $300 /Hour
+✓
+Flexible space configuration
+✓
+Choose your own add-ons
+✓
+Customizable duration
+Build Your Event →
+OR CHOOSE A PACKAGE
+Elegant Affair
+Ideal for Receptions, formal dinners, and Celebrations!
+$2,500
+weekday
+✓
+8 hours total
+✓
+Use of stage for ceremony or reception
+✓
+Table setup for 60 seated guests
+Select Package
+Executive Experience
+Perfect for conferences, seminars, and business events
+$2,300
+weekday
+✓
+6 hours total
+✓
+Projector, screen, and TV setup
+✓
+Microphones and audio setup
+Select Package
+Showcase
+Designed for concerts, fashion shows, and live performances
+$2,400
+weekday
+✓
+6 hours total (4 hours showtime + 1 hour setup + 1 hour breakdown)
+✓
+Stage lighting setup
+✓
+Sound system and projector
+Select Package
+Social Soirée
+Perfect for birthdays, receptions, and private parties
+$2,200
+weekday
+✓
+5 hours total
+✓
+Tables, chairs, and tablecloths for up to 60 guests
+✓
+Party lighting and dance floor access
+Select Package
+Not sure which package fits?
+Come see the space in person. Tours are free, no commitment required.
+Book a Free Tour
+What People Are Saying
+Rated 5/5
+5.0 on Google & Yelp
+Rated 5/5
+"
+The Portal HQ is perfect for anything you need! The staff is friendly, professional, and always ready to assist. Whether you're booking an event, searching for weekend activities, or just looking for a creative workspace, the atmosphere is always welcoming and energetic. A true hidden gem venue in Raleigh!
+"
+Autumn Self
+Multiple Events
+Rated 5/5
+"
+The space I first saw was beyond breathtaking once transformed. I held back my tears of joy. Not only did everyone rave about the splendor of the evening, people were still going on and on at the wedding. If you are in search of a venue, I cannot recommend The Portal and the incredible team there!
+"
+Lisa M.
+Welcome Party
+Rated 5/5
+"
+Had a great Christmas party there. Food was good so was atmosphere and decor.
+"
+Robin Darone
+Christmas Party
+Rated 5/5
+"
+You will not regret coming to THE PORTAL. Ask anyone around and they'll have a story to tell about the energy and experience of this place. Seek it for yourselves!
+"
+Ian Meglaughlin
+Live Event
+Rated 5/5
+"
+Amazing vibe. Great people. Nice space.
+"
+Angie White
+Private Event
+Book a Tour
+360
+Virtual Tour
+Got Questions
+Common Questions
+Everything you need to know before booking.
+Do you have a full liquor license?
++
+What's included with every booking?
++
+What is the minimum booking?
++
+Can we bring outside catering?
++
+Is parking really free?
++
+How far in advance should I book?
++
+Can I see the space before committing?
++
+What is your cancellation policy?
++
+Is the space available for corporate events?
++
+What is the maximum capacity?
++
+Still have questions?
+portalheadquarters@gmail.com
+Visit Our Venue
+The Portal HQ
+3801 Hillsborough St #113
+Raleigh, NC 27607
+Get Directions
+Full Production Setup
+Professional Audio, Lighting & AV Equipment
+Everything on this list is in-house and available through our add-on packages - the same gear used at sold-out concerts, corporate events, and live performances at The Portal HQ in Raleigh, NC.
+Speakers & PA
+JBL EON715 Powered PA Speaker (Mains)
+×
+2
+JBL EON712 1300W 12" Powered PA Speaker (Stage Wedges)
+×
+3
+Electro-Voice ELX200-18SP 18" Powered Subwoofer
+×
+2
+Microphones
+Shure SM58 Cardioid Dynamic Vocal
+×
+6
+Shure SM57 Cardioid Dynamic Instrument
+×
+5
+Shure BLX288/SM58 Digital Wireless Dual Handheld
+×
+2
+Shure Beta 52A Supercardioid Kick Drum
+×
+1
+Audiotechnica 37s Overhead Mics
+×
+2
+Mic Stands
+K&M 210/9 Telescoping Boom
+×
+6
+K&M 259 Low Tripod
+×
+4
+Gator Frameworks Low Tripod
+×
+2
+Hercules Base Tripod
+×
+1
+Proline Base Tripod
+×
+1
+Misc Boom Stick Tripod
+×
+3
+Lighting & Visuals
+Sony VPL-FHZ80 6000-Lumen Laser 3LCD Projector
+×
+4
+150W LED Moving Head Gobo Beams
+×
+12
+Rockville RockPAR50 LED RGB Wash Lights
+×
+8
+380W LED Zoom Moving Head
+×
+1
+200W PAR Stage Light 18LED RGBW
+×
+4
+Venue Tetra Bar RGBA Linear Strip Wash Light
+×
+2
+Rockville ROCKHAZE 700 CFM DMX Haze Machine
+×
+1
+Chauvet DJ CH-06 T-Bar Tripod Lighting Stand
+×
+2
+On-Stage LS7730 Lighting Stand with Truss
+×
+1
+Rotating Disco Ball
+×
+1
+Mixing & Signal
+Behringer WING Rack 48-channel Digital Mixer
+×
+1
+Behringer S32 32 x 16 Digital Stage Box
+×
+1
+On-Stage SNK8450V2 8x4 XLR Stage Snake - 50ft
+×
+2
+Mono Di Box
+×
+6
+DDJ FLX 4 DJ Board
+×
+
+... [truncated in brief; full text is in page_text.txt]
+
+## Suggested AI Use
+Use the screenshot sections as the visual source of truth. Use this brief for URL, structure, copy, links, metadata, design tokens, and implementation hints. If recreating the page, preserve the hierarchy and visible copy before adding new design ideas.

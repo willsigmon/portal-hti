@@ -1,0 +1,196 @@
+[
+  {
+    "action": "http://localhost:3001/",
+    "method": "get",
+    "id": "",
+    "name": "",
+    "fields": [
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "range",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "placeholder": "Will Sigmon",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "",
+        "placeholder": "wjsigmon@gmail.com",
+        "required": true
+      },
+      {
+        "tag": "button",
+        "type": "submit",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      }
+    ]
+  },
+  {
+    "action": "http://localhost:3001/",
+    "method": "get",
+    "id": "",
+    "name": {},
+    "fields": [
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "quantity",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "brand",
+        "id": "",
+        "placeholder": "Dell Latitude, MacBook, Lenovo etc.",
+        "required": false
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "condition",
+        "id": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          {
+            "value": "",
+            "text": "Select general condition..."
+          },
+          {
+            "value": "excellent",
+            "text": "Excellent — boots fast, perfect display screen"
+          },
+          {
+            "value": "good",
+            "text": "Good — functional, holds a charge, minor surface scratches"
+          },
+          {
+            "value": "fair",
+            "text": "Fair — boots up but holds weak charge or operates slowly"
+          }
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "id": "",
+        "placeholder": "Will Sigmon",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "id": "",
+        "placeholder": "wjsigmon@gmail.com",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "tel",
+        "name": "phone",
+        "id": "",
+        "placeholder": "(919) 555-0199",
+        "required": false
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "notes",
+        "id": "",
+        "placeholder": "Has charger, pick up from office, etc.",
+        "required": false
+      },
+      {
+        "tag": "button",
+        "type": "submit",
+        "name": "",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      }
+    ]
+  }
+]
