@@ -162,7 +162,7 @@ export default function PortalHQBooking() {
             </p>
             <div className="grid max-w-2xl grid-cols-2 gap-0 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-panel)]/70 sm:grid-cols-4">
               {VENUE_STATS.map((stat) => (
-                <div key={stat.label} className="border-r border-[var(--color-border)] p-4 last:border-r-0">
+                <div key={stat.label} className="border-r border-[var(--color-border)] p-4 last:border-r-0 text-center">
                   <strong className="block font-mono text-2xl font-bold tracking-tight text-[var(--color-ink)]">{stat.value}</strong>
                   <span className="block mt-1 font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">{stat.label}</span>
                 </div>
