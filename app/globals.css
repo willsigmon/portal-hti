@@ -128,7 +128,7 @@
   align-items: center;
   gap: 0.45rem;
   color: var(--color-accent);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.18em;

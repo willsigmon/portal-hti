@@ -32,8 +32,8 @@ export function AccessParkingSection({ compact = false }: { compact?: boolean })
             <div className="eyebrow">
               <BadgeCheck className="h-3.5 w-3.5" /> Access & parking
             </div>
-            <h2 className="mt-5 font-display text-4xl font-black leading-[0.92] tracking-[-0.055em] text-[var(--color-ink)] md:text-6xl">
-              Easy to enter. Easy to park.
+            <h2 className="mt-5 font-display text-4xl font-bold leading-none tracking-tight text-[var(--color-ink)] md:text-5xl">
+              Easy to enter. <span className="font-normal italic text-[var(--color-accent)]">Easy to park.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-[var(--color-muted)]">
               Portal HQ should feel low-friction before the event even starts: accessible guest areas, clear arrival, and plentiful parking directly on-site.
@@ -57,10 +57,10 @@ export function AccessParkingSection({ compact = false }: { compact?: boolean })
                 <article key={fact.label} className="panel-card spotlight-card flex min-h-[240px] flex-col justify-between p-6">
                   <div>
                     <Icon className="h-7 w-7 text-[var(--color-accent)]" aria-hidden="true" />
-                    <div className="mt-8 font-display text-5xl font-black leading-none tracking-[-0.05em] text-[var(--color-ink)]">
+                    <div className="mt-8 font-mono text-4xl font-bold leading-none tracking-tight text-[var(--color-ink)]">
                       {fact.stat}
                     </div>
-                    <h3 className="mt-3 text-xs font-black uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                    <h3 className="mt-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--color-accent)]">
                       {fact.label}
                     </h3>
                   </div>

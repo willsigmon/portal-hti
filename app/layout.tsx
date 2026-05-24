@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Cormorant_Garamond, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -67,7 +68,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <AmbientSpotlight />
+        {children}
+      </body>
     </html>
   );
 }
+

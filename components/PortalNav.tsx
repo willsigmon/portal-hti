@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { ClocksWidget } from "@/components/ClocksWidget";
 
 const tabs = [
   { href: "/portal-hq#gallery", label: "Gallery" },
@@ -25,7 +26,12 @@ export function PortalNav() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-panel)]/72 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md lg:flex">
+        {/* Technical telemetry clocks widget inspired by Two Twelve */}
+        <div className="hidden lg:block shrink-0">
+          <ClocksWidget />
+        </div>
+
+        <div className="hidden items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-panel)]/72 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md md:flex">
           {tabs.map((tab) => (
             <Link key={tab.href} href={tab.href} className="nav-tab">
               {tab.label}
@@ -40,3 +46,4 @@ export function PortalNav() {
     </nav>
   );
 }
+
