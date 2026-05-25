@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Sans, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 
 const display = Cormorant_Garamond({
@@ -11,9 +11,10 @@ const display = Cormorant_Garamond({
   display: "swap",
 });
 
-const body = Plus_Jakarta_Sans({
+const body = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-body",
   display: "swap",
 });

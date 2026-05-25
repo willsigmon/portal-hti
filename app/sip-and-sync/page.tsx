@@ -27,6 +27,17 @@ export default function SipAndSync() {
   const [hasTicket, setHasTicket] = useState(false);
   const [savedTicketName, setSavedTicketName] = useState("");
 
+  // ---- HERO CAROUSEL ----
+  const heroPhotos = [
+    { src: "/venue/venue-wood-entry.jpg", alt: "Portal HQ lobby — bar, gallery wall, and the neon Portal sign" },
+    { src: "/venue/venue-stage-lighting.jpg", alt: "Portal HQ concert stage under full production lighting" },
+    { src: "/venue/venue-mural-stage.jpg", alt: "Portal HQ stage with painted mural backdrop" },
+    { src: "/venue/venue-projection-wall.jpg", alt: "Portal HQ projection wall during a showcase event" },
+    { src: "/venue/venue-lobby-wide.jpg", alt: "Portal HQ wide lobby view with brick and warm lighting" },
+  ];
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
+
   // Scan check-in verification modal
   const [scanModalOpen, setScanModalOpen] = useState(false);
   const [scanData, setScanData] = useState({
@@ -113,6 +124,16 @@ export default function SipAndSync() {
     };
   }, []);
 
+  // Hero carousel rotation — pauses on hover, respects reduced-motion.
+  useEffect(() => {
+    if (heroPaused) return;
+    if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % heroPhotos.length);
+    }, 5200);
+    return () => window.clearInterval(id);
+  }, [heroPaused, heroPhotos.length]);
+
   const handleCloseScanModal = () => {
     setScanModalOpen(false);
 
@@ -175,13 +196,19 @@ export default function SipAndSync() {
 
   return (
     <div className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white">
+      <style>{`
+        @keyframes seal-spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
       {/* STICKY GLASSMORPHIC NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-bg)]/80 backdrop-blur-md">
         <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <HTILogo className="h-[34px] md:h-[44px] w-auto filter contrast-[1.03] transition-all object-contain" />
-            <span className="text-base text-[var(--color-muted)] font-display font-bold select-none opacity-45 mx-0.5">×</span>
-            <img src="/portal-logo.png" alt="Portal HQ" className="h-[42px] md:h-[50px] w-auto filter contrast-[1.02] transition-all object-contain" />
+            <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
+            <span className="text-2xl text-[var(--color-accent)]/55 font-light select-none mx-2">+</span>
+            <img src="/portal-logo.png" alt="Portal HQ" className="h-12 md:h-14 w-auto filter contrast-[1.02] transition-all object-contain" />
           </div>
 
           <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-surface)]/55 backdrop-blur-md shadow-inner">
@@ -213,15 +240,15 @@ export default function SipAndSync() {
         <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
           <div className="min-w-0 space-y-5 lg:col-span-7">
             <h1
-              className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)]"
-              style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)" }}
+              className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
+              style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)", lineHeight: 1.5 }}
             >
               <span className="sip-sync-logo relative flex flex-nowrap items-baseline whitespace-nowrap">
                 <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
                 <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
-                <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[1.18em] text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
+                <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="sip-sync-social relative z-0 block whitespace-nowrap -mt-[0.36em] text-[var(--color-ink)]">Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.7em" }}>Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -250,12 +277,43 @@ export default function SipAndSync() {
               <div className="absolute -bottom-3.5 -left-3.5 h-7 w-7 border-b border-l border-[var(--color-accent)] pointer-events-none" />
               <div className="absolute -bottom-3.5 -right-3.5 h-7 w-7 border-b border-r border-[var(--color-accent)] pointer-events-none" />
 
-              <div className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner">
-                <img
-                  src="/venue/venue-wood-entry.jpg"
-                  alt="Inside Portal HQ Raleigh — lobby entrance with bar, gallery wall, and the Portal neon sign"
-                  className="absolute inset-0 h-full w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-transform duration-700 hover:scale-[1.03]"
-                />
+              <div
+                className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner"
+                onMouseEnter={() => setHeroPaused(true)}
+                onMouseLeave={() => setHeroPaused(false)}
+                role="region"
+                aria-label="Portal HQ photo carousel"
+              >
+                {heroPhotos.map((photo, idx) => (
+                  <img
+                    key={photo.src}
+                    src={photo.src}
+                    alt={photo.alt}
+                    aria-hidden={idx !== heroIdx}
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    className={`absolute inset-0 h-full w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-opacity duration-[1100ms] ease-in-out ${idx === heroIdx ? "opacity-100" : "opacity-0"}`}
+                  />
+                ))}
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+
+                <div className="absolute inset-x-0 bottom-3 z-10 flex items-center justify-between px-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/80 tabular-nums">
+                    {String(heroIdx + 1).padStart(2, "0")} <span className="text-white/40">/ {String(heroPhotos.length).padStart(2, "0")}</span>
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    {heroPhotos.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        aria-label={`Show photo ${idx + 1}`}
+                        aria-current={idx === heroIdx}
+                        onClick={() => setHeroIdx(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${idx === heroIdx ? "w-6 bg-[var(--color-accent)] shadow-[0_0_10px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]" : "w-1.5 bg-white/45 hover:bg-white/75"}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -269,8 +327,26 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
+            <svg
+              viewBox="0 0 36 36"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="h-9 w-9 text-[var(--color-accent)]"
+            >
+              <circle cx="18" cy="18" r="14" />
+              <line x1="18" y1="4.5" x2="18" y2="7" />
+              <line x1="31.5" y1="18" x2="29" y2="18" />
+              <line x1="18" y1="31.5" x2="18" y2="29" />
+              <line x1="4.5" y1="18" x2="7" y2="18" />
+              <line x1="18" y1="18" x2="18" y2="26" />
+              <line x1="18" y1="18" x2="22.5" y2="18" />
+            </svg>
             <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
             <div className="space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
@@ -287,8 +363,23 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
+            <svg
+              viewBox="0 0 36 36"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="h-9 w-9 text-[var(--color-accent)]"
+            >
+              <path d="M18 3.5c-5.5 0-10 4.3-10 9.6 0 7 10 19.4 10 19.4s10-12.4 10-19.4c0-5.3-4.5-9.6-10-9.6z" />
+              <circle cx="18" cy="13" r="4.5" />
+              <line x1="18" y1="10" x2="18" y2="16" />
+              <line x1="15" y1="13" x2="21" y2="13" />
+            </svg>
             <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
             <div className="space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">
@@ -306,8 +397,23 @@ export default function SipAndSync() {
           <a
             href="#tickets"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
+            <svg
+              viewBox="0 0 36 36"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="h-9 w-9 text-[var(--color-accent)]"
+            >
+              <path d="M4.5 11.5 L4.5 16 A2 2 0 0 1 4.5 20 L4.5 24.5 L31.5 24.5 L31.5 20 A2 2 0 0 1 31.5 16 L31.5 11.5 Z" />
+              <line x1="13" y1="14" x2="13" y2="16" />
+              <line x1="13" y1="20" x2="13" y2="22" />
+              <path d="M21 14.5 L21 21.5 M18.5 16 Q18.5 14.5 21 14.5 Q23.5 14.5 23.5 16 Q23.5 17.5 21 18 Q18.5 18.5 18.5 20 Q18.5 21.5 21 21.5 Q23.5 21.5 23.5 20" />
+            </svg>
             <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
             <div className="space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
@@ -381,7 +487,7 @@ export default function SipAndSync() {
                 href="https://www.hubzonetech.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
+                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
               >
                 Visit hubzonetech.org <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
@@ -432,7 +538,7 @@ export default function SipAndSync() {
                 href="https://theportalhq.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
+                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
               >
                 Visit theportalhq.com <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
@@ -551,7 +657,7 @@ export default function SipAndSync() {
                 href={virtualTourSrc}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--color-ink)_14%,transparent)] px-6 text-sm font-semibold text-[var(--color-ink)] transition-all hover:bg-white/5 hover:border-[var(--color-accent)]/45 hover:text-[var(--color-accent)] hover:translate-y-[-1px]"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--color-ink)_14%,transparent)] px-6 font-sans text-sm font-semibold text-[var(--color-ink)] transition-all hover:bg-white/5 hover:border-[var(--color-accent)]/45 hover:text-[var(--color-accent)] hover:translate-y-[-1px]"
               >
                 Open full tour
               </a>
@@ -610,8 +716,8 @@ export default function SipAndSync() {
       </section>
 
       {/* TICKETS & DONATIONS */}
-      <section id="tickets" className="section container">
-        <div className="max-w-3xl mx-auto space-y-6">
+      <section id="tickets" className="section container py-20 md:py-28">
+        <div className="max-w-4xl mx-auto space-y-10">
           <div className="text-center space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               Reserve Admission Passes
@@ -624,18 +730,34 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          {/* Secure Trust Badges Panel */}
-          <div className="p-6 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 flex flex-col sm:flex-row items-start sm:items-center gap-5 text-sm">
-            <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
-              <Award className="h-4.5 w-4.5" />
+          {/* 501(c)(3) Rotating Stamp Seal + Explanatory Right Column */}
+          <div className="p-7 sm:p-8 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 grid grid-cols-[auto_1fr] items-center gap-7">
+            <div className="relative h-[88px] w-[88px] shrink-0">
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute inset-0 h-full w-full text-[var(--color-accent)] [animation:seal-spin_30s_linear_infinite] motion-reduce:[animation:none]"
+                aria-hidden="true"
+              >
+                <defs>
+                  <path id="seal-rim-circle" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+                </defs>
+                <text fill="currentColor" style={{ fontSize: "9px", letterSpacing: "0.18em", fontWeight: 600 }}>
+                  <textPath href="#seal-rim-circle" startOffset="0">
+                    TAX RECEIPT ELIGIBLE • TAX RECEIPT ELIGIBLE •
+                  </textPath>
+                </text>
+              </svg>
+              <div className="absolute inset-[14px] rounded-full border border-[var(--color-accent)]/40 flex items-center justify-center bg-[var(--color-accent)]/5">
+                <span className="font-display font-bold text-[var(--color-ink)] text-sm tracking-tight tabular-nums">501(c)(3)</span>
+              </div>
             </div>
-            <div className="space-y-0.5">
-              <strong className="block text-[var(--color-ink)] font-semibold">Receipts for Eligible Donations</strong>
+            <div className="space-y-1 text-sm">
+              <strong className="block text-[var(--color-ink)] font-semibold text-base">Receipts for Eligible Donations</strong>
               <p className="text-[var(--color-muted)] leading-relaxed">HTI is a 501(c)(3) nonprofit. Ticket purchases reserve admission; additional gifts can be receipted as donations.</p>
             </div>
           </div>
 
-          <div className="p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+          <div className="p-8 sm:p-10 md:p-12 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
             <PledgeForm mode="ticket" />
           </div>
         </div>
@@ -644,15 +766,15 @@ export default function SipAndSync() {
       {/* LAPTOP PLEDGE DRIVE */}
       <section id="pledge" className="section bg-black/20 border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
         <div className="container space-y-8">
-          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center">
+          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-stretch">
 
             {/* Live Progress Tracker Column */}
-            <div className="lg:col-span-5 space-y-5">
+            <div className="lg:col-span-5 space-y-5 flex flex-col">
               <div className="space-y-2">
                 <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
                   Drive Metrics
                 </span>
-                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
+                <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--color-ink)] lg:whitespace-nowrap">
                   Live Laptop Pledge Tracker
                 </h2>
                 <p className="text-base text-[var(--color-muted)] leading-relaxed">
@@ -666,7 +788,10 @@ export default function SipAndSync() {
                 className="p-7 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] shadow-md space-y-6 spotlight-card"
               >
                 <div className="flex items-center justify-between border-b border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pb-3">
-                  <div className="text-xs font-semibold text-[var(--color-muted)] font-sans">Live Progress</div>
+                  <div className="text-xs font-semibold text-[var(--color-muted)] font-sans flex items-center">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse mr-2" aria-hidden="true" />
+                    Live Progress
+                  </div>
                   <span className="text-xs font-semibold tracking-tight text-[var(--color-signal)]">Local preview</span>
                 </div>
 
@@ -689,10 +814,10 @@ export default function SipAndSync() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm font-semibold font-sans">
                     <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] text-xs">Campaign Progress</span>
-                    <span key={`pct-${percentage}`} className="pledge-count-tick text-[var(--color-accent)] tabular-nums">{percentage}%</span>
+                    <span key={`pct-${percentage}`} className={`pledge-count-tick text-[var(--color-accent)] tabular-nums ${percentage > 0 ? 'drop-shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_60%,transparent)]' : ''}`}>{percentage}%</span>
                   </div>
 
-                  <div className="pledge-progress-track relative h-3 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border">
+                  <div className="pledge-progress-track relative h-3 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border transition-shadow hover:shadow-[0_0_24px_color-mix(in_oklch,var(--color-accent)_30%,transparent)]">
                     <div
                       className="pledge-progress-fill relative h-full rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_rgba(245,132,32,0.5)] transition-all duration-[1200ms] ease-out"
                       style={{ width: `${Math.min(percentage, 100)}%` }}
@@ -741,7 +866,7 @@ export default function SipAndSync() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+            <div className="lg:col-span-7 p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)] h-full flex flex-col">
               <PledgeForm mode="laptop" />
             </div>
 
@@ -765,19 +890,31 @@ export default function SipAndSync() {
           </div>
 
           {/* Encouraging Social share panel */}
-          <div className="p-8 sm:p-10 md:p-12 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_0_50px_rgba(0,0,0,0.15)]">
-            <div className="space-y-2 max-w-[50ch]">
-              <h4 className="font-display font-semibold text-xl text-[var(--color-ink)]">Spread the Word!</h4>
+          <div className="p-8 sm:p-10 md:p-12 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_50px_rgba(0,0,0,0.15)]">
+            <div
+              aria-hidden="true"
+              className="shrink-0 flex items-center justify-center h-24 w-24 rounded-full border-2 border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] shadow-[0_0_0_0_color-mix(in_oklch,var(--color-accent)_45%,transparent)] animate-pulse"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-11 w-11 text-[var(--color-accent)]">
+                <path d="M3 11v2a1 1 0 0 0 1 1h2l4 3.5V6.5L6 10H4a1 1 0 0 0-1 1Z" />
+                <path d="M14 7.2c1.6 1.1 2.5 2.8 2.5 4.8s-.9 3.7-2.5 4.8" />
+                <path d="M17.5 4.5C20 6.2 21.5 9 21.5 12s-1.5 5.8-4 7.5" />
+                <path d="M8 17.5 9.2 21a1 1 0 0 0 1.8.1l1.2-3" />
+              </svg>
+            </div>
+
+            <div className="space-y-2 max-w-[50ch] flex-1">
+              <h4 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Spread the Word!</h4>
               <p className="text-base text-[var(--color-muted)] leading-relaxed">
                 Even if you don't have a spare laptop, sharing this event flyer with your NC network or corporate Slack amplifies the campaign immensely.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button onClick={handleCopyLink} variant="secondary" className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <Button onClick={handleCopyLink} variant="secondary" className="flex items-center gap-2 justify-center">
                 <Share2 className="h-4 w-4" /> Copy Event URL
               </Button>
-              <Button asChild className="flex items-center gap-2">
+              <Button asChild className="flex items-center gap-2 justify-center">
                 <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png">
                   Download Event Flyer
                 </a>
@@ -792,8 +929,8 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-10 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
-                <img src="/hti-cropped.png" alt="HTI" className="h-10 w-auto object-contain" />
+              <div className="flex h-14 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                <img src="/hti-cropped.png" alt="HTI" className="h-14 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
@@ -847,8 +984,8 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-10 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
-                <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
+              <div className="flex h-14 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                <img src="/portal-logo.png" alt="Portal" className="h-14 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
@@ -874,11 +1011,18 @@ export default function SipAndSync() {
 
       {/* FOOTER */}
       <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
-        <div className="container flex flex-col md:flex-row justify-between items-center gap-y-4">
-          <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
-          <div className="flex gap-7 font-semibold">
-            <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
-            <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>
+        <div className="container flex flex-col items-center gap-y-6">
+          <div className="flex items-center justify-center gap-3.5 opacity-80">
+            <HTILogo className="h-10 w-auto object-contain" />
+            <span className="text-xl text-[var(--color-accent)]/55 font-light select-none mx-1">+</span>
+            <img src="/portal-logo.png" alt="Portal HQ" className="h-10 w-auto object-contain" />
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-y-4 w-full">
+            <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
+            <div className="flex gap-7 font-semibold">
+              <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
+              <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>
+            </div>
           </div>
         </div>
       </footer>

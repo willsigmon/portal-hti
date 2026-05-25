@@ -385,7 +385,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
     return (
       <form onSubmit={handleTicketSubmit} className="space-y-6">
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Configurator Column */}
           <div className="lg:col-span-7 space-y-6">
             {/* Step 1: Quantity */}
@@ -536,7 +536,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           </div>
 
           {/* Right Invoice Column */}
-          <div className="lg:col-span-5 border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] rounded-2xl bg-[var(--color-surface)] p-5 md:p-6 space-y-4.5 shadow-sm lg:sticky lg:top-24">
+          <div className="lg:col-span-5 h-full flex flex-col border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] rounded-2xl bg-[var(--color-surface)] p-5 md:p-6 space-y-4.5 shadow-sm">
             <div>
               <div className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
                 Invoice Breakdown
@@ -565,7 +565,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </div>
             </div>
 
-            <div className="border-t border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] border-dashed pt-3.5 flex justify-between items-baseline">
+            <div className="mt-auto border-t border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] border-dashed pt-3.5 flex justify-between items-baseline">
               <strong className="font-display font-bold text-base text-[var(--color-ink)]">
                 Total Due
               </strong>

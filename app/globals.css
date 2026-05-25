@@ -9,17 +9,21 @@
 
 @theme {
   --font-display: "Cormorant Garamond", "Georgia", serif;
-  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
   --font-mono: "Space Mono", monospace;
 
-  /* Premium deep cosmic midnight-indigo and warm copper/orange design system */
-  --color-bg: oklch(0.09 0.024 265);          /* Deep midnight cosmic indigo */
-  --color-bg-dark: oklch(0.06 0.02 265);     /* Ultimate dark space void */
-  --color-band: oklch(0.12 0.026 265);
-  --color-surface: oklch(0.15 0.028 265);    /* Semi-translucent cosmic slate surface */
-  --color-surface-dark: oklch(0.11 0.022 265);
-  --color-panel: oklch(0.18 0.032 265);
-  --color-panel-strong: oklch(0.23 0.038 265);
+  /* Deep ambient-blue aurora design system + warm copper/orange accent.
+     Backgrounds in the cool 250-260 range; foreground accent stays warm orange. */
+  --color-bg: oklch(0.10 0.045 252);          /* Deep midnight navy — base canvas */
+  --color-bg-dark: oklch(0.06 0.035 252);     /* Deep-space void */
+  --color-band: oklch(0.13 0.045 252);
+  --color-surface: oklch(0.16 0.05 252);      /* Lit panel surface against aurora */
+  --color-surface-dark: oklch(0.12 0.04 252);
+  --color-panel: oklch(0.18 0.055 252);
+  --color-panel-strong: oklch(0.23 0.06 252);
+  --color-aurora-1: oklch(0.55 0.13 200);     /* Cyan-teal aurora wash */
+  --color-aurora-2: oklch(0.45 0.18 290);     /* Indigo-violet aurora wash */
+  --color-aurora-3: oklch(0.62 0.14 220);     /* Soft cyan highlight */
   --color-ink: oklch(0.96 0.01 85);          /* Chalky uncoated linen white */
   --color-ink-dark: oklch(0.96 0.01 85);
   --color-muted: oklch(0.75 0.015 85);       /* Muted limestone gray */
@@ -60,27 +64,68 @@
   body {
     position: relative;
     min-height: 100vh;
-    background:
-      linear-gradient(180deg, var(--color-bg) 0%, color-mix(in oklch, var(--color-bg) 92%, var(--color-band) 8%) 100%);
+    background-color: var(--color-bg);
+    background-image:
+      /* Aurora ambient washes — cool deep-space tones */
+      radial-gradient(ellipse 70vw 45vh at 78% 18%, color-mix(in oklch, var(--color-aurora-1) 14%, transparent), transparent 62%),
+      radial-gradient(ellipse 85vw 55vh at 18% 88%, color-mix(in oklch, var(--color-aurora-2) 16%, transparent), transparent 68%),
+      radial-gradient(ellipse 55vw 35vh at 92% 58%, color-mix(in oklch, var(--color-aurora-3) 10%, transparent), transparent 72%),
+      radial-gradient(ellipse 65vw 40vh at 8% 32%, color-mix(in oklch, var(--color-aurora-2) 9%, transparent), transparent 70%),
+      /* Sparse hand-placed stars — deliberate, not a noise field */
+      radial-gradient(1.6px 1.6px at 12% 6%, color-mix(in oklch, var(--color-ink) 70%, transparent), transparent 100%),
+      radial-gradient(1.2px 1.2px at 78% 14%, color-mix(in oklch, var(--color-ink) 55%, transparent), transparent 100%),
+      radial-gradient(2px 2px at 92% 38%, color-mix(in oklch, var(--color-ink) 78%, transparent), transparent 100%),
+      radial-gradient(1.4px 1.4px at 6% 48%, color-mix(in oklch, var(--color-ink) 60%, transparent), transparent 100%),
+      radial-gradient(1.8px 1.8px at 44% 72%, color-mix(in oklch, var(--color-ink) 65%, transparent), transparent 100%),
+      radial-gradient(1.2px 1.2px at 86% 84%, color-mix(in oklch, var(--color-ink) 55%, transparent), transparent 100%),
+      radial-gradient(1.6px 1.6px at 22% 92%, color-mix(in oklch, var(--color-ink) 70%, transparent), transparent 100%);
+    background-repeat: no-repeat;
     color: var(--color-ink);
     font-family: var(--font-body);
   }
 
-  /* Tactile paper-grain texture applied globally — denies the flat-AI-SaaS look. */
+  /* Slow aurora shimmer layer — animated via opacity so it never breaks
+     scroll compositing. Drifts in/out over 18s. */
+  body::after {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 55vw 40vh at 70% 25%, color-mix(in oklch, var(--color-aurora-1) 10%, transparent), transparent 60%),
+      radial-gradient(ellipse 50vw 35vh at 25% 75%, color-mix(in oklch, var(--color-aurora-2) 12%, transparent), transparent 65%);
+    opacity: 0.6;
+    animation: auroraPulse 18s ease-in-out infinite alternate;
+  }
+
+  /* Tactile paper-grain texture applied globally — sits below content. */
   body::before {
     content: "";
     pointer-events: none;
     position: fixed;
     inset: 0;
     z-index: 2;
-    opacity: 0.22;
+    opacity: 0.18;
     mix-blend-mode: soft-light;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  }
+
+  @keyframes auroraPulse {
+    0%   { opacity: 0.45; }
+    50%  { opacity: 0.85; }
+    100% { opacity: 0.55; }
   }
 
   body > *:not(canvas) {
     position: relative;
     z-index: 3;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body::after {
+      animation: none;
+    }
   }
 
   h1, h2, h3, h4, .display {
