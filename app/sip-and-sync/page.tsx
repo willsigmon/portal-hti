@@ -130,7 +130,7 @@ export default function SipAndSync() {
     if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => {
       setHeroIdx((prev) => (prev + 1) % heroPhotos.length);
-    }, 5200);
+    }, 1500);
     return () => window.clearInterval(id);
   }, [heroPaused, heroPhotos.length]);
 
@@ -206,9 +206,9 @@ export default function SipAndSync() {
       <nav className="sticky top-0 z-50 border-b border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-bg)]/80 backdrop-blur-md">
         <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
+            <img src="/portal-logo.png" alt="Portal HQ" className="h-16 md:h-20 w-auto filter contrast-[1.02] transition-all object-contain" />
             <span className="text-2xl text-[var(--color-accent)]/55 font-light select-none mx-2">+</span>
-            <img src="/portal-logo.png" alt="Portal HQ" className="h-12 md:h-14 w-auto filter contrast-[1.02] transition-all object-contain" />
+            <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
           </div>
 
           <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-surface)]/55 backdrop-blur-md shadow-inner">
@@ -286,12 +286,12 @@ export default function SipAndSync() {
               >
                 {heroPhotos.map((photo, idx) => (
                   <img
-                    key={photo.src}
+                    key={`${photo.src}-${idx === heroIdx ? "active" : "idle"}-${heroIdx}`}
                     src={photo.src}
                     alt={photo.alt}
                     aria-hidden={idx !== heroIdx}
                     loading={idx === 0 ? "eager" : "lazy"}
-                    className={`absolute inset-0 h-full w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-opacity duration-[1100ms] ease-in-out ${idx === heroIdx ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 h-full w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-opacity duration-[500ms] ease-in-out ${idx === heroIdx ? "opacity-100 kenburns-carousel-active" : "opacity-0"}`}
                   />
                 ))}
 
@@ -316,6 +316,25 @@ export default function SipAndSync() {
                 </div>
               </div>
             </div>
+
+            {/* Big fun jump-to-3D button under the carousel */}
+            <a
+              href="#explore-3d"
+              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-white shadow-[0_18px_45px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_24px_55px_color-mix(in_oklch,var(--color-accent)_65%,transparent)] active:scale-[0.99] overflow-hidden"
+            >
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="relative transition-transform duration-500 ease-out group-hover:rotate-[24deg] group-hover:scale-110">
+                <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z" />
+                <path d="M12 12 L12 22" />
+                <path d="M3 7 L12 12" />
+                <path d="M21 7 L12 12" />
+              </svg>
+              <span className="relative">See in 3D!</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="relative transition-transform duration-300 group-hover:translate-y-1">
+                <path d="M12 5v14" />
+                <path d="M19 12l-7 7-7-7" />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -327,7 +346,13 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-evening-table.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
             <svg
               viewBox="0 0 36 36"
@@ -337,7 +362,7 @@ export default function SipAndSync() {
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
-              className="h-9 w-9 text-[var(--color-accent)]"
+              className="relative z-10 h-9 w-9 text-[var(--color-accent)]"
             >
               <circle cx="18" cy="18" r="14" />
               <line x1="18" y1="4.5" x2="18" y2="7" />
@@ -347,12 +372,12 @@ export default function SipAndSync() {
               <line x1="18" y1="18" x2="18" y2="26" />
               <line x1="18" y1="18" x2="22.5" y2="18" />
             </svg>
-            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
-            <div className="space-y-2">
+            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
+            <div className="relative z-10 space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
               <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
             </div>
-            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Add to Calendar <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -363,7 +388,13 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-wood-entry.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
             <svg
               viewBox="0 0 36 36"
@@ -373,22 +404,22 @@ export default function SipAndSync() {
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
-              className="h-9 w-9 text-[var(--color-accent)]"
+              className="relative z-10 h-9 w-9 text-[var(--color-accent)]"
             >
               <path d="M18 3.5c-5.5 0-10 4.3-10 9.6 0 7 10 19.4 10 19.4s10-12.4 10-19.4c0-5.3-4.5-9.6-10-9.6z" />
               <circle cx="18" cy="13" r="4.5" />
               <line x1="18" y1="10" x2="18" y2="16" />
               <line x1="15" y1="13" x2="21" y2="13" />
             </svg>
-            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
-            <div className="space-y-2">
+            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
+            <div className="relative z-10 space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">
                 <span className="whitespace-nowrap">Portal HQ</span>
                 <span className="block text-2xl md:text-3xl text-[var(--color-muted)] font-medium mt-1">Raleigh, NC</span>
               </h3>
               <p className="text-base text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
             </div>
-            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Open Maps <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -397,7 +428,13 @@ export default function SipAndSync() {
           <a
             href="#tickets"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[300px] w-full min-w-0 flex-col items-center justify-center gap-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-bar-detail.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
             <svg
               viewBox="0 0 36 36"
@@ -407,19 +444,19 @@ export default function SipAndSync() {
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
-              className="h-9 w-9 text-[var(--color-accent)]"
+              className="relative z-10 h-9 w-9 text-[var(--color-accent)]"
             >
               <path d="M4.5 11.5 L4.5 16 A2 2 0 0 1 4.5 20 L4.5 24.5 L31.5 24.5 L31.5 20 A2 2 0 0 1 31.5 16 L31.5 11.5 Z" />
               <line x1="13" y1="14" x2="13" y2="16" />
               <line x1="13" y1="20" x2="13" y2="22" />
               <path d="M21 14.5 L21 21.5 M18.5 16 Q18.5 14.5 21 14.5 Q23.5 14.5 23.5 16 Q23.5 17.5 21 18 Q18.5 18.5 18.5 20 Q18.5 21.5 21 21.5 Q23.5 21.5 23.5 20" />
             </svg>
-            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
-            <div className="space-y-2">
+            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
+            <div className="relative z-10 space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
               <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
             </div>
-            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Secure Passes <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -470,15 +507,15 @@ export default function SipAndSync() {
                 <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Wipe</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)] tabular-nums">DoD 5220.22-M</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">DoD 5220.22-M</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Rebuild</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)]">Refurbished OS</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Refurbished OS</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Reach</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)]">Distribution + courses</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Distribution + courses</dd>
                   </div>
                 </dl>
               </div>
@@ -521,15 +558,15 @@ export default function SipAndSync() {
                 <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Stage</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)] tabular-nums">12 Gobo lights</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">12 Gobo lights</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Floor</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)] tabular-nums">5,000 sq ft</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">5,000 sq ft</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
                     <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Tenants</dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[var(--color-ink)]">Founder hub</dd>
+                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Founder hub</dd>
                   </div>
                 </dl>
               </div>
@@ -621,21 +658,21 @@ export default function SipAndSync() {
                 <img
                   src="/venue/venue-daylight-floor.jpg"
                   alt="Daylight Portal HQ space"
-                  className="w-full h-full object-cover filter contrast-[1.02]"
+                  className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
                 />
               </div>
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
                   src="/venue/venue-evening-table.jpg"
                   alt="Evening reception setup"
-                  className="w-full h-full object-cover filter contrast-[1.02]"
+                  className="kenburns-photo kenburns-photo-delayed w-full h-full object-cover filter contrast-[1.02]"
                 />
               </div>
               <div className="col-span-2 rounded-xl overflow-hidden aspect-[16/9] border bg-[var(--color-bg-dark)] shadow-sm relative group">
                 <img
                   src="/venue/venue-stage-lighting.jpg"
                   alt="Concert stage lighting production"
-                  className="w-full h-full object-cover filter contrast-[1.02] transition-transform group-hover:scale-102 duration-500"
+                  className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white text-xs">
                   <div>
@@ -647,10 +684,14 @@ export default function SipAndSync() {
             </div>
           </div>
 
-          <div className="space-y-4.5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] pt-8">
+          <div id="explore-3d" className="relative scroll-mt-24 space-y-6 p-8 md:p-12 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-accent)_20%,var(--color-border))] bg-[var(--color-panel)] shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_30px_color-mix(in_oklch,var(--color-accent)_12%,transparent)] mt-10">
+            <div aria-hidden="true" className="absolute left-0 top-12 bottom-12 w-1 bg-[var(--color-accent)] rounded-r-full" />
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div className="max-w-2xl">
-                <h3 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
+                <span className="inline-flex items-center gap-1.5 mb-3 px-3 py-1 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/8 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">
+                  Interactive 360°
+                </span>
+                <h3 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">Walk the main gallery, stage, and lobby from this page. Use touch or drag to look around.</p>
               </div>
               <a
@@ -730,26 +771,57 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          {/* 501(c)(3) Rotating Stamp Seal + Explanatory Right Column */}
+          {/* Tax-receipt circular medallion — pure graphic, no text/font inside */}
           <div className="p-7 sm:p-8 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 grid grid-cols-[auto_1fr] items-center gap-7">
-            <div className="relative h-[88px] w-[88px] shrink-0">
+            <div className="relative h-[108px] w-[108px] shrink-0">
               <svg
                 viewBox="0 0 100 100"
-                className="absolute inset-0 h-full w-full text-[var(--color-accent)] [animation:seal-spin_30s_linear_infinite] motion-reduce:[animation:none]"
+                className="absolute inset-0 h-full w-full text-[var(--color-accent)] [animation:seal-spin_45s_linear_infinite] motion-reduce:[animation:none]"
                 aria-hidden="true"
               >
-                <defs>
-                  <path id="seal-rim-circle" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-                </defs>
-                <text fill="currentColor" style={{ fontSize: "9px", letterSpacing: "0.18em", fontWeight: 600 }}>
-                  <textPath href="#seal-rim-circle" startOffset="0">
-                    TAX RECEIPT ELIGIBLE • TAX RECEIPT ELIGIBLE •
-                  </textPath>
-                </text>
+                <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" strokeWidth="0.7" strokeDasharray="2 4" opacity="0.55" />
+                <g stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
+                  {Array.from({ length: 12 }).map((_, i) => {
+                    const angle = (i * 30 * Math.PI) / 180;
+                    const x1 = (50 + Math.cos(angle) * 43).toFixed(3);
+                    const y1 = (50 + Math.sin(angle) * 43).toFixed(3);
+                    const x2 = (50 + Math.cos(angle) * 39).toFixed(3);
+                    const y2 = (50 + Math.sin(angle) * 39).toFixed(3);
+                    return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />;
+                  })}
+                </g>
               </svg>
-              <div className="absolute inset-[14px] rounded-full border border-[var(--color-accent)]/40 flex items-center justify-center bg-[var(--color-accent)]/5">
-                <span className="font-display font-bold text-[var(--color-ink)] text-sm tracking-tight tabular-nums">501(c)(3)</span>
-              </div>
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute inset-[10px] h-[calc(100%-20px)] w-[calc(100%-20px)] text-[var(--color-accent)]"
+                aria-hidden="true"
+              >
+                <circle cx="50" cy="50" r="40" fill="color-mix(in oklch, var(--color-accent) 8%, transparent)" stroke="currentColor" strokeWidth="1.6" />
+                <circle cx="50" cy="50" r="33" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.5" />
+                <g opacity="0.32">
+                  {Array.from({ length: 8 }).map((_, i) => {
+                    const angle = (i * 45 * Math.PI) / 180;
+                    const x = (50 + Math.cos(angle) * 27).toFixed(3);
+                    const y = (50 + Math.sin(angle) * 27).toFixed(3);
+                    return <circle key={i} cx={x} cy={y} r="0.9" fill="currentColor" />;
+                  })}
+                </g>
+                <path
+                  d="M50 27 C 57 27, 65 30, 70 33 L 70 52 C 70 62, 63 70, 50 76 C 37 70, 30 62, 30 52 L 30 33 C 35 30, 43 27, 50 27 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M40 51 L 47 59 L 62 42"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div className="space-y-1 text-sm">
               <strong className="block text-[var(--color-ink)] font-semibold text-base">Receipts for Eligible Donations</strong>
@@ -764,24 +836,25 @@ export default function SipAndSync() {
       </section>
 
       {/* LAPTOP PLEDGE DRIVE */}
-      <section id="pledge" className="section bg-black/20 border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
+      <section id="pledge" className="section bg-black/20 border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)] pb-12 md:pb-16">
         <div className="container space-y-8">
-          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-stretch">
+          {/* Section header — spans full width above the grid for column-top alignment */}
+          <div className="max-w-3xl space-y-2">
+            <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.14em] font-sans font-semibold">
+              Drive Metrics
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--color-ink)]">
+              Live Laptop Pledge Tracker
+            </h2>
+            <p className="text-base text-[var(--color-muted)] leading-relaxed">
+              Help us reach our collaborative event goal of <strong className="text-[var(--color-ink)]">150 pledged laptops</strong>. Bring your old device to <span className="whitespace-nowrap">Portal HQ</span>, or arrange a free pickup!
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-start">
 
             {/* Live Progress Tracker Column */}
             <div className="lg:col-span-5 space-y-5 flex flex-col">
-              <div className="space-y-2">
-                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
-                  Drive Metrics
-                </span>
-                <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--color-ink)] lg:whitespace-nowrap">
-                  Live Laptop Pledge Tracker
-                </h2>
-                <p className="text-base text-[var(--color-muted)] leading-relaxed">
-                  Help us reach our collaborative event goal of <strong className="text-[var(--color-ink)]">150 pledged laptops</strong>. Bring your old device to <span className="whitespace-nowrap">Portal HQ</span>, or arrange a free pickup!
-                </p>
-              </div>
-
               {/* Live Metric Progress Counter Card */}
               <div
                 onMouseMove={handleMouseMove}
@@ -797,15 +870,15 @@ export default function SipAndSync() {
 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Target</span>
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Target</span>
                     <strong key={`goal-${PLEDGE_GOAL}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-accent)] block tabular-nums leading-none">{PLEDGE_GOAL}</strong>
                   </div>
                   <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Pledged</span>
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Pledged</span>
                     <strong key={`pledged-${pledgesCount}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-ink)] block tabular-nums leading-none">{pledgesCount}</strong>
                   </div>
                   <div className="space-y-2 py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Remaining</span>
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Remaining</span>
                     <strong key={`remaining-${remainingCount}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-signal)] block tabular-nums leading-none">{remainingCount}</strong>
                   </div>
                 </div>
@@ -813,7 +886,7 @@ export default function SipAndSync() {
                 {/* Progress bar tracks — shimmering fill, count-up animation handled by key prop */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm font-semibold font-sans">
-                    <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] text-xs">Campaign Progress</span>
+                    <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] text-xs font-semibold">Campaign Progress</span>
                     <span key={`pct-${percentage}`} className={`pledge-count-tick text-[var(--color-accent)] tabular-nums ${percentage > 0 ? 'drop-shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_60%,transparent)]' : ''}`}>{percentage}%</span>
                   </div>
 
@@ -840,17 +913,57 @@ export default function SipAndSync() {
 
               {/* Logistics grid info */}
               <div className="grid sm:grid-cols-2 gap-3">
-                <div className="p-6 rounded-lg border border-white/5 bg-[var(--color-surface)] space-y-2.5 text-sm">
-                  <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
-                    <MapPin className="h-4 w-4 shrink-0" />
-                    Drop-off Location
+                {/* Drop-off Location card with embedded map */}
+                <div className="rounded-lg border border-white/5 bg-[var(--color-surface)] overflow-hidden flex flex-col">
+                  <div className="relative w-full overflow-hidden border-b border-white/5 bg-[var(--color-bg-dark)]">
+                    <iframe
+                      src="https://www.google.com/maps?q=3801+Hillsborough+St+Suite+113+Raleigh+NC+27607&output=embed"
+                      width="100%"
+                      height="160"
+                      style={{ border: 0, filter: "grayscale(0.25) contrast(1.05)" }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Drop-off location map"
+                      aria-label="Map showing Portal HQ at 3801 Hillsborough St Suite 113 Raleigh NC 27607"
+                    />
                   </div>
-                  <strong className="block text-[var(--color-ink)] font-sans"><span className="whitespace-nowrap">Portal HQ</span> Lobby</strong>
-                  <p className="text-[var(--color-muted)] leading-relaxed font-sans">
-                    3801 Hillsborough St, Suite 113, Raleigh. Drop off during the event or standard workspace hours.
-                  </p>
+                  <div className="p-5 space-y-2 text-sm">
+                    <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
+                      <MapPin className="h-4 w-4 shrink-0" />
+                      Drop-off Location
+                    </div>
+                    <strong className="block text-[var(--color-ink)] font-sans"><span className="whitespace-nowrap">Portal HQ</span> Lobby</strong>
+                    <p className="text-[var(--color-muted)] leading-relaxed font-sans">
+                      3801 Hillsborough St, Suite 113, Raleigh. Drop off during the event or standard workspace hours.
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6 rounded-lg border border-white/5 bg-[var(--color-surface)] space-y-2.5 text-sm">
+
+                {/* Free Vehicle Pickup card with truck SVG */}
+                <div className="p-6 rounded-lg border border-white/5 bg-[var(--color-surface)] space-y-3 text-sm">
+                  <svg
+                    viewBox="0 0 80 48"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    className="h-12 w-auto text-[var(--color-accent)]"
+                  >
+                    {/* Cab + cargo body */}
+                    <path d="M3 12 L48 12 L48 36 L3 36 Z" />
+                    <path d="M48 18 L62 18 L72 26 L72 36 L48 36 Z" />
+                    {/* Cab window */}
+                    <path d="M52 21 L60 21 L67 27 L52 27 Z" />
+                    {/* Cargo door seam */}
+                    <line x1="25" y1="14" x2="25" y2="34" />
+                    {/* Wheels */}
+                    <circle cx="16" cy="38" r="4.5" />
+                    <circle cx="60" cy="38" r="4.5" />
+                    {/* Ground line */}
+                    <line x1="0" y1="42" x2="80" y2="42" strokeDasharray="2 4" opacity="0.45" />
+                  </svg>
                   <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
                     <Award className="h-4 w-4 shrink-0" />
                     Free Vehicle Pickup
@@ -889,36 +1002,118 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          {/* Encouraging Social share panel */}
-          <div className="p-8 sm:p-10 md:p-12 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_0_50px_rgba(0,0,0,0.15)]">
+          {/* SPREAD THE WORD — full-bleed editorial-brutalist panel */}
+          <style>{`
+            @keyframes mega-wave-ring {
+              0%   { transform: scale(0.35); opacity: 0.85; }
+              80%  { opacity: 0.05; }
+              100% { transform: scale(1.6); opacity: 0; }
+            }
+            .mega-wave { animation: mega-wave-ring 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; transform-origin: center; }
+            .mega-wave.delay-1 { animation-delay: 0.65s; }
+            .mega-wave.delay-2 { animation-delay: 1.3s; }
+            @media (prefers-reduced-motion: reduce) {
+              .mega-wave { animation: none !important; opacity: 0.35; }
+            }
+            @keyframes spread-grain {
+              0%, 100% { transform: translate(0, 0); }
+              50% { transform: translate(-2%, 1%); }
+            }
+            .spread-grain-layer {
+              background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+              background-size: 220px 220px;
+              mix-blend-mode: overlay;
+              opacity: 0.18;
+              animation: spread-grain 8s steps(6) infinite;
+            }
+          `}</style>
+          <div
+            className="relative isolate overflow-hidden rounded-[var(--radius-md)] border-2 border-[var(--color-accent)]/30 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.55)]"
+            style={{
+              background:
+                "linear-gradient(135deg, color-mix(in oklch, var(--color-accent) 92%, black) 0%, color-mix(in oklch, var(--color-accent) 68%, black) 30%, color-mix(in oklch, var(--color-bg-dark) 88%, black) 75%, var(--color-bg-dark) 100%)"
+            }}
+          >
+            {/* Grain texture overlay */}
+            <div aria-hidden="true" className="absolute inset-0 pointer-events-none spread-grain-layer" />
+
+            {/* Diagonal corner ribbon */}
             <div
               aria-hidden="true"
-              className="shrink-0 flex items-center justify-center h-24 w-24 rounded-full border-2 border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] shadow-[0_0_0_0_color-mix(in_oklch,var(--color-accent)_45%,transparent)] animate-pulse"
+              className="absolute -right-16 top-7 z-20 rotate-45 bg-[var(--color-bg-dark)] text-[var(--color-accent)] font-mono text-[10px] font-bold uppercase tracking-[0.32em] px-20 py-1.5 border-y border-[var(--color-accent)]/60 shadow-md"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-11 w-11 text-[var(--color-accent)]">
-                <path d="M3 11v2a1 1 0 0 0 1 1h2l4 3.5V6.5L6 10H4a1 1 0 0 0-1 1Z" />
-                <path d="M14 7.2c1.6 1.1 2.5 2.8 2.5 4.8s-.9 3.7-2.5 4.8" />
-                <path d="M17.5 4.5C20 6.2 21.5 9 21.5 12s-1.5 5.8-4 7.5" />
-                <path d="M8 17.5 9.2 21a1 1 0 0 0 1.8.1l1.2-3" />
-              </svg>
+              Share NC
             </div>
 
-            <div className="space-y-2 max-w-[50ch] flex-1">
-              <h4 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Spread the Word!</h4>
-              <p className="text-base text-[var(--color-muted)] leading-relaxed">
-                Even if you don't have a spare laptop, sharing this event flyer with your NC network or corporate Slack amplifies the campaign immensely.
-              </p>
+            {/* Faint vertical type accent */}
+            <div
+              aria-hidden="true"
+              className="absolute right-6 bottom-6 z-10 font-mono text-[10px] uppercase tracking-[0.42em] text-white/35 [writing-mode:vertical-rl] rotate-180"
+            >
+              Amplify · Pledge · Repeat
             </div>
 
-            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
-              <Button onClick={handleCopyLink} variant="secondary" className="flex items-center gap-2 justify-center">
-                <Share2 className="h-4 w-4" /> Copy Event URL
-              </Button>
-              <Button asChild className="flex items-center gap-2 justify-center">
-                <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png">
-                  Download Event Flyer
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 items-center gap-8 px-8 sm:px-12 md:px-16 lg:px-20 py-14 md:py-20">
+              {/* Animated megaphone + radio waves */}
+              <div className="md:col-span-3 flex justify-center md:justify-start">
+                <div
+                  aria-hidden="true"
+                  className="relative h-[160px] w-[160px] flex items-center justify-center"
+                >
+                  <span className="mega-wave absolute inset-0 rounded-full border-2 border-white/40" />
+                  <span className="mega-wave delay-1 absolute inset-0 rounded-full border-2 border-white/30" />
+                  <span className="mega-wave delay-2 absolute inset-0 rounded-full border-2 border-white/20" />
+                  <svg
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="relative z-10 h-[100px] w-[100px] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
+                  >
+                    <path d="M16 54 L16 78 a4 4 0 0 0 4 4 h10 L60 100 V32 L30 50 H20 a4 4 0 0 0 -4 4 z" fill="currentColor" fillOpacity="0.1" />
+                    <path d="M70 46 c8 6 12 14 12 20 s-4 14 -12 20" />
+                    <path d="M84 36 c12 9 18 21 18 30 s-6 21 -18 30" />
+                    <path d="M34 82 L36 96" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Massive headline */}
+              <div className="md:col-span-6 space-y-3 text-center md:text-left">
+                <span className="inline-block font-mono text-[10px] uppercase tracking-[0.36em] font-semibold text-white/70 border border-white/25 rounded-full px-3 py-1">
+                  Signal Boost
+                </span>
+                <h4
+                  className="font-display font-extrabold leading-[0.92] tracking-[-0.04em] text-white"
+                  style={{ fontSize: "clamp(2.75rem, 7vw, 5.5rem)" }}
+                >
+                  Spread<br className="hidden sm:block" /> the Word<span className="text-[var(--color-bg-dark)] drop-shadow-[0_2px_0_rgba(255,255,255,0.35)]">.</span>
+                </h4>
+                <p className="text-base md:text-lg text-white/85 leading-relaxed max-w-[44ch] mx-auto md:mx-0">
+                  No spare laptop? <strong className="text-white font-semibold">Share this flyer.</strong> Every retweet, every Slack drop, every forwarded link makes a Raleigh student's screen light up.
+                </p>
+              </div>
+
+              {/* CTAs */}
+              <div className="md:col-span-3 flex flex-col gap-3">
+                <button
+                  onClick={handleCopyLink}
+                  className="group flex items-center justify-center gap-2.5 rounded-full bg-white text-[var(--color-bg-dark)] px-6 py-3.5 font-sans text-sm font-bold tracking-tight shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  <Share2 className="h-4 w-4 transition-transform group-hover:rotate-12" />
+                  Copy Event URL
+                </button>
+                <a
+                  href="/sip_and_sync_flyer.png"
+                  download="Sip_And_Sync_Flyer.png"
+                  className="group flex items-center justify-center gap-2.5 rounded-full border-2 border-white/80 text-white px-6 py-3.5 font-sans text-sm font-bold tracking-tight transition-all hover:bg-white hover:text-[var(--color-bg-dark)] hover:-translate-y-0.5"
+                >
+                  Download Flyer
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
-              </Button>
+              </div>
             </div>
           </div>
 
@@ -929,8 +1124,8 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-14 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
-                <img src="/hti-cropped.png" alt="HTI" className="h-14 w-auto object-contain" />
+              <div className="flex h-28 items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
+                <img src="/hti-cropped.png" alt="HTI" className="h-28 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
@@ -956,9 +1151,10 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-10 items-center justify-center gap-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
-                <img src="/hti-cropped.png" alt="HTI" className="h-10 w-auto object-contain" />
-                <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
+              <div className="flex h-14 items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300">
+                <img src="/hti-cropped.png" alt="HTI" className="h-14 w-auto object-contain" />
+                <span className="text-3xl text-[var(--color-accent)]/55 font-light mx-1 select-none">+</span>
+                <img src="/portal-logo.png" alt="Portal" className="h-14 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">David Galindo</h4>
@@ -984,8 +1180,8 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-14 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
-                <img src="/portal-logo.png" alt="Portal" className="h-14 w-auto object-contain" />
+              <div className="flex h-28 items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
+                <img src="/portal-logo.png" alt="Portal" className="h-28 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
@@ -1011,14 +1207,17 @@ export default function SipAndSync() {
 
       {/* FOOTER */}
       <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
-        <div className="container flex flex-col items-center gap-y-6">
-          <div className="flex items-center justify-center gap-3.5 opacity-80">
+        <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-y-8">
+          {/* LEFT: co-branding lockup */}
+          <div className="flex items-center gap-3.5 opacity-85">
             <HTILogo className="h-10 w-auto object-contain" />
             <span className="text-xl text-[var(--color-accent)]/55 font-light select-none mx-1">+</span>
             <img src="/portal-logo.png" alt="Portal HQ" className="h-10 w-auto object-contain" />
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-y-4 w-full">
-            <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
+
+          {/* RIGHT: credit + links stacked */}
+          <div className="flex flex-col items-start md:items-end gap-3 text-left md:text-right">
+            <div>Sip &amp; Sync Social Hour — HTI + <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
             <div className="flex gap-7 font-semibold">
               <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
               <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>

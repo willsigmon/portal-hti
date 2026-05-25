@@ -384,17 +384,17 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
     const invoiceTotal = invoiceTicketsCost + donationValue;
 
     return (
-      <form onSubmit={handleTicketSubmit} className="space-y-6">
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+      <form onSubmit={handleTicketSubmit} className="space-y-8">
+        <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           {/* Left Configurator Column */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-10 divide-y divide-white/5">
             {/* Step 1: Quantity */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums">
+            <div className="space-y-4 pb-2">
+              <div className="flex items-center gap-3.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   01
                 </span>
-                <h4 className="font-display font-bold text-lg text-[var(--color-ink)]">
+                <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
                   Select Ticket Quantity
                 </h4>
               </div>
@@ -435,12 +435,12 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </div>
 
             {/* Step 2: Donation Slider & Presets */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums">
+            <div className="space-y-4 pt-8">
+              <div className="flex items-center gap-3.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   02
                 </span>
-                <h4 className="font-display font-bold text-lg text-[var(--color-ink)]">
+                <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
                   Add Campaign Donation
                 </h4>
               </div>
@@ -498,12 +498,12 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </div>
 
             {/* Step 3: Guest details */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums">
+            <div className="space-y-4 pt-8">
+              <div className="flex items-center gap-3.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   03
                 </span>
-                <h4 className="font-display font-bold text-lg text-[var(--color-ink)]">
+                <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
                   Primary Guest Information
                 </h4>
               </div>

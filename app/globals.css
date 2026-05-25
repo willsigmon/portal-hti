@@ -84,19 +84,21 @@
     font-family: var(--font-body);
   }
 
-  /* Slow aurora shimmer layer — animated via opacity so it never breaks
-     scroll compositing. Drifts in/out over 18s. */
+  /* Aurora drift layer — large gradients that slowly translate across the
+     viewport to feel like floating through deep space. 80s loop. */
   body::after {
     content: "";
     pointer-events: none;
     position: fixed;
-    inset: 0;
+    inset: -25vh -25vw;
     z-index: 1;
     background:
-      radial-gradient(ellipse 55vw 40vh at 70% 25%, color-mix(in oklch, var(--color-aurora-1) 10%, transparent), transparent 60%),
-      radial-gradient(ellipse 50vw 35vh at 25% 75%, color-mix(in oklch, var(--color-aurora-2) 12%, transparent), transparent 65%);
-    opacity: 0.6;
-    animation: auroraPulse 18s ease-in-out infinite alternate;
+      radial-gradient(ellipse 60vw 45vh at 30% 30%, color-mix(in oklch, var(--color-aurora-1) 14%, transparent), transparent 60%),
+      radial-gradient(ellipse 55vw 40vh at 75% 70%, color-mix(in oklch, var(--color-aurora-2) 16%, transparent), transparent 65%),
+      radial-gradient(ellipse 45vw 35vh at 50% 20%, color-mix(in oklch, var(--color-aurora-3) 11%, transparent), transparent 70%);
+    opacity: 0.85;
+    will-change: transform;
+    animation: auroraDrift 80s ease-in-out infinite alternate;
   }
 
   /* Tactile paper-grain texture applied globally — sits below content. */
@@ -111,10 +113,26 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
   }
 
-  @keyframes auroraPulse {
-    0%   { opacity: 0.45; }
-    50%  { opacity: 0.85; }
-    100% { opacity: 0.55; }
+  @keyframes auroraDrift {
+    0%   { transform: translate3d(0, 0, 0) scale(1.02); }
+    25%  { transform: translate3d(-4vw, 2vh, 0) scale(1.06); }
+    50%  { transform: translate3d(2vw, -3vh, 0) scale(1.09); }
+    75%  { transform: translate3d(3vw, 3vh, 0) scale(1.05); }
+    100% { transform: translate3d(-2vw, -1vh, 0) scale(1.03); }
+  }
+
+  /* Ken Burns animation for the hero carousel — slow zoom + drift while the
+     active photo is visible. Each photo gets ~1.6s of motion before the
+     next swap so the movement feels continuous, not stop-start. */
+  .kenburns-carousel-active {
+    animation: kenburnsCarousel 1.6s ease-out forwards;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  @keyframes kenburnsCarousel {
+    from { transform: scale(1.02) translate(0%, 0%); }
+    to   { transform: scale(1.10) translate(-1.2%, -0.8%); }
   }
 
   body > *:not(canvas) {
@@ -123,7 +141,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    body::after {
+    body::after,
+    .kenburns-carousel-active {
       animation: none;
     }
   }
@@ -644,6 +663,24 @@ html, body {
     animation: none;
     background-image: none;
   }
+}
+
+/* Ken Burns photo pan/zoom for venue grid */
+.kenburns-photo {
+  animation: kenburnsPan 18s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+.kenburns-photo-delayed {
+  animation-delay: -9s;
+}
+@keyframes kenburnsPan {
+  0%   { transform: scale(1.03) translate(0%, 0%); }
+  50%  { transform: scale(1.08) translate(-1.5%, -1%); }
+  100% { transform: scale(1.05) translate(1%, 1.2%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kenburns-photo { animation: none; transform: scale(1.02); }
 }
 
 /* Pristine media studio print broadsheet elements */
