@@ -5,7 +5,6 @@ import { Mail, MapPin, Award, ArrowUpRight, CheckCircle, Share2, Ticket } from "
 import { Button } from "@/components/Button";
 import { HTILogo } from "@/components/HTILogo";
 import { PledgeForm } from "@/components/PledgeForm";
-import { Starfield } from "@/components/Starfield";
 import { Toast, type ToastRef } from "@/components/Toast";
 import { PLEDGE_GOAL } from "@/lib/sip-and-sync-config";
 
@@ -176,9 +175,6 @@ export default function SipAndSync() {
 
   return (
     <div className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white">
-      {/* 3D Space Starfield Background */}
-      <Starfield opacity={0.86} />
-
       {/* STICKY GLASSMORPHIC NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-bg)]/80 backdrop-blur-md">
         <div className="container flex h-20 items-center justify-between">
@@ -220,18 +216,12 @@ export default function SipAndSync() {
               className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)]"
               style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)" }}
             >
-              <span className="sip-sync-logo flex flex-nowrap items-baseline whitespace-nowrap">
-                <span className="sip-sync-sip text-[var(--color-gold)]">
-                  <span className="sip-sync-si">Si</span>
-                  <span className="sip-sync-p inline-block relative z-0">p</span>
-                </span>
-                <span className="sip-sync-amp text-white inline-block relative z-10 mx-[-0.08em]">&amp;</span>
-                <span className="sip-sync-sync text-[var(--color-accent)]">
-                  <span className="sip-sync-cap inline-block relative z-20">S</span>
-                  <span>ync</span>
-                </span>
+              <span className="sip-sync-logo relative flex flex-nowrap items-baseline whitespace-nowrap">
+                <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
+                <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
+                <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[1.18em] text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="block text-[var(--color-ink)] whitespace-nowrap animate-fade-in-up delay-100">Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap -mt-[0.36em] text-[var(--color-ink)]">Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -260,11 +250,11 @@ export default function SipAndSync() {
               <div className="absolute -bottom-3.5 -left-3.5 h-7 w-7 border-b border-l border-[var(--color-accent)] pointer-events-none" />
               <div className="absolute -bottom-3.5 -right-3.5 h-7 w-7 border-b border-r border-[var(--color-accent)] pointer-events-none" />
 
-              <div className="aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner">
+              <div className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner">
                 <img
                   src="/venue/venue-wood-entry.jpg"
                   alt="Inside Portal HQ Raleigh — lobby entrance with bar, gallery wall, and the Portal neon sign"
-                  className="h-full w-full max-w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-transform duration-700 hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>
             </div>
@@ -677,7 +667,7 @@ export default function SipAndSync() {
               >
                 <div className="flex items-center justify-between border-b border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pb-3">
                   <div className="text-xs font-semibold text-[var(--color-muted)] font-sans">Live Progress</div>
-                  <span className="text-xs font-semibold tracking-tight text-[var(--color-signal)]">Local tracker</span>
+                  <span className="text-xs font-semibold tracking-tight text-[var(--color-signal)]">Local preview</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-center">
@@ -718,7 +708,7 @@ export default function SipAndSync() {
                       : "Raleigh milestone reached. Thank you for helping close the digital divide."
                   }
                 </p>
-                <p className="text-xs text-[var(--color-muted)] leading-relaxed text-center">
+                <p className="text-xs text-[var(--color-muted)] leading-relaxed text-center border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] pt-3 mt-1">
                   Displayed pledges come from submitted forms saved in this browser until a live database is connected.
                 </p>
               </div>
@@ -806,7 +796,7 @@ export default function SipAndSync() {
                 <img src="/hti-cropped.png" alt="HTI" className="h-10 w-auto object-contain" />
               </div>
               <div className="space-y-2">
-                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
+                <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
                 <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
                   HTI representative
                 </span>
@@ -834,7 +824,7 @@ export default function SipAndSync() {
                 <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
               </div>
               <div className="space-y-2">
-                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">David Galindo</h4>
+                <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">David Galindo</h4>
                 <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
                   Coordinating director
                 </span>
@@ -861,7 +851,7 @@ export default function SipAndSync() {
                 <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
               </div>
               <div className="space-y-2">
-                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
+                <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
                 <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
                   Portal HQ co-founder
                 </span>
@@ -895,11 +885,12 @@ export default function SipAndSync() {
 
       {/* ACTIVE TICKET RETRIEVAL FLOATING PILL */}
       {hasTicket && (
-        <div className="fixed bottom-4 right-4 z-40 animate-bounce">
+        <div className="fixed bottom-4 right-4 z-40 animate-fade-in-up delay-500">
           <button
             onClick={handleOpenTicket}
             className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[var(--color-accent)] text-white shadow-lg hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] transition-all font-display text-sm font-semibold tracking-tight shadow-orange-500/20"
           >
+            <span className="h-2 w-2 rounded-full bg-white/90 animate-pulse" aria-hidden="true" />
             <Ticket className="h-4 w-4" />
             Active Ticket for {savedTicketName}
           </button>
