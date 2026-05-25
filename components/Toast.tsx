@@ -27,6 +27,9 @@ export const Toast = forwardRef<ToastRef, {}>((_, ref) => {
 
   return (
     <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
       className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-[var(--radius-md)] border border-white/10 bg-[var(--color-bg-dark)]/90 backdrop-blur-md text-[var(--color-ink-dark)] font-display text-sm font-medium tracking-tight shadow-xl shadow-black/30 transition-all duration-300 pointer-events-none ${
         visible
           ? "translate-y-0 opacity-100 scale-100"

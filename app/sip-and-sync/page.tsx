@@ -212,19 +212,20 @@ export default function SipAndSync() {
           </div>
 
           <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-surface)]/55 backdrop-blur-md shadow-inner">
-            <a href="#about" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)]">The Collaboration</a>
-            <a href="#tickets" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)]">Tickets &amp; Donations</a>
-            <a href="#pledge" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)]">Laptop Pledge Drive</a>
-            <a href="#connect" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)]">Connect</a>
+            <a href="#about" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">The Collaboration</a>
+            <a href="#tickets" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">Tickets &amp; Donations</a>
+            <a href="#pledge" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">Laptop Pledge Drive</a>
+            <a href="#connect" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">Connect</a>
           </div>
 
           <div className="hidden sm:flex items-center gap-3">
             {hasTicket && (
               <button
                 onClick={handleOpenTicket}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 hover:bg-[var(--color-accent)]/10 text-xs font-semibold text-[var(--color-accent)] transition-all font-sans"
+                aria-label={`Open active pass for ${savedTicketName || "guest"}`}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 hover:bg-[var(--color-accent)]/10 text-xs font-semibold text-[var(--color-accent)] transition-all font-sans focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
               >
-                <Ticket className="h-3.5 w-3.5 animate-pulse" />
+                <Ticket className="h-3.5 w-3.5 animate-pulse" aria-hidden="true" />
                 Active Pass
               </button>
             )}
@@ -235,6 +236,7 @@ export default function SipAndSync() {
         </div>
       </nav>
 
+      <main id="main">
       {/* HERO SECTION */}
       <section className="container relative pt-8 pb-16 md:pt-12 md:pb-20">
         <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
@@ -252,7 +254,7 @@ export default function SipAndSync() {
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
-              "Old Laptops. New Opportunities."
+              “Old Laptops. New Opportunities.”
             </p>
 
             <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed animate-fade-in-up delay-200">
@@ -301,16 +303,21 @@ export default function SipAndSync() {
                   <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/80 tabular-nums">
                     {String(heroIdx + 1).padStart(2, "0")} <span className="text-white/40">/ {String(heroPhotos.length).padStart(2, "0")}</span>
                   </span>
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-0.5">
                     {heroPhotos.map((_, idx) => (
                       <button
                         key={idx}
                         type="button"
-                        aria-label={`Show photo ${idx + 1}`}
+                        aria-label={`Show photo ${idx + 1} of ${heroPhotos.length}`}
                         aria-current={idx === heroIdx}
                         onClick={() => setHeroIdx(idx)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${idx === heroIdx ? "w-6 bg-[var(--color-accent)] shadow-[0_0_10px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]" : "w-1.5 bg-white/45 hover:bg-white/75"}`}
-                      />
+                        className="inline-flex h-6 min-w-6 items-center justify-center px-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className={`block h-1.5 rounded-full transition-all duration-300 ${idx === heroIdx ? "w-6 bg-[var(--color-accent)] shadow-[0_0_10px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]" : "w-1.5 bg-white/45 hover:bg-white/75"}`}
+                        />
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -320,7 +327,7 @@ export default function SipAndSync() {
             {/* Big fun jump-to-3D button under the carousel */}
             <a
               href="#explore-3d"
-              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-white shadow-[0_18px_45px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_24px_55px_color-mix(in_oklch,var(--color-accent)_65%,transparent)] active:scale-[0.99] overflow-hidden"
+              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_18px_45px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_24px_55px_color-mix(in_oklch,var(--color-accent)_65%,transparent)] active:scale-[0.99] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
             >
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="relative transition-transform duration-500 ease-out group-hover:rotate-[24deg] group-hover:scale-110">
@@ -352,7 +359,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <svg
               viewBox="0 0 36 36"
@@ -394,7 +401,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <svg
               viewBox="0 0 36 36"
@@ -434,7 +441,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <svg
               viewBox="0 0 36 36"
@@ -468,13 +475,13 @@ export default function SipAndSync() {
         <div className="container space-y-8">
           <div className="max-w-2xl">
             <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
-              Why we're gathering
+              Why we’re gathering
             </div>
             <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
               The Collaboration
             </h2>
             <p className="text-lg text-[var(--color-muted)] mt-2">
-              Fusing hardware digital accessibility with Raleigh's high-energy startup and creative ecosystem for one powerful night of impact.
+              Fusing hardware digital accessibility with Raleigh’s high-energy startup and creative ecosystem for one powerful night of impact.
             </p>
           </div>
 
@@ -524,9 +531,9 @@ export default function SipAndSync() {
                 href="https://www.hubzonetech.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
+                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-band)]"
               >
-                Visit hubzonetech.org <ArrowUpRight className="h-3.5 w-3.5" />
+                Visit hubzonetech.org <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             </div>
 
@@ -575,9 +582,9 @@ export default function SipAndSync() {
                 href="https://theportalhq.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5"
+                className="font-sans text-sm font-semibold text-[var(--color-accent)] inline-flex items-center gap-1 hover:underline mt-5 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-band)]"
               >
-                Visit theportalhq.com <ArrowUpRight className="h-3.5 w-3.5" />
+                Visit theportalhq.com <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             </div>
 
@@ -600,7 +607,7 @@ export default function SipAndSync() {
                 </p>
 
                 <p className="text-sm text-[var(--color-muted)] leading-relaxed">
-                  By bringing your retired laptop to our social hour, you are not simply recycling silicon. You are directly presenting a NC student with the tools to complete their schooling, expand their ambitions, and pursue their goals. Let's make sure no child gets left behind.
+                  By bringing your retired laptop to our social hour, you are not simply recycling silicon. You are directly presenting a NC student with the tools to complete their schooling, expand their ambitions, and pursue their goals. Let’s make sure no child gets left behind.
                 </p>
               </div>
 
@@ -698,7 +705,7 @@ export default function SipAndSync() {
                 href={virtualTourSrc}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--color-ink)_14%,transparent)] px-6 font-sans text-sm font-semibold text-[var(--color-ink)] transition-all hover:bg-white/5 hover:border-[var(--color-accent)]/45 hover:text-[var(--color-accent)] hover:translate-y-[-1px]"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--color-ink)_14%,transparent)] px-6 font-sans text-sm font-semibold text-[var(--color-ink)] transition-all hover:bg-white/5 hover:border-[var(--color-accent)]/45 hover:text-[var(--color-accent)] hover:translate-y-[-1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-panel)]"
               >
                 Open full tour
               </a>
@@ -734,7 +741,8 @@ export default function SipAndSync() {
                         setActiveScene(wp.id);
                         toastRef.current?.show(`Navigating walkthrough to ${wp.name}...`);
                       }}
-                      className={`group relative flex items-baseline gap-3 px-5 py-4 text-left transition-colors duration-200 ${
+                      aria-pressed={isActive}
+                      className={`group relative flex items-baseline gap-3 px-5 py-4 text-left transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-inset ${
                         isActive
                           ? "bg-[var(--color-accent)]/12 text-[var(--color-ink)]"
                           : "bg-[var(--color-panel)] text-[var(--color-muted)] hover:bg-[var(--color-panel-strong)] hover:text-[var(--color-ink)]"
@@ -970,7 +978,7 @@ export default function SipAndSync() {
                   </div>
                   <strong className="block text-[var(--color-ink)] font-sans">Donating 5+ Laptops?</strong>
                   <p className="text-[var(--color-muted)] leading-relaxed font-sans">
-                    If your business or household has 5 or more laptops to pledge, we'll coordinate a free courier pickup.
+                    If your business or household has 5 or more laptops to pledge, we’ll coordinate a free courier pickup.
                   </p>
                   <a href="mailto:pickups@hubzonetech.org" className="text-sm font-semibold text-[var(--color-accent)] hover:underline block pt-1 font-sans">
                     Email pickups@hubzonetech.org ➔
@@ -1092,7 +1100,7 @@ export default function SipAndSync() {
                   Spread<br className="hidden sm:block" /> the Word<span className="text-[var(--color-bg-dark)] drop-shadow-[0_2px_0_rgba(255,255,255,0.35)]">.</span>
                 </h4>
                 <p className="text-base md:text-lg text-white/85 leading-relaxed max-w-[44ch] mx-auto md:mx-0">
-                  No spare laptop? <strong className="text-white font-semibold">Share this flyer.</strong> Every retweet, every Slack drop, every forwarded link makes a Raleigh student's screen light up.
+                  No spare laptop? <strong className="text-white font-semibold">Share this flyer.</strong> Every retweet, every Slack drop, every forwarded link makes a Raleigh student’s screen light up.
                 </p>
               </div>
 
@@ -1100,18 +1108,18 @@ export default function SipAndSync() {
               <div className="md:col-span-3 flex flex-col gap-3">
                 <button
                   onClick={handleCopyLink}
-                  className="group flex items-center justify-center gap-2.5 rounded-full bg-white text-[var(--color-bg-dark)] px-6 py-3.5 font-sans text-sm font-bold tracking-tight shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl hover:-translate-y-0.5"
+                  className="group flex items-center justify-center gap-2.5 rounded-full bg-white text-[var(--color-bg-dark)] px-6 py-3.5 font-sans text-sm font-bold tracking-tight shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-accent)]"
                 >
-                  <Share2 className="h-4 w-4 transition-transform group-hover:rotate-12" />
+                  <Share2 className="h-4 w-4 transition-transform group-hover:rotate-12" aria-hidden="true" />
                   Copy Event URL
                 </button>
                 <a
                   href="/sip_and_sync_flyer.png"
                   download="Sip_And_Sync_Flyer.png"
-                  className="group flex items-center justify-center gap-2.5 rounded-full border-2 border-white/80 text-white px-6 py-3.5 font-sans text-sm font-bold tracking-tight transition-all hover:bg-white hover:text-[var(--color-bg-dark)] hover:-translate-y-0.5"
+                  className="group flex items-center justify-center gap-2.5 rounded-full border-2 border-white/80 text-white px-6 py-3.5 font-sans text-sm font-bold tracking-tight transition-all hover:bg-white hover:text-[var(--color-bg-dark)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-accent)]"
                 >
                   Download Flyer
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -1125,7 +1133,7 @@ export default function SipAndSync() {
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
               <div className="flex h-28 items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
-                <img src="/hti-cropped.png" alt="HTI" className="h-28 w-auto object-contain" />
+                <img src="/hti-cropped.png" alt="" aria-hidden="true" className="h-28 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
@@ -1139,9 +1147,9 @@ export default function SipAndSync() {
               <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:wsigmon@hubzonetech.org"
-                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-band)]"
                 >
-                  <Mail className="h-4 w-4" /> wsigmon@hubzonetech.org
+                  <Mail className="h-4 w-4" aria-hidden="true" /> wsigmon@hubzonetech.org
                 </a>
               </div>
             </div>
@@ -1151,10 +1159,10 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="flex h-14 items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300">
-                <img src="/hti-cropped.png" alt="HTI" className="h-14 w-auto object-contain" />
+              <div className="flex h-14 items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300" aria-hidden="true">
+                <img src="/hti-cropped.png" alt="" className="h-14 w-auto object-contain" />
                 <span className="text-3xl text-[var(--color-accent)]/55 font-light mx-1 select-none">+</span>
-                <img src="/portal-logo.png" alt="Portal" className="h-14 w-auto object-contain" />
+                <img src="/portal-logo.png" alt="" className="h-14 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">David Galindo</h4>
@@ -1168,9 +1176,9 @@ export default function SipAndSync() {
               <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:dgalindo@kurvpay.com"
-                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-band)]"
                 >
-                  <Mail className="h-4 w-4" /> dgalindo@kurvpay.com
+                  <Mail className="h-4 w-4" aria-hidden="true" /> dgalindo@kurvpay.com
                 </a>
               </div>
             </div>
@@ -1181,7 +1189,7 @@ export default function SipAndSync() {
               className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
               <div className="flex h-28 items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
-                <img src="/portal-logo.png" alt="Portal" className="h-28 w-auto object-contain" />
+                <img src="/portal-logo.png" alt="" aria-hidden="true" className="h-28 w-auto object-contain" />
               </div>
               <div className="space-y-2">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
@@ -1195,32 +1203,33 @@ export default function SipAndSync() {
               <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:jake@theportalhq.com"
-                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-band)]"
                 >
-                  <Mail className="h-4 w-4" /> jake@theportalhq.com
+                  <Mail className="h-4 w-4" aria-hidden="true" /> jake@theportalhq.com
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
       <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
         <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-y-8">
           {/* LEFT: co-branding lockup */}
-          <div className="flex items-center gap-3.5 opacity-85">
+          <div className="flex items-center gap-3.5 opacity-85" aria-hidden="true">
             <HTILogo className="h-10 w-auto object-contain" />
             <span className="text-xl text-[var(--color-accent)]/55 font-light select-none mx-1">+</span>
-            <img src="/portal-logo.png" alt="Portal HQ" className="h-10 w-auto object-contain" />
+            <img src="/portal-logo.png" alt="" className="h-10 w-auto object-contain" />
           </div>
 
           {/* RIGHT: credit + links stacked */}
           <div className="flex flex-col items-start md:items-end gap-3 text-left md:text-right">
             <div>Sip &amp; Sync Social Hour — HTI + <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
             <div className="flex gap-7 font-semibold">
-              <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
-              <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>
+              <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">hubzonetech.org</a>
+              <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">theportalhq.com</a>
             </div>
           </div>
         </div>
@@ -1231,10 +1240,11 @@ export default function SipAndSync() {
         <div className="fixed bottom-4 right-4 z-40 animate-fade-in-up delay-500">
           <button
             onClick={handleOpenTicket}
-            className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[var(--color-accent)] text-white shadow-lg hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] transition-all font-display text-sm font-semibold tracking-tight shadow-orange-500/20"
+            aria-label={`View active ticket for ${savedTicketName}`}
+            className="flex items-center gap-2 px-5 py-3 rounded-full border border-[color-mix(in_oklch,var(--color-on-accent)_25%,transparent)] bg-[var(--color-accent)] text-[var(--color-on-accent)] shadow-lg hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] transition-all font-display text-sm font-semibold tracking-tight shadow-orange-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-on-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
-            <span className="h-2 w-2 rounded-full bg-white/90 animate-pulse" aria-hidden="true" />
-            <Ticket className="h-4 w-4" />
+            <span className="h-2 w-2 rounded-full bg-[var(--color-on-accent)] animate-pulse" aria-hidden="true" />
+            <Ticket className="h-4 w-4" aria-hidden="true" />
             Active Ticket for {savedTicketName}
           </button>
         </div>
@@ -1249,9 +1259,10 @@ export default function SipAndSync() {
             {/* Close modal X button */}
             <button
               onClick={handleCloseScanModal}
-              className="absolute top-4 right-4 text-[var(--color-muted)] hover:text-[var(--color-ink)] text-xl font-bold"
+              aria-label="Close ticket modal"
+              className="absolute top-3 right-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--color-muted)] hover:text-[var(--color-ink)] hover:bg-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] text-2xl font-bold leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface)]"
             >
-              &times;
+              <span aria-hidden="true">&times;</span>
             </button>
 
             {/* Status Check badge */}

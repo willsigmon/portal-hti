@@ -189,7 +189,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </h4>
             <button
               onClick={handleResetTicket}
-              className="text-xs text-[var(--color-accent)] hover:underline"
+              className="text-xs text-[var(--color-accent)] hover:underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
             >
               Start Over / Reserve Another
             </button>
@@ -202,7 +202,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               className={`px-6 py-2.5 text-center text-xs font-bold font-sans tracking-wide ${
                 ticketPaid
                   ? "bg-[var(--color-signal)] text-white"
-                  : "bg-[var(--color-accent)] text-white"
+                  : "bg-[var(--color-accent)] text-[var(--color-on-accent)]"
               }`}
             >
               {ticketPaid ? "✓ Pass Activated — Entrance Granted" : "⚠️ Pending Payment / Inactive"}
@@ -391,7 +391,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             {/* Step 1: Quantity */}
             <div className="space-y-4 pb-2">
               <div className="flex items-center gap-3.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
+                <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-[var(--color-on-accent)] font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   01
                 </span>
                 <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
@@ -412,23 +412,26 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 <div className="flex items-center gap-1 bg-black/30 border border-white/10 rounded-[var(--radius-md)] p-1 self-end sm:self-auto shadow-sm">
                   <button
                     type="button"
+                    aria-label="Decrease ticket quantity"
                     onClick={() => setTicketQty((q) => Math.max(1, q - 1))}
-                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95"
+                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
                   >
-                    −
+                    <span aria-hidden="true">−</span>
                   </button>
                   <input
                     type="number"
                     value={ticketQty}
                     readOnly
+                    aria-label="Ticket quantity"
                     className="w-12 text-center text-base font-bold font-sans tabular-nums focus:outline-none bg-transparent text-white"
                   />
                   <button
                     type="button"
+                    aria-label="Increase ticket quantity"
                     onClick={() => setTicketQty((q) => Math.min(10, q + 1))}
-                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95"
+                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
                   >
-                    +
+                    <span aria-hidden="true">+</span>
                   </button>
                 </div>
               </div>
@@ -437,7 +440,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             {/* Step 2: Donation Slider & Presets */}
             <div className="space-y-4 pt-8">
               <div className="flex items-center gap-3.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
+                <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-[var(--color-on-accent)] font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   02
                 </span>
                 <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
@@ -447,7 +450,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
               <div className="p-4 rounded-xl border border-white/10 bg-black/20 space-y-4">
                 <p className="text-xs text-[var(--color-muted)] leading-relaxed">
-                  Support HTI's 501(c)(3) mission to buy secure drive wipes, license OS platforms, and distribute refurbished machines to families in need.
+                  Support HTI’s 501(c)(3) mission to buy secure drive wipes, license OS platforms, and distribute refurbished machines to families in need.
                 </p>
 
                 {/* Preset Option Chips */}
@@ -456,10 +459,11 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     <button
                       key={preset}
                       type="button"
+                      aria-pressed={donationPreset === preset}
                       onClick={() => handlePresetSelect(preset)}
-                      className={`py-2 px-3 rounded-lg border font-sans tabular-nums text-sm font-semibold tracking-tight transition-all duration-200 ${
+                      className={`py-2 px-3 rounded-lg border font-sans tabular-nums text-sm font-semibold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] ${
                         donationPreset === preset
-                          ? "bg-[var(--color-accent)] border-[var(--color-accent)] text-white shadow-sm shadow-orange-500/20"
+                          ? "bg-[var(--color-accent)] border-[var(--color-accent)] text-[var(--color-on-accent)] shadow-sm shadow-orange-500/20"
                           : "bg-black/30 border-white/10 text-white hover:border-[var(--color-accent)]/50 hover:bg-black/50"
                       }`}
                     >
@@ -472,12 +476,13 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 <div className="space-y-3">
                   <input
                     type="range"
+                    aria-label="Donation amount in US dollars"
                     min={donationPreset === "custom" ? "0" : "25"}
                     max="250"
                     step="5"
                     value={donationValue}
                     onChange={handleDonationSliderChange}
-                    className="w-full accent-[var(--color-accent)] h-1 rounded bg-white/10 cursor-pointer"
+                    className="w-full accent-[var(--color-accent)] h-1 rounded bg-white/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
                   />
 
                   <div className="flex items-center justify-between gap-4">
@@ -487,6 +492,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                       <input
                         type="number"
                         min="0"
+                        aria-label="Custom donation amount"
                         value={donationValue}
                         onChange={handleDonationInputChange}
                         className="w-full font-sans tabular-nums text-sm font-bold text-right bg-transparent text-white focus:outline-none"
@@ -500,7 +506,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             {/* Step 3: Guest details */}
             <div className="space-y-4 pt-8">
               <div className="flex items-center gap-3.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-white font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
+                <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-[var(--color-on-accent)] font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   03
                 </span>
                 <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">
@@ -625,7 +631,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
         <div>
           <button
             onClick={handleResetLaptop}
-            className="text-sm font-semibold text-[var(--color-accent)] hover:underline"
+            className="text-sm font-semibold text-[var(--color-accent)] hover:underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             Pledge Another Device ➔
           </button>

@@ -2,6 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Cormorant_Garamond, IBM_Plex_Sans, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+// Runs before React hydrates so we set [data-theme] on <html> synchronously,
+// preventing a light/dark flash on first paint. Defaults to dark — the
+// brand mood — and only honors prefers-color-scheme: light if the visitor
+// has no stored preference.
+const NO_FLASH_THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('ss_theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -67,9 +74,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Static string constant — no user input, safe inline boot script. */}
+        <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
+      </head>
       <body className="antialiased">
         <AmbientSpotlight />
+        <ThemeToggle />
         {children}
       </body>
     </html>
