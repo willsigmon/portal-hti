@@ -31,9 +31,9 @@ export default function SipAndSync() {
   // Narrative arc: welcome → sip → social → sync → linger.
   const heroPhotos = [
     { src: "/venue/venue-wood-entry.jpg", alt: "Portal HQ lobby — bar, gallery wall, and the neon Portal sign" },
-    { src: "/venue/venue-bar-detail.jpg", alt: "Portal HQ bar — craft drinks pouring" },
-    { src: "/venue/venue-evening-table.jpg", alt: "Portal HQ evening tables set for guests" },
-    { src: "/venue/venue-stage-lighting.jpg", alt: "Portal HQ stage under live production lighting" },
+    { src: "/venue/venue-lobby-wide.jpg", alt: "Portal HQ wide lobby with brick walls and warm lighting" },
+    { src: "/venue/venue-main-hall-daylight.jpg", alt: "Portal HQ main hall in daylight, set for guests" },
+    { src: "/venue/venue-projection-wall.jpg", alt: "Portal HQ projection wall during a showcase moment" },
     { src: "/venue/venue-lounge-corner.jpg", alt: "Portal HQ lounge corner — warm brick and conversation seating" },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
@@ -356,7 +356,7 @@ export default function SipAndSync() {
             onMouseMove={handleMouseMove}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-evening-table.jpg)",
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-daylight-floor.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -471,7 +471,7 @@ export default function SipAndSync() {
             onMouseMove={handleMouseMove}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-bar-detail.jpg)",
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-lounge-view.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -704,15 +704,15 @@ export default function SipAndSync() {
               </div>
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
-                  src="/venue/venue-evening-table.jpg"
-                  alt="Evening reception setup"
+                  src="/venue/venue-daylight-floor.jpg"
+                  alt="Daylight floor view of Portal HQ ready for guests"
                   className="kenburns-photo kenburns-photo-delayed w-full h-full object-cover filter contrast-[1.02]"
                 />
               </div>
               <div className="col-span-2 rounded-xl overflow-hidden aspect-[16/9] border bg-[var(--color-bg-dark)] shadow-sm relative group">
                 <img
-                  src="/venue/venue-stage-lighting.jpg"
-                  alt="Concert stage lighting production"
+                  src="/venue/venue-live-performance.jpg"
+                  alt="Live performance on the Portal HQ stage"
                   className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white text-xs">
