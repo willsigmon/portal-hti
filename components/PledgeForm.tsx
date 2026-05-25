@@ -515,7 +515,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
-                <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+                <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
                   Guest Name
                   <input
                     type="text"
@@ -526,7 +526,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     className="input-field"
                   />
                 </label>
-                <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+                <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
                   Email Address
                   <input
                     type="email"
@@ -655,7 +655,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
-        <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+        <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
           How Many Laptops?
           <input
             type="number"
@@ -667,7 +667,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             className="input-field"
           />
         </label>
-        <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+        <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
           Brand / Model (Optional)
           <input
             type="text"
@@ -680,7 +680,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
         </label>
       </div>
 
-      <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full text-left">
+      <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full text-left">
         General Hardware Condition
         <select
           name="condition"
@@ -698,12 +698,12 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
       {/* Contact info grid */}
       <div className="border-t border-white/10 pt-6.5 space-y-6 w-full">
-        <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] block text-left">
+        <span className="font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-accent)] block text-left">
           Coordination Details
         </span>
 
         <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
-          <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+          <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
             Your Full Name
             <input
               type="text"
@@ -715,7 +715,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               className="input-field"
             />
           </label>
-          <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+          <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
             Email Address
             <input
               type="email"
@@ -730,7 +730,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6 w-full text-left">
-          <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+          <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
             Phone Number
             <input
               type="tel"
@@ -741,7 +741,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               className="input-field"
             />
           </label>
-          <label className="flex flex-col gap-2 font-mono text-xs uppercase tracking-wider text-[var(--color-muted)] w-full">
+          <label className="flex flex-col gap-2 font-sans text-xs uppercase tracking-[0.14em] font-semibold text-[var(--color-muted)] w-full">
             Notes or Pickup Preferences
             <input
               type="text"

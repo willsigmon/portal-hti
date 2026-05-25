@@ -28,12 +28,13 @@ export default function SipAndSync() {
   const [savedTicketName, setSavedTicketName] = useState("");
 
   // ---- HERO CAROUSEL ----
+  // Narrative arc: welcome → sip → social → sync → linger.
   const heroPhotos = [
     { src: "/venue/venue-wood-entry.jpg", alt: "Portal HQ lobby — bar, gallery wall, and the neon Portal sign" },
-    { src: "/venue/venue-stage-lighting.jpg", alt: "Portal HQ concert stage under full production lighting" },
-    { src: "/venue/venue-mural-stage.jpg", alt: "Portal HQ stage with painted mural backdrop" },
-    { src: "/venue/venue-projection-wall.jpg", alt: "Portal HQ projection wall during a showcase event" },
-    { src: "/venue/venue-lobby-wide.jpg", alt: "Portal HQ wide lobby view with brick and warm lighting" },
+    { src: "/venue/venue-bar-detail.jpg", alt: "Portal HQ bar — craft drinks pouring" },
+    { src: "/venue/venue-evening-table.jpg", alt: "Portal HQ evening tables set for guests" },
+    { src: "/venue/venue-stage-lighting.jpg", alt: "Portal HQ stage under live production lighting" },
+    { src: "/venue/venue-lounge-corner.jpg", alt: "Portal HQ lounge corner — warm brick and conversation seating" },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
@@ -243,14 +244,14 @@ export default function SipAndSync() {
           <div className="min-w-0 space-y-5 lg:col-span-7">
             <h1
               className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
-              style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)", lineHeight: 1.5 }}
+              style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)", lineHeight: 1 }}
             >
               <span className="sip-sync-logo relative flex flex-nowrap items-baseline whitespace-nowrap">
                 <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
                 <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
                 <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-1.05em" }}>Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -300,7 +301,7 @@ export default function SipAndSync() {
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-3 z-10 flex items-center justify-between px-4">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/80 tabular-nums">
+                  <span className="font-sans text-[10px] uppercase tracking-[0.22em] text-white/80 tabular-nums">
                     {String(heroIdx + 1).padStart(2, "0")} <span className="text-white/40">/ {String(heroPhotos.length).padStart(2, "0")}</span>
                   </span>
                   <div className="flex items-center gap-0.5">
@@ -379,7 +380,7 @@ export default function SipAndSync() {
               <line x1="18" y1="18" x2="18" y2="26" />
               <line x1="18" y1="18" x2="22.5" y2="18" />
             </svg>
-            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
+            <span className="relative z-10 font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
             <div className="relative z-10 space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
               <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
@@ -420,7 +421,7 @@ export default function SipAndSync() {
                 <line x1="18" y1="10" x2="18" y2="16" />
                 <line x1="15" y1="13" x2="21" y2="13" />
               </svg>
-              <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
+              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
               <div className="space-y-2">
                 <h3 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.02]">
                   <span className="whitespace-nowrap">Portal HQ</span>
@@ -491,7 +492,7 @@ export default function SipAndSync() {
               <line x1="13" y1="20" x2="13" y2="22" />
               <path d="M21 14.5 L21 21.5 M18.5 16 Q18.5 14.5 21 14.5 Q23.5 14.5 23.5 16 Q23.5 17.5 21 18 Q18.5 18.5 18.5 20 Q18.5 21.5 21 21.5 Q23.5 21.5 23.5 20" />
             </svg>
-            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
+            <span className="relative z-10 font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
             <div className="relative z-10 space-y-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
               <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
@@ -546,15 +547,15 @@ export default function SipAndSync() {
 
                 <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Wipe</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Wipe</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">DoD 5220.22-M</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Rebuild</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Rebuild</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Refurbished OS</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Reach</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Reach</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Distribution + courses</dd>
                   </div>
                 </dl>
@@ -597,15 +598,15 @@ export default function SipAndSync() {
 
                 <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Stage</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Stage</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">12 Gobo lights</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Floor</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Floor</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">5,000 sq ft</dd>
                   </div>
                   <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Tenants</dt>
+                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Tenants</dt>
                     <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Founder hub</dd>
                   </div>
                 </dl>
@@ -728,7 +729,7 @@ export default function SipAndSync() {
             <div aria-hidden="true" className="absolute left-0 top-12 bottom-12 w-1 bg-[var(--color-accent)] rounded-r-full" />
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div className="max-w-2xl">
-                <span className="inline-flex items-center gap-1.5 mb-3 px-3 py-1 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/8 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">
+                <span className="inline-flex items-center gap-1.5 mb-3 px-3 py-1 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/8 font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">
                   Interactive 360°
                 </span>
                 <h3 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
@@ -781,7 +782,7 @@ export default function SipAndSync() {
                           : "bg-[var(--color-panel)] text-[var(--color-muted)] hover:bg-[var(--color-panel-strong)] hover:text-[var(--color-ink)]"
                       }`}
                     >
-                      <span className={`font-mono text-xs tracking-[0.18em] tabular-nums ${isActive ? "text-[var(--color-accent)]" : "text-[var(--color-muted)]/70"}`}>
+                      <span className={`font-sans text-xs tracking-[0.18em] tabular-nums ${isActive ? "text-[var(--color-accent)]" : "text-[var(--color-muted)]/70"}`}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="flex flex-col gap-0.5">
@@ -1081,7 +1082,7 @@ export default function SipAndSync() {
             {/* Diagonal corner ribbon */}
             <div
               aria-hidden="true"
-              className="absolute -right-16 top-7 z-20 rotate-45 bg-[var(--color-bg-dark)] text-[var(--color-accent)] font-mono text-[10px] font-bold uppercase tracking-[0.32em] px-20 py-1.5 border-y border-[var(--color-accent)]/60 shadow-md"
+              className="absolute -right-16 top-7 z-20 rotate-45 bg-[var(--color-bg-dark)] text-[var(--color-accent)] font-sans text-[10px] font-bold uppercase tracking-[0.32em] px-20 py-1.5 border-y border-[var(--color-accent)]/60 shadow-md"
             >
               Share NC
             </div>
@@ -1089,7 +1090,7 @@ export default function SipAndSync() {
             {/* Faint vertical type accent */}
             <div
               aria-hidden="true"
-              className="absolute right-6 bottom-6 z-10 font-mono text-[10px] uppercase tracking-[0.42em] text-white/35 [writing-mode:vertical-rl] rotate-180"
+              className="absolute right-6 bottom-6 z-10 font-sans text-[10px] uppercase tracking-[0.42em] text-white/35 [writing-mode:vertical-rl] rotate-180"
             >
               Amplify · Pledge · Repeat
             </div>
@@ -1123,7 +1124,7 @@ export default function SipAndSync() {
 
               {/* Massive headline */}
               <div className="md:col-span-6 space-y-3 text-center md:text-left">
-                <span className="inline-block font-mono text-[10px] uppercase tracking-[0.36em] font-semibold text-white/70 border border-white/25 rounded-full px-3 py-1">
+                <span className="inline-block font-sans text-[10px] uppercase tracking-[0.36em] font-semibold text-white/70 border border-white/25 rounded-full px-3 py-1">
                   Signal Boost
                 </span>
                 <h4

@@ -378,15 +378,17 @@
   background: transparent;
   color: var(--color-ink);
   padding: 0.62rem 0;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: -0.005em;
   transition: border-color 160ms var(--ease-spring), background 160ms var(--ease-spring);
 }
 
 .input-field::placeholder {
-  color: color-mix(in oklch, var(--color-muted) 45%, transparent);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  color: color-mix(in oklch, var(--color-muted) 50%, transparent);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
 }
 
 .input-field:focus {
