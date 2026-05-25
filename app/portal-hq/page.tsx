@@ -137,12 +137,12 @@ export default function PortalHQBooking() {
       <main className="relative overflow-hidden">
         <section className="container relative grid gap-12 pb-20 pt-10 md:pt-16 lg:grid-cols-12 lg:items-center">
           {/* Minimalist Celestial Gold-Leaf Engraving Backdrop */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 select-none opacity-32 transition-opacity duration-1000 md:h-[800px] md:w-[800px] lg:h-[1000px] lg:w-[1000px]">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/8 to-[var(--color-violet)]/12 blur-3xl animate-pulse" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 select-none opacity-80 transition-opacity duration-1000 md:h-[800px] md:w-[800px] lg:h-[1000px] lg:w-[1000px]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-accent)]/15 to-[var(--color-violet)]/20 blur-3xl animate-pulse" />
             <img 
               src="/portal_cosmic_hero.png" 
               alt="" 
-              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-55 animate-spin-slow filter sepia-[0.95] saturate-[0.7] brightness-[0.72] contrast-[1.15] hue-rotate-[320deg] drop-shadow-[0_0_50px_rgba(217,125,84,0.15)]"
+              className="absolute inset-0 h-full w-full object-contain mix-blend-screen opacity-85 animate-spin-slow filter sepia-[0.95] saturate-[0.7] brightness-[0.75] contrast-[1.15] hue-rotate-[320deg] drop-shadow-[0_0_80px_rgba(217,125,84,0.38)]"
               style={{ 
                 animationDuration: "140s",
                 maskImage: "radial-gradient(circle, rgba(0,0,0,1) 28%, rgba(0,0,0,0) 65%)", 
@@ -154,7 +154,7 @@ export default function PortalHQBooking() {
           <div className="relative z-10 space-y-8 lg:col-span-7">
             <div className="eyebrow">// 35.7876° N, 78.6791° W // SECTION 01 // THE RALEIGH EVENT HOUSE</div>
             <h1 className="display-xl max-w-[12ch] leading-[1.08] tracking-tight">
-              One Space. <span className="font-normal italic text-[var(--color-accent)]">Every Event.</span>
+              One Space. <span className="font-normal italic bg-gradient-to-r from-[var(--color-gold)] via-[var(--color-violet)] to-[var(--color-accent)] bg-clip-text text-transparent filter drop-shadow-[0_2px_10px_rgba(217,125,84,0.1)]">Every Event.</span>
             </h1>
             <p className="max-w-[30ch] border-l-2 border-[var(--color-accent)]/30 pl-5 font-display text-2xl font-medium italic leading-relaxed text-[var(--color-muted)] md:text-3xl">
               A transformable venue for corporate retreats, live showcases, and private celebrations.

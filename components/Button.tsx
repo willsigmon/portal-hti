@@ -8,7 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-[var(--color-accent)] text-white hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)]",
+        primary: "bg-[var(--color-accent)] text-white hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] hover:shadow-[0_0_20px_color-mix(in_oklch,var(--color-accent)_40%,transparent)] shadow-md shadow-orange-500/10",
         secondary: "border border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] hover:bg-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]",
         ghost: "hover:bg-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]",
       },

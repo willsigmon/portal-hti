@@ -163,20 +163,32 @@
 
 .panel-card {
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, color-mix(in oklch, var(--color-panel) 94%, white 2%), color-mix(in oklch, var(--color-surface) 96%, black 4%));
+  border: 1px solid color-mix(in oklch, var(--color-violet) 12%, var(--color-border));
+  background: linear-gradient(180deg, color-mix(in oklch, var(--color-panel) 92%, var(--color-violet) 2%), color-mix(in oklch, var(--color-surface) 94%, black 6%));
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.28), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    0 0 15px color-mix(in oklch, var(--color-violet) 3%, transparent);
 }
 
 .panel-card-strong {
   border-radius: calc(var(--radius-lg) + 2px);
-  background: linear-gradient(180deg, color-mix(in oklch, var(--color-panel-strong) 96%, white 2%), color-mix(in oklch, var(--color-panel) 96%, black 5%));
+  border: 1px solid color-mix(in oklch, var(--color-accent) 18%, var(--color-border));
+  background: linear-gradient(180deg, color-mix(in oklch, var(--color-panel-strong) 92%, var(--color-accent) 2%), color-mix(in oklch, var(--color-panel) 94%, black 8%));
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.38), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 0 25px color-mix(in oklch, var(--color-accent) 5%, transparent);
 }
 
 .photo-frame {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: calc(var(--radius-lg) + 2px);
+  border: 1px solid color-mix(in oklch, var(--color-accent) 24%, var(--color-border));
   background: var(--color-panel);
   padding: 0.62rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
 .photo-frame > img {
