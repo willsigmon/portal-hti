@@ -103,15 +103,16 @@
 .container {
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: clamp(1.5rem, 4vw, 2.25rem);
+  padding-inline: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* Generous editorial breathing room. Floor 64px, ceiling 128px. */
 .section {
-  padding-block: clamp(2.5rem, 5vw, 4.5rem); /* Tightened and reined in breathing room between major panels */
+  padding-block: clamp(4rem, 8vw, 8rem);
 }
 
 .section-tight {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
 
 .surface-band {
