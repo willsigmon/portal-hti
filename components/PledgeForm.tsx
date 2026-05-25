@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "./Button";
+import { PAYPAL_DONATE_URL, QR_API_BASE } from "@/lib/sip-and-sync-config";
 
 type Mode = "ticket" | "laptop";
 type TicketStep = "configure" | "wallet";
@@ -142,7 +143,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
     const newPledge = {
       name: laptopData.name.trim() || "Anonymous",
-      count: parseInt(laptopData.quantity as any) || 1,
+      count: Number(laptopData.quantity) || 1,
       details: laptopData.brand.trim() || "Laptop Device",
       condition: laptopData.condition,
       time: "Just Now",
@@ -178,7 +179,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
       const verifyUrl = typeof window !== "undefined"
         ? `${window.location.origin}${window.location.pathname}?verify=${ticketCode}&guest=${encodeURIComponent(guestName)}&qty=${ticketQty}&donation=${donationValue}`
         : "";
-      const qrCodeSrc = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(verifyUrl)}`;
+      const qrCodeSrc = `${QR_API_BASE}?size=200x200&data=${encodeURIComponent(verifyUrl)}`;
 
       return (
         <div className="space-y-6">
@@ -339,7 +340,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               <div className="grid sm:grid-cols-2 gap-4 pt-1">
                 <Button asChild size="lg" className="w-full justify-center">
                   <a
-                    href="https://www.paypal.com/donate/?hosted_button_id=C6QJ6V23C63P2"
+                    href={PAYPAL_DONATE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -579,7 +580,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
               </Button>
 
               <a
-                href="https://www.paypal.com/donate/?hosted_button_id=C6QJ6V23C63P2"
+                href={PAYPAL_DONATE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] hover:underline py-1 transition-colors"

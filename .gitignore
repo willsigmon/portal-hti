@@ -48,3 +48,6 @@ Thumbs.db
 
 # local browser automation artifacts
 .playwright-mcp/
+
+# Local Claude Code preview configuration — not shared
+.claude/launch.json

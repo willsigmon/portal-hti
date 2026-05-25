@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SipAndSync from "./campaign/sip-and-sync/page";
+import SipAndSync from "./sip-and-sync/page";
 
 export const metadata: Metadata = {
   title: "Sip & Sync Social Hour — HTI × Portal HQ",

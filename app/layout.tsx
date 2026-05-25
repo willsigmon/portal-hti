@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     description: "Corporate retreats, concerts, showcases, and private celebrations in one production-ready Raleigh venue.",
     images: ["/venue/venue-daylight-floor.jpg"],
   },
-  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
 

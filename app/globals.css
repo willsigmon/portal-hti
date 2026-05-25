@@ -51,11 +51,6 @@
 
 @layer base {
   html {
-    background:
-      radial-gradient(circle at 10% 15%, color-mix(in oklch, var(--color-violet) 18%, transparent), transparent 45rem),
-      radial-gradient(circle at 90% 12%, color-mix(in oklch, var(--color-accent) 12%, transparent), transparent 40rem),
-      radial-gradient(circle at 50% 85%, color-mix(in oklch, var(--color-violet) 10%, transparent), transparent 50rem),
-      var(--color-bg);
     color: var(--color-ink);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
