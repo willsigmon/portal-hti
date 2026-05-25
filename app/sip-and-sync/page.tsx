@@ -217,15 +217,21 @@ export default function SipAndSync() {
         <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
           <div className="min-w-0 space-y-5 lg:col-span-7">
             <h1
-              className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)] animate-fade-in-up"
+              className="display-xl max-w-full leading-[0.88] tracking-[-0.045em] text-[var(--color-ink)]"
               style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)" }}
             >
-              <span className="block whitespace-nowrap">
-                <span className="text-[var(--color-gold)]">Sip</span>{" "}
-                <span className="text-white">&amp;</span>{" "}
-                <span className="text-[var(--color-accent)]">Sync</span>
+              <span className="sip-sync-logo flex flex-nowrap items-baseline whitespace-nowrap">
+                <span className="sip-sync-sip text-[var(--color-gold)]">
+                  <span className="sip-sync-si">Si</span>
+                  <span className="sip-sync-p inline-block relative z-0">p</span>
+                </span>
+                <span className="sip-sync-amp text-white inline-block relative z-10 mx-[-0.08em]">&amp;</span>
+                <span className="sip-sync-sync text-[var(--color-accent)]">
+                  <span className="sip-sync-cap inline-block relative z-20">S</span>
+                  <span>ync</span>
+                </span>
               </span>
-              <span className="block text-[var(--color-ink)] whitespace-nowrap">Social Hour</span>
+              <span className="block text-[var(--color-ink)] whitespace-nowrap animate-fade-in-up delay-100">Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -256,8 +262,8 @@ export default function SipAndSync() {
 
               <div className="aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner">
                 <img
-                  src="/portal_hq_real.png"
-                  alt="Real view of Portal HQ Raleigh Event space"
+                  src="/venue/venue-wood-entry.jpg"
+                  alt="Inside Portal HQ Raleigh — lobby entrance with bar, gallery wall, and the Portal neon sign"
                   className="h-full w-full max-w-full object-cover filter contrast-[1.04] saturate-[0.98] transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>
@@ -266,39 +272,21 @@ export default function SipAndSync() {
         </div>
 
         {/* EVENT QUICK INFO GRID */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-3 md:mt-16">
+        <div className="mt-14 grid gap-6 sm:grid-cols-3 md:mt-20">
           {/* Calendar Card */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[180px] w-full min-w-0 flex-col justify-center gap-4 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-3">
-              {/* Bespoke SVG stitch-style calendar icon */}
-              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="calGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f59e32" />
-                    <stop offset="100%" stopColor="#d9b36a" />
-                  </linearGradient>
-                </defs>
-                <rect x="15" y="25" width="70" height="60" rx="10" stroke="url(#calGrad)" strokeWidth="4" fill="rgba(255, 255, 255, 0.02)" />
-                <path d="M15 45H85" stroke="url(#calGrad)" strokeWidth="3" strokeDasharray="3 3" />
-                <circle cx="35" cy="15" r="4" fill="#f59e32" />
-                <circle cx="65" cy="15" r="4" fill="#d9b36a" />
-                <path d="M35 15V28M65 15V28" stroke="url(#calGrad)" strokeWidth="3.5" strokeLinecap="round" />
-                <path d="M50 50L53 58L61 61L53 64L50 72L47 64L39 61L47 58Z" fill="#f59e32" />
-              </svg>
-
-              <div className="min-w-0 space-y-0.5">
-                <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">When</div>
-                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
-                <p className="text-sm text-[var(--color-muted)]">6:00 PM – 9:00 PM</p>
-              </div>
+            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
+            <div className="space-y-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
+              <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
             </div>
-            <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Add to Calendar <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -309,30 +297,17 @@ export default function SipAndSync() {
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[180px] w-full min-w-0 flex-col justify-center gap-4 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-3">
-              {/* Bespoke SVG stitch-style map pin icon */}
-              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="pinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#87b891" />
-                    <stop offset="100%" stopColor="#d9b36a" />
-                  </linearGradient>
-                </defs>
-                <circle cx="50" cy="85" r="10" stroke="url(#pinGrad)" strokeWidth="1.5" opacity="0.3" strokeDasharray="3 3" />
-                <circle cx="50" cy="85" r="18" stroke="url(#pinGrad)" strokeWidth="1" opacity="0.15" />
-                <path d="M50 85C50 85 25 55 25 38C25 24.1929 36.1929 13 50 13C63.8071 13 75 24.1929 75 38C75 55 50 85 50 85Z" stroke="url(#pinGrad)" strokeWidth="4" fill="rgba(255, 255, 255, 0.02)" />
-                <circle cx="50" cy="38" r="8" fill="#87b891" />
-              </svg>
-
-              <div className="min-w-0 space-y-0.5">
-                <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Where</div>
-                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">Portal HQ, Raleigh</h3>
-                <p className="text-xs text-[var(--color-muted)] leading-tight">3801 Hillsborough St, Suite 113</p>
-              </div>
+            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
+            <div className="space-y-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">
+                <span className="whitespace-nowrap">Portal HQ</span>
+                <span className="block text-2xl md:text-3xl text-[var(--color-muted)] font-medium mt-1">Raleigh, NC</span>
+              </h3>
+              <p className="text-base text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
             </div>
-            <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Open Maps <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -341,29 +316,14 @@ export default function SipAndSync() {
           <a
             href="#tickets"
             onMouseMove={handleMouseMove}
-            className="spotlight-card group relative flex min-h-[180px] w-full min-w-0 flex-col justify-center gap-4 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
+            className="spotlight-card group relative flex min-h-[260px] w-full min-w-0 flex-col items-center justify-center gap-5 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30"
           >
-            <div className="flex min-w-0 items-start gap-3">
-              {/* Bespoke SVG stitch-style ticket icon */}
-              <svg className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="tktGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f58420" />
-                    <stop offset="100%" stopColor="#ffb800" />
-                  </linearGradient>
-                </defs>
-                <path d="M15 35C15 35 25 35 25 45C25 55 15 55 15 55V75H85V55C85 55 75 55 75 45C75 35 85 35 85 35V15H15V35Z" stroke="url(#tktGrad)" strokeWidth="4" fill="rgba(255, 255, 255, 0.02)" />
-                <path d="M40 22V68" stroke="url(#tktGrad)" strokeWidth="2.5" strokeDasharray="5 5" />
-                <path d="M60 45L62 49L67 50L63 53L64 57L60 55L56 57L57 53L53 50L58 49Z" fill="#ffb800" />
-              </svg>
-
-              <div className="min-w-0 space-y-0.5">
-                <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Admission</div>
-                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">$5.00 Tickets</h3>
-                <p className="text-sm text-[var(--color-muted)]">Includes craft drinks + live networking</p>
-              </div>
+            <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
+            <div className="space-y-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
+              <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
             </div>
-            <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)]">
+            <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
               Secure Passes <ArrowUpRight className="h-3 w-3" />
             </span>
           </a>
@@ -374,7 +334,7 @@ export default function SipAndSync() {
       <section id="about" className="section bg-black/20 border-y border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
         <div className="container space-y-8">
           <div className="max-w-2xl">
-            <div className="text-xs font-bold text-[var(--color-accent)] tracking-wide mb-1.5 font-sans">
+            <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
               Why we're gathering
             </div>
             <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
@@ -393,7 +353,7 @@ export default function SipAndSync() {
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
-                  <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)] font-sans">
                     501(c)(3) Nonprofit Partner
                   </span>
                 </div>
@@ -444,7 +404,7 @@ export default function SipAndSync() {
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
-                  <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)] font-sans">
                     Host &amp; Experience Partner
                   </span>
                 </div>
@@ -494,7 +454,7 @@ export default function SipAndSync() {
             >
               <div className="p-8 sm:p-10 md:p-12 lg:p-16 lg:col-span-7 flex flex-col justify-center space-y-4">
                 <div>
-                  <span className="text-xs font-semibold tracking-tight text-[var(--color-accent)] font-sans">
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)] font-sans">
                     Our Real Mission
                   </span>
                   <h3 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)] mt-3">
@@ -529,13 +489,14 @@ export default function SipAndSync() {
           <div className="grid lg:grid-cols-12 gap-y-8 lg:gap-x-16 items-center">
             <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
               <div className="space-y-2">
-                <span className="text-xs font-bold text-[var(--color-accent)] tracking-tight font-sans uppercase">
+                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
                   The experience space
                 </span>
-                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-2 whitespace-nowrap">
-                  The Venue: Portal HQ
+                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-3 leading-[0.95]">
+                  The Venue:
+                  <span className="block whitespace-nowrap text-[var(--color-accent)]">Portal HQ</span>
                 </h2>
-                <p className="text-lg text-[var(--color-muted)] max-w-[46ch] mx-auto">
+                <p className="text-lg md:text-xl text-[var(--color-muted)] max-w-[46ch] mx-auto leading-relaxed mt-5">
                   A state-of-the-art 5,000 sq ft community workspace and high-production showcase venue in downtown Raleigh.
                 </p>
               </div>
@@ -544,16 +505,16 @@ export default function SipAndSync() {
                 The Sip &amp; Sync Social Hour will take place in the main gallery hall of <span className="whitespace-nowrap">Portal HQ</span>. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-2 w-full max-w-lg mx-auto">
-                <div className="flex min-h-[160px] flex-col items-center justify-center gap-2 rounded-xl border border-white/5 bg-[var(--color-surface)] p-7 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-display text-4xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">5,000</strong>
-                  <span className="text-sm font-bold text-[var(--color-accent)]">Sq Ft</span>
-                  <span className="max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
+              <div className="grid grid-cols-2 gap-5 pt-4 w-full max-w-lg mx-auto">
+                <div className="flex min-h-[180px] flex-col items-center justify-center gap-3 rounded-xl border border-white/5 bg-[var(--color-surface)] p-8 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
+                  <strong className="font-display text-5xl md:text-6xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">5,000</strong>
+                  <span className="text-base md:text-lg font-bold text-[var(--color-accent)]">Sq Ft</span>
+                  <span className="max-w-[18ch] text-sm leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
                 </div>
-                <div className="flex min-h-[160px] flex-col items-center justify-center gap-2 rounded-xl border border-white/5 bg-[var(--color-surface)] p-7 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-display text-4xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)]">150+</strong>
-                  <span className="text-sm font-bold text-[var(--color-accent)]">Free Parking</span>
-                  <span className="max-w-[16ch] text-xs leading-snug text-[var(--color-muted)]">Spaces on site</span>
+                <div className="flex min-h-[180px] flex-col items-center justify-center gap-3 rounded-xl border border-white/5 bg-[var(--color-surface)] p-8 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
+                  <strong className="font-display text-5xl md:text-6xl font-extrabold leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">150+</strong>
+                  <span className="text-base md:text-lg font-bold text-[var(--color-accent)]">Free Parking</span>
+                  <span className="max-w-[18ch] text-sm leading-snug text-[var(--color-muted)]">Spaces on site</span>
                 </div>
               </div>
             </div>
@@ -662,7 +623,7 @@ export default function SipAndSync() {
       <section id="tickets" className="section container">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="text-center space-y-2">
-            <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
+            <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               Reserve Admission Passes
             </span>
             <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
@@ -698,7 +659,7 @@ export default function SipAndSync() {
             {/* Live Progress Tracker Column */}
             <div className="lg:col-span-5 space-y-5">
               <div className="space-y-2">
-                <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide font-sans">
+                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
                   Drive Metrics
                 </span>
                 <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
@@ -720,30 +681,30 @@ export default function SipAndSync() {
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-center">
-                  <div className="space-y-1 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
-                    <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Target Goal</span>
-                    <strong className="text-base font-bold text-[var(--color-accent)]">{PLEDGE_GOAL} Devices</strong>
+                  <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Target</span>
+                    <strong key={`goal-${PLEDGE_GOAL}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-accent)] block tabular-nums leading-none">{PLEDGE_GOAL}</strong>
                   </div>
-                  <div className="space-y-1 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
-                    <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Pledged</span>
-                    <strong className="text-base font-bold text-[var(--color-ink)] font-sans">{pledgesCount}</strong>
+                  <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Pledged</span>
+                    <strong key={`pledged-${pledgesCount}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-ink)] block tabular-nums leading-none">{pledgesCount}</strong>
                   </div>
-                  <div className="space-y-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans tracking-wide block">Still Needed</span>
-                    <strong className="text-base font-bold text-[var(--color-signal)] font-sans">{remainingCount}</strong>
+                  <div className="space-y-2 py-1">
+                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.16em] block">Remaining</span>
+                    <strong key={`remaining-${remainingCount}`} className="pledge-count-tick font-display text-3xl md:text-4xl font-bold text-[var(--color-signal)] block tabular-nums leading-none">{remainingCount}</strong>
                   </div>
                 </div>
 
-                {/* Progress bar tracks */}
+                {/* Progress bar tracks — shimmering fill, count-up animation handled by key prop */}
                 <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-semibold font-sans">
-                    <span className="text-[var(--color-muted)]">Campaign Progress</span>
-                    <span className="text-[var(--color-accent)]">{percentage}%</span>
+                  <div className="flex justify-between text-sm font-semibold font-sans">
+                    <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] text-xs">Campaign Progress</span>
+                    <span key={`pct-${percentage}`} className="pledge-count-tick text-[var(--color-accent)] tabular-nums">{percentage}%</span>
                   </div>
 
-                  <div className="h-3 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border">
+                  <div className="pledge-progress-track relative h-3 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border">
                     <div
-                      className="h-full rounded-full bg-[var(--color-accent)] shadow-[0_0_8px_rgba(245,132,32,0.4)] transition-all duration-1000 ease-out"
+                      className="pledge-progress-fill relative h-full rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_rgba(245,132,32,0.5)] transition-all duration-[1200ms] ease-out"
                       style={{ width: `${Math.min(percentage, 100)}%` }}
                     />
                   </div>
@@ -802,7 +763,7 @@ export default function SipAndSync() {
       <section id="connect" className="section container">
         <div className="space-y-8">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide block mb-1 font-sans">
+            <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
               Get in Touch
             </span>
             <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
@@ -839,87 +800,82 @@ export default function SipAndSync() {
             {/* Will Sigmon */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-7 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-7 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">Will Sigmon</h4>
-                  <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
-                    HTI representative
-                  </span>
-                </div>
-                <p className="text-xs text-[var(--color-muted)] leading-relaxed font-sans">
-                  Oversees hardware donation logistics, secure wipe data compliance verification, and 501(c)(3) corporate tax certificates.
-                </p>
+              <div className="flex h-10 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                <img src="/hti-cropped.png" alt="HTI" className="h-10 w-auto object-contain" />
               </div>
-
-              <div className="mt-6 pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] flex items-center justify-between gap-3">
+              <div className="space-y-2">
+                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">Will Sigmon</h4>
+                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
+                  HTI representative
+                </span>
+              </div>
+              <p className="text-sm text-[var(--color-muted)] leading-relaxed font-sans max-w-[32ch]">
+                Oversees hardware donation logistics, secure wipe data compliance verification, and 501(c)(3) corporate tax certificates.
+              </p>
+              <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:wsigmon@hubzonetech.org"
-                  className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
                 >
-                  <Mail className="h-3.5 w-3.5" /> wsigmon@hubzonetech.org
+                  <Mail className="h-4 w-4" /> wsigmon@hubzonetech.org
                 </a>
-                <img src="/hti-cropped.png" alt="HTI" className="h-8 w-auto opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300 object-contain" />
               </div>
             </div>
 
             {/* David Galindo */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-7 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-7 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">David Galindo</h4>
-                  <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
-                    Coordinating director
-                  </span>
-                </div>
-                <p className="text-xs text-[var(--color-muted)] leading-relaxed font-sans">
-                  Coordinates joint campaign workflows, secure check-in operations, sponsor relationships, and community outreach.
-                </p>
+              <div className="flex h-10 items-center justify-center gap-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                <img src="/hti-cropped.png" alt="HTI" className="h-10 w-auto object-contain" />
+                <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
               </div>
-
-              <div className="mt-6 pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] flex items-center justify-between gap-3">
+              <div className="space-y-2">
+                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">David Galindo</h4>
+                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
+                  Coordinating director
+                </span>
+              </div>
+              <p className="text-sm text-[var(--color-muted)] leading-relaxed font-sans max-w-[32ch]">
+                Coordinates joint campaign workflows, secure check-in operations, sponsor relationships, and community outreach.
+              </p>
+              <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:dgalindo@kurvpay.com"
-                  className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
                 >
-                  <Mail className="h-3.5 w-3.5" /> dgalindo@kurvpay.com
+                  <Mail className="h-4 w-4" /> dgalindo@kurvpay.com
                 </a>
-                <div className="flex gap-4 opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300 items-center">
-                  <img src="/hti-cropped.png" alt="HTI" className="h-8 w-auto object-contain" />
-                  <img src="/portal-logo.png" alt="Portal" className="h-8 w-auto object-contain" />
-                </div>
               </div>
             </div>
 
             {/* Jake Berlin */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-7 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-7 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
+              className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center gap-6 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-display font-bold text-xl text-[var(--color-ink)]">Jake Berlin</h4>
-                  <span className="text-xs font-semibold text-[var(--color-accent)] tracking-tight block mt-0.5 font-sans">
-                    Portal HQ co-founder
-                  </span>
-                </div>
-                <p className="text-xs text-[var(--color-muted)] leading-relaxed font-sans">
-                  Handles venue logistics, stage AV lighting design coordination, craft beverage sponsorships, and founder partnerships.
-                </p>
+              <div className="flex h-10 items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                <img src="/portal-logo.png" alt="Portal" className="h-10 w-auto object-contain" />
               </div>
-
-              <div className="mt-6 pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] flex items-center justify-between gap-3">
+              <div className="space-y-2">
+                <h4 className="font-display font-bold text-3xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
+                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block font-sans">
+                  Portal HQ co-founder
+                </span>
+              </div>
+              <p className="text-sm text-[var(--color-muted)] leading-relaxed font-sans max-w-[32ch]">
+                Handles venue logistics, stage AV lighting design coordination, craft beverage sponsorships, and founder partnerships.
+              </p>
+              <div className="mt-auto pt-5 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full flex justify-center">
                 <a
                   href="mailto:jake@theportalhq.com"
-                  className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1.5 font-sans"
+                  className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-2 font-sans"
                 >
-                  <Mail className="h-3.5 w-3.5" /> jake@theportalhq.com
+                  <Mail className="h-4 w-4" /> jake@theportalhq.com
                 </a>
-                <img src="/portal-logo.png" alt="Portal" className="h-8 w-auto opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300 object-contain" />
               </div>
             </div>
           </div>
