@@ -118,8 +118,24 @@
     font-family: var(--font-body);
   }
 
-  /* Aurora drift layer — large gradients that slowly translate across the
-     viewport to feel like floating through deep space. 80s loop. */
+  /* Deep parallax aurora — slower, larger gradients sitting BEHIND body::after.
+     Two layers at different speeds give a real "floating through space"
+     parallax instead of a single washed pulse. */
+  .aurora-deep {
+    pointer-events: none;
+    position: fixed;
+    inset: -40vh -40vw;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 110vw 80vh at 20% 25%, color-mix(in oklch, var(--color-aurora-2) 22%, transparent), transparent 65%),
+      radial-gradient(ellipse 95vw 70vh at 85% 80%, color-mix(in oklch, var(--color-aurora-1) 20%, transparent), transparent 68%),
+      radial-gradient(ellipse 75vw 55vh at 60% 50%, color-mix(in oklch, var(--color-aurora-3) 14%, transparent), transparent 72%);
+    opacity: 0.85;
+    will-change: transform;
+    animation: auroraDeep 140s ease-in-out infinite alternate;
+  }
+
+  /* Foreground aurora drift — punchier, more visible motion, 60s loop. */
   body::after {
     content: "";
     pointer-events: none;
@@ -127,12 +143,12 @@
     inset: -25vh -25vw;
     z-index: 1;
     background:
-      radial-gradient(ellipse 60vw 45vh at 30% 30%, color-mix(in oklch, var(--color-aurora-1) 14%, transparent), transparent 60%),
-      radial-gradient(ellipse 55vw 40vh at 75% 70%, color-mix(in oklch, var(--color-aurora-2) 16%, transparent), transparent 65%),
-      radial-gradient(ellipse 45vw 35vh at 50% 20%, color-mix(in oklch, var(--color-aurora-3) 11%, transparent), transparent 70%);
-    opacity: 0.85;
+      radial-gradient(ellipse 70vw 55vh at 30% 30%, color-mix(in oklch, var(--color-aurora-1) 22%, transparent), transparent 60%),
+      radial-gradient(ellipse 65vw 50vh at 75% 70%, color-mix(in oklch, var(--color-aurora-2) 24%, transparent), transparent 65%),
+      radial-gradient(ellipse 55vw 40vh at 50% 20%, color-mix(in oklch, var(--color-aurora-3) 18%, transparent), transparent 70%);
+    opacity: 1;
     will-change: transform;
-    animation: auroraDrift 80s ease-in-out infinite alternate;
+    animation: auroraDrift 60s ease-in-out infinite alternate;
   }
 
   /* Tactile paper-grain texture applied globally — sits below content. */
@@ -148,11 +164,23 @@
   }
 
   @keyframes auroraDrift {
-    0%   { transform: translate3d(0, 0, 0) scale(1.02); }
-    25%  { transform: translate3d(-4vw, 2vh, 0) scale(1.06); }
-    50%  { transform: translate3d(2vw, -3vh, 0) scale(1.09); }
-    75%  { transform: translate3d(3vw, 3vh, 0) scale(1.05); }
-    100% { transform: translate3d(-2vw, -1vh, 0) scale(1.03); }
+    0%   { transform: translate3d(-2vw, 0, 0) scale(1.04); }
+    25%  { transform: translate3d(-10vw, 5vh, 0) scale(1.12); }
+    50%  { transform: translate3d(6vw, -7vh, 0) scale(1.18); }
+    75%  { transform: translate3d(8vw, 6vh, 0) scale(1.10); }
+    100% { transform: translate3d(-5vw, -2vh, 0) scale(1.06); }
+  }
+
+  /* Parallax deep aurora — bigger sweep, counter-direction for depth feel. */
+  @keyframes auroraDeep {
+    0%   { transform: translate3d(0, 0, 0) scale(1.05); }
+    33%  { transform: translate3d(8vw, -4vh, 0) scale(1.14); }
+    66%  { transform: translate3d(-6vw, 5vh, 0) scale(1.20); }
+    100% { transform: translate3d(4vw, 2vh, 0) scale(1.08); }
+  }
+
+  [data-theme="light"] .aurora-deep {
+    display: none;
   }
 
   /* Ken Burns animation for the hero carousel — slow zoom + drift while the
@@ -169,13 +197,14 @@
     to   { transform: scale(1.10) translate(-1.2%, -0.8%); }
   }
 
-  body > *:not(canvas) {
+  body > *:not(canvas):not(.aurora-deep) {
     position: relative;
     z-index: 3;
   }
 
   @media (prefers-reduced-motion: reduce) {
     body::after,
+    .aurora-deep,
     .kenburns-carousel-active {
       animation: none;
     }

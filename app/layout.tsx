@@ -10,9 +10,12 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 // has no stored preference.
 const NO_FLASH_THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('ss_theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
+// Cormorant Garamond on Google Fonts caps at weight 700. `display-xl` /
+// `display-lg` request font-weight: 800 in globals.css; the browser will
+// synthesize that from 700 until globals.css can be updated to 700.
 const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
@@ -20,7 +23,7 @@ const display = Cormorant_Garamond({
 
 const body = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-body",
   display: "swap",
@@ -80,6 +83,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
       </head>
       <body className="antialiased">
+        {/* Second parallax aurora layer — bigger drift, slower loop, sits behind
+            body::after to create the "floating through deep space" parallax. */}
+        <div className="aurora-deep" aria-hidden="true" />
         <AmbientSpotlight />
         <ThemeToggle />
         {children}

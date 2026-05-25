@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-[var(--color-accent)] text-[var(--color-on-accent)] hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] hover:shadow-[0_0_20px_color-mix(in_oklch,var(--color-accent)_40%,transparent)] shadow-md shadow-orange-500/10",
-        secondary: "border border-[color-mix(in_oklch,var(--color-ink)_15%,transparent)] hover:bg-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]",
+        secondary: "border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] backdrop-blur-sm rounded-[var(--radius-lg)] hover:bg-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)]",
         ghost: "hover:bg-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]",
       },
       size: {
@@ -17,6 +17,10 @@ const buttonVariants = cva(
         lg: "h-[50px] px-7 text-base rounded-[var(--radius-md)]",
       },
     },
+    compoundVariants: [
+      { variant: "secondary", size: "default", className: "px-5 text-sm" },
+      { variant: "secondary", size: "lg", className: "px-6 text-[15px]" },
+    ],
     defaultVariants: {
       variant: "primary",
       size: "default",

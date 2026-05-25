@@ -207,7 +207,7 @@ export default function SipAndSync() {
         <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-3.5">
             <img src="/portal-logo.png" alt="Portal HQ" className="h-16 md:h-20 w-auto filter contrast-[1.02] transition-all object-contain" />
-            <span className="text-2xl text-[var(--color-accent)]/55 font-light select-none mx-2">+</span>
+            <span aria-hidden="true" className="font-display italic font-light text-3xl md:text-4xl text-[var(--color-accent)] mx-3 leading-none select-none">×</span>
             <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
           </div>
 
@@ -250,7 +250,7 @@ export default function SipAndSync() {
                 <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
                 <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.7em" }}>Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-1.05em" }}>Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -345,9 +345,9 @@ export default function SipAndSync() {
           </div>
         </div>
 
-        {/* EVENT QUICK INFO GRID */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-3 md:mt-20">
-          {/* Calendar Card */}
+        {/* EVENT QUICK INFO GRID — asymmetric density per WSADA §15 */}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 md:mt-20">
+          {/* Calendar Card — compact left */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
@@ -355,11 +355,11 @@ export default function SipAndSync() {
             onMouseMove={handleMouseMove}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-evening-table.jpg)",
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-evening-table.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-3 sm:order-1"
           >
             <svg
               viewBox="0 0 36 36"
@@ -389,7 +389,7 @@ export default function SipAndSync() {
             </span>
           </a>
 
-          {/* Location Card */}
+          {/* Location Card — wide hero-of-the-trio, horizontal layout */}
           <a
             href="https://maps.google.com/?q=3801+Hillsborough+St,+Suite+113,+Raleigh,+NC+27607"
             target="_blank"
@@ -397,51 +397,84 @@ export default function SipAndSync() {
             onMouseMove={handleMouseMove}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-wood-entry.jpg)",
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-wood-entry.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-row items-center justify-between gap-8 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 md:p-10 text-left shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-6 sm:col-span-2 sm:order-3 lg:order-2"
           >
-            <svg
-              viewBox="0 0 36 36"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-              className="relative z-10 h-9 w-9 text-[var(--color-accent)]"
-            >
-              <path d="M18 3.5c-5.5 0-10 4.3-10 9.6 0 7 10 19.4 10 19.4s10-12.4 10-19.4c0-5.3-4.5-9.6-10-9.6z" />
-              <circle cx="18" cy="13" r="4.5" />
-              <line x1="18" y1="10" x2="18" y2="16" />
-              <line x1="15" y1="13" x2="21" y2="13" />
-            </svg>
-            <span className="relative z-10 font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
-            <div className="relative z-10 space-y-2">
-              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">
-                <span className="whitespace-nowrap">Portal HQ</span>
-                <span className="block text-2xl md:text-3xl text-[var(--color-muted)] font-medium mt-1">Raleigh, NC</span>
-              </h3>
-              <p className="text-base text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
+            {/* LEFT — content stack */}
+            <div className="relative z-10 flex flex-col gap-4 min-w-0 flex-1">
+              <svg
+                viewBox="0 0 36 36"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className="h-9 w-9 text-[var(--color-accent)]"
+              >
+                <path d="M18 3.5c-5.5 0-10 4.3-10 9.6 0 7 10 19.4 10 19.4s10-12.4 10-19.4c0-5.3-4.5-9.6-10-9.6z" />
+                <circle cx="18" cy="13" r="4.5" />
+                <line x1="18" y1="10" x2="18" y2="16" />
+                <line x1="15" y1="13" x2="21" y2="13" />
+              </svg>
+              <span className="font-mono text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
+              <div className="space-y-2">
+                <h3 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.02]">
+                  <span className="whitespace-nowrap">Portal HQ</span>
+                  <span className="block text-2xl md:text-3xl text-[var(--color-muted)] font-medium mt-1 italic">Raleigh, NC</span>
+                </h3>
+                <p className="text-base text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
+              </div>
+              <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)] self-stretch">
+                Open Maps <ArrowUpRight className="h-3 w-3" />
+              </span>
             </div>
-            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
-              Open Maps <ArrowUpRight className="h-3 w-3" />
-            </span>
+
+            {/* RIGHT — editorial compass-rose pointer to Raleigh */}
+            <div className="relative z-10 hidden md:flex shrink-0 items-center justify-center">
+              <svg
+                viewBox="0 0 140 140"
+                fill="none"
+                aria-hidden="true"
+                className="h-32 w-32 lg:h-40 lg:w-40 text-[var(--color-accent)] transition-transform duration-500 ease-out group-hover:rotate-[18deg]"
+              >
+                {/* outer ring */}
+                <circle cx="70" cy="70" r="62" stroke="currentColor" strokeOpacity="0.32" strokeWidth="0.75" />
+                <circle cx="70" cy="70" r="48" stroke="currentColor" strokeOpacity="0.18" strokeWidth="0.5" />
+                {/* tick marks */}
+                <g stroke="currentColor" strokeOpacity="0.45" strokeWidth="0.75" strokeLinecap="round">
+                  <line x1="70" y1="10" x2="70" y2="18" />
+                  <line x1="70" y1="122" x2="70" y2="130" />
+                  <line x1="10" y1="70" x2="18" y2="70" />
+                  <line x1="122" y1="70" x2="130" y2="70" />
+                </g>
+                {/* compass star — N arrow */}
+                <path d="M70 22 L80 70 L70 60 L60 70 Z" fill="currentColor" fillOpacity="0.78" />
+                <path d="M70 118 L60 70 L70 80 L80 70 Z" fill="currentColor" fillOpacity="0.22" />
+                <path d="M22 70 L70 60 L60 70 L70 80 Z" fill="currentColor" fillOpacity="0.22" />
+                <path d="M118 70 L70 80 L80 70 L70 60 Z" fill="currentColor" fillOpacity="0.22" />
+                {/* RDU dot */}
+                <circle cx="70" cy="70" r="3.5" fill="currentColor" />
+                <text x="70" y="98" textAnchor="middle" fill="currentColor" fillOpacity="0.75" fontFamily="ui-monospace, SFMono-Regular, monospace" fontSize="7.5" letterSpacing="2.2">RDU</text>
+                <text x="70" y="48" textAnchor="middle" fill="currentColor" fillOpacity="0.55" fontFamily="ui-monospace, SFMono-Regular, monospace" fontSize="6.5" letterSpacing="2">N</text>
+              </svg>
+            </div>
           </a>
 
-          {/* Tickets Info Card */}
+          {/* Tickets Info Card — compact right */}
           <a
             href="#tickets"
             onMouseMove={handleMouseMove}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 92%, transparent) 0%, color-mix(in oklch, var(--color-band) 82%, transparent) 100%), url(/venue/venue-bar-detail.jpg)",
+                "linear-gradient(180deg, color-mix(in oklch, var(--color-band) 78%, transparent) 0%, color-mix(in oklch, var(--color-band) 68%, transparent) 100%), url(/venue/venue-bar-detail.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-3 sm:order-2 lg:order-3"
           >
             <svg
               viewBox="0 0 36 36"
