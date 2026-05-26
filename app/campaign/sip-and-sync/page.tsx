@@ -7,21 +7,13 @@ import { HTILogo } from "@/components/HTILogo";
 import { PledgeForm } from "@/components/PledgeForm";
 import { Starfield } from "@/components/Starfield";
 import { Toast, type ToastRef } from "@/components/Toast";
-
-interface Pledge {
-  name: string;
-  count: number;
-  details: string;
-  condition: string;
-  time: string;
-  code: string;
-}
+import { EVENT_PLEDGE_GOAL, type PublicTicket } from "@/lib/event-types";
 
 export default function SipAndSync() {
   const toastRef = useRef<ToastRef | null>(null);
 
   // ---- APP STATE ----
-  const PLEDGE_GOAL = 150;
+  const PLEDGE_GOAL = EVENT_PLEDGE_GOAL;
   const [pledgesCount, setPledgesCount] = useState(0);
   const [remainingCount, setRemainingCount] = useState(PLEDGE_GOAL);
   const [percentage, setPercentage] = useState(0);
@@ -35,26 +27,43 @@ export default function SipAndSync() {
     guest: "",
     qty: "1",
     donation: "0",
+    token: "",
   });
+  const [scanResult, setScanResult] = useState<{
+    state: "idle" | "loading" | "authorized" | "blocked" | "invalid";
+    reason?: string;
+    ticket?: PublicTicket;
+  }>({ state: "idle" });
 
   // ---- HONEST LOCAL PLEDGE TRACKER SYNC ----
-  const syncCampaignTracker = () => {
-    let stored: Pledge[] = [];
-
+  const syncCampaignTracker = async () => {
     try {
-      stored = JSON.parse(localStorage.getItem("ss_pledges") || "[]");
+      const response = await fetch("/api/event/summary", { cache: "no-store" });
+      if (!response.ok) throw new Error("Summary API unavailable");
+      const payload = await response.json();
+      const totalPledged = Number(payload.summary?.pledgedDevices || 0);
+      const goal = Number(payload.summary?.goal || PLEDGE_GOAL);
+      setPledgesCount(totalPledged);
+      setRemainingCount(Math.max(goal - totalPledged, 0));
+      setPercentage(Math.min(100, Math.round((totalPledged / goal) * 100)));
     } catch {
-      stored = [];
+      let stored: Array<{ count?: number; quantity?: number }> = [];
+
+      try {
+        stored = JSON.parse(localStorage.getItem("ss_pledges") || "[]");
+      } catch {
+        stored = [];
+      }
+
+      const totalPledged = stored.reduce((sum: number, item) => {
+        const count = Number(item.count ?? item.quantity);
+        return sum + (Number.isFinite(count) && count > 0 ? count : 0);
+      }, 0);
+
+      setPledgesCount(totalPledged);
+      setRemainingCount(Math.max(PLEDGE_GOAL - totalPledged, 0));
+      setPercentage(Math.min(100, Math.round((totalPledged / PLEDGE_GOAL) * 100)));
     }
-
-    const totalPledged = stored.reduce((sum: number, item: Pledge) => {
-      const count = Number(item.count);
-      return sum + (Number.isFinite(count) && count > 0 ? count : 0);
-    }, 0);
-
-    setPledgesCount(totalPledged);
-    setRemainingCount(Math.max(PLEDGE_GOAL - totalPledged, 0));
-    setPercentage(Math.min(100, Math.round((totalPledged / PLEDGE_GOAL) * 100)));
   };
 
   const syncTicketBadge = () => {
@@ -85,17 +94,42 @@ export default function SipAndSync() {
       const guestVal = params.get("guest") || "Guest";
       const qtyVal = params.get("qty") || "1";
       const donationVal = params.get("donation") || "0";
+      const tokenVal = params.get("token") || "";
 
       setScanData({
         code: codeVal,
         guest: decodeURIComponent(guestVal),
         qty: qtyVal,
         donation: donationVal,
+        token: tokenVal,
       });
       setScanModalOpen(true);
+      setScanResult({ state: "loading" });
 
       // Prevent screen scroll
       document.body.style.overflow = "hidden";
+
+      fetch("/api/event/check-in", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: codeVal, token: tokenVal }),
+      })
+        .then(async (response) => {
+          const payload = await response.json().catch(() => ({}));
+          if (response.ok && payload.ok) {
+            setScanResult({ state: "authorized", reason: payload.reason, ticket: payload.ticket });
+            syncCampaignTracker();
+            return;
+          }
+          setScanResult({
+            state: response.status === 404 || payload.reason === "invalid_token" ? "invalid" : "blocked",
+            reason: payload.reason || payload.error || "Unable to authorize this pass.",
+            ticket: payload.ticket,
+          });
+        })
+        .catch(() => {
+          setScanResult({ state: "invalid", reason: "Check-in service is unavailable." });
+        });
     }
 
     // Listen to custom local storage sync events emitted by PledgeForm
@@ -118,7 +152,8 @@ export default function SipAndSync() {
   }, []);
 
   const handleCloseScanModal = () => {
-    setScanModalOpen(false);
+      setScanModalOpen(false);
+    setScanResult({ state: "idle" });
     document.body.style.overflow = "";
 
     // Clear check-in query parameters without reload
@@ -163,7 +198,7 @@ export default function SipAndSync() {
   const virtualTourSrc = `https://theportalhq.com/walkthrough-tour-assets/index.html?tour_root=walkthrough-tour-assets&hide_cta=1&scene=${activeScene}`;
 
   const tourWaypoints = [
-    { name: "Entry & Reception", id: "6a062176ebf5884479702b73", label: "Check-in Desk & Drinks" },
+    { name: "Entry & Reception", id: "6a062176ebf5884479702b73", label: "Check-in Desk & Reception" },
     { name: "Showcase Stage", id: "6a062176ebf5884479702b73&stage=1", label: "Live Presentations & AV" },
     { name: "Studio Gallery Hall", id: "6a062176ebf5884479702b73&studio=1", label: "Laptop Drop-off Area" },
   ];
@@ -227,7 +262,7 @@ export default function SipAndSync() {
             </p>
 
             <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed animate-fade-in-up delay-200">
-              Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
+              Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy refreshments, and bring an old laptop to help NC families get online.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-1 animate-fade-in-up delay-300">
@@ -263,7 +298,7 @@ export default function SipAndSync() {
         <div className="mt-12 grid gap-5 sm:grid-cols-3 md:mt-16">
           {/* Calendar Card */}
           <a
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+food%2C+refreshments%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
@@ -354,7 +389,6 @@ export default function SipAndSync() {
               <div className="min-w-0 space-y-0.5">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">Admission</div>
                 <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">$5.00 Tickets</h3>
-                <p className="text-sm text-[var(--color-muted)]">Includes craft drinks + live networking</p>
               </div>
             </div>
             <span className="mt-4 inline-flex items-center gap-0.5 self-start whitespace-nowrap text-[10px] font-semibold text-[var(--color-muted)] transition-colors group-hover:text-[var(--color-accent)] sm:self-end">
@@ -586,15 +620,15 @@ export default function SipAndSync() {
             <div className="lg:col-span-6 lg:col-start-7 grid grid-cols-2 gap-2">
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
-                  src="https://theportalhq.com/Newphotos/5.png"
-                  alt="Daylight Portal HQ space"
+                  src="https://theportalhq.com/Newphotos/1C7A8524.jpeg"
+                  alt="Stage setup under blue production lighting"
                   className="w-full h-full object-cover filter contrast-[1.02]"
                 />
               </div>
               <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
                 <img
-                  src="https://theportalhq.com/Newphotos/Elegant%20Affair/1C7A8512.jpeg"
-                  alt="Evening reception setup"
+                  src="https://theportalhq.com/Newphotos/Showcase/1C7A9002.jpeg"
+                  alt="Corporate talk presentation in the Main Hall"
                   className="w-full h-full object-cover filter contrast-[1.02]"
                 />
               </div>
@@ -798,7 +832,7 @@ export default function SipAndSync() {
                   }
                 </p>
                 <p className="text-[10px] text-[var(--color-muted)] leading-relaxed text-center">
-                  Displayed pledges come from submitted forms saved in this browser until a live database is connected.
+                  Displayed pledges come from the event operations store. If the API is offline, this panel falls back to this browser’s saved pledges.
                 </p>
               </div>
 
@@ -1005,17 +1039,31 @@ export default function SipAndSync() {
             </button>
 
             {/* Status Check badge */}
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[var(--color-signal)]/20 bg-[var(--color-signal)]/10 text-xs font-bold text-[var(--color-signal)] font-sans tracking-wide mx-auto animate-pulse">
+            <div className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border text-xs font-bold font-sans tracking-wide mx-auto animate-pulse ${
+              scanResult.state === "authorized"
+                ? "border-[var(--color-signal)]/20 bg-[var(--color-signal)]/10 text-[var(--color-signal)]"
+                : "border-[var(--color-accent)]/25 bg-[var(--color-accent)]/10 text-[var(--color-accent)]"
+            }`}>
               <CheckCircle className="h-3.5 w-3.5" />
-              Scan Authorized
+              {scanResult.state === "loading"
+                ? "Verifying pass"
+                : scanResult.state === "authorized"
+                  ? "Scan Authorized"
+                  : "Action Required"}
             </div>
 
             <div className="space-y-2">
               <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)]">
-                Entrance Access Granted
+                {scanResult.state === "authorized" ? "Entrance Access Granted" : "Pass Needs Review"}
               </h3>
               <p className="text-xs text-[var(--color-muted)] max-w-[32ch] mx-auto font-sans">
-                Welcome to the Sip &amp; Sync Social Hour! Show this scan validation sheet to the check-in supervisor.
+                {scanResult.state === "authorized"
+                  ? "Welcome to the Sip & Sync Social Hour. This pass has been checked in through the operations API."
+                  : scanResult.state === "loading"
+                    ? "Checking the event operations system before admitting this pass."
+                    : scanResult.reason === "payment_required"
+                      ? "This pass exists, but payment has not been marked paid by event operations yet."
+                      : "This code could not be authorized. Ask an event lead to review it in the admin console."}
               </p>
             </div>
 
@@ -1023,20 +1071,20 @@ export default function SipAndSync() {
             <div className="rounded-xl border bg-[var(--color-surface)]/50 p-4 space-y-2.5 text-xs text-left font-sans">
               <div className="flex justify-between items-center border-b pb-2">
                 <span className="text-[var(--color-muted)]">Gate Code</span>
-                <strong className="font-sans tabular-nums text-sm text-[var(--color-ink)]">#{scanData.code}</strong>
+                <strong className="font-sans tabular-nums text-sm text-[var(--color-ink)]">#{scanResult.ticket?.code || scanData.code}</strong>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-[var(--color-muted)]">Primary Guest</span>
-                <strong className="font-semibold text-[var(--color-ink)]">{scanData.guest}</strong>
+                <strong className="font-semibold text-[var(--color-ink)]">{scanResult.ticket?.guestName || scanData.guest}</strong>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-[var(--color-muted)]">Pass Quantity</span>
-                <strong className="font-semibold text-[var(--color-ink)]">{scanData.qty} Passes</strong>
+                <strong className="font-semibold text-[var(--color-ink)]">{scanResult.ticket?.qty || scanData.qty} Passes</strong>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[var(--color-muted)]">Sponsor Level</span>
+                <span className="text-[var(--color-muted)]">Payment Status</span>
                 <strong className="font-bold text-[var(--color-accent)]">
-                  {parseFloat(scanData.donation) > 0 ? `$${parseFloat(scanData.donation).toFixed(2)} Donation` : "General Admission"}
+                  {scanResult.ticket?.paymentStatus || "Verifying"}
                 </strong>
               </div>
             </div>

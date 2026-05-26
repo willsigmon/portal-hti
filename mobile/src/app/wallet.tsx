@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ScrollView, TextInput, Pressable, Image, Alert 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { storage } from '@/lib/storage';
+import { EVENT_WEB_BASE_URL, fetchTicket, parseTicketQr } from '@/lib/event-api';
 import { Ticket, Scan, Key, Calendar, MapPin, Sparkles, AlertTriangle, ShieldCheck, X } from 'lucide-react-native';
 
 import StarfieldBackdrop from '@/components/StarfieldBackdrop';
@@ -10,12 +11,14 @@ import { Spacing, BottomTabInset } from '@/constants/theme';
 
 interface TicketData {
   orderId: string;
+  token?: string;
   qty: number;
   donation: number;
   name: string;
   email: string;
   timestamp: string;
   gateCode: string;
+  paymentStatus?: string;
 }
 
 export default function WalletScreen() {
@@ -27,9 +30,20 @@ export default function WalletScreen() {
   // Load ticket from secure local storage
   const loadTicket = async () => {
     try {
-      const stored = await storage.getItem('ss_ticket');
+      const stored = (await storage.getItem('ss_event_ticket')) || (await storage.getItem('ss_ticket'));
       if (stored) {
-        setTicket(JSON.parse(stored));
+        const parsed = JSON.parse(stored);
+        setTicket({
+          orderId: parsed.orderId || parsed.code,
+          token: parsed.token,
+          qty: parsed.qty || 1,
+          donation: parsed.donation || 0,
+          name: parsed.name || parsed.guestName || 'Event Guest',
+          email: parsed.email || parsed.guestEmail || '',
+          timestamp: parsed.timestamp || parsed.createdAt || new Date().toISOString(),
+          gateCode: parsed.gateCode || '#0611',
+          paymentStatus: parsed.paymentStatus,
+        });
       }
     } catch (e) {
       console.log('Error loading ticket', e);
@@ -47,23 +61,24 @@ export default function WalletScreen() {
       return;
     }
 
-    // Simulate database lookup and import
-    const mockTicket: TicketData = {
-      orderId: id,
-      qty: 2,
-      donation: 50,
-      name: 'Will Sigmon',
-      email: 'wjsigmon@gmail.com',
-      timestamp: new Date().toISOString(),
-      gateCode: '#0611',
-    };
-
     try {
-      await storage.setItem('ss_ticket', JSON.stringify(mockTicket));
-      setTicket(mockTicket);
+      const serverTicket = await fetchTicket(id);
+      const importedTicket: TicketData = {
+        orderId: serverTicket.code,
+        token: serverTicket.token,
+        qty: serverTicket.qty,
+        donation: serverTicket.donation,
+        name: serverTicket.guestName,
+        email: serverTicket.guestEmail || '',
+        timestamp: serverTicket.createdAt,
+        gateCode: '#0611',
+        paymentStatus: serverTicket.paymentStatus,
+      };
+      await storage.setItem('ss_event_ticket', JSON.stringify(importedTicket));
+      setTicket(importedTicket);
       setOrderIdInput('');
-    } catch {
-      Alert.alert('Error', 'Failed to securely save ticket');
+    } catch (error) {
+      Alert.alert('Ticket Not Found', error instanceof Error ? error.message : 'Ask event staff to scan the QR code from your web pass.');
     }
   };
 
@@ -88,36 +103,30 @@ export default function WalletScreen() {
     setShowScanner(false);
     if (!data) return;
 
-    // Standard QR code contains orderId or raw ticket JSON
-    let orderId = '';
-    if (data.startsWith('SS-')) {
-      orderId = data;
-    } else if (data.includes('verify=')) {
-      const parts = data.split('verify=');
-      if (parts[1]) orderId = parts[1].split('&')[0];
-    }
-
-    if (!orderId) {
+    const parsed = parseTicketQr(data);
+    if (!parsed?.code) {
       Alert.alert('Invalid QR Code', 'This QR code is not recognized as a Portal Sip & Sync pass.');
       return;
     }
 
-    const mockTicket: TicketData = {
-      orderId: orderId,
-      qty: 1,
-      donation: 25,
-      name: 'Will Sigmon',
-      email: 'wjsigmon@gmail.com',
-      timestamp: new Date().toISOString(),
-      gateCode: '#0611',
-    };
-
     try {
-      await storage.setItem('ss_ticket', JSON.stringify(mockTicket));
-      setTicket(mockTicket);
-      Alert.alert('Imported Successfully', `Event Pass ${orderId} has been added to your secure wallet.`);
-    } catch {
-      Alert.alert('Error', 'Failed to securely save ticket');
+      const serverTicket = await fetchTicket(parsed.code, parsed.token);
+      const importedTicket: TicketData = {
+        orderId: serverTicket.code,
+        token: serverTicket.token || parsed.token,
+        qty: serverTicket.qty,
+        donation: serverTicket.donation,
+        name: serverTicket.guestName,
+        email: serverTicket.guestEmail || '',
+        timestamp: serverTicket.createdAt,
+        gateCode: '#0611',
+        paymentStatus: serverTicket.paymentStatus,
+      };
+      await storage.setItem('ss_event_ticket', JSON.stringify(importedTicket));
+      setTicket(importedTicket);
+      Alert.alert('Imported Successfully', `Event Pass ${serverTicket.code} has been added to your secure wallet.`);
+    } catch (error) {
+      Alert.alert('Import Failed', error instanceof Error ? error.message : 'Failed to import ticket');
     }
   };
 
@@ -132,6 +141,7 @@ export default function WalletScreen() {
           style: 'destructive',
           onPress: async () => {
             await storage.deleteItem('ss_ticket');
+            await storage.deleteItem('ss_event_ticket');
             setTicket(null);
           },
         },
@@ -202,7 +212,7 @@ export default function WalletScreen() {
                   <View style={styles.qrContainer}>
                     <Image
                       source={{
-                        uri: `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://portal-hti.vercel.app/?verify=${ticket.orderId}&color=06050f&margin=10`,
+                        uri: `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(`${EVENT_WEB_BASE_URL}/?verify=${ticket.orderId}&token=${ticket.token || ''}`)}&color=06050f&margin=10`,
                       }}
                       style={styles.qrImage}
                     />
@@ -311,7 +321,7 @@ export default function WalletScreen() {
                 <View style={styles.warningInfoBox}>
                   <AlertTriangle size={14} color="#f58420" style={{ marginTop: 2 }} />
                   <Text style={styles.warningInfoText}>
-                    If you haven’t booked a pass yet, please visit the portal at portal-hti.vercel.app to pledge or register.
+                    If you haven’t booked a pass yet, visit the Sip & Sync portal to pledge or register. QR import is best because it carries the secure pass token.
                   </Text>
                 </View>
               </View>

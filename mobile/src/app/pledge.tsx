@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, TextInput, Pressable, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { storage } from '@/lib/storage';
+import { createEventPledge } from '@/lib/event-api';
 import { CheckCircle2, ChevronRight, Laptop, ShieldCheck } from 'lucide-react-native';
 
 import StarfieldBackdrop from '@/components/StarfieldBackdrop';
@@ -15,8 +16,8 @@ export default function PledgeScreen() {
     quantity: '1',
     brand: '',
     condition: 'good',
-    name: 'Will Sigmon',
-    email: 'wjsigmon@gmail.com',
+    name: '',
+    email: '',
     phone: '',
     notes: '',
   });
@@ -53,21 +54,43 @@ export default function PledgeScreen() {
     if (!validate()) return;
 
     try {
+      let newPledge;
+      try {
+        const saved = await createEventPledge({
+          quantity: form.quantity,
+          brand: form.brand,
+          condition: form.condition,
+          donorName: form.name,
+          donorEmail: form.email,
+          donorPhone: form.phone,
+          notes: form.notes,
+        });
+        newPledge = {
+          ...saved,
+          name: saved.donorName,
+          email: form.email,
+          phone: form.phone,
+          count: saved.quantity,
+          timestamp: saved.createdAt,
+        };
+      } catch {
+        newPledge = {
+          id: `PLG-${Date.now().toString().slice(-6)}`,
+          quantity: parseInt(form.quantity, 10),
+          count: parseInt(form.quantity, 10),
+          brand: form.brand || 'Generic Device',
+          condition: form.condition,
+          donorName: form.name,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          notes: form.notes,
+          timestamp: new Date().toISOString(),
+        };
+      }
+
       const stored = await storage.getItem('ss_pledges');
       const pledges = stored ? JSON.parse(stored) : [];
-
-      const newPledge = {
-        id: `PLG-${Date.now().toString().slice(-6)}`,
-        quantity: parseInt(form.quantity, 10),
-        brand: form.brand || 'Generic Device',
-        condition: form.condition,
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        notes: form.notes,
-        timestamp: new Date().toISOString(),
-      };
-
       pledges.push(newPledge);
       await storage.setItem('ss_pledges', JSON.stringify(pledges));
 
@@ -83,8 +106,8 @@ export default function PledgeScreen() {
       quantity: '1',
       brand: '',
       condition: 'good',
-      name: 'Will Sigmon',
-      email: 'wjsigmon@gmail.com',
+      name: '',
+      email: '',
       phone: '',
       notes: '',
     });
@@ -102,7 +125,7 @@ export default function PledgeScreen() {
             </View>
             <Text style={styles.successTitle}>Pledge Registered!</Text>
             <Text style={styles.successSub}>
-              Thank you for supporting HTI’s 501(c)(3) drive. We have securely logged your device coordinates.
+              Thank you for supporting HTI’s device drive. We have securely logged your pledge for event coordination.
             </Text>
 
             <View style={styles.trackingCard}>
@@ -111,7 +134,7 @@ export default function PledgeScreen() {
             </View>
 
             <Text style={styles.successHint}>
-              A representative will contact you within 48 hours to schedule the US DoD data wipe and logistics.
+              A representative will contact you to schedule data handling, wipe verification, and logistics.
             </Text>
 
             <Pressable
@@ -146,7 +169,7 @@ export default function PledgeScreen() {
               </View>
               <Text style={styles.formTitle}>Pledge a Laptop</Text>
               <Text style={styles.formSub}>
-                All devices are fully sanitized using DoD-grade wiping standards and gifted to NC families.
+                All devices are routed through secure data handling, wipe verification, refurbishment, and distribution to NC families.
               </Text>
             </View>
 

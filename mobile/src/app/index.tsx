@@ -3,6 +3,7 @@ import { StyleSheet, View, ScrollView, Pressable, Linking, Text } from 'react-na
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { storage } from '@/lib/storage';
+import { fetchEventSummary } from '@/lib/event-api';
 import { Calendar, MapPin, Laptop, Sparkles, Ticket, Shield } from 'lucide-react-native';
 
 import StarfieldBackdrop from '@/components/StarfieldBackdrop';
@@ -42,21 +43,32 @@ export default function HomeScreen() {
   // 2. Load Local Pledges Statistics
   const loadPledgeStats = async () => {
     try {
+      const summary = await fetchEventSummary();
+      setStats({
+        pledges: summary.pledgedDevices,
+        wiped: summary.receivedDevices,
+        progress: summary.progress,
+      });
+      return;
+    } catch {
+      // Offline companion mode falls back to locally submitted pledges.
+    }
+
+    try {
       const stored = await storage.getItem('ss_pledges');
       if (stored) {
         const pledgeList = JSON.parse(stored);
-        const count = pledgeList.reduce((sum: number, p: any) => sum + parseInt(p.quantity || 1, 10), 0);
-        const wiped = count; // Live wiped count matches total pledges
+        const count = pledgeList.reduce((sum: number, p: any) => sum + parseInt(p.quantity || p.count || 1, 10), 0);
         setStats({
           pledges: count,
-          wiped: wiped,
+          wiped: 0,
           progress: Math.min(100, (count / 150) * 100),
         });
       } else {
         setStats({ pledges: 0, wiped: 0, progress: 0 });
       }
     } catch (e) {
-      console.log('Error loading stats', e);
+      console.log('Error loading local stats', e);
     }
   };
 
@@ -197,7 +209,7 @@ export default function HomeScreen() {
               <View style={styles.logisticsInfo}>
                 <Text style={styles.logisticsTitle}>Secure Data Erasure</Text>
                 <Text style={styles.logisticsDetail}>
-                  US DoD 5220.22-M sanitization provided live.
+                  Secure wipe verification coordinated by HTI.
                 </Text>
               </View>
             </View>

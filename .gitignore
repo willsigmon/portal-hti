@@ -11,6 +11,7 @@ dist/
 build/
 web-build/
 coverage/
+data/
 
 # Expo / native generated output
 .expo/

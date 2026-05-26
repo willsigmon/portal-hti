@@ -6,7 +6,7 @@
     "dev": "rm -rf .next-dev && NEXT_DIST_DIR=.next-dev next dev",
     "build": "rm -rf .next && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings=0",
     "clean": "rm -rf .next .next-dev",
     "mobile": "npm --prefix mobile start",
     "mobile:ios": "npm --prefix mobile run ios",
@@ -29,6 +29,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.18",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.1.7",
     "typescript": "^5"

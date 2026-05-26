@@ -16,7 +16,14 @@ Canonical repo for the HTI Portal web experience, the Portal HQ companion mobile
 npm install
 npm run dev
 npm run build
+npm run lint
 ```
+
+## Event operations
+
+- `/admin` and `/ops` provide the iPad-friendly event operations console.
+- API-backed tickets, pledge tracking, payment review, and check-in live under `/api/event/*`.
+- See `docs/event-ops.md` for environment variables, deployment notes, and the payment/check-in flow.
 
 ## Mobile app
 

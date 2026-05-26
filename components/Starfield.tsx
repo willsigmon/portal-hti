@@ -23,8 +23,9 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
 
     let animationFrameId: number;
     let stars: Star[] = [];
-    const STAR_COUNT = 24000; // Richer field for the event backdrop without becoming visual noise
-    const SPEED = 0.45; // Quicker, high-craft ambient space drift
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const STAR_COUNT = reduceMotion ? 0 : 1200; // Rich enough for mood without punishing mobile GPUs.
+    const SPEED = 0.32; // Calm ambient drift that stays below the content hierarchy.
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -89,6 +90,11 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
       backdrop.addColorStop(1, "#070809"); // Void floor
       ctx.fillStyle = backdrop;
       ctx.fillRect(0, 0, w, h);
+
+      if (reduceMotion) {
+        ctx.globalAlpha = 1.0;
+        return;
+      }
 
       for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
