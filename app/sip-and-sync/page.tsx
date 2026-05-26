@@ -292,10 +292,24 @@ export default function SipAndSync() {
                 letterSpacing: "-0.055em",
               }}
             >
-              <span className="sip-sync-logo relative flex flex-nowrap items-baseline whitespace-nowrap">
+              <span className="sip-sync-logo relative flex flex-nowrap items-baseline justify-center whitespace-nowrap">
+                {/* Oversized ampersand floats behind, semi-transparent.
+                    Absolutely positioned so it doesn't push Sip / Sync
+                    apart, yet stays visually centered between them. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
+                >
+                  <span
+                    className="sip-sync-amp text-[var(--color-ink)]"
+                    style={{ fontSize: "1.65em", lineHeight: 0.82 }}
+                  >
+                    &amp;
+                  </span>
+                </span>
+                <span className="sr-only">and</span>
                 <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
-                <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
-                <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
+                <span className="sip-sync-sync relative z-10 ml-[0.18em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
               <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
@@ -425,7 +439,7 @@ export default function SipAndSync() {
               <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)] font-semibold">When</span>
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
-              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">Thursday, June 11</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05] whitespace-nowrap">Thursday, June 11</h3>
               <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
             </div>
             <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
@@ -663,7 +677,7 @@ export default function SipAndSync() {
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               The experience space
             </span>
-            <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-3 leading-[0.95]">
+            <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-3 leading-[0.95] whitespace-nowrap">
               The Venue: <span className="text-[var(--color-accent)]">Portal HQ</span>
             </h2>
             <p className="text-lg md:text-xl text-[var(--color-muted)] max-w-[60ch] leading-relaxed mt-4">
@@ -999,7 +1013,7 @@ export default function SipAndSync() {
               <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
                 Get in Touch
               </span>
-              <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
+              <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] whitespace-nowrap">
                 Connect &amp; Share
               </h2>
               <p className="text-lg text-[var(--color-muted)] mt-2">

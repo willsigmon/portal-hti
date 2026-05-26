@@ -919,6 +919,9 @@ html, body {
 }
 
 .sip-sync-amp {
+  /* Oversized, semi-transparent ampersand seated behind Sip & Sync.
+     Twists into place from -180deg with a slight overshoot, then
+     settles at the muted background opacity. */
   opacity: 0;
   transform: rotate(-180deg) scale(0.6);
   transform-origin: 50% 55%;
@@ -944,11 +947,11 @@ html, body {
     transform: rotate(-180deg) scale(0.55);
   }
   60% {
-    opacity: 1;
+    opacity: 0.35;
     transform: rotate(18deg) scale(1.06);
   }
   100% {
-    opacity: 1;
+    opacity: 0.22;
     transform: rotate(0deg) scale(1);
   }
 }
