@@ -1056,47 +1056,61 @@ export default function SipAndSync() {
       {/* CONNECT & SHARE */}
       <section id="connect" className="section container">
         <div className="space-y-8">
-          <div className="reveal-up max-w-2xl">
-            <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
-              Get in Touch
-            </span>
-            <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
-              Connect &amp; Share
-            </h2>
-            <p className="text-lg text-[var(--color-muted)] mt-2">
-              Have questions about tax certificates, corporate bulk pledges, or event partnerships? Reach out directly to coordinating directors.
-            </p>
-          </div>
+          {/* Header row — "Connect & Share" left, Spread the Word callout right, on a single line at lg+. */}
+          <div className="reveal-up grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-6">
+              <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
+                Get in Touch
+              </span>
+              <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)]">
+                Connect &amp; Share
+              </h2>
+              <p className="text-lg text-[var(--color-muted)] mt-2">
+                Have questions about tax certificates, corporate bulk pledges, or event partnerships? Reach out directly to coordinating directors.
+              </p>
+            </div>
 
-          {/* SPREAD THE WORD — centered vertical-stack callout */}
-          <div className="reveal-up rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-8 md:p-10 max-w-2xl mx-auto">
-            <div className="flex flex-col items-center text-center gap-5">
-              {/* Megaphone icon up top — 56px in accent-tinted circle */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-accent)]/12 text-[var(--color-accent)]">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1Z" />
-                  <path d="M14 8a4 4 0 0 1 0 8" />
-                  <path d="M18 5a8 8 0 0 1 0 14" />
-                </svg>
+            {/* SPREAD THE WORD — sits to the right of the heading on one line at lg+. */}
+            <div className="lg:col-span-6 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-6 md:p-7">
+              <div className="flex items-center gap-5">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--color-accent)]/12 text-[var(--color-accent)]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1Z" />
+                    <path d="M14 8a4 4 0 0 1 0 8" />
+                    <path d="M18 5a8 8 0 0 1 0 14" />
+                  </svg>
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-[var(--color-ink)] leading-tight">
+                    Spread the Word
+                  </h3>
+                  <p className="text-sm text-[var(--color-muted)] leading-relaxed mt-1">
+                    No spare laptop? <strong className="text-[var(--color-ink)] font-semibold">Share this flyer.</strong>
+                  </p>
+                </div>
+
+                <div className="hidden sm:flex shrink-0 items-center gap-2">
+                  <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-4 py-2.5 text-xs font-sans font-bold text-[var(--color-on-accent)] shadow-md transition-all hover:scale-[1.03] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                    <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
+                    Copy URL
+                  </button>
+                  <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)] px-4 py-2.5 text-xs font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                    Download
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">
-                  Spread the Word
-                </h3>
-                <p className="text-base text-[var(--color-muted)] leading-relaxed max-w-[42ch] mx-auto">
-                  No spare laptop? <strong className="text-[var(--color-ink)] font-semibold">Share this flyer.</strong> Every forwarded link lights up a Raleigh student&rsquo;s screen.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <button onClick={handleCopyLink} className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-sans font-bold text-[var(--color-on-accent)] shadow-md transition-all hover:scale-[1.03] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
-                  <Share2 className="h-4 w-4" aria-hidden="true" />
-                  Copy event URL
+              {/* Mobile CTAs — stack under the icon+text on small screens */}
+              <div className="flex sm:hidden items-center justify-end gap-2 mt-4">
+                <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-4 py-2.5 text-xs font-sans font-bold text-[var(--color-on-accent)] shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                  <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
+                  Copy URL
                 </button>
-                <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-2 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)] px-6 py-3 text-sm font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
-                  Download flyer
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)] px-4 py-2.5 text-xs font-sans font-semibold text-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                  Download
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
               </div>
             </div>
