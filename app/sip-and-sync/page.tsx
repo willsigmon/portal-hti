@@ -523,18 +523,18 @@ export default function SipAndSync() {
                   HTI bridges the digital divide by transforming retired corporate and private laptops into secure Chromebooks and providing digital literacy training to NC families who lack access to technology.
                 </p>
 
-                <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Wipe</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">DoD 5220.22-M</dd>
+                <dl className="grid grid-cols-3 divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Wipe</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">DoD 5220.22-M</dd>
                   </div>
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Rebuild</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Refurbished OS</dd>
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Rebuild</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">Refurbished OS</dd>
                   </div>
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Reach</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Distribution + courses</dd>
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Reach</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">NC families</dd>
                   </div>
                 </dl>
               </div>
@@ -574,18 +574,18 @@ export default function SipAndSync() {
                   Raleigh’s premier community workspace and multi-purpose venue. Fostering a high-energy creative ecosystem for entrepreneurs, artists, founders, locally connecting and executing.
                 </p>
 
-                <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Stage</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">12 Gobo lights</dd>
+                <dl className="grid grid-cols-3 divide-x divide-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] border-y border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Stage</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">12 Gobo lights</dd>
                   </div>
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Floor</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">5,000 sq ft</dd>
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Floor</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">5,000 sq ft</dd>
                   </div>
-                  <div className="px-4 py-3.5 sm:py-4 sm:first:pl-0 sm:last:pr-0 sm:px-5">
-                    <dt className="font-sans text-xs uppercase tracking-[0.16em] text-[var(--color-muted)]">Tenants</dt>
-                    <dd className="mt-1 font-sans text-sm font-semibold uppercase tracking-[0.04em] tabular-nums leading-snug text-[var(--color-ink)]">Founder hub</dd>
+                  <div className="px-3 py-4 text-center first:pl-0 last:pr-0">
+                    <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] font-semibold">Tenants</dt>
+                    <dd className="mt-1.5 font-sans text-[13px] font-semibold tabular-nums leading-tight text-[var(--color-ink)] whitespace-nowrap">Founder hub</dd>
                   </div>
                 </dl>
               </div>
