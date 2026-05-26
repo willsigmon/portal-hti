@@ -559,9 +559,11 @@ export default function SipAndSync() {
                   </span>
                 </div>
 
-                {/* Brand mark — bright, shiny, parallax-driven by parent mouse position */}
-                <div className="flex items-center justify-center min-h-[140px] relative">
-                  <HTILogo className="parallax-logo h-[96px] w-auto object-contain" />
+                {/* Brand mark — bright, shiny, parallax-driven by parent mouse position.
+                    Fixed h-[148px] well + h-[112px] logo so HTI and Portal HQ
+                    sit on the same vertical baseline across both bento cards. */}
+                <div className="flex items-center justify-center h-[148px] relative">
+                  <HTILogo className="parallax-logo h-[112px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)]">
@@ -610,9 +612,10 @@ export default function SipAndSync() {
                   </span>
                 </div>
 
-                {/* Brand mark — bright, shiny, parallax-driven by parent mouse position */}
-                <div className="flex items-center justify-center min-h-[140px] relative">
-                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[140px] w-auto object-contain" />
+                {/* Brand mark — fixed-height well matches HTI side so the
+                    two logos sit on the same vertical center line. */}
+                <div className="flex items-center justify-center h-[148px] relative">
+                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[112px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
