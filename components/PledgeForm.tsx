@@ -384,10 +384,10 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
     const invoiceTotal = invoiceTicketsCost + donationValue;
 
     return (
-      <form onSubmit={handleTicketSubmit} className="space-y-8">
+      <form onSubmit={handleTicketSubmit} className="space-y-6">
         <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           {/* Left Configurator Column */}
-          <div className="lg:col-span-7 space-y-10 divide-y divide-white/5">
+          <div className="lg:col-span-7 space-y-7 divide-y divide-white/5">
             {/* Step 1: Quantity */}
             <div className="space-y-4 pb-2">
               <div className="flex items-center gap-3.5">
@@ -438,7 +438,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </div>
 
             {/* Step 2: Donation Slider & Presets */}
-            <div className="space-y-5 pt-10">
+            <div className="space-y-5 pt-6">
               <div className="flex items-center gap-3.5">
                 <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-[var(--color-on-accent)] font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   02
@@ -504,7 +504,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
             </div>
 
             {/* Step 3: Guest details */}
-            <div className="space-y-5 pt-10">
+            <div className="space-y-5 pt-6">
               <div className="flex items-center gap-3.5">
                 <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-bold text-[var(--color-on-accent)] font-sans tabular-nums shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_45%,transparent)]">
                   03
