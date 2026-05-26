@@ -635,77 +635,75 @@ export default function SipAndSync() {
       {/* VENUE SPOTLIGHT & 360° WALKTHROUGH */}
       <section id="venue-spotlight" className="section">
         <div className="container space-y-8">
-          <div className="grid lg:grid-cols-12 gap-y-8 lg:gap-x-16 items-center">
-            <div className="reveal-up lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
-              <div className="space-y-2">
-                <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
-                  The experience space
-                </span>
-                <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-3 leading-[0.95]">
-                  The Venue:
-                  <span className="block whitespace-nowrap text-[var(--color-accent)]">Portal HQ</span>
-                </h2>
-                <p className="text-lg md:text-xl text-[var(--color-muted)] max-w-[46ch] mx-auto leading-relaxed mt-5">
-                  A state-of-the-art 5,000 sq ft community workspace and high-production showcase venue in downtown Raleigh.
-                </p>
-              </div>
+          {/* Top header — eyebrow + heading + lede above the photo grid */}
+          <div className="reveal-up max-w-3xl">
+            <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
+              The experience space
+            </span>
+            <h2 className="display-lg tracking-[-0.04em] text-[var(--color-ink)] mt-3 leading-[0.95]">
+              The Venue: <span className="text-[var(--color-accent)]">Portal HQ</span>
+            </h2>
+            <p className="text-lg md:text-xl text-[var(--color-muted)] max-w-[60ch] leading-relaxed mt-4">
+              A state-of-the-art 5,000 sq ft community workspace and high-production showcase venue in downtown Raleigh.
+            </p>
+          </div>
 
-              <p className="text-base text-[var(--color-muted)] leading-relaxed max-w-[54ch] mx-auto">
-                The Sip &amp; Sync Social Hour will take place in the main gallery hall of <span className="whitespace-nowrap">Portal HQ</span>. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
-              </p>
-
-              <div className="grid grid-cols-2 gap-5 pt-4 w-full max-w-lg mx-auto">
-                <div className="flex min-h-[180px] flex-col items-center justify-center gap-3 rounded-xl border border-white/5 bg-[var(--color-surface)] p-8 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-sans text-5xl md:text-6xl font-black leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">5,000</strong>
-                  <span className="text-base md:text-lg font-bold text-[var(--color-accent)]">Sq Ft</span>
-                  <span className="max-w-[18ch] text-sm leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
-                </div>
-                <div className="flex min-h-[180px] flex-col items-center justify-center gap-3 rounded-xl border border-white/5 bg-[var(--color-surface)] p-8 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
-                  <strong className="font-sans text-5xl md:text-6xl font-black leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">150+</strong>
-                  <span className="text-base md:text-lg font-bold text-[var(--color-accent)]">Free Parking</span>
-                  <span className="max-w-[18ch] text-sm leading-snug text-[var(--color-muted)]">Spaces on site</span>
-                </div>
-              </div>
+          {/* Full-width venue photo grid — fills the square cleanly */}
+          <div className="grid grid-cols-2 gap-2.5">
+            <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
+              <img
+                src="/venue/venue-production-stage.jpg"
+                alt="Portal HQ production stage in full lighting rig"
+                className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
+              />
             </div>
-
-            {/* Asymmetric Venue Photo Grid */}
-            <div className="lg:col-span-6 lg:col-start-7 grid grid-cols-2 gap-2">
-              <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
-                <img
-                  src="/venue/venue-production-stage.jpg"
-                  alt="Portal HQ production stage in full lighting rig"
-                  className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
-                <img
-                  src="/venue/venue-showcase-card.jpg"
-                  alt="Portal HQ showcase room arranged for guests"
-                  className="kenburns-photo kenburns-photo-delayed w-full h-full object-cover filter contrast-[1.02]"
-                />
-              </div>
-              <div className="col-span-2 rounded-xl overflow-hidden aspect-[16/9] border bg-[var(--color-bg-dark)] shadow-sm relative group">
-                <img
-                  src="/venue/venue-live-performance.jpg"
-                  alt="Live performance on the Portal HQ stage"
-                  className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white text-xs">
-                  <div>
-                     <strong className="block font-semibold"><span className="whitespace-nowrap">Portal HQ</span> Concert Stage</strong>
-                    Experience concert-grade production during the Sip & Sync Social Hour.
-                  </div>
+            <div className="rounded-xl overflow-hidden aspect-[4/3] border bg-[var(--color-bg-dark)] shadow-sm">
+              <img
+                src="/venue/venue-showcase-card.jpg"
+                alt="Portal HQ showcase room arranged for guests"
+                className="kenburns-photo kenburns-photo-delayed w-full h-full object-cover filter contrast-[1.02]"
+              />
+            </div>
+            <div className="col-span-2 rounded-xl overflow-hidden aspect-[21/9] border bg-[var(--color-bg-dark)] shadow-sm relative group">
+              <img
+                src="/venue/venue-live-performance.jpg"
+                alt="Live performance on the Portal HQ stage"
+                className="kenburns-photo w-full h-full object-cover filter contrast-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent flex items-end p-5 md:p-7 text-white text-sm">
+                <div>
+                  <strong className="block font-display text-xl md:text-2xl font-bold tracking-tight"><span className="whitespace-nowrap">Portal HQ</span> Concert Stage</strong>
+                  <span className="block text-white/75 mt-1">Concert-grade production during the Sip &amp; Sync Social Hour.</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div id="explore-3d" className="relative scroll-mt-24 space-y-6 p-8 md:p-12 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-accent)_20%,var(--color-border))] bg-[var(--color-panel)] shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_30px_color-mix(in_oklch,var(--color-accent)_12%,transparent)] mt-10">
+          {/* Supporting copy + stats in a 2-up row below the photos */}
+          <div className="grid lg:grid-cols-12 gap-8 items-center pt-2">
+            <p className="lg:col-span-7 text-base text-[var(--color-muted)] leading-relaxed">
+              The Sip &amp; Sync Social Hour will take place in the main gallery hall of <span className="whitespace-nowrap">Portal HQ</span>. Attendees will experience our full in-house concert production system: 12 active moving Gobo lighting beams, high-lumen visual projection setups, and background ambient sound networks.
+            </p>
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+              <div className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-white/5 bg-[var(--color-surface)] p-5 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
+                <strong className="font-sans text-4xl md:text-5xl font-black leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">5,000</strong>
+                <span className="text-sm font-bold text-[var(--color-accent)]">Sq Ft</span>
+                <span className="max-w-[18ch] text-xs leading-snug text-[var(--color-muted)]">Flexible creative hub</span>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-white/5 bg-[var(--color-surface)] p-5 text-center shadow-md transition-all duration-300 hover:scale-[1.02]">
+                <strong className="font-sans text-4xl md:text-5xl font-black leading-none tracking-[-0.04em] text-[var(--color-ink)] tabular-nums">150+</strong>
+                <span className="text-sm font-bold text-[var(--color-accent)]">Free Parking</span>
+                <span className="max-w-[18ch] text-xs leading-snug text-[var(--color-muted)]">Spaces on site</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="explore-3d" className="relative scroll-mt-24 space-y-4 p-5 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-accent)_20%,var(--color-border))] bg-[var(--color-panel)] shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_30px_color-mix(in_oklch,var(--color-accent)_12%,transparent)] mt-6">
             <div aria-hidden="true" className="absolute left-0 top-12 bottom-12 w-1 bg-[var(--color-accent)] rounded-r-full" />
-            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
               <div className="max-w-2xl">
-                <h3 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">Walk the main gallery, stage, and lobby from this page. Use touch or drag to look around.</p>
+                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Explore Before You Arrive</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">Walk the main gallery, stage, and lobby from this page. Use touch or drag to look around.</p>
               </div>
               <a
                 href={virtualTourSrc}
@@ -717,7 +715,7 @@ export default function SipAndSync() {
               </a>
             </div>
             {/* Walkthrough viewport — full-bleed, no fake browser chrome */}
-            <div className="space-y-4">
+            <div className="space-y-2.5">
               <div className="relative overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_12%,transparent)] bg-black shadow-xl shadow-black/30">
                 <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-16 bg-gradient-to-b from-black/40 to-transparent" />
                 <iframe
@@ -729,7 +727,7 @@ export default function SipAndSync() {
                   loading="lazy"
                   className="block w-full border-0"
                   style={{
-                    height: "clamp(360px, 62vh, 680px)",
+                    height: "clamp(320px, 52vh, 560px)",
                     background: "#000"
                   }}
                 />
