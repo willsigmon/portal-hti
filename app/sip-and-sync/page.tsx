@@ -299,7 +299,7 @@ export default function SipAndSync() {
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
-                  style={{ transform: "translateX(-0.08em)" }}
+                  style={{ transform: "translateX(-0.22em)" }}
                 >
                   <span
                     className="sip-sync-amp text-[var(--color-ink)]"
