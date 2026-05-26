@@ -275,10 +275,10 @@ export default function SipAndSync() {
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
           <div className="min-w-0 lg:col-span-5 animate-fade-in-up delay-400">
             <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] p-1.5 shadow-lg transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
-              <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[var(--color-accent)] pointer-events-none" />
-              <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[var(--color-accent)] pointer-events-none" />
-              <div className="absolute -bottom-3.5 -left-3.5 h-7 w-7 border-b border-l border-[var(--color-accent)] pointer-events-none" />
-              <div className="absolute -bottom-3.5 -right-3.5 h-7 w-7 border-b border-r border-[var(--color-accent)] pointer-events-none" />
+              <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
+              <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
+              <div className="absolute -bottom-3.5 -left-3.5 h-7 w-7 border-b border-l border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
+              <div className="absolute -bottom-3.5 -right-3.5 h-7 w-7 border-b border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
 
               <div
                 className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner"
@@ -328,7 +328,7 @@ export default function SipAndSync() {
             {/* Big fun jump-to-3D button under the carousel */}
             <a
               href="#explore-3d"
-              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_18px_45px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_24px_55px_color-mix(in_oklch,var(--color-accent)_65%,transparent)] active:scale-[0.99] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_12px_30px_color-mix(in_oklch,var(--color-accent)_28%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_18px_40px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] active:scale-[0.99] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
             >
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="relative transition-transform duration-500 ease-out group-hover:rotate-[24deg] group-hover:scale-110">
@@ -1215,8 +1215,8 @@ export default function SipAndSync() {
       </main>
 
       {/* FOOTER */}
-      <footer className="py-12 text-sm text-[var(--color-muted)]">
-        <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-y-8">
+      <footer className="pt-14 pb-12 text-sm text-[var(--color-muted)]">
+        <div className="container pt-8 border-t border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] flex flex-col md:flex-row md:items-center md:justify-between gap-y-8">
           {/* LEFT: co-branding lockup */}
           <div className="flex items-center gap-3.5 opacity-85" aria-hidden="true">
             <HTILogo className="h-10 w-auto object-contain" />

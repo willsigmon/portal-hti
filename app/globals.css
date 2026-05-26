@@ -119,6 +119,7 @@
     background-repeat: no-repeat;
     color: var(--color-ink);
     font-family: var(--font-body);
+    line-height: 1.625;
   }
 
   /* Deep parallax aurora — slower, larger gradients sitting BEHIND body::after.
