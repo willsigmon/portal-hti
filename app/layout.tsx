@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Cormorant_Garamond, IBM_Plex_Sans, Space_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Space_Grotesk, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Starfield } from "@/components/StarField";
@@ -12,13 +12,12 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 // has no stored preference.
 const NO_FLASH_THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('ss_theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-// Cormorant Garamond on Google Fonts caps at weight 700. display-xl /
-// display-lg are anchored to 700 in globals.css — real metal, no
-// synthesized faux-800.
-const display = Cormorant_Garamond({
+// Space Grotesk — geometric grotesk with personality. Tight tracking,
+// quirky double-story 'a' and 'g'. Display weights 500/600/700 anchor
+// the display-xl / display-lg scale. Real metal, no synthesized bold.
+const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });

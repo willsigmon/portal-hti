@@ -212,7 +212,7 @@ export default function SipAndSync() {
         <div className="container flex h-[88px] md:h-[104px] items-center justify-between">
           <div className="flex items-center gap-3.5">
             <img src="/portal-logo.png" alt="Portal HQ" className="h-14 md:h-[72px] w-auto filter contrast-[1.02] transition-all object-contain" />
-            <span aria-hidden="true" className="font-display italic font-light text-3xl md:text-4xl text-[var(--color-accent)] mx-3 leading-none select-none">×</span>
+            <span aria-hidden="true" className="font-display font-medium text-3xl md:text-4xl text-[var(--color-accent)] mx-3 leading-none select-none">×</span>
             <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
           </div>
 
@@ -255,7 +255,7 @@ export default function SipAndSync() {
                 <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
                 <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "0.04em" }}>Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-sans font-medium italic text-[var(--color-muted)] tracking-[-0.005em] max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
