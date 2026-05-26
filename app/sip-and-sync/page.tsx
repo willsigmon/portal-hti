@@ -6,6 +6,7 @@ import { Button } from "@/components/Button";
 import { HTILogo } from "@/components/HTILogo";
 import { PledgeForm } from "@/components/PledgeForm";
 import { Toast, type ToastRef } from "@/components/Toast";
+import { MobileActionBar } from "@/components/MobileActionBar";
 import { PLEDGE_GOAL } from "@/lib/sip-and-sync-config";
 
 interface Pledge {
@@ -38,6 +39,32 @@ export default function SipAndSync() {
   ];
   const [heroIdx, setHeroIdx] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
+  // Touch swipe state for the mobile hero carousel.
+  const heroTouchStartX = useRef<number | null>(null);
+  const heroTouchStartY = useRef<number | null>(null);
+  const handleHeroTouchStart = (e: React.TouchEvent) => {
+    heroTouchStartX.current = e.touches[0].clientX;
+    heroTouchStartY.current = e.touches[0].clientY;
+    setHeroPaused(true);
+  };
+  const handleHeroTouchEnd = (e: React.TouchEvent) => {
+    const startX = heroTouchStartX.current;
+    const startY = heroTouchStartY.current;
+    heroTouchStartX.current = null;
+    heroTouchStartY.current = null;
+    setHeroPaused(false);
+    if (startX === null || startY === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    // Only count near-horizontal flicks of ≥40px so a vertical scroll
+    // doesn't accidentally advance the slideshow.
+    if (Math.abs(dx) < 40 || Math.abs(dy) > Math.abs(dx)) return;
+    setHeroIdx((prev) =>
+      dx < 0
+        ? (prev + 1) % heroPhotos.length
+        : (prev - 1 + heroPhotos.length) % heroPhotos.length
+    );
+  };
 
   // Scan check-in verification modal
   const [scanModalOpen, setScanModalOpen] = useState(false);
@@ -209,11 +236,11 @@ export default function SipAndSync() {
       `}</style>
       {/* STICKY GLASSMORPHIC NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-bg)]/80 backdrop-blur-md">
-        <div className="container flex h-[88px] md:h-[104px] items-center justify-between">
-          <div className="flex items-center gap-3.5">
-            <img src="/portal-logo.png" alt="Portal HQ" className="h-14 md:h-[72px] w-auto filter contrast-[1.02] transition-all object-contain" />
-            <span aria-hidden="true" className="font-display font-medium text-3xl md:text-4xl text-[var(--color-accent)] mx-3 leading-none select-none">×</span>
-            <HTILogo className="h-12 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain" />
+        <div className="container flex h-[68px] md:h-[104px] items-center justify-between">
+          <div className="flex items-center gap-2.5 md:gap-3.5 min-w-0">
+            <img src="/portal-logo.png" alt="Portal HQ" className="h-10 md:h-[72px] w-auto filter contrast-[1.02] transition-all object-contain shrink-0" />
+            <span aria-hidden="true" className="font-display font-medium text-2xl md:text-4xl text-[var(--color-accent)] mx-1 md:mx-3 leading-none select-none shrink-0">×</span>
+            <HTILogo className="h-9 md:h-14 w-auto filter contrast-[1.03] transition-all object-contain shrink-0" />
           </div>
 
           <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] bg-[var(--color-surface)]/55 backdrop-blur-md shadow-inner">
@@ -223,7 +250,7 @@ export default function SipAndSync() {
             <a href="#connect" className="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] text-[var(--color-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">Connect</a>
           </div>
 
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             {hasTicket && (
               <button
                 onClick={handleOpenTicket}
@@ -234,28 +261,43 @@ export default function SipAndSync() {
                 Active Pass
               </button>
             )}
-            <Button size="default" variant="primary" asChild>
-              <a href="#tickets">Get Tickets</a>
-            </Button>
+            {/* Mobile: compact icon CTA so the nav stays balanced */}
+            <a
+              href="#tickets"
+              aria-label="Get tickets"
+              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-accent)] text-[var(--color-on-accent)] shadow-[0_6px_18px_color-mix(in_oklch,var(--color-accent)_40%,transparent)] active:scale-95 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            >
+              <Ticket className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <div className="hidden sm:block">
+              <Button size="default" variant="primary" asChild>
+                <a href="#tickets">Get Tickets</a>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
 
       <main id="main">
       {/* HERO SECTION */}
-      <section className="container relative pt-14 pb-28 md:pt-24 md:pb-32">
-        <div className="grid w-full min-w-0 items-end gap-x-10 lg:gap-x-14 gap-y-14 lg:grid-cols-12">
-          <div className="min-w-0 space-y-8 lg:col-span-6">
+      <section className="container relative pt-8 pb-16 md:pt-24 md:pb-32">
+        <div className="grid w-full min-w-0 items-end gap-x-10 lg:gap-x-14 gap-y-10 md:gap-y-14 lg:grid-cols-12">
+          <div className="min-w-0 space-y-6 md:space-y-8 lg:col-span-6">
             <h1
               className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
-              style={{ fontSize: "clamp(3.45rem, 10vw, 8.75rem)", lineHeight: 1 }}
+              style={{
+                fontFamily: "var(--font-wordmark), Cormorant Garamond, Georgia, serif",
+                fontSize: "clamp(2.75rem, 11vw, 8.75rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.055em",
+              }}
             >
               <span className="sip-sync-logo relative flex flex-nowrap items-baseline whitespace-nowrap">
                 <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
                 <span className="sip-sync-amp relative z-20 mx-[-0.04em] inline-block text-[var(--color-ink)]">&amp;</span>
                 <span className="sip-sync-sync relative z-40 -ml-[0.04em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
-              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "0.04em" }}>Social Hour</span>
+              <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
 
             <p className="text-xl md:text-2xl font-sans font-medium italic text-[var(--color-muted)] tracking-[-0.005em] max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
@@ -266,11 +308,11 @@ export default function SipAndSync() {
               Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-1 animate-fade-in-up delay-300">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-1 animate-fade-in-up delay-300">
+              <Button size="lg" asChild className="w-full sm:w-auto justify-center">
                 <a href="#tickets">Reserve Spot</a>
               </Button>
-              <Button variant="secondary" size="lg" asChild>
+              <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto justify-center">
                 <a href="#pledge">Donate Laptop</a>
               </Button>
             </div>
@@ -285,11 +327,13 @@ export default function SipAndSync() {
               <div className="absolute -bottom-3.5 -right-3.5 h-7 w-7 border-b border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
 
               <div
-                className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner"
+                className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-dark)] shadow-inner touch-pan-y"
                 onMouseEnter={() => setHeroPaused(true)}
                 onMouseLeave={() => setHeroPaused(false)}
+                onTouchStart={handleHeroTouchStart}
+                onTouchEnd={handleHeroTouchEnd}
                 role="region"
-                aria-label="Portal HQ photo carousel"
+                aria-label="Portal HQ photo carousel — swipe to advance"
               >
                 {heroPhotos.map((photo, idx) => (
                   <img
@@ -316,7 +360,7 @@ export default function SipAndSync() {
                         aria-label={`Show photo ${idx + 1} of ${heroPhotos.length}`}
                         aria-current={idx === heroIdx}
                         onClick={() => setHeroIdx(idx)}
-                        className="inline-flex h-6 min-w-6 items-center justify-center px-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                        className="inline-flex h-9 min-w-9 items-center justify-center px-1.5 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                       >
                         <span
                           aria-hidden="true"
@@ -364,7 +408,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
@@ -401,7 +445,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
+            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
@@ -434,7 +478,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
@@ -599,7 +643,7 @@ export default function SipAndSync() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 h-64 lg:h-full min-h-[240px] relative bg-[var(--color-bg-dark)]">
+              <div className="lg:col-span-5 h-56 sm:h-72 lg:h-full min-h-[200px] relative bg-[var(--color-bg-dark)]">
                 <img
                   src="/heartfelt_laptop.png"
                   alt="NC student using a refurbished Chromebook"
@@ -1179,6 +1223,9 @@ export default function SipAndSync() {
 
       {/* Lightweight Toast Notifier */}
       <Toast ref={toastRef} />
+
+      {/* Mobile-only sticky action bar — fades in after first scroll. */}
+      <MobileActionBar />
     </div>
   );
 }

@@ -23,11 +23,27 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
 
     let animationFrameId: number;
     let stars: Star[] = [];
-    const STAR_COUNT = 24000; // Dense star field — floating through deep space
+    // Mobile-aware star budget. Phones (≤768px or coarse pointer) drop to
+    // ~3,500 stars at DPR-1; tablets ~9,000; desktop keeps the dense 24k
+    // field. Keeps frame budget under 16ms on iPhone 12-class hardware.
+    const isCoarsePointer =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(pointer: coarse)").matches;
+    const w0 = typeof window !== "undefined" ? window.innerWidth : 1440;
+    const STAR_COUNT =
+      isCoarsePointer || w0 <= 768
+        ? 3500
+        : w0 <= 1100
+          ? 9000
+          : 24000;
     const SPEED = 0.42; // Continuous z-axis drift
 
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
+      // Cap DPR at 1.5 on touch devices — full DPR doubles GPU/CPU cost
+      // on mobile retina screens for negligible visible gain on a
+      // particle field.
+      const rawDpr = window.devicePixelRatio || 1;
+      const dpr = isCoarsePointer ? Math.min(rawDpr, 1.5) : rawDpr;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;

@@ -417,13 +417,22 @@
 
 /* Tighter section rhythm now that the nebula is seamless — content
    reveals via scroll-triggered animation carry the visual separation
-   instead of huge vertical air. */
+   instead of huge vertical air. Phones get more breathing room
+   proportionally (3.25rem floor) so sections don't run together. */
 .section {
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(3.25rem, 5vw, 4.5rem);
 }
 
 .section-tight {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: clamp(2rem, 3vw, 2.5rem);
+}
+
+/* Mobile body padding so the sticky bottom action bar (MobileActionBar)
+   never covers footer content. Desktop has no bar — zero offset. */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5.25rem);
+  }
 }
 
 /* Apple-style scroll reveal — universal, driven by IntersectionObserver
@@ -806,9 +815,21 @@ input[type="range"]::-webkit-slider-thumb {
     letter-spacing: -0.035em;
   }
 
+  .display-lg {
+    font-size: clamp(2.1rem, 8.5vw, 2.85rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+
   .container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  /* Eyebrows on phones: prevent long uppercase strings from
+     overflowing the container width. */
+  .eyebrow {
+    letter-spacing: 0.12em;
   }
 }
 

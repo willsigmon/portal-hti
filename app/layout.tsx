@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { IBM_Plex_Sans, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Sans, Space_Grotesk, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Starfield } from "@/components/StarField";
@@ -19,6 +19,17 @@ const display = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-display",
+  display: "swap",
+});
+
+// Cormorant Garamond — used ONLY for the Sip & Sync Social Hour
+// wordmark via `--font-wordmark`. The rest of the page stays in
+// Space Grotesk. Will explicitly liked the serif on the hero mark.
+const wordmark = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-wordmark",
   display: "swap",
 });
 
@@ -78,7 +89,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${wordmark.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         {/* Static string constant — no user input, safe inline boot script. */}
         <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />

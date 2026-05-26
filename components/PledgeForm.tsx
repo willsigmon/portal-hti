@@ -414,7 +414,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     type="button"
                     aria-label="Decrease ticket quantity"
                     onClick={() => setTicketQty((q) => Math.max(1, q - 1))}
-                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+                    className="h-11 w-11 flex items-center justify-center rounded text-xl font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
                   >
                     <span aria-hidden="true">−</span>
                   </button>
@@ -429,7 +429,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     type="button"
                     aria-label="Increase ticket quantity"
                     onClick={() => setTicketQty((q) => Math.min(10, q + 1))}
-                    className="h-9 w-9 flex items-center justify-center rounded text-lg font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+                    className="h-11 w-11 flex items-center justify-center rounded text-xl font-bold hover:bg-white/10 text-white transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
                   >
                     <span aria-hidden="true">+</span>
                   </button>
@@ -461,7 +461,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                       type="button"
                       aria-pressed={donationPreset === preset}
                       onClick={() => handlePresetSelect(preset)}
-                      className={`py-2 px-3 rounded-lg border font-sans tabular-nums text-sm font-semibold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] ${
+                      className={`min-h-11 py-2.5 px-3 rounded-lg border font-sans tabular-nums text-sm font-semibold tracking-tight transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] ${
                         donationPreset === preset
                           ? "bg-[var(--color-accent)] border-[var(--color-accent)] text-[var(--color-on-accent)] shadow-sm shadow-orange-500/20"
                           : "bg-black/30 border-white/10 text-white hover:border-[var(--color-accent)]/50 hover:bg-black/50"
@@ -482,7 +482,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     step="5"
                     value={donationValue}
                     onChange={handleDonationSliderChange}
-                    className="w-full accent-[var(--color-accent)] h-1 rounded bg-white/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+                    className="w-full accent-[var(--color-accent)] h-2 md:h-1 rounded bg-white/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
                   />
 
                   <div className="flex items-center justify-between gap-4">
