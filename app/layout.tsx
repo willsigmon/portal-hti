@@ -3,7 +3,7 @@ import "./globals.css";
 import { Cormorant_Garamond, IBM_Plex_Sans, Space_Grotesk, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Starfield } from "@/components/StarField";
+import { Starfield } from "@/components/Starfield";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { ScrollParallax } from "@/components/ScrollParallax";
 
