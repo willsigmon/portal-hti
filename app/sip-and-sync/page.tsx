@@ -1073,13 +1073,13 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="w-full min-h-[7.5rem] flex items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300" aria-hidden="true">
-                <span className="inline-flex h-16 items-center">
+              <div className="w-full min-h-[7.5rem] flex items-center justify-center gap-4 opacity-70 group-hover:opacity-95 transition-opacity duration-300" aria-hidden="true">
+                <span className="inline-flex h-16 items-center justify-center">
                   <img src="/hti-cropped.png" alt="" className="h-16 w-auto object-contain" />
                 </span>
-                <span className="text-3xl text-[var(--color-accent)]/55 font-light leading-none select-none">+</span>
-                <span className="inline-flex h-20 items-center">
-                  <img src="/portal-logo.png" alt="" className="h-20 w-auto object-contain" />
+                <span className="text-2xl text-[var(--color-accent)]/55 font-light leading-none select-none">+</span>
+                <span className="inline-flex h-16 items-center justify-center">
+                  <img src="/portal-logo.png" alt="" className="h-16 w-auto object-contain" />
                 </span>
               </div>
               <div className="w-full min-h-[2.5rem] flex items-center justify-center mt-5">
