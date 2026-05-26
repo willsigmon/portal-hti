@@ -298,7 +298,7 @@ export default function SipAndSync() {
                     apart, yet stays visually centered between them. */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
+                  className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                   style={{ transform: "translateX(-0.22em)" }}
                 >
                   <span
@@ -310,7 +310,7 @@ export default function SipAndSync() {
                 </span>
                 <span className="sr-only">and</span>
                 <span className="sip-sync-sip relative z-10 text-[var(--color-gold)]">Sip</span>
-                <span className="sip-sync-sync relative z-10 ml-[0.18em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
+                <span className="sip-sync-sync relative z-30 ml-[0.18em] inline-block text-[var(--color-accent)] drop-shadow-[0_4px_36px_color-mix(in_oklch,var(--color-accent)_55%,transparent)]">Sync</span>
               </span>
               <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
