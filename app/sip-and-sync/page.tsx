@@ -327,11 +327,18 @@ export default function SipAndSync() {
               Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
             </p>
 
-            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-1 animate-fade-in-up delay-300">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:items-start gap-2.5 sm:gap-4 pt-1 animate-fade-in-up delay-300">
               <Button size="lg" asChild className="w-full sm:w-auto justify-center">
                 <a href="#tickets">Reserve Spot</a>
               </Button>
-              <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto justify-center">
+              {/* Secondary CTA shrinks on mobile so the primary owns
+                  visual weight — Hormozi-grade hierarchy. */}
+              <Button
+                variant="ghost"
+                size="default"
+                asChild
+                className="w-auto sm:w-auto justify-center text-[var(--color-muted)] hover:text-[var(--color-accent)] underline underline-offset-4 decoration-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] hover:decoration-[var(--color-accent)] sm:no-underline sm:border-2 sm:border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] sm:bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)]"
+              >
                 <a href="#pledge">Donate Laptop</a>
               </Button>
             </div>
@@ -1030,15 +1037,15 @@ export default function SipAndSync() {
             </div>
 
             {/* SPREAD THE WORD — small badge row, sits to the right of the heading at lg+. */}
-            <div className="reveal-right lg:col-span-6 flex flex-wrap items-center justify-center lg:justify-end gap-2">
-              <span className="text-xs text-[var(--color-muted)] mr-1">Spread the word —</span>
-              <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_18%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] px-4 py-2 text-xs font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[var(--color-accent)]/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
-                <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
+            <div className="reveal-right lg:col-span-6 flex flex-wrap items-center justify-center lg:justify-end gap-1.5 md:gap-2">
+              <span className="w-full md:w-auto text-xs text-[var(--color-muted)] md:mr-1">Spread the word —</span>
+              <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_18%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-xs font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[var(--color-accent)]/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                <Share2 className="h-3 w-3 md:h-3.5 md:w-3.5" aria-hidden="true" />
                 Copy URL
               </button>
-              <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-4 py-2 text-xs font-sans font-semibold text-[var(--color-on-accent)] shadow-sm transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+              <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-xs font-sans font-semibold text-[var(--color-on-accent)] shadow-sm transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
                 Download flyer
-                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <ArrowUpRight className="h-3 w-3 md:h-3.5 md:w-3.5" aria-hidden="true" />
               </a>
             </div>
           </div>
