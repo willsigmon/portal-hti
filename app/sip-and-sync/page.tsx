@@ -33,7 +33,7 @@ export default function SipAndSync() {
     { src: "/venue/venue-wood-entry.jpg", alt: "Portal HQ lobby — bar, gallery wall, and the neon Portal sign" },
     { src: "/venue/venue-lobby-wide.jpg", alt: "Portal HQ wide lobby with brick walls and warm lighting" },
     { src: "/venue/venue-main-hall-daylight.jpg", alt: "Portal HQ main hall in daylight, set for guests" },
-    { src: "/venue/venue-projection-wall.jpg", alt: "Portal HQ projection wall during a showcase moment" },
+    { src: "/venue/venue-stage-wide.jpg", alt: "Portal HQ stage room from the wide gallery view" },
     { src: "/venue/venue-lounge-corner.jpg", alt: "Portal HQ lounge corner — warm brick and conversation seating" },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
