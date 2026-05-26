@@ -347,7 +347,7 @@ export default function SipAndSync() {
         </div>
 
         {/* EVENT QUICK INFO GRID — asymmetric density per WSADA §15 */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 md:mt-20">
+        <div className="reveal-up mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 md:mt-20">
           {/* Calendar Card — compact left */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
@@ -511,7 +511,7 @@ export default function SipAndSync() {
       {/* THE COLLABORATION (BENTO GRID) */}
       <section id="about" className="section">
         <div className="container space-y-8">
-          <div className="max-w-2xl">
+          <div className="reveal-up max-w-2xl">
             <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
               Why we’re gathering
             </div>
@@ -523,7 +523,7 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="reveal-up grid md:grid-cols-2 gap-5">
             {/* HTI Bento Card */}
             <div
               onMouseMove={handleMouseMove}
@@ -630,7 +630,7 @@ export default function SipAndSync() {
             <div
               className="md:col-span-2 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-panel)] shadow-md overflow-hidden grid lg:grid-cols-12"
             >
-              <div className="p-7 sm:p-9 md:p-10 lg:p-12 lg:col-span-7 flex flex-col justify-center space-y-4">
+              <div className="p-8 sm:p-10 md:p-10 lg:p-12 lg:col-span-7 flex flex-col justify-center space-y-4">
                 <div>
                   <span className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)] font-sans">
                     Our Real Mission
@@ -665,7 +665,7 @@ export default function SipAndSync() {
       <section id="venue-spotlight" className="section">
         <div className="container space-y-8">
           <div className="grid lg:grid-cols-12 gap-y-8 lg:gap-x-16 items-center">
-            <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
+            <div className="reveal-up lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
               <div className="space-y-2">
                 <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
                   The experience space
@@ -805,7 +805,7 @@ export default function SipAndSync() {
       {/* TICKETS & DONATIONS */}
       <section id="tickets" className="section container py-20 md:py-28">
         <div className="max-w-4xl mx-auto space-y-10">
-          <div className="text-center space-y-2">
+          <div className="reveal-up text-center space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               Reserve Admission Passes
             </span>
@@ -818,7 +818,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Tax-receipt circular medallion — pure graphic, no text/font inside */}
-          <div className="p-7 sm:p-8 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 grid grid-cols-[auto_1fr] items-center gap-7">
+          <div className="p-8 sm:p-10 md:p-12 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-surface)]/50 grid grid-cols-[auto_1fr] items-center gap-7">
             <div className="relative h-[108px] w-[108px] shrink-0">
               <svg
                 viewBox="0 0 100 100"
@@ -885,7 +885,7 @@ export default function SipAndSync() {
       <section id="pledge" className="section pb-12 md:pb-16">
         <div className="container space-y-8 px-2 md:px-6 lg:px-10">
           {/* Section header — spans full width above the grid for column-top alignment */}
-          <div className="max-w-3xl space-y-2">
+          <div className="reveal-up max-w-3xl space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.14em] font-sans font-semibold">
               Drive Metrics
             </span>
@@ -904,7 +904,7 @@ export default function SipAndSync() {
               {/* Live Metric Progress Counter Card */}
               <div
                 onMouseMove={handleMouseMove}
-                className="p-7 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] shadow-md space-y-6 spotlight-card"
+                className="p-8 md:p-10 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] shadow-md space-y-6 spotlight-card"
               >
                 <div className="flex items-center justify-between border-b border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pb-3">
                   <div className="text-xs font-semibold text-[var(--color-muted)] font-sans flex items-center">
@@ -973,7 +973,7 @@ export default function SipAndSync() {
                       aria-label="Map showing Portal HQ at 3801 Hillsborough St Suite 113 Raleigh NC 27607"
                     />
                   </div>
-                  <div className="p-5 space-y-2 text-sm">
+                  <div className="p-6 md:p-8 space-y-3 text-sm">
                     <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
                       <MapPin className="h-4 w-4 shrink-0" />
                       Drop-off Location
@@ -1028,7 +1028,7 @@ export default function SipAndSync() {
                       <line x1="0" y1="30" x2="4" y2="30" strokeDasharray="2 3" opacity="0.4" />
                     </svg>
                   </div>
-                  <div className="p-5 space-y-2 text-sm">
+                  <div className="p-6 md:p-8 space-y-3 text-sm">
                     <div className="flex items-center gap-1.5 text-[var(--color-accent)] font-bold font-sans">
                       <Award className="h-4 w-4 shrink-0" />
                       Free Vehicle Pickup
@@ -1045,7 +1045,7 @@ export default function SipAndSync() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 p-6 sm:p-7 md:p-8 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)] h-full flex flex-col">
+            <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)] h-full flex flex-col">
               <PledgeForm mode="laptop" />
             </div>
 
@@ -1056,7 +1056,7 @@ export default function SipAndSync() {
       {/* CONNECT & SHARE */}
       <section id="connect" className="section container">
         <div className="space-y-8">
-          <div className="max-w-2xl">
+          <div className="reveal-up max-w-2xl">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
               Get in Touch
             </span>
@@ -1069,7 +1069,7 @@ export default function SipAndSync() {
           </div>
 
           {/* SPREAD THE WORD — tidy CTA strip */}
-          <div className="rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex items-center gap-4 min-w-0">
               <svg
                 viewBox="0 0 44 44"
@@ -1114,7 +1114,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Coordinators Grid */}
-          <div className="grid md:grid-cols-3 gap-4.5">
+          <div className="reveal-up grid md:grid-cols-3 gap-4.5">
             {/* Will Sigmon */}
             <div
               onMouseMove={handleMouseMove}
@@ -1254,7 +1254,7 @@ export default function SipAndSync() {
       {scanModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
           <div
-            className="relative w-full max-w-md p-5 md:p-6.5 rounded-[var(--radius-md)] border border-[var(--color-signal)]/30 bg-[var(--color-surface)] shadow-2xl space-y-4.5 text-center transform scale-100 opacity-100 transition-all"
+            className="relative w-full max-w-md p-7 md:p-9 rounded-[var(--radius-md)] border border-[var(--color-signal)]/30 bg-[var(--color-surface)] shadow-2xl space-y-4.5 text-center transform scale-100 opacity-100 transition-all"
           >
             {/* Close modal X button */}
             <button
