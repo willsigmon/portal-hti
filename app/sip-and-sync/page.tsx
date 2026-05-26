@@ -747,8 +747,8 @@ export default function SipAndSync() {
       </section>
 
       {/* TICKETS & DONATIONS */}
-      <section id="tickets" className="section container py-12 md:py-16">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <section id="tickets" className="section container py-8 md:py-10">
+        <div className="max-w-4xl mx-auto space-y-4">
           <div className="reveal-up text-center space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               Reserve Admission Passes
@@ -762,8 +762,8 @@ export default function SipAndSync() {
           </div>
 
           {/* 501(c)(3) tax-receipt badge — small inline pill */}
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center justify-center gap-2 rounded-full border border-[color-mix(in_oklch,var(--color-accent)_30%,transparent)] bg-[color-mix(in_oklch,var(--color-accent)_8%,transparent)] px-4 py-1.5 text-xs font-sans font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)] w-fit mx-auto">
+          <div className="flex flex-col items-center gap-1.5">
+            <div className="flex items-center justify-center gap-2 rounded-full border border-[color-mix(in_oklch,var(--color-accent)_30%,transparent)] bg-[color-mix(in_oklch,var(--color-accent)_8%,transparent)] px-4 py-1 text-xs font-sans font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)] w-fit mx-auto">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
@@ -774,7 +774,7 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="p-6 sm:p-8 md:p-10 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+          <div className="p-5 sm:p-6 md:p-7 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
             <PledgeForm mode="ticket" />
           </div>
         </div>
