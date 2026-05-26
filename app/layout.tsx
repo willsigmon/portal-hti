@@ -10,9 +10,9 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 // has no stored preference.
 const NO_FLASH_THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('ss_theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-// Cormorant Garamond on Google Fonts caps at weight 700. `display-xl` /
-// `display-lg` request font-weight: 800 in globals.css; the browser will
-// synthesize that from 700 until globals.css can be updated to 700.
+// Cormorant Garamond on Google Fonts caps at weight 700. display-xl /
+// display-lg are anchored to 700 in globals.css — real metal, no
+// synthesized faux-800.
 const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "600", "700"],

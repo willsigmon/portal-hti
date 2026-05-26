@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-[var(--color-accent)] text-[var(--color-on-accent)] hover:bg-[color-mix(in_oklch,var(--color-accent)_92%,black)] hover:shadow-[0_0_20px_color-mix(in_oklch,var(--color-accent)_40%,transparent)] shadow-md shadow-orange-500/10",
-        secondary: "border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] backdrop-blur-sm rounded-[var(--radius-lg)] hover:bg-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)]",
+        secondary: "border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)] rounded-[var(--radius-lg)] hover:bg-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)]",
         ghost: "hover:bg-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]",
       },
       size: {
