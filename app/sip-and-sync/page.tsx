@@ -563,7 +563,7 @@ export default function SipAndSync() {
 
                 {/* Brand mark — bright, shiny, parallax-driven by parent mouse position */}
                 <div className="flex items-center justify-center min-h-[140px] relative">
-                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[96px] w-auto object-contain" />
+                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[140px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
@@ -1008,7 +1008,7 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="w-full min-h-[6.5rem] flex items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
+              <div className="w-full min-h-[7.5rem] flex items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
                 <img src="/hti-cropped.png" alt="" aria-hidden="true" className="h-28 w-auto object-contain" />
               </div>
               <div className="w-full min-h-[2.5rem] flex items-center justify-center mt-5">
@@ -1039,13 +1039,13 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="w-full min-h-[6.5rem] flex items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300" aria-hidden="true">
-                <span className="inline-flex h-14 items-center">
-                  <img src="/hti-cropped.png" alt="" className="h-14 w-auto object-contain" />
+              <div className="w-full min-h-[7.5rem] flex items-center justify-center gap-3 opacity-70 group-hover:opacity-95 transition-opacity duration-300" aria-hidden="true">
+                <span className="inline-flex h-16 items-center">
+                  <img src="/hti-cropped.png" alt="" className="h-16 w-auto object-contain" />
                 </span>
                 <span className="text-3xl text-[var(--color-accent)]/55 font-light leading-none select-none">+</span>
-                <span className="inline-flex h-14 items-center">
-                  <img src="/portal-logo.png" alt="" className="h-14 w-auto object-contain" />
+                <span className="inline-flex h-20 items-center">
+                  <img src="/portal-logo.png" alt="" className="h-20 w-auto object-contain" />
                 </span>
               </div>
               <div className="w-full min-h-[2.5rem] flex items-center justify-center mt-5">
@@ -1076,8 +1076,8 @@ export default function SipAndSync() {
               onMouseMove={handleMouseMove}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col items-center text-center hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden spotlight-card"
             >
-              <div className="w-full min-h-[6.5rem] flex items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
-                <img src="/portal-logo.png" alt="" aria-hidden="true" className="h-28 w-auto object-contain" />
+              <div className="w-full min-h-[7.5rem] flex items-center justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-300">
+                <img src="/portal-logo.png" alt="" aria-hidden="true" className="h-[120px] w-auto object-contain" />
               </div>
               <div className="w-full min-h-[2.5rem] flex items-center justify-center mt-5">
                 <h4 className="font-display font-bold text-2xl text-[var(--color-ink)] leading-tight">Jake Berlin</h4>
