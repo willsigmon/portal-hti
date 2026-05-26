@@ -853,12 +853,12 @@ export default function SipAndSync() {
                     <Award className="h-4 w-4 shrink-0" />
                     Free Vehicle Pickup
                   </div>
-                  <strong className="block text-[var(--color-ink)] font-sans">Donating 5+ Laptops?</strong>
+                  <strong className="block text-[var(--color-ink)] font-sans">Donating 50+ Laptops?</strong>
                   <p className="text-[var(--color-muted)] leading-relaxed font-sans">
-                    If your business or household has 5 or more laptops to pledge, we'll coordinate a free courier pickup.
+                    If your business or household has 50 or more laptops to pledge, we'll coordinate a free courier pickup.
                   </p>
-                  <a href="mailto:pickups@hubzonetech.org" className="text-[11px] font-semibold text-[var(--color-accent)] hover:underline block pt-1 font-sans">
-                    Email pickups@hubzonetech.org ➔
+                  <a href="mailto:info@hubzonetech.org" className="text-[11px] font-semibold text-[var(--color-accent)] hover:underline block pt-1 font-sans">
+                    Email info@hubzonetech.org ➔
                   </a>
                 </div>
               </div>
