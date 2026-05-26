@@ -239,8 +239,8 @@ export default function SipAndSync() {
 
       <main id="main">
       {/* HERO SECTION */}
-      <section className="container relative pt-8 pb-16 md:pt-12 md:pb-20">
-        <div className="grid w-full min-w-0 items-center gap-x-14 gap-y-14 lg:grid-cols-12">
+      <section className="container relative pt-14 pb-20 md:pt-24 md:pb-24">
+        <div className="grid w-full min-w-0 items-end gap-x-14 gap-y-14 lg:grid-cols-12">
           <div className="min-w-0 space-y-5 lg:col-span-7">
             <h1
               className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
@@ -254,7 +254,7 @@ export default function SipAndSync() {
               <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
 
-            <p className="text-xl md:text-2xl font-display font-semibold italic text-[var(--color-muted)] tracking-tight max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
+            <p className="text-xl md:text-2xl font-sans font-medium italic text-[var(--color-muted)] tracking-[-0.005em] max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
               “Old Laptops. New Opportunities.”
             </p>
 
@@ -328,7 +328,7 @@ export default function SipAndSync() {
             {/* Big fun jump-to-3D button under the carousel */}
             <a
               href="#explore-3d"
-              className="see3d-button group relative mx-auto mt-7 flex w-fit items-center justify-center gap-3.5 rounded-full bg-[var(--color-accent)] px-9 py-4 font-sans text-base md:text-lg font-extrabold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_12px_30px_color-mix(in_oklch,var(--color-accent)_28%,transparent)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_18px_40px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] active:scale-[0.99] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+              className="see3d-button group relative mx-auto mt-6 flex w-fit items-center justify-center gap-3 rounded-full bg-[var(--color-accent)] px-8 py-3.5 font-sans text-base font-extrabold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_12px_30px_color-mix(in_oklch,var(--color-accent)_28%,transparent)] transition-all duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-[1.05] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_color-mix(in_oklch,var(--color-accent)_45%,transparent)] active:scale-[0.97] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
             >
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="relative transition-transform duration-500 ease-out group-hover:rotate-[24deg] group-hover:scale-110">
@@ -541,7 +541,7 @@ export default function SipAndSync() {
                   <HTILogo className="h-[80px] w-auto filter contrast-[1.03] transition-all group-hover:scale-105 duration-300 object-contain" />
                 </div>
 
-                <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)]">
+                <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)]">
                   HUBZone Technology Initiative
                 </h3>
 
@@ -592,7 +592,7 @@ export default function SipAndSync() {
                   <img src="/portal-logo.png" alt="Portal HQ" className="h-[80px] w-auto filter contrast-[1.02] transition-all group-hover:scale-105 duration-300 object-contain" />
                 </div>
 
-                <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
+                <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Portal HQ
                 </h3>
 
@@ -790,7 +790,7 @@ export default function SipAndSync() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="flex flex-col gap-0.5">
-                        <strong className="font-display text-base font-semibold leading-none tracking-tight">{wp.name}</strong>
+                        <strong className="text-base font-semibold leading-none tracking-tight">{wp.name}</strong>
                         <span className="text-sm leading-snug text-[var(--color-muted)]">{wp.label}</span>
                       </span>
                     </button>
@@ -1068,48 +1068,37 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          {/* SPREAD THE WORD — tidy CTA strip */}
-          <div className="rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="flex items-center gap-4 min-w-0">
-              <svg
-                viewBox="0 0 44 44"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-10 w-10 shrink-0 text-[var(--color-accent)]"
-              >
-                <path d="M6 20 L6 28 a1.5 1.5 0 0 0 1.5 1.5 H12 L24 36 V12 L12 18 H7.5 a1.5 1.5 0 0 0 -1.5 1.5 z" fill="currentColor" fillOpacity="0.15" />
-                <path d="M30 17 c2.5 2 4 5 4 7 s-1.5 5 -4 7" />
-                <path d="M35 13 c4 3 6 7 6 11 s-2 8 -6 11" />
-              </svg>
-              <div className="space-y-1 min-w-0">
-                <h4 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-[var(--color-ink)] leading-tight">
+          {/* SPREAD THE WORD — centered vertical-stack callout */}
+          <div className="reveal-up rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] p-8 md:p-10 max-w-2xl mx-auto">
+            <div className="flex flex-col items-center text-center gap-5">
+              {/* Megaphone icon up top — 56px in accent-tinted circle */}
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-accent)]/12 text-[var(--color-accent)]">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1Z" />
+                  <path d="M14 8a4 4 0 0 1 0 8" />
+                  <path d="M18 5a8 8 0 0 1 0 14" />
+                </svg>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">
                   Spread the Word
-                </h4>
-                <p className="text-sm text-[var(--color-muted)] leading-relaxed">
-                  No spare laptop? Share the flyer. Every forwarded link lights up a Raleigh student&rsquo;s screen.
+                </h3>
+                <p className="text-base text-[var(--color-muted)] leading-relaxed max-w-[42ch] mx-auto">
+                  No spare laptop? <strong className="text-[var(--color-ink)] font-semibold">Share this flyer.</strong> Every forwarded link lights up a Raleigh student&rsquo;s screen.
                 </p>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-2.5 shrink-0">
-              <button
-                onClick={handleCopyLink}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] text-[var(--color-on-accent)] px-5 py-2.5 font-sans text-sm font-bold tracking-tight transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-panel)]"
-              >
-                <Share2 className="h-4 w-4 transition-transform group-hover:rotate-12" aria-hidden="true" />
-                Copy Event URL
-              </button>
-              <a
-                href="/sip_and_sync_flyer.png"
-                download="Sip_And_Sync_Flyer.png"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-[color-mix(in_oklch,var(--color-ink)_18%,transparent)] text-[var(--color-ink)] px-5 py-2.5 font-sans text-sm font-bold tracking-tight transition-all hover:bg-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-panel)]"
-              >
-                Download Flyer
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-              </a>
+
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <button onClick={handleCopyLink} className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-sans font-bold text-[var(--color-on-accent)] shadow-md transition-all hover:scale-[1.03] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                  <Share2 className="h-4 w-4" aria-hidden="true" />
+                  Copy event URL
+                </button>
+                <a href="/sip_and_sync_flyer.png" download="Sip_And_Sync_Flyer.png" className="inline-flex items-center gap-2 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_22%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_80%,transparent)] px-6 py-3 text-sm font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[color-mix(in_oklch,var(--color-accent)_45%,transparent)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
+                  Download flyer
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1272,7 +1261,7 @@ export default function SipAndSync() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--color-ink)]">
+              <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)]">
                 Entrance Access Granted
               </h3>
               <p className="text-xs text-[var(--color-muted)] max-w-[32ch] mx-auto font-sans">

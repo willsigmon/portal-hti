@@ -268,10 +268,17 @@
     opacity: 0.35;
   }
 
-  h1, h2, h3, h4, .display {
+  h1, h2, .display {
     font-family: var(--font-display);
     font-feature-settings: "ss01", "cv11", "tnum";
     letter-spacing: -0.035em;
+  }
+
+  h3, h4 {
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+    letter-spacing: -0.015em;
+    font-weight: 600;
   }
 
   a, button, input, select, textarea {
