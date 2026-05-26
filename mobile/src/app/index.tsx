@@ -16,7 +16,7 @@ export default function HomeScreen() {
 
   // 1. Live Countdown Calculation to June 11, 2026 18:00
   useEffect(() => {
-    const targetDate = new Date('2026-06-11T18:00:00-04:00').getTime(); // Eastern Time
+    const targetDate = new Date('2026-06-12T18:00:00-04:00').getTime(); // Eastern Time
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -189,7 +189,7 @@ export default function HomeScreen() {
             <View style={styles.logisticsRow}>
               <Calendar size={18} color="#b0aeb7" />
               <View style={styles.logisticsInfo}>
-                <Text style={styles.logisticsTitle}>June 11, 2026</Text>
+                <Text style={styles.logisticsTitle}>June 12, 2026</Text>
                 <Text style={styles.logisticsDetail}>6:00 PM – 9:00 PM EST</Text>
               </View>
             </View>

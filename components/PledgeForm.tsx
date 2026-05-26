@@ -353,7 +353,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                 </div>
                 <div>
                   <span className="block text-xs text-[var(--color-muted)] font-sans tracking-wide mb-1">Date &amp; Time</span>
-                  <strong className="text-[var(--color-ink)] font-semibold font-sans">Thursday, June 11 • 6-9PM</strong>
+                  <strong className="text-[var(--color-ink)] font-semibold font-sans">Friday, June 12 • 6-9PM</strong>
                 </div>
                 <div>
                   <span className="block text-xs text-[var(--color-muted)] font-sans tracking-wide mb-1">Payment</span>
@@ -425,7 +425,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
           ) : (
             <div className="rounded-xl border border-[var(--color-signal)]/20 bg-[color-mix(in_oklch,var(--color-signal)_4%,var(--color-bg))] p-5 text-center">
               <h5 className="font-display font-bold text-lg text-[var(--color-ink)]">Ticket Activated!</h5>
-              <p className="text-sm text-[var(--color-muted)] max-w-[42ch] mx-auto mt-1">Thank you for your support of HTI and Portal HQ. See you on June 11th.</p>
+              <p className="text-sm text-[var(--color-muted)] max-w-[42ch] mx-auto mt-1">Thank you for your support of HTI and Portal HQ. See you on June 12th.</p>
             </div>
           )}
         </div>

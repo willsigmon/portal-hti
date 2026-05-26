@@ -41,7 +41,7 @@ export default function WalletScreen() {
           name: parsed.name || parsed.guestName || 'Event Guest',
           email: parsed.email || parsed.guestEmail || '',
           timestamp: parsed.timestamp || parsed.createdAt || new Date().toISOString(),
-          gateCode: parsed.gateCode || '#0611',
+          gateCode: parsed.gateCode || '#0612',
           paymentStatus: parsed.paymentStatus,
         });
       }
@@ -71,7 +71,7 @@ export default function WalletScreen() {
         name: serverTicket.guestName,
         email: serverTicket.guestEmail || '',
         timestamp: serverTicket.createdAt,
-        gateCode: '#0611',
+        gateCode: '#0612',
         paymentStatus: serverTicket.paymentStatus,
       };
       await storage.setItem('ss_event_ticket', JSON.stringify(importedTicket));
@@ -119,7 +119,7 @@ export default function WalletScreen() {
         name: serverTicket.guestName,
         email: serverTicket.guestEmail || '',
         timestamp: serverTicket.createdAt,
-        gateCode: '#0611',
+        gateCode: '#0612',
         paymentStatus: serverTicket.paymentStatus,
       };
       await storage.setItem('ss_event_ticket', JSON.stringify(importedTicket));
@@ -252,7 +252,7 @@ export default function WalletScreen() {
 
                   <View style={styles.venueRow}>
                     <Calendar size={12} color="#b0aeb7" />
-                    <Text style={styles.venueText}>June 11, 2026 • 6–9 PM</Text>
+                    <Text style={styles.venueText}>June 12, 2026 • 6–9 PM</Text>
                   </View>
                   <View style={styles.venueRow}>
                     <MapPin size={12} color="#b0aeb7" />

@@ -298,7 +298,7 @@ export default function SipAndSync() {
         <div className="mt-12 grid gap-5 sm:grid-cols-3 md:mt-16">
           {/* Calendar Card */}
           <a
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+food%2C+refreshments%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260612T220000Z/20260613T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+food%2C+refreshments%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
@@ -323,7 +323,7 @@ export default function SipAndSync() {
 
               <div className="min-w-0 space-y-0.5">
                 <div className="text-xs text-[var(--color-accent)] font-bold font-sans tracking-wide">When</div>
-                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
+                <h3 className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)]">Friday, June 12</h3>
                 <p className="text-sm text-[var(--color-muted)]">6:00 PM – 9:00 PM</p>
               </div>
             </div>
@@ -1003,7 +1003,7 @@ export default function SipAndSync() {
       {/* FOOTER */}
       <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-y-4">
-          <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
+          <div>Sip &amp; Sync Social Hour — HTI × <span className="whitespace-nowrap">Portal HQ</span> • June 12, 2026</div>
           <div className="flex gap-7 font-semibold">
             <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">hubzonetech.org</a>
             <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">theportalhq.com</a>
