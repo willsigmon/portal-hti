@@ -346,8 +346,8 @@ export default function SipAndSync() {
           </div>
         </div>
 
-        {/* EVENT QUICK INFO GRID — asymmetric density per WSADA §15 */}
-        <div className="reveal-up mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-12 md:mt-20">
+        {/* EVENT QUICK INFO GRID — equal-width 3-up */}
+        <div className="reveal-up mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-20">
           {/* Calendar Card — compact left */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
@@ -360,7 +360,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-3 sm:order-1"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center gap-5">
               <svg
@@ -404,7 +404,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 md:p-10 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-6 sm:col-span-2 sm:order-3 lg:order-2"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
           >
             {/* LEFT — content stack */}
             <div className="relative z-10 flex flex-col gap-4 min-w-0 flex-1">
@@ -448,7 +448,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] lg:col-span-3 sm:order-2 lg:order-3"
+            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center gap-5">
               <svg
