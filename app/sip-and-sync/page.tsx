@@ -243,7 +243,7 @@ export default function SipAndSync() {
       <main id="main">
       {/* HERO SECTION */}
       <section className="container relative pt-14 pb-28 md:pt-24 md:pb-32">
-        <div className="grid w-full min-w-0 items-end gap-x-14 gap-y-14 lg:grid-cols-12">
+        <div className="grid w-full min-w-0 items-end gap-x-24 lg:gap-x-32 gap-y-14 lg:grid-cols-12">
           <div className="min-w-0 space-y-8 lg:col-span-6">
             <h1
               className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
