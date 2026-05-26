@@ -782,8 +782,8 @@ export default function SipAndSync() {
       </section>
 
       {/* LAPTOP PLEDGE DRIVE */}
-      <section id="pledge" className="section pb-12 md:pb-16">
-        <div className="container space-y-8 px-2 md:px-6 lg:px-10">
+      <section id="pledge" className="section container pb-12 md:pb-16">
+        <div className="max-w-4xl mx-auto space-y-8">
           {/* Section header — spans full width above the grid for column-top alignment */}
           <div className="reveal-up max-w-3xl space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.14em] font-sans font-semibold">
