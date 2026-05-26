@@ -282,7 +282,7 @@ export default function SipAndSync() {
       {/* HERO SECTION */}
       <section className="container relative pt-8 pb-16 md:pt-24 md:pb-32">
         <div className="grid w-full min-w-0 items-end gap-x-10 lg:gap-x-14 gap-y-10 md:gap-y-14 lg:grid-cols-12">
-          <div className="min-w-0 space-y-6 md:space-y-8 lg:col-span-6">
+          <div className="min-w-0 space-y-6 md:space-y-8 lg:col-span-6 text-center md:text-left flex flex-col items-center md:items-start">
             <h1
               className="display-xl max-w-full tracking-[-0.045em] text-[var(--color-ink)]"
               style={{
@@ -319,7 +319,7 @@ export default function SipAndSync() {
               <span className="sip-sync-social relative z-0 block whitespace-nowrap text-[var(--color-ink)]" style={{ marginTop: "-0.18em" }}>Social Hour</span>
             </h1>
 
-            <p className="text-xl md:text-2xl font-sans font-medium italic text-[var(--color-muted)] tracking-[-0.005em] max-w-[28ch] border-l-2 border-[var(--color-accent)]/40 pl-4 animate-fade-in-up delay-100">
+            <p className="text-xl md:text-2xl font-sans font-medium italic text-[var(--color-muted)] tracking-[-0.005em] max-w-[28ch] md:border-l-2 md:border-[color-mix(in_oklch,var(--color-accent)_40%,transparent)] md:pl-4 animate-fade-in-up delay-100">
               “Old Laptops. New Opportunities.”
             </p>
 
@@ -527,7 +527,7 @@ export default function SipAndSync() {
       {/* THE COLLABORATION (BENTO GRID) */}
       <section id="about" className="section">
         <div className="container space-y-8">
-          <div className="reveal-blur max-w-2xl">
+          <div className="reveal-blur max-w-2xl text-center md:text-left mx-auto md:mx-0">
             <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
               Why we’re gathering
             </div>
@@ -543,7 +543,7 @@ export default function SipAndSync() {
             {/* HTI Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="reveal-left p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="reveal-left p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 text-center md:text-left hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
@@ -594,7 +594,7 @@ export default function SipAndSync() {
             {/* Portal HQ Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="reveal-right p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="reveal-right p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 text-center md:text-left hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
@@ -681,7 +681,7 @@ export default function SipAndSync() {
       <section id="venue-spotlight" className="section">
         <div className="container space-y-8">
           {/* Top header — eyebrow + heading + lede above the photo grid */}
-          <div className="reveal-blur max-w-3xl">
+          <div className="reveal-blur max-w-3xl text-center md:text-left mx-auto md:mx-0">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               The experience space
             </span>
@@ -851,7 +851,7 @@ export default function SipAndSync() {
       <section id="pledge" className="section container pb-12 md:pb-16">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Section header — spans full width above the grid for column-top alignment */}
-          <div className="reveal-blur max-w-3xl space-y-2">
+          <div className="reveal-blur max-w-3xl space-y-2 text-center md:text-left mx-auto md:mx-0">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.14em] font-sans font-semibold">
               Drive Metrics
             </span>
@@ -1017,7 +1017,7 @@ export default function SipAndSync() {
         <div className="space-y-8">
           {/* Header row — "Connect & Share" left, Spread the Word callout right, on a single line at lg+. */}
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="reveal-left lg:col-span-6">
+            <div className="reveal-left lg:col-span-6 text-center md:text-left">
               <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
                 Get in Touch
               </span>
@@ -1030,7 +1030,7 @@ export default function SipAndSync() {
             </div>
 
             {/* SPREAD THE WORD — small badge row, sits to the right of the heading at lg+. */}
-            <div className="reveal-right lg:col-span-6 flex flex-wrap items-center justify-start lg:justify-end gap-2">
+            <div className="reveal-right lg:col-span-6 flex flex-wrap items-center justify-center lg:justify-end gap-2">
               <span className="text-xs text-[var(--color-muted)] mr-1">Spread the word —</span>
               <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_18%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] px-4 py-2 text-xs font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[var(--color-accent)]/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
                 <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
