@@ -560,10 +560,11 @@ export default function SipAndSync() {
                 </div>
 
                 {/* Brand mark — bright, shiny, parallax-driven by parent mouse position.
-                    Fixed h-[148px] well + h-[112px] logo so HTI and Portal HQ
-                    sit on the same vertical baseline across both bento cards. */}
-                <div className="flex items-center justify-center h-[148px] relative">
-                  <HTILogo className="parallax-logo h-[112px] w-auto object-contain" />
+                    Both wells share h-[184px] flex items-center so HTI and
+                    Portal HQ sit on the same vertical center line regardless
+                    of logo height. */}
+                <div className="flex items-center justify-center h-[184px] relative">
+                  <HTILogo className="parallax-logo h-[120px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)]">
@@ -612,10 +613,11 @@ export default function SipAndSync() {
                   </span>
                 </div>
 
-                {/* Brand mark — fixed-height well matches HTI side so the
-                    two logos sit on the same vertical center line. */}
-                <div className="flex items-center justify-center h-[148px] relative">
-                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[112px] w-auto object-contain" />
+                {/* Brand mark — fixed-height well matches HTI side. Portal HQ
+                    logo runs larger (h-[172px]) because the 'RALEIGH EVENT CO.'
+                    sub-mark inside the artwork needs the room to stay legible. */}
+                <div className="flex items-center justify-center h-[184px] relative">
+                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[172px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
