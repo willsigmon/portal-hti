@@ -430,7 +430,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[230px] md:min-h-[280px] w-full min-w-0 grid-rows-[2.25rem_1.75rem_1fr_2rem] md:grid-rows-[2.5rem_1.75rem_1fr_2rem] gap-2.5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-5 md:p-7 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
@@ -467,7 +467,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
+            className="spotlight-card group relative grid min-h-[230px] md:min-h-[280px] w-full min-w-0 grid-rows-[2.25rem_1.75rem_1fr_2rem] md:grid-rows-[2.5rem_1.75rem_1fr_2rem] gap-2.5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-5 md:p-7 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
@@ -500,7 +500,7 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative grid min-h-[260px] md:min-h-[340px] w-full min-w-0 grid-rows-[2.5rem_2rem_1fr_2.25rem] md:grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-6 md:p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[230px] md:min-h-[280px] w-full min-w-0 grid-rows-[2.25rem_1.75rem_1fr_2rem] md:grid-rows-[2.5rem_1.75rem_1fr_2rem] gap-2.5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-5 md:p-7 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
             <div className="relative z-10 flex items-center justify-center">
               <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
