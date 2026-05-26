@@ -16,22 +16,20 @@ import { useEffect } from "react";
 export function RevealOnScroll() {
   useEffect(() => {
     // Skip entirely for users who asked for less motion.
+    const SELECTOR =
+      ".reveal, .reveal-up, .reveal-fade, .reveal-scale, .reveal-left, .reveal-right, .reveal-blur, .reveal-zoom, .reveal-stagger";
+
     if (
       typeof window === "undefined" ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
       document
-        .querySelectorAll<HTMLElement>(
-          ".reveal, .reveal-up, .reveal-fade, .reveal-scale, .reveal-stagger"
-        )
+        .querySelectorAll<HTMLElement>(SELECTOR)
         .forEach((el) => {
           el.setAttribute("data-reveal", "in");
         });
       return;
     }
-
-    const SELECTOR =
-      ".reveal, .reveal-up, .reveal-fade, .reveal-scale, .reveal-stagger";
 
     const observer = new IntersectionObserver(
       (entries) => {

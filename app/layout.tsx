@@ -5,6 +5,7 @@ import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Starfield } from "@/components/StarField";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { ScrollParallax } from "@/components/ScrollParallax";
 
 // Runs before React hydrates so we set [data-theme] on <html> synchronously,
 // preventing a light/dark flash on first paint. Defaults to dark — the
@@ -103,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AmbientSpotlight />
         <ThemeToggle />
         <RevealOnScroll />
+        <ScrollParallax />
         {children}
       </body>
     </html>

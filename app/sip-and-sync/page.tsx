@@ -301,11 +301,15 @@ export default function SipAndSync() {
                   className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                   style={{ transform: "translateX(-0.22em)" }}
                 >
-                  <span
-                    className="sip-sync-amp text-[var(--color-ink)]"
-                    style={{ fontSize: "1.65em", lineHeight: 0.82 }}
-                  >
-                    &amp;
+                  {/* Inner span carries parallax so the ampersand drifts
+                      slightly with scroll, separate from its rotate-in. */}
+                  <span data-parallax="0.05" className="inline-block">
+                    <span
+                      className="sip-sync-amp text-[var(--color-ink)]"
+                      style={{ fontSize: "1.65em", lineHeight: 0.82 }}
+                    >
+                      &amp;
+                    </span>
                   </span>
                 </span>
                 <span className="sr-only">and</span>
@@ -335,6 +339,8 @@ export default function SipAndSync() {
 
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
           <div className="min-w-0 lg:col-span-6 lg:translate-x-12 animate-fade-in-up delay-400">
+            {/* Parallax inner wrapper drifts upward as the user scrolls */}
+            <div data-parallax="-0.06" className="will-change-transform">
             <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] p-1.5 shadow-lg transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
               <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
               <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
@@ -387,6 +393,7 @@ export default function SipAndSync() {
                 </div>
               </div>
             </div>
+            </div>{/* /parallax wrapper */}
 
             {/* Big fun jump-to-3D button under the carousel */}
             <a
@@ -520,7 +527,7 @@ export default function SipAndSync() {
       {/* THE COLLABORATION (BENTO GRID) */}
       <section id="about" className="section">
         <div className="container space-y-8">
-          <div className="reveal-up max-w-2xl">
+          <div className="reveal-blur max-w-2xl">
             <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
               Why we’re gathering
             </div>
@@ -532,11 +539,11 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="reveal-stagger grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {/* HTI Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="reveal-left p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
@@ -587,7 +594,7 @@ export default function SipAndSync() {
             {/* Portal HQ Bento Card */}
             <div
               onMouseMove={handleMouseMove}
-              className="p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
+              className="reveal-right p-8 md:p-10 rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] shadow-sm flex flex-col gap-8 hover:border-[var(--color-accent)]/20 transition-all duration-300 relative group overflow-hidden"
             >
               <div className="space-y-4.5">
                 <div className="border-b border-white/5 pb-3">
@@ -674,7 +681,7 @@ export default function SipAndSync() {
       <section id="venue-spotlight" className="section">
         <div className="container space-y-8">
           {/* Top header — eyebrow + heading + lede above the photo grid */}
-          <div className="reveal-up max-w-3xl">
+          <div className="reveal-blur max-w-3xl">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               The experience space
             </span>
@@ -809,7 +816,7 @@ export default function SipAndSync() {
       {/* TICKETS & DONATIONS */}
       <section id="tickets" className="section container py-8 md:py-10">
         <div className="max-w-4xl mx-auto space-y-4">
-          <div className="reveal-up text-center space-y-2">
+          <div className="reveal-zoom text-center space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] font-sans">
               Reserve Admission Passes
             </span>
@@ -844,7 +851,7 @@ export default function SipAndSync() {
       <section id="pledge" className="section container pb-12 md:pb-16">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Section header — spans full width above the grid for column-top alignment */}
-          <div className="reveal-up max-w-3xl space-y-2">
+          <div className="reveal-blur max-w-3xl space-y-2">
             <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.14em] font-sans font-semibold">
               Drive Metrics
             </span>
@@ -1009,8 +1016,8 @@ export default function SipAndSync() {
       <section id="connect" className="section container">
         <div className="space-y-8">
           {/* Header row — "Connect & Share" left, Spread the Word callout right, on a single line at lg+. */}
-          <div className="reveal-up grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-6">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="reveal-left lg:col-span-6">
               <span className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] block mb-3 font-sans">
                 Get in Touch
               </span>
@@ -1023,7 +1030,7 @@ export default function SipAndSync() {
             </div>
 
             {/* SPREAD THE WORD — small badge row, sits to the right of the heading at lg+. */}
-            <div className="lg:col-span-6 flex flex-wrap items-center justify-start lg:justify-end gap-2">
+            <div className="reveal-right lg:col-span-6 flex flex-wrap items-center justify-start lg:justify-end gap-2">
               <span className="text-xs text-[var(--color-muted)] mr-1">Spread the word —</span>
               <button onClick={handleCopyLink} aria-label="Copy event URL" className="inline-flex items-center gap-1.5 rounded-full border-2 border-[color-mix(in_oklch,var(--color-ink)_18%,transparent)] bg-[color-mix(in_oklch,var(--color-band)_70%,transparent)] px-4 py-2 text-xs font-sans font-semibold text-[var(--color-ink)] transition-all hover:border-[var(--color-accent)]/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">
                 <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
