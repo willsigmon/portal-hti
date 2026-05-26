@@ -221,7 +221,7 @@ export default function SipAndSync() {
   const virtualTourSrc = `https://theportalhq.com/walkthrough-tour-assets/index.html?tour_root=walkthrough-tour-assets&hide_cta=1&scene=${activeScene}`;
 
   const tourWaypoints = [
-    { name: "Entry & Reception", id: "6a062176ebf5884479702b73", label: "Check-in Desk & Drinks" },
+    { name: "Entry & Reception", id: "6a062176ebf5884479702b73", label: "Check-in Desk & Reception" },
     { name: "Showcase Stage", id: "6a062176ebf5884479702b73&stage=1", label: "Live Presentations & AV" },
     { name: "Studio Gallery Hall", id: "6a062176ebf5884479702b73&studio=1", label: "Laptop Drop-off Area" },
   ];
@@ -324,7 +324,7 @@ export default function SipAndSync() {
             </p>
 
             <p className="text-base md:text-lg text-[var(--color-muted)] max-w-[31ch] sm:max-w-[48ch] leading-relaxed animate-fade-in-up delay-200">
-              Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy free drinks, and bring an old laptop to help NC families get online.
+              Come join us in Raleigh for a fun social hour. Meet local business owners, enjoy refreshments, and bring an old laptop to help NC families get online.
             </p>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:items-start gap-2.5 sm:gap-4 pt-1 animate-fade-in-up delay-300">
@@ -427,7 +427,7 @@ export default function SipAndSync() {
         <div className="reveal-stagger mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-20">
           {/* Calendar Card — compact left */}
           <a
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260612T220000Z/20260613T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+food%2C+refreshments%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={handleMouseMove}
@@ -454,7 +454,7 @@ export default function SipAndSync() {
               <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)] font-semibold">When</span>
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05] whitespace-nowrap">Thursday, June 11</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05] whitespace-nowrap">Friday, June 12</h3>
               <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
             </div>
             <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
@@ -522,7 +522,6 @@ export default function SipAndSync() {
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
-              <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
             </div>
             <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
               Secure Passes <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
@@ -1011,12 +1010,12 @@ export default function SipAndSync() {
                       <Award className="h-4 w-4 shrink-0" />
                       Free Vehicle Pickup
                     </div>
-                    <strong className="block text-[var(--color-ink)] font-sans">Donating 5+ Laptops?</strong>
+                    <strong className="block text-[var(--color-ink)] font-sans">Donating 50+ Laptops?</strong>
                     <p className="text-[var(--color-muted)] leading-relaxed font-sans">
-                      If your business or household has 5+ laptops to pledge, we&rsquo;ll coordinate a free courier pickup at your door.
+                      If your business or household has 50+ laptops to pledge, we&rsquo;ll coordinate a free courier pickup at your door.
                     </p>
-                    <a href="mailto:pickups@hubzonetech.org" className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 pt-1 font-sans">
-                      Email pickups@hubzonetech.org &rarr;
+                    <a href="mailto:info@hubzonetech.org" className="text-sm font-semibold text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 pt-1 font-sans">
+                      Email info@hubzonetech.org &rarr;
                     </a>
                   </div>
                 </div>
@@ -1172,7 +1171,7 @@ export default function SipAndSync() {
 
           {/* RIGHT: credit + links stacked */}
           <div className="flex flex-col items-start md:items-end gap-3 text-left md:text-right">
-            <div>Sip &amp; Sync Social Hour — HTI + <span className="whitespace-nowrap">Portal HQ</span> • June 11, 2026</div>
+            <div>Sip &amp; Sync Social Hour — HTI + <span className="whitespace-nowrap">Portal HQ</span> • June 12, 2026</div>
             <div className="flex gap-7 font-semibold">
               <a href="https://hubzonetech.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">hubzonetech.org</a>
               <a href="https://theportalhq.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]">theportalhq.com</a>
