@@ -130,8 +130,9 @@ export default function SipAndSync() {
     if (heroPaused) return;
     if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => {
+      // 2.0s per slide — slow enough to read, fast enough to stay alive.
       setHeroIdx((prev) => (prev + 1) % heroPhotos.length);
-    }, 1500);
+    }, 2000);
     return () => window.clearInterval(id);
   }, [heroPaused, heroPhotos.length]);
 
@@ -276,7 +277,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
-          <div className="min-w-0 lg:col-span-6 animate-fade-in-up delay-400">
+          <div className="min-w-0 lg:col-span-6 lg:translate-x-12 animate-fade-in-up delay-400">
             <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] p-1.5 shadow-lg transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
               <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
               <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
