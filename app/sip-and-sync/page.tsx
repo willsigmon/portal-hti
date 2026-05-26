@@ -509,7 +509,7 @@ export default function SipAndSync() {
       </section>
 
       {/* THE COLLABORATION (BENTO GRID) */}
-      <section id="about" className="section bg-black/20 border-y border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
+      <section id="about" className="section">
         <div className="container space-y-8">
           <div className="max-w-2xl">
             <div className="text-sm font-bold text-[var(--color-accent)] uppercase tracking-[0.18em] mb-3 font-sans">
@@ -662,7 +662,7 @@ export default function SipAndSync() {
       </section>
 
       {/* VENUE SPOTLIGHT & 360° WALKTHROUGH */}
-      <section id="venue-spotlight" className="section bg-black/16 border-b border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)]">
+      <section id="venue-spotlight" className="section">
         <div className="container space-y-8">
           <div className="grid lg:grid-cols-12 gap-y-8 lg:gap-x-16 items-center">
             <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4 lg:py-2">
@@ -882,7 +882,7 @@ export default function SipAndSync() {
       </section>
 
       {/* LAPTOP PLEDGE DRIVE */}
-      <section id="pledge" className="section bg-black/20 border-t border-[color-mix(in_oklch,var(--color-ink)_5%,transparent)] pb-12 md:pb-16">
+      <section id="pledge" className="section pb-12 md:pb-16">
         <div className="container space-y-8 px-2 md:px-6 lg:px-10">
           {/* Section header — spans full width above the grid for column-top alignment */}
           <div className="max-w-3xl space-y-2">
@@ -1215,7 +1215,7 @@ export default function SipAndSync() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] py-12 text-sm text-[var(--color-muted)] bg-[var(--color-surface)]/20">
+      <footer className="py-12 text-sm text-[var(--color-muted)]">
         <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-y-8">
           {/* LEFT: co-branding lockup */}
           <div className="flex items-center gap-3.5 opacity-85" aria-hidden="true">
