@@ -818,54 +818,50 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-start">
-
-            {/* Live Progress Tracker Column */}
-            <div className="lg:col-span-5">
-              {/* Live Metric Progress Counter Card */}
-              <div
-                onMouseMove={handleMouseMove}
-                className="p-8 md:p-10 rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] shadow-md space-y-6 spotlight-card"
-              >
-                <div className="flex items-center justify-between border-b border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] pb-3">
-                  <div className="text-xs font-semibold text-[var(--color-muted)] font-sans flex items-center">
-                    <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse mr-2" aria-hidden="true" />
-                    Live Progress
-                  </div>
-                  <span className="text-xs font-semibold tracking-tight text-[var(--color-signal)]">Local preview</span>
+          {/* Live Progress — horizontal banner stretching full-width, single row of stats + bar */}
+          <div
+            onMouseMove={handleMouseMove}
+            className="rounded-xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] shadow-md spotlight-card px-6 md:px-8 py-5 md:py-6"
+          >
+            <div className="grid lg:grid-cols-12 gap-6 items-center">
+              {/* Live status indicator */}
+              <div className="lg:col-span-3 flex items-center justify-between lg:justify-start gap-3">
+                <div className="flex items-center text-xs font-semibold text-[var(--color-muted)] font-sans uppercase tracking-[0.14em]">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse mr-2" aria-hidden="true" />
+                  Live Progress
                 </div>
+                <span className="text-xs font-semibold tracking-tight text-[var(--color-signal)] lg:ml-auto">Local preview</span>
+              </div>
 
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Target</span>
-                    <strong key={`goal-${PLEDGE_GOAL}`} className="pledge-count-tick font-sans text-3xl md:text-4xl font-black tracking-[-0.03em] text-[var(--color-accent)] block tabular-nums leading-none">{PLEDGE_GOAL}</strong>
-                  </div>
-                  <div className="space-y-2 border-r border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Pledged</span>
-                    <strong key={`pledged-${pledgesCount}`} className="pledge-count-tick font-sans text-3xl md:text-4xl font-black tracking-[-0.03em] text-[var(--color-ink)] block tabular-nums leading-none">{pledgesCount}</strong>
-                  </div>
-                  <div className="space-y-2 py-1">
-                    <span className="text-xs text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Remaining</span>
-                    <strong key={`remaining-${remainingCount}`} className="pledge-count-tick font-sans text-3xl md:text-4xl font-black tracking-[-0.03em] text-[var(--color-signal)] block tabular-nums leading-none">{remainingCount}</strong>
-                  </div>
+              {/* Target / Pledged / Remaining stats */}
+              <div className="lg:col-span-5 grid grid-cols-3 gap-3 text-center">
+                <div className="space-y-1">
+                  <span className="text-[10px] text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Target</span>
+                  <strong key={`goal-${PLEDGE_GOAL}`} className="pledge-count-tick font-sans text-2xl md:text-3xl font-black tracking-[-0.03em] text-[var(--color-accent)] block tabular-nums leading-none">{PLEDGE_GOAL}</strong>
                 </div>
-
-                {/* Progress bar tracks — shimmering fill, count-up animation handled by key prop */}
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-semibold font-sans">
-                    <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] text-xs font-semibold">Campaign Progress</span>
-                    <span key={`pct-${percentage}`} className={`pledge-count-tick text-[var(--color-accent)] tabular-nums ${percentage > 0 ? 'drop-shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_60%,transparent)]' : ''}`}>{percentage}%</span>
-                  </div>
-
-                  <div className="pledge-progress-track relative h-3 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border transition-shadow hover:shadow-[0_0_24px_color-mix(in_oklch,var(--color-accent)_30%,transparent)]">
-                    <div
-                      className="pledge-progress-fill relative h-full rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_rgba(245,132,32,0.5)] transition-all duration-[1200ms] ease-out"
-                      style={{ width: `${Math.min(percentage, 100)}%` }}
-                    />
-                  </div>
+                <div className="space-y-1 border-x border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)]">
+                  <span className="text-[10px] text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Pledged</span>
+                  <strong key={`pledged-${pledgesCount}`} className="pledge-count-tick font-sans text-2xl md:text-3xl font-black tracking-[-0.03em] text-[var(--color-ink)] block tabular-nums leading-none">{pledgesCount}</strong>
                 </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] text-[var(--color-muted)] font-sans uppercase tracking-[0.14em] font-semibold block">Remaining</span>
+                  <strong key={`remaining-${remainingCount}`} className="pledge-count-tick font-sans text-2xl md:text-3xl font-black tracking-[-0.03em] text-[var(--color-signal)] block tabular-nums leading-none">{remainingCount}</strong>
+                </div>
+              </div>
 
-                <p className="text-sm text-[var(--color-muted)] leading-relaxed italic text-center">
+              {/* Progress bar + percentage */}
+              <div className="lg:col-span-4 space-y-1.5">
+                <div className="flex justify-between text-xs font-semibold font-sans">
+                  <span className="text-[var(--color-muted)] uppercase tracking-[0.14em] font-semibold">Campaign Progress</span>
+                  <span key={`pct-${percentage}`} className={`pledge-count-tick text-[var(--color-accent)] tabular-nums ${percentage > 0 ? 'drop-shadow-[0_0_18px_color-mix(in_oklch,var(--color-accent)_60%,transparent)]' : ''}`}>{percentage}%</span>
+                </div>
+                <div className="pledge-progress-track relative h-2.5 w-full rounded-full bg-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] overflow-hidden p-0.5 border transition-shadow hover:shadow-[0_0_24px_color-mix(in_oklch,var(--color-accent)_30%,transparent)]">
+                  <div
+                    className="pledge-progress-fill relative h-full rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_rgba(245,132,32,0.5)] transition-all duration-[1200ms] ease-out"
+                    style={{ width: `${Math.min(percentage, 100)}%` }}
+                  />
+                </div>
+                <p className="text-[11px] text-[var(--color-muted)] italic leading-snug">
                   {pledgesCount === 0
                     ? "Be the first to pledge a laptop and jumpstart the campaign."
                     : pledgesCount < PLEDGE_GOAL
@@ -873,15 +869,13 @@ export default function SipAndSync() {
                       : "Raleigh milestone reached. Thank you for helping close the digital divide."
                   }
                 </p>
-                <p className="text-xs text-[var(--color-muted)] leading-relaxed text-center border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] pt-3 mt-1">
-                  Displayed pledges come from submitted forms saved in this browser until a live database is connected.
-                </p>
               </div>
             </div>
+          </div>
 
-            <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)] h-full flex flex-col">
-              <PledgeForm mode="laptop" />
-            </div>
+          {/* Pledge a Laptop form — full width below the banner */}
+          <div className="p-8 sm:p-10 md:p-12 rounded-2xl border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-panel)] shadow-xl shadow-[0_0_50px_rgba(0,0,0,0.25)]">
+            <PledgeForm mode="laptop" />
           </div>
 
           {/* Logistics row — full-width below the tracker+form grid */}
