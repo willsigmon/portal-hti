@@ -436,34 +436,14 @@ export default function SipAndSync() {
               </span>
             </div>
 
-            {/* RIGHT — editorial compass-rose pointer to Raleigh */}
+            {/* RIGHT — Portal HQ official badge as the location stamp */}
             <div className="relative z-10 hidden md:flex shrink-0 items-center justify-center">
-              <svg
-                viewBox="0 0 140 140"
-                fill="none"
+              <img
+                src="/portal-logo.png"
+                alt=""
                 aria-hidden="true"
-                className="h-32 w-32 lg:h-40 lg:w-40 text-[var(--color-accent)] transition-transform duration-500 ease-out group-hover:rotate-[18deg]"
-              >
-                {/* outer ring */}
-                <circle cx="70" cy="70" r="62" stroke="currentColor" strokeOpacity="0.32" strokeWidth="0.75" />
-                <circle cx="70" cy="70" r="48" stroke="currentColor" strokeOpacity="0.18" strokeWidth="0.5" />
-                {/* tick marks */}
-                <g stroke="currentColor" strokeOpacity="0.45" strokeWidth="0.75" strokeLinecap="round">
-                  <line x1="70" y1="10" x2="70" y2="18" />
-                  <line x1="70" y1="122" x2="70" y2="130" />
-                  <line x1="10" y1="70" x2="18" y2="70" />
-                  <line x1="122" y1="70" x2="130" y2="70" />
-                </g>
-                {/* compass star — N arrow */}
-                <path d="M70 22 L80 70 L70 60 L60 70 Z" fill="currentColor" fillOpacity="0.78" />
-                <path d="M70 118 L60 70 L70 80 L80 70 Z" fill="currentColor" fillOpacity="0.22" />
-                <path d="M22 70 L70 60 L60 70 L70 80 Z" fill="currentColor" fillOpacity="0.22" />
-                <path d="M118 70 L70 80 L80 70 L70 60 Z" fill="currentColor" fillOpacity="0.22" />
-                {/* RDU dot */}
-                <circle cx="70" cy="70" r="3.5" fill="currentColor" />
-                <text x="70" y="98" textAnchor="middle" fill="currentColor" fillOpacity="0.75" fontFamily="ui-monospace, SFMono-Regular, monospace" fontSize="7.5" letterSpacing="2.2">RDU</text>
-                <text x="70" y="48" textAnchor="middle" fill="currentColor" fillOpacity="0.55" fontFamily="ui-monospace, SFMono-Regular, monospace" fontSize="6.5" letterSpacing="2">N</text>
-              </svg>
+                className="h-32 w-auto lg:h-40 object-contain filter drop-shadow-[0_8px_24px_color-mix(in_oklch,black_45%,transparent)] transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+              />
             </div>
           </a>
 
