@@ -4,6 +4,7 @@ import { Cormorant_Garamond, IBM_Plex_Sans, Space_Mono } from "next/font/google"
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Starfield } from "@/components/StarField";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 // Runs before React hydrates so we set [data-theme] on <html> synchronously,
 // preventing a light/dark flash on first paint. Defaults to dark — the
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="aurora-deep" aria-hidden="true" />
         <AmbientSpotlight />
         <ThemeToggle />
+        <RevealOnScroll />
         {children}
       </body>
     </html>

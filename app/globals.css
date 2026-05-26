@@ -426,76 +426,66 @@
   padding-block: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-/* Apple-style scroll reveal. Uses scroll-driven `animation-timeline:
-   view()` where supported (Chromium ≥ 115, Safari TP). For browsers
-   without support, elements stay visible by default — graceful
-   degradation, no blank-state flash. */
-@supports (animation-timeline: view()) {
-  .reveal,
-  .reveal-up,
-  .reveal-fade,
-  .reveal-scale,
-  .reveal-stagger > * {
-    animation-timeline: view();
-    animation-fill-mode: both;
-    /* Apple's MacBook Neo signature: reveal completes early in viewport
-       (entry 0% → cover 18%) so the content reads as "already settled"
-       once the user can see it. Tight, deliberate, never bouncy. */
-    animation-range: entry 0% cover 18%;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
-  }
+/* Apple-style scroll reveal — universal, driven by IntersectionObserver
+   in components/RevealOnScroll.tsx. The observer sets data-reveal="in"
+   when the element enters the viewport; CSS animates from the hidden
+   state to settled. Works in every modern browser (Safari, Firefox,
+   Chromium) without depending on scroll-timeline support. */
 
-  .reveal,
-  .reveal-up {
-    animation-name: revealUp;
-    animation-duration: 1ms; /* scroll-driven, duration is scaled by range */
-  }
-
-  .reveal-fade {
-    animation-name: revealFade;
-    animation-duration: 1ms;
-  }
-
-  .reveal-scale {
-    animation-name: revealScale;
-    animation-duration: 1ms;
-  }
-
-  /* Staggered cascade — children of a .reveal-stagger container animate
-     in sequence with a 90ms delay between each, matching Apple's flyout
-     reveal pattern. Up to 8 children handled; falls back gracefully. */
-  .reveal-stagger > * {
-    animation-name: revealUp;
-    animation-duration: 1ms;
-  }
-  .reveal-stagger > *:nth-child(1) { animation-range: entry 0% cover 14%; }
-  .reveal-stagger > *:nth-child(2) { animation-range: entry 4% cover 18%; }
-  .reveal-stagger > *:nth-child(3) { animation-range: entry 8% cover 22%; }
-  .reveal-stagger > *:nth-child(4) { animation-range: entry 12% cover 26%; }
-  .reveal-stagger > *:nth-child(5) { animation-range: entry 16% cover 30%; }
-  .reveal-stagger > *:nth-child(6) { animation-range: entry 20% cover 34%; }
-  .reveal-stagger > *:nth-child(7) { animation-range: entry 24% cover 38%; }
-  .reveal-stagger > *:nth-child(8) { animation-range: entry 28% cover 42%; }
+/* Hidden state — applied to anything tagged with a reveal class until
+   the observer marks it `in`. */
+.reveal,
+.reveal-up,
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.55s cubic-bezier(0.4, 0, 0.6, 1);
+  will-change: opacity, transform;
 }
 
-@keyframes revealUp {
-  /* Apple-tight: 12px translate (was 48), opacity 0 → 1. Subtle settle,
-     not a dramatic fly-in. Matches Apple's tight movement vocabulary. */
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.6, 1);
+  will-change: opacity;
 }
 
-@keyframes revealFade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97) translateY(8px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.6, 1);
+  will-change: opacity, transform;
 }
 
-@keyframes revealScale {
-  /* Tight scale 0.97 → 1 plus 8px settle. Apple's "punch line" pattern
-     for hero headlines that need to land confidently. */
-  from { opacity: 0; transform: scale(0.97) translateY(8px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+/* Settled state — observer adds [data-reveal="in"] (or RevealOnScroll
+   adds it immediately for above-the-fold elements). */
+.reveal[data-reveal="in"],
+.reveal-up[data-reveal="in"],
+.reveal-stagger[data-reveal="in"] > * {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+.reveal-fade[data-reveal="in"] {
+  opacity: 1;
+}
+
+.reveal-scale[data-reveal="in"] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Staggered cascade — children of an `in` .reveal-stagger settle in
+   sequence with 70ms delays. Matches Apple's flyout reveal pattern. */
+.reveal-stagger[data-reveal="in"] > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(2) { transition-delay: 70ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(3) { transition-delay: 140ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(4) { transition-delay: 210ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(6) { transition-delay: 350ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(7) { transition-delay: 420ms; }
+.reveal-stagger[data-reveal="in"] > *:nth-child(8) { transition-delay: 490ms; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -503,9 +493,9 @@
   .reveal-fade,
   .reveal-scale,
   .reveal-stagger > * {
-    animation: none;
     opacity: 1;
     transform: none;
+    transition: none;
   }
 }
 
