@@ -24,6 +24,7 @@
   --color-aurora-1: oklch(0.55 0.13 200);     /* Cyan-teal aurora wash */
   --color-aurora-2: oklch(0.45 0.18 290);     /* Indigo-violet aurora wash */
   --color-aurora-3: oklch(0.62 0.14 220);     /* Soft cyan highlight */
+  --color-portal-purple: oklch(0.55 0.28 295);/* Portal's sacred purple — distant vortex */
   --color-ink: oklch(0.96 0.01 85);          /* Chalky uncoated linen white */
   --color-ink-dark: oklch(0.96 0.01 85);
   --color-muted: oklch(0.75 0.015 85);       /* Muted limestone gray */
@@ -127,12 +128,28 @@
     inset: -40vh -40vw;
     z-index: 0;
     background:
+      /* Distant purple portal — Portal HQ's sacred color. Small, intense,
+         far in the corner like a portal opening you're drifting past. */
+      radial-gradient(circle 18vw at 86% 16%, color-mix(in oklch, var(--color-portal-purple) 32%, transparent) 0%, color-mix(in oklch, var(--color-portal-purple) 14%, transparent) 32%, transparent 70%),
       radial-gradient(ellipse 110vw 80vh at 20% 25%, color-mix(in oklch, var(--color-aurora-2) 22%, transparent), transparent 65%),
       radial-gradient(ellipse 95vw 70vh at 85% 80%, color-mix(in oklch, var(--color-aurora-1) 20%, transparent), transparent 68%),
       radial-gradient(ellipse 75vw 55vh at 60% 50%, color-mix(in oklch, var(--color-aurora-3) 14%, transparent), transparent 72%);
-    opacity: 0.85;
+    opacity: 0.9;
     will-change: transform;
     animation: auroraDeep 140s ease-in-out infinite alternate;
+  }
+
+  /* Discrete portal-pulse layer — slow breathing on the purple vortex
+     so it feels alive but doesn't shout. */
+  .aurora-deep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 8vw at 86% 16%, color-mix(in oklch, var(--color-portal-purple) 55%, transparent) 0%, transparent 60%);
+    opacity: 0.7;
+    animation: portalPulse 11s ease-in-out infinite alternate;
+    pointer-events: none;
   }
 
   /* Foreground aurora drift — punchier, more visible motion, 60s loop. */
@@ -179,6 +196,13 @@
     100% { transform: translate3d(4vw, 2vh, 0) scale(1.08); }
   }
 
+  /* Portal vortex breathing — slow opacity pulse on the deep purple radial. */
+  @keyframes portalPulse {
+    0%   { opacity: 0.45; transform: scale(0.96); }
+    50%  { opacity: 0.85; transform: scale(1.08); }
+    100% { opacity: 0.55; transform: scale(1.00); }
+  }
+
   [data-theme="light"] .aurora-deep {
     display: none;
   }
@@ -205,6 +229,7 @@
   @media (prefers-reduced-motion: reduce) {
     body::after,
     .aurora-deep,
+    .aurora-deep::before,
     .kenburns-carousel-active {
       animation: none;
     }
