@@ -23,6 +23,26 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
 
     let animationFrameId: number;
     let stars: Star[] = [];
+    // Theme-aware palette. Light mode uses warm dusty ink dots so they
+    // read as motes drifting through daylight; dark mode keeps the
+    // bright white / copper space-particle palette. Re-checked on
+    // every frame so a runtime theme toggle re-tints without remount.
+    const getTheme = () =>
+      document.documentElement.getAttribute("data-theme") === "light"
+        ? "light"
+        : "dark";
+    let theme: "light" | "dark" = getTheme();
+    const themeObserver = new MutationObserver(() => {
+      const next = getTheme();
+      if (next !== theme) {
+        theme = next;
+        initStars();
+      }
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
     // Mobile-aware star budget. Phones (≤768px or coarse pointer) drop to
     // ~3,500 stars at DPR-1; tablets ~9,000; desktop keeps the dense 24k
     // field. Keeps frame budget under 16ms on iPhone 12-class hardware.
@@ -58,16 +78,30 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
       const h = window.innerHeight;
       const maxDepth = w;
 
+      // Theme-aware palette. Dark = bright space dust; Light = warm
+      // dusty ink / clay / copper so the particles read as motes
+      // drifting through daylight against warm paper.
+      const palette =
+        theme === "light"
+          ? {
+              base: "#3a3022", // Warm dark ink
+              accents: ["#8a4a26", "#a8702c", "#5a4a3a"], // Clay / copper / mocha
+            }
+          : {
+              base: "#ffffff", // Bright white space particles
+              accents: ["#d97d54", "#cba158", "#efece6"], // Clay terracotta / brushed copper / chalky white
+            };
+
       for (let i = 0; i < STAR_COUNT; i++) {
-        let color = "#ffffff";
+        let color = palette.base;
         const rand = Math.random();
 
         if (rand > 0.965) {
-          color = "#d97d54"; // Clay terracotta
+          color = palette.accents[0];
         } else if (rand > 0.94) {
-          color = "#cba158"; // Brushed copper
+          color = palette.accents[1];
         } else if (rand > 0.91) {
-          color = "#efece6"; // Soft chalky white
+          color = palette.accents[2];
         }
 
         stars.push({
@@ -135,8 +169,10 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
           ctx.stroke();
         }
 
-        // Ultra-high performance core render utilizing hardware-accelerated fillRect in white
-        ctx.fillStyle = "#ffffff";
+        // Ultra-high performance core render utilizing hardware-accelerated
+        // fillRect. Dark theme = bright white; light theme = warm dark ink
+        // so the particle reads against paper.
+        ctx.fillStyle = theme === "light" ? "#3a3022" : "#ffffff";
         ctx.globalAlpha = Math.min(1, starOpacity * 1.15 * opacity);
         ctx.fillRect(
           px - currentSize / 2,
@@ -157,6 +193,7 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
+      themeObserver.disconnect();
     };
   }, [opacity]);
 
