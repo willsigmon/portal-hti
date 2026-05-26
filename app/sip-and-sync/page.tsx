@@ -350,7 +350,7 @@ export default function SipAndSync() {
         </div>
 
         {/* EVENT QUICK INFO GRID — equal-width 3-up */}
-        <div className="reveal-up mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-20">
+        <div className="reveal-stagger mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-20">
           {/* Calendar Card — compact left */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sip+%26+Sync%3A+Laptop+Pledge+Drive+%26+Social+Hour&dates=20260611T220000Z/20260612T010000Z&details=Join+us+for+Sip+%26+Sync%21+A+joint+collaboration+between+Hub+Zone+Tech+and+Portal+HQ+to+close+the+digital+divide+in+North+Carolina.+Bring+your+old+laptops+to+be+securely+wiped+and+donated+to+local+students+in+need.+Enjoy+free+drinks%2C+networking%2C+food%2C+and+more.&location=Portal+HQ%2C+3801+Hillsborough+St+Suite+113%2C+Raleigh%2C+NC+27607"
@@ -472,7 +472,7 @@ export default function SipAndSync() {
             </p>
           </div>
 
-          <div className="reveal-up grid md:grid-cols-2 gap-5">
+          <div className="reveal-stagger grid md:grid-cols-2 gap-5">
             {/* HTI Bento Card */}
             <div
               onMouseMove={handleMouseMove}
@@ -977,7 +977,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Coordinators Grid */}
-          <div className="reveal-up grid md:grid-cols-3 gap-4.5">
+          <div className="reveal-stagger grid md:grid-cols-3 gap-4.5">
             {/* Will Sigmon */}
             <div
               onMouseMove={handleMouseMove}

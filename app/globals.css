@@ -434,10 +434,15 @@
   .reveal,
   .reveal-up,
   .reveal-fade,
-  .reveal-scale {
+  .reveal-scale,
+  .reveal-stagger > * {
     animation-timeline: view();
     animation-fill-mode: both;
-    animation-range: entry 0% cover 28%;
+    /* Apple's MacBook Neo signature: reveal completes early in viewport
+       (entry 0% → cover 18%) so the content reads as "already settled"
+       once the user can see it. Tight, deliberate, never bouncy. */
+    animation-range: entry 0% cover 18%;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
   }
 
   .reveal,
@@ -455,10 +460,28 @@
     animation-name: revealScale;
     animation-duration: 1ms;
   }
+
+  /* Staggered cascade — children of a .reveal-stagger container animate
+     in sequence with a 90ms delay between each, matching Apple's flyout
+     reveal pattern. Up to 8 children handled; falls back gracefully. */
+  .reveal-stagger > * {
+    animation-name: revealUp;
+    animation-duration: 1ms;
+  }
+  .reveal-stagger > *:nth-child(1) { animation-range: entry 0% cover 14%; }
+  .reveal-stagger > *:nth-child(2) { animation-range: entry 4% cover 18%; }
+  .reveal-stagger > *:nth-child(3) { animation-range: entry 8% cover 22%; }
+  .reveal-stagger > *:nth-child(4) { animation-range: entry 12% cover 26%; }
+  .reveal-stagger > *:nth-child(5) { animation-range: entry 16% cover 30%; }
+  .reveal-stagger > *:nth-child(6) { animation-range: entry 20% cover 34%; }
+  .reveal-stagger > *:nth-child(7) { animation-range: entry 24% cover 38%; }
+  .reveal-stagger > *:nth-child(8) { animation-range: entry 28% cover 42%; }
 }
 
 @keyframes revealUp {
-  from { opacity: 0; transform: translateY(48px); }
+  /* Apple-tight: 12px translate (was 48), opacity 0 → 1. Subtle settle,
+     not a dramatic fly-in. Matches Apple's tight movement vocabulary. */
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -468,7 +491,9 @@
 }
 
 @keyframes revealScale {
-  from { opacity: 0; transform: scale(0.94) translateY(28px); }
+  /* Tight scale 0.97 → 1 plus 8px settle. Apple's "punch line" pattern
+     for hero headlines that need to land confidently. */
+  from { opacity: 0; transform: scale(0.97) translateY(8px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
@@ -476,7 +501,8 @@
   .reveal,
   .reveal-up,
   .reveal-fade,
-  .reveal-scale {
+  .reveal-scale,
+  .reveal-stagger > * {
     animation: none;
     opacity: 1;
     transform: none;
