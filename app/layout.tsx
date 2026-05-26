@@ -83,6 +83,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
       </head>
       <body className="antialiased">
+        {/* Star field — two parallax layers drifting at different speeds give
+            the "floating through space" feel. Far stars move slow, near stars
+            move slightly faster. Both twinkle independently. */}
+        <div className="star-field star-field-far" aria-hidden="true" />
+        <div className="star-field star-field-near" aria-hidden="true" />
         {/* Second parallax aurora layer — bigger drift, slower loop, sits behind
             body::after to create the "floating through deep space" parallax. */}
         <div className="aurora-deep" aria-hidden="true" />
