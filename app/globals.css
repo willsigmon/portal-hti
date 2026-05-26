@@ -285,6 +285,39 @@
     to   { transform: scale(1.10) translate(-1.2%, -0.8%); }
   }
 
+  /* Bright + shiny + mouse-parallax logo treatment.
+     Parent card sets --parallax-x / --parallax-y on mousemove. The logo
+     translates in that direction (slight follow-cursor feel) and carries
+     a warm accent glow + soft white inner shimmer so it reads as polished
+     metal/glass against the bento card surface. */
+  .parallax-logo {
+    transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+    filter:
+      drop-shadow(0 6px 18px color-mix(in oklch, var(--color-accent) 35%, transparent))
+      drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45))
+      brightness(1.08)
+      saturate(1.06);
+    will-change: transform;
+  }
+
+  .parallax-logo:hover,
+  *:hover > .parallax-logo,
+  .spotlight-card:hover .parallax-logo {
+    filter:
+      drop-shadow(0 10px 28px color-mix(in oklch, var(--color-accent) 55%, transparent))
+      drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55))
+      brightness(1.14)
+      saturate(1.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-logo {
+      transform: none;
+      transition: none;
+    }
+  }
+
   body > *:not(canvas):not(.aurora-deep):not(.star-field) {
     position: relative;
     z-index: 3;

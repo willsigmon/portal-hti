@@ -161,6 +161,9 @@ export default function SipAndSync() {
     const y = e.clientY - rect.top;
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
+    // Parallax delta — clamped offset from card center, used by .parallax-logo children
+    card.style.setProperty("--parallax-x", `${((x / rect.width) - 0.5) * 14}px`);
+    card.style.setProperty("--parallax-y", `${((y / rect.height) - 0.5) * 14}px`);
   };
 
   const handleCopyLink = () => {
@@ -507,9 +510,9 @@ export default function SipAndSync() {
                   </span>
                 </div>
 
-                {/* Massive Brand Logo Wrapper */}
-                <div className="flex items-center justify-center min-h-[140px] bg-black/40 border border-white/5 rounded-xl py-5 px-5 relative overflow-hidden group">
-                  <HTILogo className="h-[80px] w-auto filter contrast-[1.03] transition-all group-hover:scale-105 duration-300 object-contain" />
+                {/* Brand mark — bright, shiny, parallax-driven by parent mouse position */}
+                <div className="flex items-center justify-center min-h-[140px] relative">
+                  <HTILogo className="parallax-logo h-[96px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)]">
@@ -558,9 +561,9 @@ export default function SipAndSync() {
                   </span>
                 </div>
 
-                {/* Massive Brand Logo Wrapper */}
-                <div className="flex items-center justify-center min-h-[140px] bg-black/40 border border-white/5 rounded-xl py-5 px-5 relative overflow-hidden group">
-                  <img src="/portal-logo.png" alt="Portal HQ" className="h-[80px] w-auto filter contrast-[1.02] transition-all group-hover:scale-105 duration-300 object-contain" />
+                {/* Brand mark — bright, shiny, parallax-driven by parent mouse position */}
+                <div className="flex items-center justify-center min-h-[140px] relative">
+                  <img src="/portal-logo.png" alt="Portal HQ" className="parallax-logo h-[96px] w-auto object-contain" />
                 </div>
 
                 <h3 className="text-2xl font-bold tracking-tight text-[var(--color-ink)] whitespace-nowrap">
