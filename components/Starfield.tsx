@@ -23,8 +23,8 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
 
     let animationFrameId: number;
     let stars: Star[] = [];
-    const STAR_COUNT = 24000; // Richer field for the event backdrop without becoming visual noise
-    const SPEED = 0.45; // Quicker, high-craft ambient space drift
+    const STAR_COUNT = 24000; // Dense star field — floating through deep space
+    const SPEED = 0.42; // Continuous z-axis drift
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -81,14 +81,8 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
       const cy = h / 2;
       const maxDepth = w;
 
-      // Ambient gallery space: raw charcoal and limestone concrete depths.
-      const backdrop = ctx.createRadialGradient(cx * 0.5, cy * 0.3, 0, cx, cy, Math.max(w, h));
-      backdrop.addColorStop(0, "#1c1d22"); // Warm charcoal concrete core
-      backdrop.addColorStop(0.35, "#121316"); // Deep limestone slate
-      backdrop.addColorStop(0.7, "#0c0d0f"); // Dark raw iron
-      backdrop.addColorStop(1, "#070809"); // Void floor
-      ctx.fillStyle = backdrop;
-      ctx.fillRect(0, 0, w, h);
+      // Transparent clear — let the aurora / nebula bg show through
+      ctx.clearRect(0, 0, w, h);
 
       for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
@@ -153,8 +147,9 @@ export function Starfield({ opacity = 0.72 }: { opacity?: number }) {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 pointer-events-none select-none"
-      style={{ mixBlendMode: "normal", opacity: 1 }}
+      className="pointer-events-none select-none"
+      style={{ position: "fixed", inset: 0, zIndex: 0, opacity }}
+      aria-hidden="true"
     />
   );
 }

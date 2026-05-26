@@ -3,6 +3,7 @@ import "./globals.css";
 import { Cormorant_Garamond, IBM_Plex_Sans, Space_Mono } from "next/font/google";
 import { AmbientSpotlight } from "@/components/AmbientSpotlight";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Starfield } from "@/components/StarField";
 
 // Runs before React hydrates so we set [data-theme] on <html> synchronously,
 // preventing a light/dark flash on first paint. Defaults to dark — the
@@ -83,13 +84,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
       </head>
       <body className="antialiased">
-        {/* Star field — two parallax layers drifting at different speeds give
-            the "floating through space" feel. Far stars move slow, near stars
-            move slightly faster. Both twinkle independently. */}
-        <div className="star-field star-field-far" aria-hidden="true" />
-        <div className="star-field star-field-near" aria-hidden="true" />
-        {/* Second parallax aurora layer — bigger drift, slower loop, sits behind
-            body::after to create the "floating through deep space" parallax. */}
+        {/* 24,000-star animated canvas — "floating through deep space" travel
+            with 3D parallax trails. Sits behind the aurora gas clouds. */}
+        <Starfield opacity={0.85} />
+        {/* Aurora gas-cloud parallax layer over the star field. */}
         <div className="aurora-deep" aria-hidden="true" />
         <AmbientSpotlight />
         <ThemeToggle />
