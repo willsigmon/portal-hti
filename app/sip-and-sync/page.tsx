@@ -1078,7 +1078,7 @@ export default function SipAndSync() {
                   <img src="/hti-cropped.png" alt="" className="h-16 w-auto object-contain" />
                 </span>
                 <span className="text-2xl text-[var(--color-accent)]/55 font-light leading-none select-none">+</span>
-                <span className="inline-flex h-16 items-center justify-center">
+                <span className="inline-flex h-16 items-center justify-center translate-y-2">
                   <img src="/portal-logo.png" alt="" className="h-16 w-auto object-contain" />
                 </span>
               </div>
