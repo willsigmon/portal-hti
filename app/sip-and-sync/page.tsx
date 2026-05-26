@@ -276,7 +276,7 @@ export default function SipAndSync() {
           </div>
 
           {/* Strong visual hero move - premium Slack meetup mockup framed card */}
-          <div className="min-w-0 lg:col-span-6 lg:-mt-12 animate-fade-in-up delay-400">
+          <div className="min-w-0 lg:col-span-6 animate-fade-in-up delay-400">
             <div onMouseMove={handleMouseMove} className="spotlight-card relative mx-auto w-full max-w-[calc(100vw-3rem)] rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_10%,transparent)] bg-[var(--color-band)] p-1.5 shadow-lg transition-all duration-300 hover:scale-[1.01] lg:max-w-full">
               <div className="absolute -top-3.5 -left-3.5 h-7 w-7 border-t border-l border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
               <div className="absolute -top-3.5 -right-3.5 h-7 w-7 border-t border-r border-[color-mix(in_oklch,var(--color-accent)_55%,transparent)] pointer-events-none" />
@@ -363,19 +363,10 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
-            <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center gap-5">
-              <svg
-                viewBox="0 0 36 36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-9 w-9 text-[var(--color-accent)]"
-              >
+            <div className="relative z-10 flex items-center justify-center">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
                 <circle cx="18" cy="18" r="14" />
                 <line x1="18" y1="4.5" x2="18" y2="7" />
                 <line x1="31.5" y1="18" x2="29" y2="18" />
@@ -384,14 +375,16 @@ export default function SipAndSync() {
                 <line x1="18" y1="18" x2="18" y2="26" />
                 <line x1="18" y1="18" x2="22.5" y2="18" />
               </svg>
-              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">When</span>
-              <div className="space-y-2">
-                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)]">Thursday, June 11</h3>
-                <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
-              </div>
             </div>
-            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
-              Add to Calendar <ArrowUpRight className="h-3 w-3" />
+            <div className="relative z-10 flex items-center justify-center">
+              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)] font-semibold">When</span>
+            </div>
+            <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">Thursday, June 11</h3>
+              <p className="text-base text-[var(--color-muted)] tabular-nums">6:00 PM – 9:00 PM</p>
+            </div>
+            <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
+              Add to Calendar <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
             </span>
           </a>
 
@@ -407,38 +400,27 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center gap-5 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
+            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] sm:col-span-2 lg:col-span-1"
           >
-            {/* LEFT — content stack */}
-            <div className="relative z-10 flex flex-col gap-4 min-w-0 flex-1">
-              <svg
-                viewBox="0 0 36 36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-9 w-9 text-[var(--color-accent)]"
-              >
+            <div className="relative z-10 flex items-center justify-center">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
                 <path d="M18 3.5c-5.5 0-10 4.3-10 9.6 0 7 10 19.4 10 19.4s10-12.4 10-19.4c0-5.3-4.5-9.6-10-9.6z" />
                 <circle cx="18" cy="13" r="4.5" />
                 <line x1="18" y1="10" x2="18" y2="16" />
                 <line x1="15" y1="13" x2="21" y2="13" />
               </svg>
-              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Where</span>
-              <div className="space-y-2">
-                <h3 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.02]">
-                  <span className="whitespace-nowrap">Portal HQ</span>
-                  <span className="block text-2xl md:text-3xl text-[var(--color-muted)] font-medium mt-1 italic">Raleigh, NC</span>
-                </h3>
-                <p className="text-base text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
-              </div>
-              <span className="mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)] self-stretch">
-                Open Maps <ArrowUpRight className="h-3 w-3" />
-              </span>
             </div>
-
+            <div className="relative z-10 flex items-center justify-center">
+              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)] font-semibold">Where</span>
+            </div>
+            <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05] whitespace-nowrap">Portal HQ</h3>
+              <p className="text-base md:text-lg text-[var(--color-muted)] italic leading-snug">Raleigh, NC</p>
+              <p className="text-sm text-[var(--color-muted)] leading-snug">3801 Hillsborough St, Suite 113</p>
+            </div>
+            <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
+              Open Maps <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+            </span>
           </a>
 
           {/* Tickets Info Card — compact right */}
@@ -451,32 +433,25 @@ export default function SipAndSync() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="spotlight-card group relative flex min-h-[340px] w-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
+            className="spotlight-card group relative grid min-h-[340px] w-full min-w-0 grid-rows-[3rem_2rem_1fr_2.25rem] gap-3 overflow-hidden rounded-[var(--radius-md)] border border-[color-mix(in_oklch,var(--color-ink)_8%,transparent)] bg-[var(--color-band)] p-8 text-center shadow-sm transition-all duration-300 hover:translate-y-[-2px] hover:border-[var(--color-accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]"
           >
-            <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center gap-5">
-              <svg
-                viewBox="0 0 36 36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-9 w-9 text-[var(--color-accent)]"
-              >
+            <div className="relative z-10 flex items-center justify-center">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-10 w-10 text-[var(--color-accent)]">
                 <path d="M4.5 11.5 L4.5 16 A2 2 0 0 1 4.5 20 L4.5 24.5 L31.5 24.5 L31.5 20 A2 2 0 0 1 31.5 16 L31.5 11.5 Z" />
                 <line x1="13" y1="14" x2="13" y2="16" />
                 <line x1="13" y1="20" x2="13" y2="22" />
                 <path d="M21 14.5 L21 21.5 M18.5 16 Q18.5 14.5 21 14.5 Q23.5 14.5 23.5 16 Q23.5 17.5 21 18 Q18.5 18.5 18.5 20 Q18.5 21.5 21 21.5 Q23.5 21.5 23.5 20" />
               </svg>
-              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)]">Admission</span>
-              <div className="space-y-2">
-                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
-                <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
-              </div>
             </div>
-            <span className="relative z-10 mt-auto inline-flex items-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] w-full justify-center transition-colors group-hover:text-[var(--color-accent)]">
-              Secure Passes <ArrowUpRight className="h-3 w-3" />
+            <div className="relative z-10 flex items-center justify-center">
+              <span className="font-sans text-sm uppercase tracking-[0.22em] text-[var(--color-accent)] font-semibold">Admission</span>
+            </div>
+            <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-2">
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-ink)] tabular-nums">$5.00</h3>
+              <p className="text-base text-[var(--color-muted)] leading-snug max-w-[24ch] mx-auto">Includes craft drinks + live networking</p>
+            </div>
+            <span className="relative z-10 inline-flex items-center justify-center gap-1.5 whitespace-nowrap pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]/80 border-t border-[color-mix(in_oklch,var(--color-ink)_6%,transparent)] transition-colors group-hover:text-[var(--color-accent)]">
+              Secure Passes <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
             </span>
           </a>
         </div>
