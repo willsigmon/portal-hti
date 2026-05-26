@@ -314,13 +314,72 @@
   padding-inline: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-/* Generous editorial breathing room. Floor 64px, ceiling 128px. */
+/* Tighter section rhythm now that the nebula is seamless — content
+   reveals via scroll-triggered animation carry the visual separation
+   instead of huge vertical air. */
 .section {
-  padding-block: clamp(4rem, 8vw, 8rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .section-tight {
-  padding-block: clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Apple-style scroll reveal. Uses scroll-driven `animation-timeline:
+   view()` where supported (Chromium ≥ 115, Safari TP). For browsers
+   without support, elements stay visible by default — graceful
+   degradation, no blank-state flash. */
+@supports (animation-timeline: view()) {
+  .reveal,
+  .reveal-up,
+  .reveal-fade,
+  .reveal-scale {
+    animation-timeline: view();
+    animation-fill-mode: both;
+    animation-range: entry 0% cover 28%;
+  }
+
+  .reveal,
+  .reveal-up {
+    animation-name: revealUp;
+    animation-duration: 1ms; /* scroll-driven, duration is scaled by range */
+  }
+
+  .reveal-fade {
+    animation-name: revealFade;
+    animation-duration: 1ms;
+  }
+
+  .reveal-scale {
+    animation-name: revealScale;
+    animation-duration: 1ms;
+  }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes revealScale {
+  from { opacity: 0; transform: scale(0.94) translateY(28px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-up,
+  .reveal-fade,
+  .reveal-scale {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .surface-band {
