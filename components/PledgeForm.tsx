@@ -405,7 +405,7 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
                     Admission Passes
                   </label>
                   <span className="text-xs text-[var(--color-muted)]">
-                    $5.00 each • Fills seats + funds wipes
+                    $5.00 each • Fills seats
                   </span>
                 </div>
 
