@@ -101,6 +101,13 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
     setTicketPaid(false);
     setTicketStep("wallet");
 
+    // Persist ticket reservation to backend
+    fetch("/api/pledge", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "event_ticket", data: newTicket }),
+    }).catch((err) => console.warn("Background ticket persistence error:", err));
+
     // Emit event to notify navbar/retrieval badges
     window.dispatchEvent(new Event("ticketSync"));
   };
@@ -112,6 +119,14 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
       parsed.paid = true;
       localStorage.setItem("ss_event_ticket", JSON.stringify(parsed));
       setTicketPaid(true);
+
+      // Notify backend that attendee confirmed payment
+      fetch("/api/pledge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "ticket_payment_confirmed", data: parsed }),
+      }).catch((err) => console.warn("Background payment confirmation error:", err));
+
       window.dispatchEvent(new Event("ticketSync"));
     }
   };
@@ -152,6 +167,22 @@ export function PledgeForm({ mode = "laptop" }: PledgeFormProps) {
 
     const updatedPledges = [...currentPledges, newPledge];
     localStorage.setItem("ss_pledges", JSON.stringify(updatedPledges));
+
+    // Persist donor details and device pledge to backend
+    fetch("/api/pledge", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "laptop_pledge",
+        data: {
+          ...newPledge,
+          email: laptopData.email,
+          phone: laptopData.phone,
+          dropoff_option: laptopData.dropoff,
+          notes: laptopData.notes,
+        },
+      }),
+    }).catch((err) => console.warn("Background laptop pledge persistence error:", err));
 
     setLaptopStep("success");
 
